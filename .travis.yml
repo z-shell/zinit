@@ -7,7 +7,7 @@ git:
   depth: 1
 branches:
   only:
-  - master
+  - main
 addons:
   apt:
     packages:
@@ -15,8 +15,8 @@ addons:
     - mailutils
 env:
   global:
-  - ENCRYPTION_LABEL: de1faff15945
-  - COMMIT_AUTHOR_EMAIL: psprint@zdharma.org
+  - ENCRYPTION_LABEL: "de1faff15945"
+  - COMMIT_AUTHOR_EMAIL: "sall@w-ss.ip"
 before_script:
 - sudo apt-get install -y zsh mailutils
 - zsh --version
@@ -34,15 +34,9 @@ script:
 - make -C test testD VERBOSE=1
 - make -C test testE VERBOSE=1
 notifications:
-  irc:
-    channels:
-    - chat.freenode.net#zplugin
-    on_success: change
-    on_failure: change
-    skip_join: true
   email:
     recipients:
-      - sgniazdowski@gmail.com
+      - admin@digitalclouds.dev
     on_success: change
     on_failure: change
 before_install:

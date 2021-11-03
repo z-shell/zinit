@@ -1,10 +1,6 @@
 .TH "" "" "October 2019" "" ""
 News
 .P
-\fB\fBpaypal\fR \fI\(lahttps://img.shields.io/badge/-Donate-yellow.svg?longCache=true&style=for-the-badge\(ra\fR\fR \fI\(lahttps://www.paypal.me/ZdharmaInitiative\(ra\fR \fB\fBpaypal\fR \fI\(lahttps://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif\(ra\fR\fR \fI\(lahttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D54B3S7C6HGME\(ra\fR \fB\fBpatreon\fR \fI\(lahttps://img.shields.io/badge/-Patreon-orange.svg?longCache=true&style=for-the-badge\(ra\fR\fR \fI\(lahttps://www.patreon.com/psprint\(ra\fR New: You can request a feature when donating, even fancy or advanced ones get implemented this way. \fBThere are reports\fR \fI\(laDONATIONS.md\(ra\fR about what is being done with the money received.
-.P
-\fB\fBStatus\fR \fI\(lahttps://travis-ci.org/zdharma/zplugin.svg?branch=master\(ra\fR\fR \fI\(lahttps://travis-ci.org/zdharma/zplugin\(ra\fR \fB\fBMIT License\fR \fI\(lahttps://img.shields.io/badge/license-MIT-blue.svg\(ra\fR\fR \fI\(la./LICENSE\(ra\fR \fBnull\fI\(lahttps://img.shields.io/github/tag/zdharma/zplugin.svg\(ra\fR\fR \fI\(lahttps://github.com/zdharma/zplugin/releases\(ra\fR null\fI\(lahttps://img.shields.io/github/commit-activity/y/zdharma/zplugin.svg\(ra\fR \fB\fBChat at https://gitter.im/zplugin/Lobby\fR \fI\(lahttps://badges.gitter.im/zplugin/Lobby.svg\(ra\fR\fR \fI\(lahttps://gitter.im/zplugin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\(ra\fR
-.P
 \fBTable of Contents\fR \fIgenerated with \fBDocToc\fI \fI\(lahttps://github.com/thlorenz/doctoc\(ra\fI\fR
 .RS 0
 .IP \(bu 4
@@ -137,12 +133,12 @@ This script loads correctly thanks to the emulation, however it isn't functional
 .IP \(bu 4
 A new ice-mod \fBreset''\fR that ivokes \fBgit reset --hard\fR (or the provided command) before \fBgit pull\fR and \fBatpull''\fR ice. It can be used it to implement altering (i.e. patching) of the plugin's files inside the \fBatpull''\fR ice \[en] \fBgit\fR will report no conflicts when doing \fBpull\fR, and the changes can be then again introduced by the \fBatpull''\fR ice.
 .IP \(bu 4
-Three new Zplugin annexes (i.e. \fBextensions\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Annexes/\(ra\fR):
+Three new Zplugin annexes (i.e. \fBextensions\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Annexes/\(ra\fR):
 .RS 4
 .IP \(bu 4
 \fBz-a-man\fR \fI\(lahttps://github.com/zplugin/z-a-man\(ra\fR
 .P
-Generates man pages and code-documentation man pages from plugin's README.md and source files (the code documentation is obtained from \fBZshelldoc\fR \fI\(lahttps://github.com/zdharma/zshelldoc\(ra\fR).
+Generates man pages and code-documentation man pages from plugin's README.md and source files (the code documentation is obtained from \fBZshelldoc\fR \fI\(lahttps://github.com/z-shell/zshelldoc\(ra\fR).
 .IP \(bu 4
 \fBz-a-test\fR \fI\(lahttps://github.com/zplugin/z-a-test\(ra\fR
 .P
@@ -185,7 +181,7 @@ ${ZPLGM\[lB]PLUGINS_DIR\[rB]} ${ZPLGM\[lB]SNIPPETS_DIR\[rB]}\fR)
 09-07-2019
 .RS 4
 .IP \(bu 4
-Zplugin can now have \fBits own plugins\fR, called \fBz-plugins\fR! Check out an example but fully functional z-plugin \fBzdharma/z-p-submods\fR \fI\(lahttps://github.com/zdharma/z-p-submods\(ra\fR and a document that explains on how to implement your own z-plugin (\fBhere\fR \fI\(la../../wiki/Z-PLUGINS\(ra\fR).
+Zplugin can now have \fBits own plugins\fR, called \fBz-plugins\fR! Check out an example but fully functional z-plugin \fBzdharma/z-p-submods\fR \fI\(lahttps://github.com/z-shell/z-p-submods\(ra\fR and a document that explains on how to implement your own z-plugin (\fBhere\fR \fI\(la../../wiki/Z-PLUGINS\(ra\fR).
 .RE 0
 
 .IP \(bu 4
@@ -228,7 +224,7 @@ New ice mod \fBsubscribe''\fR/\fBon-update-of''\fR which works like the \fBwait'
 % zplugin ice on-update-of'{~/files-*,/tmp/files-*}' lucid \[rs]
     atload"echo I have been loaded" \[rs]
     notify"Yes that's true :)"
-% zplugin load zdharma/null
+% zplugin load z-shell/null
 % touch ~/files-1
 The plugin has been loaded
 %
@@ -249,10 +245,10 @@ New ice-mod \fBnotify''\fR which will cause to display an under-prompt notificat
 .P
 .RS 2
 .nf
-% zplugin ice wait"0" lucid notify"zdharma/null has been loaded"
-% zplugin light zdharma/null
+% zplugin ice wait"0" lucid notify"z-shell/null has been loaded"
+% zplugin light z-shell/null
 %
-zdharma/null has been loaded
+z-shell/null has been loaded
 .fi
 .RE
 .P
@@ -261,7 +257,7 @@ In case of problems with the loading a warning message will be output:
 .RS 2
 .nf
 % zplugin ice notify atload'return 7'
-% zplugin light zdharma/null
+% zplugin light z-shell/null
 %
 notify: Plugin not loaded / loaded with problem, the return code: 7
 .fi
@@ -311,7 +307,7 @@ Supported is \fBunloading\fR of plugin and ability to list, (un)install and sele
 The system does not use \fB$FPATH\fR, loading multiple plugins doesn't clutter \fB$FPATH\fR with the same number of entries (e.g. \fB10\fR). Code is immune to \fBKSH_ARRAYS\fR. Completion management functionality is provided to allow user to call \fBcompinit\fR only once in \fB.zshrc\fR.
 .SH "ZPLUGIN WIKI"
 .P
-The information in this README is complemented by the \fBZplugin wiki\fR \fI\(lahttp://zdharma.org/zplugin/wiki/\(ra\fR. The README is an introductory overview of Zplugin while the wiki gives a complete and in-depth information with examples. Make sure to read it to get the most out of Zplugin.
+The information in this README is complemented by the \fBZplugin wiki\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/\(ra\fR. The README is an introductory overview of Zplugin while the wiki gives a complete and in-depth information with examples. Make sure to read it to get the most out of Zplugin.
 .SH "INSTALLATION"
 .SS "Option 1 - Automatic Installation (Recommended)"
 .P
@@ -319,7 +315,7 @@ The easiest way to install Zplugin is to execute:
 .P
 .RS 2
 .nf
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/z-shell/zplugin/main/doc/install.sh)"
 .fi
 .RE
 .P
@@ -331,7 +327,7 @@ To manually install Zplugin clone the repo to e.g. \fB~/.zplugin/bin\fR:
 .RS 2
 .nf
 mkdir ~/.zplugin
-git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
+git clone https://github.com/z-shell/zplugin.git ~/.zplugin/bin
 .fi
 .RE
 .P
@@ -358,7 +354,7 @@ After installing and reloading the shell compile Zplugin with \fBzplugin self-up
 .SH "USAGE"
 .SS "Introduction"
 .P
-\fBClick here to read the introduction to Zplugin\fR \fI\(lahttp://zdharma.org/zplugin/wiki/INTRODUCTION/\(ra\fR. It explains basic usage and some of the more unique features of Zplugin such as the Turbo mode. If you're new to Zplugin we highly recommend you read it at least once.
+\fBClick here to read the introduction to Zplugin\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/INTRODUCTION/\(ra\fR. It explains basic usage and some of the more unique features of Zplugin such as the Turbo mode. If you're new to Zplugin we highly recommend you read it at least once.
 .SS "Example Usage"
 .P
 After installing Zplugin you can start adding some actions (load some plugins) to \fB~/.zshrc\fR, at bottom. Some examples:
@@ -367,10 +363,10 @@ After installing Zplugin you can start adding some actions (load some plugins) t
 .nf
 # Two regular plugins loaded without tracking.
 zplugin light zsh-users/zsh-autosuggestions
-zplugin light zdharma/fast-syntax-highlighting
+zplugin light z-shell/fast-syntax-highlighting
 
 # Plugin history-search-multi-word loaded with tracking.
-zplugin load zdharma/history-search-multi-word
+zplugin load z-shell/history-search-multi-word
 
 # Load the pure theme, with zsh-async library that's bundled with it.
 zplugin ice pick"async.zsh" src"pure.zsh"
@@ -392,7 +388,7 @@ zplugin load docker/compose
 # Vim repository on GitHub \[en] a typical source code that needs compilation \[en] Zplugin
 # can manage it for you if you like, run `./configure` and other `make`, etc. stuff.
 # Ice-mod `pick` selects a binary program to add to $PATH. You could also install the
-# package under the path $ZPFX, see: http://zdharma.org/zplugin/wiki/Compiling-programs
+# package under the path $ZPFX, see: http://z-shell.github.io/zplugin/wiki/Compiling-programs
 zplugin ice as"program" atclone"rm -f src/auto/config.cache; ./configure" \[rs]
     atpull"%atclone" make pick"src/vim"
 zplugin light vim/vim
@@ -418,7 +414,7 @@ zplugin light trapd00r/LS_COLORS
 .fi
 .RE
 .P
-\fBYou can see an extended explanation of LS_COLORS in the wiki.\fR \fI\(lahttp://zdharma.org/zplugin/wiki/LS_COLORS-explanation/\(ra\fR
+\fBYou can see an extended explanation of LS_COLORS in the wiki.\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/LS_COLORS-explanation/\(ra\fR
 .P
 .RS 2
 .nf
@@ -428,11 +424,11 @@ zplugin light direnv/direnv
 .fi
 .RE
 .P
-\fBYou can see an extended explanation of direnv in the wiki.\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Direnv-explanation/\(ra\fR
+\fBYou can see an extended explanation of direnv in the wiki.\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Direnv-explanation/\(ra\fR
 .P
-If you're interested in more examples then check out the \fBzplugin-configs repository\fR \fI\(lahttps://github.com/zdharma/zplugin-configs\(ra\fR where users have uploaded their \fB~/.zshrc\fR and Zplugin configurations. Feel free to \fBsubmit\fR \fI\(lahttps://github.com/zdharma/zplugin-configs/issues/new?template=request-to-add-zshrc-to-the-zplugin-configs-repo.md\(ra\fR your \fB~/.zshrc\fR there if it contains Zplugin commands.
+If you're interested in more examples then check out the \fBzplugin-configs repository\fR \fI\(lahttps://github.com/z-shell/zplugin-configs\(ra\fR where users have uploaded their \fB~/.zshrc\fR and Zplugin configurations. Feel free to \fBsubmit\fR \fI\(lahttps://github.com/z-shell/zplugin-configs/issues/new?template=request-to-add-zshrc-to-the-zplugin-configs-repo.md\(ra\fR your \fB~/.zshrc\fR there if it contains Zplugin commands.
 .P
-You can also check out the \fBGallery of Zplugin Invocations\fR \fI\(lahttp://zdharma.org/zplugin/wiki/GALLERY/\(ra\fR for some additional examples.
+You can also check out the \fBGallery of Zplugin Invocations\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/GALLERY/\(ra\fR for some additional examples.
 .SS "Ice Modifiers"
 .P
 Following \fBice\fR modifiers are to be passed to \fBzplugin ice ...\fR to obtain described effects. The word \fBice\fR means something that's added (like ice to a drink) \[en] and in Zplugin it means adding modifier to a next \fBzplugin\fR command, and also something that's temporary because it melts \[en] and this means that the modification will last only for a \fBsingle\fR next \fBzplugin\fR command.
@@ -460,9 +456,9 @@ tab(@);
 cb cb
 c l .
 Modifier@Description
-\fB\fB\fBpick\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Sourcing-multiple-files/\(ra\fR@ Select the file to source, or the file to set as command (when using \fBsnippet --command\fR or the ice \fBas"program"\fR); it is a pattern, alphabetically first matched file is being chosen; e.g. \fBzplugin ice pick"*.plugin.zsh"; zplugin load …\fR.
-\fB\fB\fBsrc\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Sourcing-multiple-files\(ra\fR@ Specify additional file to source after sourcing main file or after setting up command (via \fBas"program"\fR). It is not a pattern but a plain file name.
-\fB\fB\fBmultisrc\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Sourcing-multiple-files\(ra\fR@ Allows to specify multiple files for sourcing, enumerated with spaces as the separators (e.g. \fBmultisrc'misc.zsh grep.zsh'\fR) and also using brace-expansion syntax (e.g. \fBmultisrc'{misc,grep}.zsh'\fR). Supports patterns.
+\fB\fB\fBpick\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Sourcing-multiple-files/\(ra\fR@ Select the file to source, or the file to set as command (when using \fBsnippet --command\fR or the ice \fBas"program"\fR); it is a pattern, alphabetically first matched file is being chosen; e.g. \fBzplugin ice pick"*.plugin.zsh"; zplugin load …\fR.
+\fB\fB\fBsrc\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Sourcing-multiple-files\(ra\fR@ Specify additional file to source after sourcing main file or after setting up command (via \fBas"program"\fR). It is not a pattern but a plain file name.
+\fB\fB\fBmultisrc\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Sourcing-multiple-files\(ra\fR@ Allows to specify multiple files for sourcing, enumerated with spaces as the separators (e.g. \fBmultisrc'misc.zsh grep.zsh'\fR) and also using brace-expansion syntax (e.g. \fBmultisrc'{misc,grep}.zsh'\fR). Supports patterns.
 .TE
 .SS "Conditional Loading"
 .TS
@@ -470,9 +466,9 @@ tab(@);
 cb cb
 c l .
 Modifier@Description
-\fB\fB\fBwait\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Example-wait-conditions\(ra\fR@ Postpone loading a plugin or snippet. For \fBwait'1'\fR, loading is done \fB1\fR second after prompt. For \fBwait'\[lB]\[lB] ... \[rB]\[rB]'\fR, \fBwait'(( ... ))'\fR, loading is done when given condition is meet. For \fBwait'!...'\fR, prompt is reset after load. Zsh can start 73% faster thanks to postponed loading. \fBFact:\fR when \fBwait\fR is used without value, it works as \fBwait'0'\fR.
-\fB\fB\fBload\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Multiple-prompts\(ra\fR@ A condition to check which should cause plugin to load. It will load once, the condition can be still true, but will not trigger second load (unless plugin is unloaded earlier, see \fBunload\fR below). E.g.: \fBload'\[lB]\[lB] $PWD = */github* \[rB]\[rB]'\fR.
-\fB\fB\fBunload\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Multiple-prompts\(ra\fR@ A condition to check causing plugin to unload. It will unload once, then only if loaded again. E.g.: \fBunload'\[lB]\[lB] $PWD != */github* \[rB]\[rB]'\fR.
+\fB\fB\fBwait\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Example-wait-conditions\(ra\fR@ Postpone loading a plugin or snippet. For \fBwait'1'\fR, loading is done \fB1\fR second after prompt. For \fBwait'\[lB]\[lB] ... \[rB]\[rB]'\fR, \fBwait'(( ... ))'\fR, loading is done when given condition is meet. For \fBwait'!...'\fR, prompt is reset after load. Zsh can start 73% faster thanks to postponed loading. \fBFact:\fR when \fBwait\fR is used without value, it works as \fBwait'0'\fR.
+\fB\fB\fBload\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Multiple-prompts\(ra\fR@ A condition to check which should cause plugin to load. It will load once, the condition can be still true, but will not trigger second load (unless plugin is unloaded earlier, see \fBunload\fR below). E.g.: \fBload'\[lB]\[lB] $PWD = */github* \[rB]\[rB]'\fR.
+\fB\fB\fBunload\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Multiple-prompts\(ra\fR@ A condition to check causing plugin to unload. It will unload once, then only if loaded again. E.g.: \fBunload'\[lB]\[lB] $PWD != */github* \[rB]\[rB]'\fR.
 \fBcloneonly\fR@ Don't load the plugin / snippet, only download it 
 \fBif\fR@ Load plugin or snippet only when given condition is fulfilled, for example: \fBzplugin ice if'\[lB]\[lB] -n "$commands\[lB]otool\[rB]" \[rB]\[rB]'; zplugin load ...\fR.
 \fBhas\fR@ Load plugin or snippet only when given command is available (in $PATH), e.g. \fBzplugin ice has'git' ...\fR 
@@ -505,13 +501,13 @@ c l .
 Modifier@Description
 \fBmv\fR@ Move file after cloning or after update (then, only if new commits were downloaded). Example: \fBmv "fzf-* -> fzf"\fR. It uses \fB->\fR as separator for old and new file names. Works also with snippets.
 \fBcp\fR@ Copy file after cloning or after update (then, only if new commits were downloaded). Example: \fBcp "docker-c* -> dcompose"\fR. Ran after \fBmv\fR.
-\fB\fB\fBatclone\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after cloning, within plugin's directory, e.g. \fBzplugin ice atclone"echo Cloned"\fR. Ran also after downloading snippet.
-\fB\fB\fBatpull\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after updating (\fBonly if new commits are waiting for download\fR), within plugin's directory. If starts with "!" then command will be ran before \fBmv\fR & \fBcp\fR ices and before \fBgit pull\fR or \fBsvn update\fR. Otherwise it is ran after them. Can be \fBatpull'%atclone'\fR, to repeat \fBatclone\fR Ice-mod.
-\fB\fB\fBatinit\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after directory setup (cloning, checking it, etc.) of plugin/snippet but before loading.
-\fB\fB\fBatload\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after loading, within plugin's directory. Can be also used with snippets. Passed code can be preceded with \fB!\fR, it will then be tracked (if using \fBload\fR, not \fBlight\fR).
+\fB\fB\fBatclone\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after cloning, within plugin's directory, e.g. \fBzplugin ice atclone"echo Cloned"\fR. Ran also after downloading snippet.
+\fB\fB\fBatpull\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after updating (\fBonly if new commits are waiting for download\fR), within plugin's directory. If starts with "!" then command will be ran before \fBmv\fR & \fBcp\fR ices and before \fBgit pull\fR or \fBsvn update\fR. Otherwise it is ran after them. Can be \fBatpull'%atclone'\fR, to repeat \fBatclone\fR Ice-mod.
+\fB\fB\fBatinit\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after directory setup (cloning, checking it, etc.) of plugin/snippet but before loading.
+\fB\fB\fBatload\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/atload-and-other-at-ices\(ra\fR@ Run command after loading, within plugin's directory. Can be also used with snippets. Passed code can be preceded with \fB!\fR, it will then be tracked (if using \fBload\fR, not \fBlight\fR).
 \fBrun-atpull\fR@ Always run the atpull hook (when updating), not only when there are new commits to be downloaded.
 \fBnocd\fR@ Don't switch the current directory into the plugin's directory when evaluating the above ice-mods \fBatinit''\fR,\fBatload''\fR, etc.
-\fB\fB\fBmake\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Installing-with-make\(ra\fR@ Run \fBmake\fR command after cloning/updating and executing \fBmv\fR, \fBcp\fR, \fBatpull\fR, \fBatclone\fR Ice mods. Can obtain argument, e.g. \fBmake"install PREFIX=/opt"\fR. If the value starts with \fB!\fR then \fBmake\fR is ran before \fBatclone\fR/\fBatpull\fR, e.g. \fBmake'!'\fR.
+\fB\fB\fBmake\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Installing-with-make\(ra\fR@ Run \fBmake\fR command after cloning/updating and executing \fBmv\fR, \fBcp\fR, \fBatpull\fR, \fBatclone\fR Ice mods. Can obtain argument, e.g. \fBmake"install PREFIX=/opt"\fR. If the value starts with \fB!\fR then \fBmake\fR is ran before \fBatclone\fR/\fBatpull\fR, e.g. \fBmake'!'\fR.
 .TE
 .SS "Sticky-Emulation Of Other Shells"
 .TS
@@ -531,14 +527,14 @@ cb cb
 c l .
 Modifier@Description
 \fBas\fR@ Can be \fBas"program"\fR (also the alias: \fBas"command"\fR), and will cause to add script/program to \fB$PATH\fR instead of sourcing (see \fBpick\fR). Can also be \fBas"completion"\fR \[en] use with plugins or snippets in whose only underscore-starting \fB_*\fR files you are interested in.
-\fB\fB\fBid-as\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/id-as/\(ra\fR@ Nickname a plugin or snippet, to e.g. create a short handler for long-url snippet.
+\fB\fB\fBid-as\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/id-as/\(ra\fR@ Nickname a plugin or snippet, to e.g. create a short handler for long-url snippet.
 \fBcompile\fR@ Pattern (+ possible \fB{...}\fR expansion, like \fB{a/*,b*}\fR) to select additional files to compile, e.g. \fBcompile"(pure\[rs]|async).zsh"\fR for \fBsindresorhus/pure\fR.\[rs]
 \fBnocompile\fR@ Don't try to compile \fBpick\fR-pointed files. If passed the exclamation mark (i.e. \fBnocompile'!'\fR), then do compile, but after \fBmake''\fR and \fBatclone''\fR (useful if Makefile installs some scripts, to point \fBpick''\fR at the location of their installation).
 \fBservice\fR@ Make following plugin or snippet a \fIservice\fR, which will be ran in background, and only in single Zshell instance. See \fBzservices-organization\fR \fI\(lahttps://github.com/zservices\(ra\fR page.
 \fBreset-prompt\fR@ Reset the prompt after loading the plugin/snippet (by issuing \fBzle .reset-prompt\fR). Note: normally it's sufficient to precede the value of \fBwait''\fR ice with \fB!\fR.
 \fBbindmap\fR@ To hold \fB;\fR-separated strings like \fBKey(s)A -> Key(s)B\fR, e.g. \fB^R -> ^T; ^A -> ^B\fR. In general, \fBbindmap''\fRchanges bindings (done with the \fBbindkey\fR builtin) the plugin does. The example would cause the plugin to map Ctrl-T instead of Ctrl-R, and Ctrl-B instead of Ctrl-A. \fBDoes not work with snippets.\fR
 \fBtrackbinds\fR@ Shadow but only \fBbindkey\fR calls even with \fBzplugin light ...\fR, i.e. even with tracking disabled (fast loading), to allow \fBbindmap\fR to remap the key-binds. The same effect has \fBzplugin light -b ...\fR, i.e. additional \fB-b\fR option to the \fBlight\fR-subcommand. \fBDoes not work with snippets.\fR
-\fB\fB\fBwrap-track\fB\fR\fR \fI\(lahttp://zdharma.org/zplugin/wiki/wrap-track\(ra\fR@ Takes a \fB;\fR-separated list of function names that are to be tracked (meaning gathering report and unload data) \fBonce\fR during execution. It works by wrapping the functions with a tracking-enabling and disabling snippet of code. In summary, \fBwrap-track\fR allows to extend the tracking beyond the moment of loading of a plugin. Example use is to \fBwrap-track\fR a precmd function of a prompt (like \fB_p9k_precmd()\fR of powerlevel10k) or other plugin that \fIpostpones its initialization till the first prompt\fR (like e.g.: zsh-autosuggestions). \fBDoes not work with snippets.\fR
+\fB\fB\fBwrap-track\fB\fR\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/wrap-track\(ra\fR@ Takes a \fB;\fR-separated list of function names that are to be tracked (meaning gathering report and unload data) \fBonce\fR during execution. It works by wrapping the functions with a tracking-enabling and disabling snippet of code. In summary, \fBwrap-track\fR allows to extend the tracking beyond the moment of loading of a plugin. Example use is to \fBwrap-track\fR a precmd function of a prompt (like \fB_p9k_precmd()\fR of powerlevel10k) or other plugin that \fIpostpones its initialization till the first prompt\fR (like e.g.: zsh-autosuggestions). \fBDoes not work with snippets.\fR
 \fBaliases\fR@Load the plugin with the aliases mechanism enabled. Use with plugins that define \fBand use\fR aliases in their scripts.
 .TE
 .SS "Order of Execution"
@@ -708,7 +704,7 @@ zplugin light NicoSantangelo/Alpharized
 .fi
 .RE
 .P
-See also the Wiki page: \fBExample Oh My Zsh Setup\fR \fI\(lahttp://zdharma.org/zplugin/wiki/Example-Oh-My-Zsh-setup/\(ra\fR.
+See also the Wiki page: \fBExample Oh My Zsh Setup\fR \fI\(lahttp://z-shell.github.io/zplugin/wiki/Example-Oh-My-Zsh-setup/\(ra\fR.
 .SH "COMPLETIONS"
 .SS "Calling \fBcompinit\fR Without Turbo Mode"
 .P
@@ -744,7 +740,7 @@ zplugin cdreplay -q # -q is for quiet; actually run all the `compdef's saved bef
 This allows to call compinit once. Performance gains are huge, example shell startup time with double \fBcompinit\fR: \fB0.980\fR sec, with \fBcdreplay\fR and single \fBcompinit\fR: \fB0.156\fR sec.
 .SS "Calling \fBcompinit\fR With Turbo Mode"
 .P
-If you load completions using \fBwait''\fR Turbo mode then you can add \fBatinit'zpcompinit'\fR to syntax-highlighting plugin (which should be the last one loaded, as their (2 projects, \fBz-sy-h\fR \fI\(lahttps://github.com/zsh-users/zsh-syntax-highlighting\(ra\fR & \fBf-sy-h\fR \fI\(lahttps://github.com/zdharma/fast-syntax-highlighting\(ra\fR) documentation state), or \fBatload'zpcompinit'\fR to last completion-related plugin. \fBzpcompinit\fR is a function that just runs \fBautoload
+If you load completions using \fBwait''\fR Turbo mode then you can add \fBatinit'zpcompinit'\fR to syntax-highlighting plugin (which should be the last one loaded, as their (2 projects, \fBz-sy-h\fR \fI\(lahttps://github.com/zsh-users/zsh-syntax-highlighting\(ra\fR & \fBf-sy-h\fR \fI\(lahttps://github.com/z-shell/fast-syntax-highlighting\(ra\fR) documentation state), or \fBatload'zpcompinit'\fR to last completion-related plugin. \fBzpcompinit\fR is a function that just runs \fBautoload
 compinit; compinit\fR, created for convenience. There's also \fBzpcdreplay\fR which will replay any caught compdefs so you can also do: \fBatinit'zpcompinit;
 zpcdreplay'\fR, etc. Basically, the whole topic is the same as normal \fBcompinit\fR call, but it is done in \fBatinit\fR or \fBatload\fR hook of the last related plugin with use of the helper functions (\fBzpcompinit\fR,\fBzpcdreplay\fR & \fBzpcdclear\fR \[en] see below for explanation of the last one).
 .SS "Ignoring Compdefs"
@@ -782,7 +778,7 @@ skip_global_compinit=1
 .P
 The module is a binary Zsh module (think about \fBzmodload\fR Zsh command, it's that topic) which transparently and automatically \fBcompiles sourced scripts\fR. Many plugin managers do not offer compilation of plugins, the module is a solution to this. Even if a plugin manager does compile plugin's main script (like Zplugin does), the script can source smaller helper scripts or dependency libraries (for example, the prompt \fBgeometry-zsh/geometry\fR does that) and there are very few solutions to that, which are demanding (e.g. specifying all helper files in plugin load command and tracking updates to the plugin \[en] in Zplugin case: by using \fBcompile\fR ice-mod).
 .P
- \fBimage\fR \fI\(lahttps://raw.githubusercontent.com/zdharma/zplugin/images/mod-auto-compile.png\(ra\fR
+ \fBimage\fR \fI\(lahttps://raw.githubusercontent.com/z-shell/zplugin/images/mod-auto-compile.png\(ra\fR
 .SS "Installation"
 .SS "Without Zplugin"
 .P
@@ -790,7 +786,7 @@ To install just the binary Zplugin module \fBstandalone\fR (Zplugin is not neede
 .P
 .RS 2
 .nf
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/mod-install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/z-shell/zplugin/main/doc/mod-install.sh)"
 .fi
 .RE
 .P
@@ -868,7 +864,7 @@ Below is a configuration that adds multiple git extensions, loaded in Turbo mode
 .RS 2
 .nf
 zplugin ice wait"2" lucid as"program" pick"bin/git-dsf"
-zplugin light zdharma/zsh-diff-so-fancy
+zplugin light z-shell/zsh-diff-so-fancy
 
 zplugin ice wait"2" lucid as"program" pick"$ZPFX/bin/git-now" make"prefix=$ZPFX install"
 zplugin light iwata/git-now
@@ -901,17 +897,3 @@ To accomplish this, use \fBburst\fR argument and call \fB-zplg-scheduler\fR func
 RUN zsh -i -c -- '-zplg-scheduler burst || true'
 .fi
 .RE
-.P
-An example \fBDockerfile\fR can be found \fB\fBhere\fR\fR \fI\(lahttps://github.com/robobenklein/configs/blob/master/Dockerfile\(ra\fR.
-.SH "GETTING HELP AND COMMUNITY"
-.P
-Do you need help or wish to get in touch with other Zplugin users?
-.RS 0
-.IP \(bu 4
-Visit our subreddit \fBr/zplugin\fR \fI\(lahttps://www.reddit.com/r/zplugin/\(ra\fR.
-.IP \(bu 4
-Chat with us in our IRC channel. Connect to \fBchat.freenode.net:6697\fR \fI\(laircs://chat.freenode.net:6697/%23zplugin\(ra\fR (SSL) or \fBchat.freenode.net:6667\fR \fI\(lairc://chat.freenode.net:6667/%23zplugin\(ra\fR and join #zplugin.
-.RE 0
-
-.P
-Following is a quick access via Webchat \fB\fBIRC\fR \fI\(lahttps://kiwiirc.com/buttons/chat.freenode.net/zplugin.png\(ra\fR\fR \fI\(lahttps://kiwiirc.com/client/chat.freenode.net:+6697/#zplugin\(ra\fR

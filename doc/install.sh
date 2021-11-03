@@ -29,24 +29,24 @@ fi
 if command -v curl >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
     cd /tmp/zinit 
-    curl -fsSLO https://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
+    curl -fsSLO https://raw.githubusercontent.com/z-shell/zinit/main/git-process-output.zsh && \
         chmod a+x /tmp/zinit/git-process-output.zsh
 elif command -v wget >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
     cd /tmp/zinit 
-    wget -q https://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
+    wget -q https://raw.githubusercontent.com/z-shell/zinit/main/git-process-output.zsh && \
         chmod a+x /tmp/zinit/git-process-output.zsh
 fi
 
 echo
 if test -d "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME/.git"; then
     cd "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME"
-    echo "[1;34m▓▒░[0m Updating [1;36mDHARMA[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
-    git pull origin master
+    echo "[1;34m▓▒░[0m Updating [1;36mZ-SHELL[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
+    git pull origin main
 else
     cd "$ZINIT_HOME"
-    echo "[1;34m▓▒░[0m Installing [1;36mDHARMA[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
-    { git clone --progress https://github.com/zdharma/zinit.git "$ZINIT_BIN_DIR_NAME" \
+    echo "[1;34m▓▒░[0m Installing [1;36mZ-SHELL[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
+    { git clone --progress https://github.com/z-shell/zinit.git "$ZINIT_BIN_DIR_NAME" \
         2>&1 | { /tmp/zinit/git-process-output.zsh || cat; } } 2>/dev/null
     if [ -d "$ZINIT_BIN_DIR_NAME" ]; then
         echo
@@ -76,9 +76,9 @@ if [ $RCUPDATE -eq 1 ]; then
 
 ### Added by Zinit's installer
 if [[ ! -f $ZINIT_HOME/$ZINIT_BIN_DIR_NAME/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}Z-SHELL%F{220} Initiative Plugin Manager (%F{33}z-shell/zinit%F{220})…%f"
     command mkdir -p "$ZINIT_HOME" && command chmod g-rwX "$ZINIT_HOME"
-    command git clone https://github.com/zdharma/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
+    command git clone https://github.com/z-shell/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -93,10 +93,10 @@ EOF
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \\
-    zinit-zsh/z-a-rust \\
-    zinit-zsh/z-a-as-monitor \\
-    zinit-zsh/z-a-patch-dl \\
-    zinit-zsh/z-a-bin-gem-node
+    z-shell/z-a-rust \\
+    z-shell/z-a-as-monitor \\
+    z-shell/z-a-patch-dl \\
+    z-shell/z-a-bin-gem-node
 
 EOF
 echo
@@ -142,11 +142,11 @@ command cat <<-EOF
 
 For more information see:
 - [38;5;226mREADME[0m section on the ice-modifiers:
-    - https://github.com/zdharma/zinit#ice-modifiers,
+    - https://github.com/z-shell/zinit#ice-modifiers,
 - [38;5;226mintro[0m to Zinit at the Wiki:
-    - https://zdharma.org/zinit/wiki/INTRODUCTION/,
+    - https://z-shell.github.io/zinit/wiki/INTRODUCTION/,
 - [38;5;226mzinit-zsh[0m GitHub account, which holds all the available Zinit annexes:
-    - https://github.com/zinit-zsh/,
+    - https://github.com/z-shell/,
 - [38;5;226mFor-Syntax[0m article on the Wiki; it is less directly related to the ices, however, it explains how to use them conveniently:
-    - https://zdharma.org/zinit/wiki/For-Syntax/.
+    - https://z-shell.github.io/zinit/wiki/For-Syntax/.
 EOF

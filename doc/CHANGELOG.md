@@ -13,24 +13,15 @@ All notable changes to this project will be documented in this file.
   - A few tips for the project rename following the field reports (the issues created
     by users):
     - the `ZPLGM` hash is now `ZINIT`,
-    - the annexes are moved under [zinit-zsh](https://github.com/zinit-zsh)
+    - the annexes are moved under [z-shell](https://github.com/z-shell)
       organization (it needs a logo, could you create one, if you're skilled in
       graphics?).
-
-* 19-01-2020
-  - The name has been changed to **Zinit** based on the results of the
-    [poll](https://github.com/zdharma/zinit/issues/235).
-  - In general, you don't have to do anything after the name change.
-  - Only a run of `zinit update --all` might be necessary.
-  - You might also want to rename your `zplugin` calls in `zshrc` to `zinit`.
-  - Zinit will reuse `~/.zplugin` directory if it exists, otherwise it'll create
-    `~/.zinit`.
 
 * 15-01-2020
   - There's a new function, `zpextract`, which unpacks the given file. It supports many
     formats (notably also `dmg` images) – if there's a format that's unsupported please
     don't hesitate to [make a
-    request](https://github.com/zdharma/zinit/issues/new?template=feature_request.md)
+    request](https://github.com/z-shell/zinit/issues/new?template=feature_request.md)
     for it to be added. A few facts:
     - the function is available only at the time of the plugin/snippet installation,
     - it's to be used within `atclone` and `atpull` ices,
@@ -68,7 +59,7 @@ All notable changes to this project will be documented in this file.
 * 11-12-2019
   - Zinit now supports installing special-Zsh NPM packages! Bye-bye the long and
     complex ice-lists! Check out the
-    [Wiki](http://zdharma.org/zinit/wiki/NPM-Packages/) for an introductory document
+    [Wiki](http://z-shell.org/zinit/wiki/NPM-Packages/) for an introductory document
     on the feature.
 
 * 25-11-2019
@@ -99,7 +90,7 @@ All notable changes to this project will be documented in this file.
     [z-a-bin-gem-node](https://github.com/zinit/z-a-bin-gem-node) annex, it provides
     the command to the command line without altering `$PATH`.
 
-    See the [Zinit Wiki](http://zdharma.org/zinit/wiki/For-Syntax/) for more
+    See the [Zinit Wiki](http://z-shell.org/zinit/wiki/For-Syntax/) for more
     information on the for-syntax.
 
 * 06-11-2019
@@ -107,7 +98,7 @@ All notable changes to this project will be documented in this file.
 
     ```zsh
      zinit as"program" atload'print Hi!' for \
-         atinit'print First!' zdharma/null \
+         atinit'print First!' z-shell/null \
          atinit'print Second!' svn OMZ::plugins/git
     ```
 
@@ -125,11 +116,11 @@ All notable changes to this project will be documented in this file.
     ```zsh
     % print -rl $path | egrep -i '(/git|null)'
     /root/.zinit/snippets/OMZ::plugins/git
-    /root/.zinit/plugins/zdharma---null
+    /root/.zinit/plugins/z-shell---null
     ```
 
     To load in light mode, use a new `light-mode` ice. More examples and information
-    can be found on the [Zinit Wiki](http://zdharma.org/zinit/wiki/For-Syntax/).
+    can be found on the [Zinit Wiki](http://z-shell.org/zinit/wiki/For-Syntax/).
 
 * 03-11-2019
   - A new value for the `as''` ice – `null`. Specifying `as"null"` is like specifying
@@ -147,7 +138,7 @@ All notable changes to this project will be documented in this file.
     # provides the function `crasis', and it will be then
     # immediately invoked with the same arguments
     zinit ice trigger-load'!crasis'
-    zinit load zdharma/zinit-crasis
+    zinit load z-shell/zinit-crasis
     ```
 
 * 22-10-2019
@@ -213,28 +204,28 @@ All notable changes to this project will be documented in this file.
     patching) of the plugin's files inside the `atpull''` ice – `git` will report no
     conflicts when doing `pull`, and the changes can be then again introduced by the
     `atpull''` ice..
-  - Three new Zplugin annexes (i.e.
-    [extensions](http://zdharma.org/zplugin/wiki/Annexes/)):
+  - Three new zinit annexes (i.e.
+    [extensions](http://z-shell.org/zinit/wiki/Annexes/)):
 
-      - [z-a-man](https://github.com/zplugin/z-a-man)
+      - [z-a-man](https://github.com/zinit/z-a-man)
 
         Generates man pages and code-documentation man pages from plugin's README.md
         and source files (the code documentation is obtained from
-        [Zshelldoc](https://github.com/zdharma/zshelldoc)).
+        [Zshelldoc](https://github.com/z-shell/zshelldoc)).
 
-      - [z-a-test](https://github.com/zplugin/z-a-test)
+      - [z-a-test](https://github.com/zinit/z-a-test)
 
         Runs tests (if detected `test' target in a `Makefile` or any `*.zunit` files)
         on plugin installation and non-empty update.
 
-      - [z-a-patch-dl](https://github.com/zplugin/z-a-patch-dl)
+      - [z-a-patch-dl](https://github.com/zinit/z-a-patch-dl)
 
         Allows easy download and applying of patches, to e.g. aid building a binary
         program equipped in the plugin.
 
   - A new variable is being recognized by the installation script:
     `$ZPLG_BIN_DIR_NAME`. It configures the directory within `$ZPLG_HOME` to which
-    Zplugin should be cloned.
+    zinit should be cloned.
 
 * 09-08-2019
   - A new ice-mod `wrap-track''` which gets `;`-separated list of functions that are to
@@ -252,21 +243,21 @@ All notable changes to this project will be documented in this file.
       in the current session.
 
 * 09-07-2019
-  - Zplugin can now have **its own plugins**, called **z-plugins**! Check out an
+  - zinit can now have **its own plugins**, called **z-plugins**! Check out an
     example but fully functional z-plugin
-    [zdharma/z-p-submods](https://github.com/zdharma/z-p-submods) and a document that
+    [z-shell/z-p-submods](https://github.com/z-shell/z-p-submods) and a document that
     explains on how to implement your own z-plugin
     ([here](../../wiki/Z-PLUGINS)).
 
 * 08-07-2019
-  - You can now do `zplugin ice wait ...` and it will work as `zplugin ice wait'0' ...`
+  - You can now do `zinit ice wait ...` and it will work as `zinit ice wait'0' ...`
     :) I.e. when there's no value to the `wait''` ice then a value of `0` is being
     substituted.
 
 * 02-07-2019
   - [Cooperation of Fast-Syntax-Highlighting and
-    Zplugin](https://asciinema.org/a/254630) – a new precise highlighting for
-    Zplugin in F-Sy-H.
+    zinit](https://asciinema.org/a/254630) – a new precise highlighting for
+    zinit in F-Sy-H.
 
 * 01-07-2019
   - `atclone''`, `atpull''` & `make''` get run in the same subshell, thus an e.g.
@@ -283,10 +274,10 @@ All notable changes to this project will be documented in this file.
     triggers loading of the plugin/snippet:
 
     ```zsh
-    % zplugin ice on-update-of'{~/files-*,/tmp/files-*}' lucid \
+    % zinit ice on-update-of'{~/files-*,/tmp/files-*}' lucid \
         atload"echo I have been loaded" \
         notify"Yes that's true :)"
-    % zplugin load zdharma/null
+    % zinit load z-shell/null
     % touch ~/files-1
     The plugin has been loaded
     %
@@ -303,17 +294,17 @@ All notable changes to this project will be documented in this file.
     when the plugin or snippet gets loaded. E.g.:
 
     ```zsh
-    % zplugin ice wait"0" lucid notify"zdharma/null has been loaded"
-    % zplugin light zdharma/null
+    % zinit ice wait"0" lucid notify"z-shell/null has been loaded"
+    % zinit light z-shell/null
     %
-    zdharma/null has been loaded
+    z-shell/null has been loaded
     ```
 
     In case of problems with the loading a warning message will be output:
 
     ```
-    % zplugin ice notify atload'return 7'
-    % zplugin light zdharma/null
+    % zinit ice notify atload'return 7'
+    % zinit light z-shell/null
     %
     notify: Plugin not loaded / loaded with problem, the return code: 7
     ```
@@ -325,10 +316,10 @@ All notable changes to this project will be documented in this file.
     or `c`. The meaning is illustrated by the following example:
 
     ```zsh
-    zplugin ice wait"0b" as"command" pick"wd.sh" atinit"echo Firing 1" lucid
-    zplugin light mfaerevaag/wd
-    zplugin ice wait"0a" as"command" pick"wd.sh" atinit"echo Firing 2" lucid
-    zplugin light mfaerevaag/wd
+    zinit ice wait"0b" as"command" pick"wd.sh" atinit"echo Firing 1" lucid
+    zinit light mfaerevaag/wd
+    zinit ice wait"0a" as"command" pick"wd.sh" atinit"echo Firing 2" lucid
+    zinit light mfaerevaag/wd
 
     # The output
     Firing 2
@@ -342,7 +333,7 @@ All notable changes to this project will be documented in this file.
 
     In other words, instead of `wait'1'` you can enter `wait'1a'`,
     `wait'1b'` and `wait'1c'` – to this way **impose order** on the loadings
-    **regardless of the order of `zplugin` commands**. 
+    **regardless of the order of `zinit` commands**. 
 * 26-05-2019
   - Turbo-Mode now divides the scheduled events (i.e. loadings of plugins or snippets)
     into packs of 5. In other words, after loading each series of 5 plugins or snippets
@@ -362,49 +353,49 @@ All notable changes to this project will be documented in this file.
 * 12-10-2018
   - New `id-as''` ice-mod. You can nickname a plugin or snippet, to e.g. load it twice, with different `pick''`
     ice-mod, or from Github binary releases and regular Github repository at the same time. More information
-    in [blog post](http://zdharma.org/2018-10-12/Nickname-a-plugin-or-snippet).
+    in [blog post](http://z-shell.org/2018-10-12/Nickname-a-plugin-or-snippet).
 
 * 30-08-2018
   - New `as''` ice-mod value: `completion`. Can be used to install completion-only "plugins", even single
     files:
     ```zsh
-    zplugin ice as"completion" mv"hub* -> _hub"
-    zplugin snippet https://github.com/github/hub/blob/master/etc/hub.zsh_completion
+    zinit ice as"completion" mv"hub* -> _hub"
+    zinit snippet https://github.com/github/hub/blob/master/etc/hub.zsh_completion
     ```
 
   - Uplift of Git-output, it now has an animated progress-bar:
 
-  ![image](https://raw.githubusercontent.com/zdharma/zplugin/images/zplg-progress-bar.gif)
+  ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-progress-bar.gif)
 
 * 15-08-2018
   - New `$ZPLGM` field `COMPINIT_OPTS` (also see [Customizing Paths](#customizing-paths--other)). You can pass
     `-C` or `-i` there to mute the `insecure directories` messages. Typical use case could be:
     ```zsh
-    zplugin ice wait"5" atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
-    zplugin light zdharma/fast-syntax-highlighting
+    zinit ice wait"5" atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
+    zinit light z-shell/fast-syntax-highlighting
     ```
 
 * 13-08-2018
-  - `self-update` (subcommand used to update Zplugin) now lists new commits downloaded by the update:
-  ![image](https://raw.githubusercontent.com/zdharma/zplugin/images/zplg-self-update.png)
+  - `self-update` (subcommand used to update zinit) now lists new commits downloaded by the update:
+  ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-self-update.png)
 
   - New subcommand `bindkeys` that lists what bindkeys each plugin has set up.
 
 * 25-07-2018
   - If you encountered a problem with loading Turbo-Mode plugins, it is fixed now. This occurred in versions
-  available between `10` and `23` of July. Issue `zplugin self-update` if you installed/updated in this period.
+  available between `10` and `23` of July. Issue `zinit self-update` if you installed/updated in this period.
   - New bug-fix release `v2.07`.
 
 * 13-07-2018
   - New `multisrc''` ice, it allows to specify multiple files for sourcing and  it uses brace expansion syntax, so for example you can:
     ```zsh
-    zplugin ice depth"1" multisrc="lib/{functions,misc}.zsh" pick"/dev/null"; zplugin load robbyrussell/oh-my-zsh
-    zplugin ice svn multisrc"{functions,misc}.zsh" pick"/dev/null"; zplugin snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"\${array[@]}" pick"/dev/null"; zplugin snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"${array[@]}" pick"/dev/null"; zplugin snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"\$array" pick"/dev/null"; zplugin snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"$array" pick"/dev/null"; zplugin snippet OMZ::lib
-    zplugin ice svn multisrc"misc.zsh functions.zsh" pick"/dev/null"; zplugin snippet OMZ::lib
+    zinit ice depth"1" multisrc="lib/{functions,misc}.zsh" pick"/dev/null"; zinit load robbyrussell/oh-my-zsh
+    zinit ice svn multisrc"{functions,misc}.zsh" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zplg ice svn multisrc"\${array[@]}" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zplg ice svn multisrc"${array[@]}" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zplg ice svn multisrc"\$array" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zplg ice svn multisrc"$array" pick"/dev/null"; zinit snippet OMZ::lib
+    zinit ice svn multisrc"misc.zsh functions.zsh" pick"/dev/null"; zinit snippet OMZ::lib
     ```
 * 12-07-2018
   - For docker and new machine provisioning, there's a trick that allows to install all [turbo-mode](#turbo-mode-zsh--53)
@@ -418,20 +409,20 @@ All notable changes to this project will be documented in this file.
   - Ice `wait'0'` now means actually short time – you can load plugins and snippets **very quickly** after prompt.
 
 * 02-03-2018
-  - Zplugin exports `$ZPFX` parameter. Its default value is `~/.zplugin/polaris` (user can
-    override it before sourcing Zplugin). This directory is like `/usr/local`, a prefix
+  - zinit exports `$ZPFX` parameter. Its default value is `~/.zinit/polaris` (user can
+    override it before sourcing zinit). This directory is like `/usr/local`, a prefix
     for installed software, so it's possible to use ice like `make"PREFIX=$ZPFX"` or
-    `atclone"./configure --prefix=$ZPFX"`. Zplugin also setups `$MANPATH` pointing to the
+    `atclone"./configure --prefix=$ZPFX"`. zinit also setups `$MANPATH` pointing to the
     `polaris` directory. Checkout [gallery](GALLERY.md) for examples.
-  - [New README section](#hint-extending-git) about extending Git with Zplugin.
+  - [New README section](#hint-extending-git) about extending Git with zinit.
 
 * 05-02-2018
   - I work much on this README however multi-file Wiki might be better to read – it
-    [just has been created](https://github.com/zdharma/zplugin/wiki).
+    [just has been created](https://github.com/z-shell/zinit/wiki).
 
 * 16-01-2018
   - New ice-mod `compile` which takes pattern to select additional files to compile, e.g.
-    `zplugin ice compile"(hsmw-*|history-*)"` (for `zdharma/history-search-multi-word` plugin).
+    `zinit ice compile"(hsmw-*|history-*)"` (for `z-shell/history-search-multi-word` plugin).
     See [Ice Modifiers](#ice-modifiers).
 
 * 14-01-2018
@@ -441,10 +432,10 @@ All notable changes to this project will be documented in this file.
     completion right-before setting up syntax highlighting (because that should be done at the end).
 
 * 13-01-2018
-  - New customizable path `$ZPLGM[ZCOMPDUMP_PATH]` that allows to point zplugin to non-standard
+  - New customizable path `$ZPLGM[ZCOMPDUMP_PATH]` that allows to point zinit to non-standard
     `.zcompdump` location.
   - Tilde-expansion is now performed on the [customizable paths](#customizing-paths--other) – you can
-    assign paths like `~/.zplugin`, there's no need to use `$HOME/.zplugin`.
+    assign paths like `~/.zinit`, there's no need to use `$HOME/.zinit`.
 
 * 31-12-2017
   - For the new year there's a new feature: user-services spawned by Zshell :) Check out
@@ -452,11 +443,11 @@ All notable changes to this project will be documented in this file.
     READMEs say, and controlled via:
 
     ```
-    % zplugin srv redis next    # current serving shell will drop the service, next Zshell will pick it up
-    % zplugin srv redis quit    # the serving shell will quit managing the service, next Zshell will pick it up
-    % zplugin srv redis stop    # stop serving, do not pass it to any shell, just hold the service
-    % zplugin srv redis start   # start stopped service, without changing the serving shell
-    % zplugin srv redis restart # restart service, without changing the serving shell
+    % zinit srv redis next    # current serving shell will drop the service, next Zshell will pick it up
+    % zinit srv redis quit    # the serving shell will quit managing the service, next Zshell will pick it up
+    % zinit srv redis stop    # stop serving, do not pass it to any shell, just hold the service
+    % zinit srv redis start   # start stopped service, without changing the serving shell
+    % zinit srv redis restart # restart service, without changing the serving shell
     ```
 
     This feature allows to configure everything in `.zshrc`, without the the need to deal with `systemd` or
@@ -464,13 +455,13 @@ All notable changes to this project will be documented in this file.
     (details on [zservices/redis](https://github.com/zservices/redis)).
 
 * 24-12-2017
-  - Xmas present – [fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
+  - Xmas present – [fast-syntax-highlighting](https://github.com/z-shell/fast-syntax-highlighting)
     now highlights the quoted part in `atinit"echo Initializing"`, i.e. it supports ICE syntax :)
 
 * 08-12-2017
   - SVN snippets are compiled on install and update
-  - Resolved how should ice-mods be remembered – general rule is that using `zplugin ice ...` makes
-    memory-saved and disk-saved ice-mods not used, and replaced on update. Calling e.g. `zplugin
+  - Resolved how should ice-mods be remembered – general rule is that using `zinit ice ...` makes
+    memory-saved and disk-saved ice-mods not used, and replaced on update. Calling e.g. `zinit
     update ...` without preceding `ice` uses memory, then disk-saved ices.
 
 * 07-12-2017
@@ -478,14 +469,14 @@ All notable changes to this project will be documented in this file.
     It's good to forget wrongly passed Ice-mods (which are storred on disk e.g. for `update --all`).
 
 * 04-12-2017
-  - It's possible to set plugin loading and unloading on condition. ZPlugin supports plugin unloading,
+  - It's possible to set plugin loading and unloading on condition. zinit supports plugin unloading,
     so it's possible to e.g. **unload prompt and load another one**, on e.g. directory change. Checkout
     [full story](#automatic-loadunload-on-condition) and [Asciinema video](https://asciinema.org/a/150825).
 
 * 29-11-2017
-  - **[Turbo Mode](https://github.com/zdharma/zplugin#turbo-mode-zsh--53)** – **39-50% or more faster Zsh startup!**
+  - **[Turbo Mode](https://github.com/z-shell/zinit#turbo-mode-zsh--53)** – **39-50% or more faster Zsh startup!**
   - Subcommand `update` can update snippets, via given URL (up to this point snippets were updated via
-    `zplugin update --all`).
+    `zinit update --all`).
   - Completion management is enabled for snippets (not only plugins).
 
 * 13-11-2017
@@ -493,13 +484,13 @@ All notable changes to this project will be documented in this file.
     plugins and snippets. For example there's `Zshelldoc` that uses `Makefile` to build final scripts:
 
     ```SystemVerilog
-    zplugin ice as"program" pick"build/zsd*" make; zplugin light zdharma/zshelldoc
+    zinit ice as"program" pick"build/zsd*" make; zinit light z-shell/zshelldoc
     ```
 
     The above doesn't trigger the `install` target, but this does:
 
     ```SystemVerilog
-    zplugin ice as"program" pick"build/zsd*" make"install PREFIX=/tmp"; zplugin light zdharma/zshelldoc
+    zinit ice as"program" pick"build/zsd*" make"install PREFIX=/tmp"; zinit light z-shell/zshelldoc
     ```
 
   - Fixed problem with binary-release selection (`from"gh-r"`) by adding Ice-mod `bpick`, which
@@ -513,7 +504,7 @@ All notable changes to this project will be documented in this file.
 * 04-11-2017
   - New subcommand `ls` which lists snippets-directory in a formatted and colorized manner. Example:
 
-  ![zplugin-ls](https://raw.githubusercontent.com/zdharma/zplugin/images/zplg-ls.png)
+  ![zinit-ls](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-ls.png)
 
 * 29-10-2017
   - Subversion protocol (supported by Github) can be used to clone **subdirectories** when using
@@ -521,7 +512,7 @@ All notable changes to this project will be documented in this file.
 
     ```SystemVerilog
     zstyle ':prezto:module:prompt' theme smiley
-    zplugin ice svn silent; zplugin snippet PZT::modules/prompt
+    zinit ice svn silent; zinit snippet PZT::modules/prompt
     ```
 
   - Snippets support `Prezto` modules (with dependencies), and can use **PZT::** URL-shorthand,
@@ -536,11 +527,11 @@ All notable changes to this project will be documented in this file.
     # Multi-file snippet, URL points to directory to clone with Subversion
     # The file to source (init.zsh) is automatically detected
 
-    zplugin ice svn; zplugin snippet PZT::modules/prompt
+    zinit ice svn; zinit snippet PZT::modules/prompt
 
     # Use of Subversion to load an OMZ plugin
 
-    zplugin ice svn; zplugin snippet OMZ::plugins/git
+    zinit ice svn; zinit snippet OMZ::plugins/git
     ```
 
   - Fixed a bug with `cURL` usage (snippets) for downloading, it will now be properly used
@@ -549,8 +540,8 @@ All notable changes to this project will be documented in this file.
   - Snippets can use "**OMZ::**" prefix to easily point to `Oh-My-Zsh` plugins and libraries, e.g.:
 
     ```SystemVerilog
-    zplugin snippet OMZ::lib/git.zsh
-    zplugin snippet OMZ::plugins/git/git.plugin.zsh
+    zinit snippet OMZ::lib/git.zsh
+    zinit snippet OMZ::plugins/git/git.plugin.zsh
     ```
 
 * 12-10-2017
@@ -559,11 +550,11 @@ All notable changes to this project will be documented in this file.
     are displayed in order of loading:
 
     ```zsh
-    % zplugin times
+    % zinit times
     Plugin loading times:
     0.010 sec - OMZ::lib/git.zsh
     0.001 sec - OMZ::plugins/git/git.plugin.zsh
-    0.003 sec - zdharma/history-search-multi-word
+    0.003 sec - z-shell/history-search-multi-word
     0.003 sec - rimraf/k
     0.003 sec - zsh-users/zsh-autosuggestions
     ```
@@ -575,9 +566,9 @@ All notable changes to this project will be documented in this file.
   - Plugins can now be absolute paths:
 
     ```SystemVerilog
-    zplugin load %HOME/github/{directory}
-    zplugin load /Users/sgniazdowski/github/{directory}
-    zplugin load %/Users/sgniazdowski/github/{directory}
+    zinit load %HOME/github/{directory}
+    zinit load /Users/sgniazdowski/github/{directory}
+    zinit load %/Users/sgniazdowski/github/{directory}
     ```
 
     Completions are not automatically installed, but user can run `zplg creinstall %HOME/github/{directory}`, etc.
@@ -586,10 +577,10 @@ All notable changes to this project will be documented in this file.
   - New `ice` modifier: `if`, to which you can provide a conditional expression:
 
     ```SystemVerilog
-    % zplugin ice if"(( 0 ))"
-    % zplugin snippet --command https://github.com/b4b4r07/httpstat/blob/master/httpstat.sh
-    % zplugin ice if"(( 1 ))"
-    % zplugin snippet --command https://github.com/b4b4r07/httpstat/blob/master/httpstat.sh
+    % zinit ice if"(( 0 ))"
+    % zinit snippet --command https://github.com/b4b4r07/httpstat/blob/master/httpstat.sh
+    % zinit ice if"(( 1 ))"
+    % zinit snippet --command https://github.com/b4b4r07/httpstat/blob/master/httpstat.sh
     Setting up snippet httpstat.sh
     Downloading httpstat.sh...
     ```

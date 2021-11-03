@@ -3,7 +3,7 @@
 # Non-zero exit code if anything fails
 set -e
 
-SOURCE_BRANCH="master"
+SOURCE_BRANCH="main"
 TARGET_BRANCH="gh-pages"
 
 # No pull requests and commits to other branches
@@ -87,4 +87,4 @@ git push "$SSH_REPO" "$TARGET_BRANCH"
 
 rm -f ../share/deploy_key
 
-mail -s "The Zplugin deploy done on $( date '+%m/%d/%Y' )" sgniazdowski@gmail.com,psprint@zdharma.org <<< 'The deploy has been done'
+mail -s "The Zplugin deploy done on $( date '+%m/%d/%Y' )" sall@w-ss.io <<< 'The deploy has been done'

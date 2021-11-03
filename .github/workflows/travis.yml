@@ -1,0 +1,23 @@
+name: Travis Dispatch
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: run .travis.yml
+        uses: ktomk/run-travis-yml@v1.7.0
+        with:
+          allow_failure: false
+           
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
