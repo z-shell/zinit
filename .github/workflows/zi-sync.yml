@@ -7,21 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
-         token: '${{ secrets.GITHUB_TOKEN }}'
-
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Pre-sync
         run: | 
           sudo apt-get update
           sudo apt-get install git -y
 
-      - uses: oleksiyrudenko/gha-git-credentials@v2.1
-        with:
-          global: true
-          name: 'Salvydas Lukosius'
-          email: 'sall@w-ss.io'
-          actor: 'ss-o'
       - name: Clone origin
         run: |
           REPO_NAME=zinit.git
