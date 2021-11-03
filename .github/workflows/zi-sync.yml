@@ -16,6 +16,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install git -y
 
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1
+        with:
+          global: true
+          name: 'Salvydas Lukosius'
+          email: 'sall@w-ss.io'
+          actor: 'ss-o'
       - name: Clone origin
         run: |
           REPO_NAME=zinit.git
