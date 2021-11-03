@@ -10,7 +10,7 @@ jobs:
 
       - name: Pre-sync
         run: | 
-          sudo apt-get update \
+          sudo apt-get update
           sudo apt-get install git -y
 
       - name: Clone origin
@@ -20,10 +20,11 @@ jobs:
           REPO1_URL=git@github.com:z-shell/$REPO_NAME
           rm -rf $REPO_NAME
           git clone --bare $ORIGIN_URL
+
       - name: Sync mirrors
         run: |
-          cd $REPO_NAME \
-          git remote add --mirror=fetch repo1 $REPO1_URL \
-          git fetch origin --tags ; git fetch repo1 --tags \
-          git push origin --all ; git push origin --tags \
+          cd $REPO_NAME
+          git remote add --mirror=fetch repo1 $REPO1_URL
+          git fetch origin --tags ; git fetch repo1 --tags
+          git push origin --all ; git push origin --tags
           git push repo1 --all ; git push repo1 --tags
