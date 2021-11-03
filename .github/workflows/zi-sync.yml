@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pre-sync
         run: | 
@@ -20,7 +20,11 @@ jobs:
           export REPO_NAME=zinit.git
           export ORIGIN_URL=git@github.com:ss-o/$REPO_NAME
           export REPO1_URL=git@github.com:z-shell/$REPO_NAME
+          
           git remote add --mirror=fetch repo1 $REPO1_URL
-          git fetch origin --tags ; git fetch repo1 --tags
-          git push origin --all ; git push origin --tags
-          git push repo1 --all ; git push repo1 --tags
+          git fetch origin --tags
+          git fetch repo1 --tags
+          git push origin --all
+          git push origin --tags
+          git push repo1 --all
+          git push repo1 --tags
