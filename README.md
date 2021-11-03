@@ -7,6 +7,7 @@
 </p>
 
 [![MIT License][mit-badge]][mit-link] [![][ver-badge]][ver-link] [![pre-commit]][pre-commit-link]
+[![Build Status](https://app.travis-ci.com/ss-o/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main)](https://app.travis-ci.com/ss-o/zinit)
 [![DeepSource](https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/z-shell/zinit/?ref=repository-badge)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -1749,8 +1750,8 @@ zinit as"null" wait"1" lucid for \
 
 Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 
-[status-badge]: https://travis-ci.org/z-shell/zinit.svg?branch=main
-[status-link]: https://travis-ci.org/z-shell/zinit
+[status-badge]: https://travis-ci.org/ss-o/zinit.svg?branch=main
+[status-link]: https://travis-ci.org/ss-o/zinit
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: ./LICENSE
 [ver-badge]: https://img.shields.io/github/tag/z-shell/zinit.svg
