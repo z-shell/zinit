@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Pre-sync
         run: | 
           sudo apt-get update
@@ -19,12 +20,9 @@ jobs:
           REPO_NAME=zinit.git
           ORIGIN_URL=git@github.com:ss-o/$REPO_NAME
           REPO1_URL=git@github.com:z-shell/$REPO_NAME
-          rm -rf $REPO_NAME
-          git clone --bare $ORIGIN_URL
 
       - name: Sync mirrors
         run: |
-          cd $REPO_NAME
           git remote add --mirror=fetch repo1 $REPO1_URL
           git fetch origin --tags ; git fetch repo1 --tags
           git push origin --all ; git push origin --tags
