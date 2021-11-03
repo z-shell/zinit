@@ -17,12 +17,9 @@ jobs:
 
       - name: Clone origin
         run: |
-          REPO_NAME=zinit.git
-          ORIGIN_URL=git@github.com:ss-o/$REPO_NAME
-          REPO1_URL=git@github.com:z-shell/$REPO_NAME
-
-      - name: Sync mirrors
-        run: |
+          export REPO_NAME=zinit.git
+          export ORIGIN_URL=git@github.com:ss-o/$REPO_NAME
+          export REPO1_URL=git@github.com:z-shell/$REPO_NAME
           git remote add --mirror=fetch repo1 $REPO1_URL
           git fetch origin --tags ; git fetch repo1 --tags
           git push origin --all ; git push origin --tags
