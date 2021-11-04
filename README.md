@@ -8,7 +8,10 @@
 
 [![MIT License][mit-badge]][mit-link] [![][ver-badge]][ver-link] [![pre-commit]][pre-commit-link]
 [![Build Status](https://app.travis-ci.com/ss-o/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main)](https://app.travis-ci.com/ss-o/zinit)
+[![CodeFactor](https://www.codefactor.io/repository/github/z-shell/zinit/badge/main)](https://www.codefactor.io/repository/github/z-shell/zinit/overview/main)
 [![DeepSource](https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/z-shell/zinit/?ref=repository-badge)
+
+---
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
