@@ -735,9 +735,9 @@ ZINIT[EXTENDED_GLOB]=""
             builtin print
         fi
         if [[ $1 != -q ]] {
-            command git pull --no-stat --ff-only origin master
+            command git pull --no-stat --ff-only origin main
         } else {
-            command git pull --no-stat --quiet --ff-only origin master
+            command git pull --no-stat --quiet --ff-only origin main
         }
     )
     if [[ $1 != -q ]] {
