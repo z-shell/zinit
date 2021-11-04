@@ -17,16 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: repo-sync/github-sync@v2
-      name: Sync repo to branch - main
+    - name: GitHub Repo Sync
+      uses: repo-sync/github-sync@v2.3.0
       with:
         source_repo: z-shell/zinit
         source_branch: main
-        destination_branch: sync
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: repo-sync/pull-request@v2
-      name: Create pull request - main
-      with:
-        source_branch: sync
-        destination_branch: main
+        destination_branch: sync-main 
         github_token: ${{ secrets.GITHUB_TOKEN }}
