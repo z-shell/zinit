@@ -23,4 +23,4 @@ jobs:
         source_repo: z-shell/zinit
         source_branch: main
         destination_branch: sync-main 
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ github.token }}
