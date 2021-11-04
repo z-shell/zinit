@@ -73,20 +73,20 @@ zmodules/Src/zshpaths.h
 zmodules/Src/zshterm.h
 zmodules/Src/zshxmods.h
 
-zmodules/Src/zdharma/Makefile.in
-zmodules/Src/zdharma/*.export
-zmodules/Src/zdharma/so_locations
-zmodules/Src/zdharma/*.pro
-zmodules/Src/zdharma/*.epro
-zmodules/Src/zdharma/*.syms
-zmodules/Src/zdharma/*.dSYM
-zmodules/Src/zdharma/*.mdh
-zmodules/Src/zdharma/*.mdhi
-zmodules/Src/zdharma/*.mdhs
-zmodules/Src/zdharma/*.mdh.tmp
-zmodules/Src/zdharma/errnames.c
-zmodules/Src/zdharma/errcount.h
-zmodules/Src/zdharma/curses_keys.h
+zmodules/Src/z-shell/Makefile.in
+zmodules/Src/z-shell/*.export
+zmodules/Src/z-shell/so_locations
+zmodules/Src/z-shell/*.pro
+zmodules/Src/z-shell/*.epro
+zmodules/Src/z-shell/*.syms
+zmodules/Src/z-shell/*.dSYM
+zmodules/Src/z-shell/*.mdh
+zmodules/Src/z-shell/*.mdhi
+zmodules/Src/z-shell/*.mdhs
+zmodules/Src/z-shell/*.mdh.tmp
+zmodules/Src/z-shell/errnames.c
+zmodules/Src/z-shell/errcount.h
+zmodules/Src/z-shell/curses_keys.h
 
 zmodules/Test/*.tmp
 /.project
