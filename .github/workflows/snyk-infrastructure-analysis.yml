@@ -17,15 +17,9 @@ jobs:
         continue-on-error: true
         uses: snyk/actions/iac@master
         env:
-          # In order to use the Snyk Action you will need to have a Snyk API token.
-          # More details in https://github.com/snyk/actions#getting-your-snyk-token
-          # or you can signup for free at https://snyk.io/login
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           file: zinit.zsh
-
-      - name: Snyk
-        uses: snyk/actions@0.3.0
 
       - name: Release-Notes-Preview
         uses: snyk/release-notes-preview@v1.6.1
