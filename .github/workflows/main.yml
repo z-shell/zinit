@@ -18,8 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        token: ${{ github.token }}
     - uses: repo-sync/github-sync@v2
       name: Sync repo to branch - main
       with:
@@ -27,9 +25,9 @@ jobs:
         source_branch: main
         destination_branch: sync-main
         github_token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: repo-sync/pull-request@v2
-      name: Create pull request - main
-      with:
-        source_branch: sync-main
-        destination_branch: main
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+#    - uses: repo-sync/pull-request@v2
+#      name: Create pull request - main
+#      with:
+#        source_branch: sync-main
+#        destination_branch: main
+#        github_token: ${{ secrets.GITHUB_TOKEN }}
