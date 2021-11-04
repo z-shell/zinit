@@ -1,16 +1,8 @@
-
 name: Repo Sync
 
 on:
   schedule: 
   - cron: "*/15 * * * *"
-  push:
-    tags: ["v*.*"]
-  release:
-    types:
-      - created
-      - published
-  workflow_dispatch:
 
 jobs:
   repo-sync:
