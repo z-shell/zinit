@@ -22,7 +22,16 @@ jobs:
           # or you can signup for free at https://snyk.io/login
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          file: your-file-to-test.yaml
+          file: zinit.zsh
+
+      - name: Snyk
+        uses: snyk/actions@0.3.0
+
+      - name: Release-Notes-Preview
+        uses: snyk/release-notes-preview@v1.6.1
+        with:
+         releaseBranch: alpha
+
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v1
         with:
