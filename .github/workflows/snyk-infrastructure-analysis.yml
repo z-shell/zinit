@@ -21,3 +21,10 @@ jobs:
 
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v1
+      - name: Release-Notes-Preview
+        uses: snyk/release-notes-preview@v1.6.1
+        with:
+          releaseBranch: alpha
+          
+      - name: Snyk
+        uses: snyk/actions@0.3.0
