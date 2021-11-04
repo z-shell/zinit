@@ -6,7 +6,8 @@
 </a>
 </p>
 
-[![MIT License][mit-badge]][mit-link] [![][ver-badge]][ver-link] [![pre-commit]][pre-commit-link]
+[![MIT License][mit-badge]][mit-link] [![][ver-badge]][ver-link]
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/z-shell/zinit/main.svg)](https://results.pre-commit.ci/latest/github/z-shell/zinit/main)
 [![Build Status](https://app.travis-ci.com/ss-o/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main)](https://app.travis-ci.com/ss-o/zinit)
 [![CodeFactor](https://www.codefactor.io/repository/github/z-shell/zinit/badge/main)](https://www.codefactor.io/repository/github/z-shell/zinit/overview/main)
 [![DeepSource](https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/z-shell/zinit/?ref=repository-badge)
