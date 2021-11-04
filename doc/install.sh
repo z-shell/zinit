@@ -28,30 +28,30 @@ fi
 # Get the download-progress bar tool
 if command -v curl >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
-    cd /tmp/zinit 
-    curl -fsSLO https://raw.githubusercontent.com/z-shell/zinit/main/git-process-output.zsh && \
+    cd /tmp/zinit || return
+    curl -fsSLO https://raw.githubusercontent.com/z-shell/zinit/main/git-process-output.zsh &&
         chmod a+x /tmp/zinit/git-process-output.zsh
 elif command -v wget >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
-    cd /tmp/zinit 
-    wget -q https://raw.githubusercontent.com/z-shell/zinit/main/git-process-output.zsh && \
+    cd /tmp/zinit || return
+    wget -q https://raw.githubusercontent.com/z-shell/zinit/main/git-process-output.zsh &&
         chmod a+x /tmp/zinit/git-process-output.zsh
 fi
 
 echo
 if test -d "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME/.git"; then
-    cd "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME"
+    cd "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" || return
     echo "[1;34m▓▒░[0m Updating [1;36mZ-SHELL[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
     git pull origin main
 else
-    cd "$ZINIT_HOME"
+    cd "$ZINIT_HOME" || return
     echo "[1;34m▓▒░[0m Installing [1;36mZ-SHELL[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
     { git clone --progress https://github.com/z-shell/zinit.git "$ZINIT_BIN_DIR_NAME" \
-        2>&1 | { /tmp/zinit/git-process-output.zsh || cat; } } 2>/dev/null
+        2>&1 | { /tmp/zinit/git-process-output.zsh || cat; }; } 2>/dev/null
     if [ -d "$ZINIT_BIN_DIR_NAME" ]; then
         echo
         echo "[1;34m▓▒░[0m Zinit succesfully installed at [1;32m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m".
-        VERSION="$(command git -C "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" describe --tags 2>/dev/null)" 
+        VERSION="$(command git -C "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" describe --tags 2>/dev/null)"
         echo "[1;34m▓▒░[0m Version: [1;32m$VERSION[0m"
     else
         echo
@@ -64,7 +64,7 @@ fi
 #
 THE_ZDOTDIR="${ZDOTDIR:-$HOME}"
 RCUPDATE=1
-if egrep '(zinit|zplugin)\.zsh' "$THE_ZDOTDIR/.zshrc" >/dev/null 2>&1; then
+if grep -E '(zinit|zplugin)\.zsh' "$THE_ZDOTDIR/.zshrc" >/dev/null 2>&1; then
     echo "[34m▓▒░[0m .zshrc already contains \`zinit …' commands – not making changes."
     RCUPDATE=0
 fi
@@ -72,11 +72,11 @@ fi
 if [ $RCUPDATE -eq 1 ]; then
     echo "[34m▓▒░[0m Updating $THE_ZDOTDIR/.zshrc (10 lines of code, at the bottom)"
     ZINIT_HOME="$(echo $ZINIT_HOME | sed "s|$HOME|\$HOME|")"
-    command cat <<-EOF >> "$THE_ZDOTDIR/.zshrc"
+    command cat <<-EOF >>"$THE_ZDOTDIR/.zshrc"
 
 ### Added by Zinit's installer
 if [[ ! -f $ZINIT_HOME/$ZINIT_BIN_DIR_NAME/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}Z-SHELL%F{220} Initiative Plugin Manager (%F{33}z-shell/zinit%F{220})…%f"
+    print -P "%F{33}▓▒░ %F{160}Installing %F{33}ZINIT%F{160} Initiative Plugin Manager (%F{33}z-shell/zinit%F{160})…%f"
     command mkdir -p "$ZINIT_HOME" && command chmod g-rwX "$ZINIT_HOME"
     command git clone https://github.com/z-shell/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
@@ -99,16 +99,16 @@ zinit light-mode for \\
     z-shell/z-a-bin-gem-node
 
 EOF
-echo
-echo "[38;5;219m▓▒░[0m Would you like to add 4 useful plugins" \
-    "- the most useful annexes (Zinit extensions that add new" \
-    "functions-features to the plugin manager) to the zshrc as well?" \
-    "It will be the following snippet:"
+    echo
+    echo "[38;5;219m▓▒░[0m Would you like to add 4 useful plugins" \
+        "- the most useful annexes (Zinit extensions that add new" \
+        "functions-features to the plugin manager) to the zshrc as well?" \
+        "It will be the following snippet:"
     command cat "$file"
-    echo -n "[38;5;219m▓▒░[0m Enter y/n and press Return: "
+    printf "[38;5;219m▓▒░[0m Enter y/n and press Return: "
     read input
     if [ "$input" = y ] || [ "$input" = Y ]; then
-        command cat "$file" >> "$THE_ZDOTDIR"/.zshrc
+        command cat "$file" >>"$THE_ZDOTDIR"/.zshrc
         echo
         echo "[34m▓▒░[0m Done."
         echo
@@ -118,7 +118,7 @@ echo "[38;5;219m▓▒░[0m Would you like to add 4 useful plugins" \
         echo
     fi
 
-    command cat <<-EOF >> "$THE_ZDOTDIR/.zshrc"
+    command cat <<-EOF >>"$THE_ZDOTDIR/.zshrc"
 ### End of Zinit's installer chunk
 EOF
 fi
@@ -135,7 +135,7 @@ command cat <<-EOF
 [38;5;219m▓▒░[0m [38;5;178mcloneopts'' depth'' proto'' [38;5;82mon-update-of'' subscribe''
 [38;5;219m▓▒░[0m bpick'' cloneonly'' service'' notify'' wrap-track''
 [38;5;219m▓▒░[0m bindmap'' atdelete'' ver'' 
- 
+
 [34m▓▒░[0m No-value (flag-only) ices:
 [38;5;219m▓▒░[0m [38;5;220msvn git [38;5;82msilent lucid [0mlight-mode is-snippet blockf nocompletions
 [38;5;219m▓▒░[0m run-atpull reset-prompt trackbinds aliases [38;5;111msh bash ksh csh[0m

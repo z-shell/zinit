@@ -124,7 +124,7 @@ builtin source "${ZINIT[BIN_DIR]}/zinit-side.zsh" || { builtin print -P "${ZINIT
     local user=$1 pkg=$2 plugin=$2 id_as=$3 dir=$4 profile=$5 \
         local_path=${ZINIT[PLUGINS_DIR]}/${3//\//---} pkgjson \
         tmpfile=${$(mktemp):-${TMPDIR:-/tmp}/zsh.xYzAbc123} \
-        URL=https://raw.githubusercontent.com/Zsh-Packages/$2/master/package.json
+        URL=https://raw.githubusercontent.com/z-shell/$2/main/package.json
 
     local pro_sep="{rst}, {profile}" epro_sep="{error}, {profile}" \
         tool_sep="{rst}, {cmd}" \
@@ -1354,7 +1354,7 @@ builtin source "${ZINIT[BIN_DIR]}/zinit-side.zsh" || { builtin print -P "${ZINIT
     } elif [[ -n ${ZINIT_SICE[$id_as]} ]] {
         +zinit-message "{error}WARNING:{msg2} Inconsistency #3" \
             "occurred, please report the string: \`{obj}${ZINIT_SICE[$id_as]}{msg2}' to the" \
-            "GitHub issues page: {obj}https://github.com/zdharma/zinit/issues/{msg2}.{rst}"
+            "GitHub issues page: {obj}https://github.com/z-shell/zinit/issues/{msg2}.{rst}"
     }
     id_as=${ICE[id-as]:-$id_as}
 

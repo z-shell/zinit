@@ -1031,7 +1031,7 @@ builtin setopt noaliases
 # FUNCTION: .zinit-register-plugin. [[[
 # Adds the plugin to ZINIT_REGISTERED_PLUGINS array and to the
 # zsh_loaded_plugins array (managed according to the plugin standard:
-# http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html).
+# http://z-shell.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html).
 .zinit-register-plugin() {
     local uspl2="$1" mode="$2" teleid="$3"
     integer ret=0
@@ -1966,8 +1966,6 @@ builtin setopt noaliases
     fi
     local append influx in_prepend
     if [[ $2 == (b|u|it|st|nb|nu|nit|nst) ]]; then
-        # Powtórzenie kodu aby zabezpieczyć ewentualne krańcowe białe znaki
-        # oraz aby umożliwić akumulację tego kodu z innymi.
         append=$ZINIT[col-$2]
     elif [[ $2 == (…|ndsh|mdsh|mmdsh|-…|lr|) || -z $2 || -z $ZINIT[col-$2] ]]; then
         # Wznowienie poprzedniego kodu escape, jeżeli jest taki zapisany.
@@ -1975,10 +1973,7 @@ builtin setopt noaliases
             in_prepend=$ZINIT[col-$ZINIT[__last-formatter-code]]
             influx=$ZINIT[col-$ZINIT[__last-formatter-code]]
         fi
-        # W przeciwnym razie brak akcji – tylko skopiowanie
-        # tego kodu bez koloru.
     else
-        # Zakończenie aktywności kodu escape.
         append=$ZINIT[col-rst]
     fi
     
@@ -2289,7 +2284,7 @@ $match[7]}:-${ZINIT[__last-formatter-code]}}}:+}}}//←→}
                 builtin emulate -L zsh
                 builtin setopt extendedglob
                 # Example entry:
-                # 1531252764+2+1 p 18 light zdharma/zsh-diff-so-fancy
+                # 1531252764+2+1 p 18 light z-shell/zsh-diff-so-fancy
                 #
                 # This either doesn't change ZINIT_TASKS entry - when
                 # ___i is used in the ternary expression, or replaces
@@ -3066,7 +3061,7 @@ zstyle ':completion:*:*:zinit:*' group-name ""
 # ]]]
 
 # module recompilation for the project rename. [[[
-if [[ -e ${${ZINIT[BIN_DIR]}}/zmodules/Src/zdharma/zplugin.so ]] {
+if [[ -e ${${ZINIT[BIN_DIR]}}/zmodules/Src/z-shell/zplugin.so ]] {
     if [[ ! -f ${${ZINIT[BIN_DIR]}}/zmodules/COMPILED_AT || ( ${${ZINIT[BIN_DIR]}}/zmodules/COMPILED_AT -ot ${${ZINIT[BIN_DIR]}}/zmodules/RECOMPILE_REQUEST ) ]] {
         # Don't trust access times and verify hard stored values.
         [[ -e ${${ZINIT[BIN_DIR]}}/module/COMPILED_AT ]] && local compiled_at_ts="$(<${${ZINIT[BIN_DIR]}}/module/COMPILED_AT)"
