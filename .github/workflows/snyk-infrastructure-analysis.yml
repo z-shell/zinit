@@ -25,6 +25,3 @@ jobs:
         uses: snyk/release-notes-preview@v1.6.1
         with:
           releaseBranch: alpha
-          
-      - name: Snyk
-        uses: snyk/actions@0.3.0
