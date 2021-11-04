@@ -12,16 +12,16 @@ if [[ "$TRAVIS_PULL_REQUEST" != "false" || "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" 
     exit 0
 fi
 
-REPO=`git config remote.origin.url`
+REPO=$(git config remote.origin.url)
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
-SHA=`git rev-parse --verify HEAD`
+SHA=$(git rev-parse --verify HEAD)
 
 # Create an empty branch if gh-pages doesn't exist
 git clone "$REPO" out
 git -C out checkout "$TARGET_BRANCH" || git -C out checkout --orphan "$TARGET_BRANCH"
 
 # To count original files
-LIST_ORIGINAL=( out/* )
+LIST_ORIGINAL=(out/*)
 
 # Remove existing contents
 mv -v out/site site_out
@@ -46,7 +46,7 @@ touch out/.nojekyll
 cp -v zsdoc/pdf/*.pdf out
 
 # To count new files
-LIST_NEW=( out/* )
+LIST_NEW=(out/*)
 
 ### CD ###
 cd out
@@ -60,7 +60,7 @@ if git diff --quiet --exit-code && [[ "${#LIST_ORIGINAL}" -eq "${#LIST_NEW}" ]];
 fi
 
 # Now let's go have some fun with the cloned repo
-git config user.name "Sebastian Gniazdowski [Travis CI]"
+git config user.name "Salvydas Lukosius [Travis CI]"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 # Commit the new files
@@ -75,7 +75,7 @@ ENCRYPTED_IV="${!ENCRYPTED_IV_VAR}"
 
 #openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in ../share/deploy_key.enc -out ../share/deploy_key -d
 chmod 600 ../share/deploy_key
-eval `ssh-agent -s`
+eval "$(ssh-agent -s)"
 ssh-add ../share/deploy_key
 
 echo
@@ -87,4 +87,4 @@ git push "$SSH_REPO" "$TARGET_BRANCH"
 
 rm -f ../share/deploy_key
 
-mail -s "The Zplugin deploy done on $( date '+%m/%d/%Y' )" sall@w-ss.io <<< 'The deploy has been done'
+mail -s "The Zinit deploy done on $(date '+%m/%d/%Y')" sall@w-ss.io <<<'The deploy has been done'
