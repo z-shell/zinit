@@ -1,0 +1,46 @@
+name: Repo Sync
+
+on:
+  schedule: 
+  - cron: "*/15 * * * *"
+  push:
+    tags: ["v*.*"]
+  release:
+    types:
+      - created
+      - published
+  workflow_dispatch:
+
+jobs:
+  repo-sync:
+    name: Repo Sync
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: repo-sync/github-sync@v2
+      name: Sync repo to branch - main
+      with:
+        source_repo: ${{ secrets.SOURCE_REPO }}
+        source_branch: main
+        destination_branch: ${{ secrets.INTERMEDIATE_BRANCH }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: repo-sync/pull-request@v2
+      name: Create pull request - main
+      with:
+        source_branch: ${{ secrets.INTERMEDIATE_BRANCH }}
+        destination_branch: main
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: repo-sync/pull-request@v2
+      name: Sync repo to branch - gh-pages
+      with:
+        source_repo: ${{ secrets.SOURCE_REPO }}
+        source_branch: gh-pages
+        destination_branch: ${{ secrets.INTERMEDIATE_PAGES_BRANCH }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: repo-sync/pull-request@v2
+      name: Create pull request - gh-pages
+      with:
+        source_branch: ${{ secrets.INTERMEDIATE_PAGES_BRANCH }}
+        destination_branch: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
