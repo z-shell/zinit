@@ -90,21 +90,11 @@ EOF
     file="$(mktemp)"
     command cat <<-EOF >>"$file"
 
-# (this is currently required for annexes)
-
-zinit light-mode for \
-    z-shell/z-a-readurl \
-    z-shell/z-a-meta-plugins
-
-zinit light-mode for annexes \
-    zsh-users+fast \
-    z-shell/dircolors-material
-
-#zinit light-mode for \\
-#    z-shell/z-a-rust \\
-#    z-shell/z-a-as-monitor \\
-#    z-shell/z-a-patch-dl \\
-#    z-shell/z-a-bin-gem-node
+# (this is currently required annexes)
+zinit light-mode for \\
+    z-shell/z-a-readurl \\
+    z-shell/z-a-meta-plugins \\
+    annexes
 
 EOF
     echo
@@ -153,8 +143,8 @@ For more information see:
     - https://github.com/z-shell/zinit#ice-modifiers
 - [38;5;226mintro[0m to Zinit at the Wiki:
     - https://z-shell.github.io/zinit/wiki/INTRODUCTION
-- [38;5;226mzinit-zsh[0m GitHub account, which holds all the available Zinit annexes:
-    - https://github.com/z-shell
+- [38;5;226mzinit-zsh[0m See meta plugins support, which install groups of plugins via a single, friendly label:
+    - https://github.com/z-shell/z-a-meta-plugins
 - [38;5;226mFor-Syntax[0m article on the Wiki; it is less directly related to the ices, however, it explains how to use them conveniently:
     - https://z-shell.github.io/zinit/wiki/For-Syntax
 EOF
