@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ github.token }}
     - uses: repo-sync/github-sync@v2
       name: Sync repo to branch - main
       with:
