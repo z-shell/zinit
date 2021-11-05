@@ -71,6 +71,27 @@
 <details>
   <summary>Here are the new features and updates added to Zinit in the last 90 days.</summary>
 
+- 05-11-2021
+
+  - The packages have been disconnected from NPM registry and now live only on z-shell organization under #zinit-packages tag. Publishing to NPM isn't needed.
+  - There are two interesting packages,
+    [any-gem](https://github.com/z-shell/any-gem) and
+    [any-node](https://github.com/z-shell/any-node). They allow to install any
+    Gem(s) or Node module(s) locally in a newly created plugin directory. For example:
+
+    ```zsh
+    zinit pack param='GEM -> rails' for any-gem
+    zinit pack param='MOD -> doctoc' for any-node
+    # To have the command in zshrc, add an id-as'' ice so that
+    # Zinit knows that the package is already installed
+    # (also: the Unicode arrow is allowed)
+    zinit id-as=jekyll pack param='GEM → jekyll' for any-gem
+    ```
+
+    The binaries will be exposed without altering the PATH via shims
+    ([Bin-Gem-Node](https://github.com/z-shell/z-a-bin-gem-node) annex is needed).
+    Shims are correctly removed when deleting a plugin with `zinit delete …`.
+  
 - 16-07-2020
 
   - A new ice `null` which works exactly the same as `as"null"`, i.e.: it makes
@@ -191,7 +212,7 @@
   - `ziextract` and `extract''` now support Windows installers — currently the
     installer of Firefox. Let me know if any of your installers doesn't work.
     You can test the installer with the Firefox Developer Edition Zinit
-    [package](https://github.com/Zsh-Packages/firefox-dev):
+    [package](https://github.com/z-shell/firefox-dev):
 
     ```zsh
     zinit pack"bgn" for firefox-dev
@@ -341,7 +362,7 @@
     ```
 
     ).
-
+  
 - 12-04-2020
 
   - A new document on the Wiki is available — about the [**bindmap''
@@ -422,11 +443,6 @@
   - A new article is available on the Wiki — about the
     [**`extract`**](http://z-shell.github.io/zinit/wiki/extract-Ice/) ice.
 
-- 19-02-2020
-
-  The project has a fresh, new subreddit [r/zinit](https://www.reddit.com/r/zinit/).
-  You can also visit the old subreddit [r/zplugin](https://www.reddit.com/r/zplugin/).
-
 - 09-02-2020
 
   Note that the ice `extract` can handle files with spaces — to encode such a name use
@@ -480,32 +496,10 @@
     - one other option `--norm` prevents the archive from being deleted upon unpacking.
   - snippets now aren't re-downloaded unless they're newer on the HTTP server; use
     this with the `--norm` option of `ziextract` to prevent unnecessary updates; for
-    example, the [firefox-dev package](https://github.com/Zsh-Packages/firefox-dev)
+    example, the [firefox-dev package](https://github.com/z-shell/firefox-dev)
     uses this option for this purpose,
   - GitHub doesn't report proper `Last-Modified` HTTP server for the files in the
     repositories so the feature doesn't yet work with such files.
-
-- 13-12-2019
-
-  - The packages have been disconnected from NPM registry and now live only on Zsh
-    Packages organization. Publishing to NPM isn't needed.
-  - There are two interesting packages,
-    [any-gem](https://github.com/Zsh-Packages/any-gem) and
-    [any-node](https://github.com/Zsh-Packages/any-node). They allow to install any
-    Gem(s) or Node module(s) locally in a newly created plugin directory. For example:
-
-    ```zsh
-    zinit pack param='GEM -> rails' for any-gem
-    zinit pack param='MOD -> doctoc' for any-node
-    # To have the command in zshrc, add an id-as'' ice so that
-    # Zinit knows that the package is already installed
-    # (also: the Unicode arrow is allowed)
-    zinit id-as=jekyll pack param='GEM → jekyll' for any-gem
-    ```
-
-    The binaries will be exposed without altering the PATH via shims
-    ([Bin-Gem-Node](https://github.com/z-shell/z-a-bin-gem-node) annex is needed).
-    Shims are correctly removed when deleting a plugin with `zinit delete …`.
 
 - 11-12-2019
 
