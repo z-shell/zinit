@@ -699,8 +699,8 @@ To see the full history check [the changelog](doc/CHANGELOG.md).
 ---
 
 <p align="center">
-<a href="https://github.com/z-shell/pm-perf-test">
-<img width="550px" src="https://raw.githubusercontent.com/z-shell/zinit/images/startup-times.png"/>
+<a href="https://github.com/z-shell/zinit" alt="pm-perf-test">
+<img width="440px" src="https://raw.githubusercontent.com/z-shell/zinit/images/startup-times.png"/>
 </a>
 </p>
 
