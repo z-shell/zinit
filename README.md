@@ -6,10 +6,8 @@
 </a>
 </p>
 
-[![MIT License][mit-badge]][mit-link] [![][ver-badge]][ver-link]
-[![Build Status](https://app.travis-ci.com/ss-o/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main)](https://app.travis-ci.com/ss-o/zinit)
-[![CodeFactor](https://www.codefactor.io/repository/github/z-shell/zinit/badge/main)](https://www.codefactor.io/repository/github/z-shell/zinit/overview/main)
-[![DeepSource](https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/z-shell/zinit/?ref=repository-badge)
+[![Travis Status][status-badge]][status-link] [![CodeFactor][codefactor-badge]][codefactor-link] [![DeepSource][deepsource-badge]][deepsource-link]
+[![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link] [![Gitter][gitter-badge]][gitter-link]
 
 ---
 
@@ -1753,13 +1751,21 @@ zinit as"null" wait"1" lucid for \
 
 Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 
-[status-badge]: https://travis-ci.org/ss-o/zinit.svg?branch=main
-[status-link]: https://travis-ci.org/ss-o/zinit
+  
+[codefactor-badge]: https://www.codefactor.io/repository/github/z-shell/zinit/badge/main
+[codefactor-link]: https://www.codefactor.io/repository/github/z-shell/zinit/overview/main
+[deepsource-badge]: https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true
+[deepsource-link]: https://deepsource.io/gh/z-shell/zinit/?ref=repository-badge
+[status-badge]: https://app.travis-ci.com/ss-o/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main
+[status-link]: https://app.travis-ci.com/ss-o/zinit
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: ./LICENSE
 [ver-badge]: https://img.shields.io/github/tag/z-shell/zinit.svg
 [ver-link]: https://github.com/z-shell/zinit/releases
+
 [pre-commit]: https://img.shields.io/badge/pre--commit-enabled-blue?logo=pre-commit&logoColor=white
 [pre-commit-link]: https://github.com/pre-commit/pre-commit
+[gitter-badge]: https://badges.gitter.im/z-shell/community.svg
+[gitter-link]: https://gitter.im/z-shell/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
 <!-- vim:set ft=markdown tw=80 fo+=1n: -->
