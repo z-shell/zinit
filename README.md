@@ -73,7 +73,7 @@
 
 - 05-11-2021
 
-  - The packages have been disconnected from NPM registry and now live only on z-shell organization under #zinit-packages tag. Publishing to NPM isn't needed.
+  - The packages have been disconnected from NPM registry and now live only on z-shell organization under #zinit-package tag. Publishing to NPM isn't needed.
   - There are two interesting packages,
     [any-gem](https://github.com/z-shell/any-gem) and
     [any-node](https://github.com/z-shell/any-node). They allow to install any
