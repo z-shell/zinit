@@ -19,7 +19,7 @@ understanding of styling is a must if you want to contribute to bigger projects 
 2. [Python](#python)
 3. [MarkDown](#markdown)
 4. [JavaScript](#javascript)
-5. GitHub Actions
+5. [GitHub Actions](#github-action)
 
 ### Prerequisites
 
