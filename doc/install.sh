@@ -124,15 +124,15 @@ fi
 command cat <<-EOF
 
 [34m▓▒░[0m A quick intro to Zinit: below are all the available Zinit
-[34m▓▒░[0m ice-modifiers, grouped by their role by different colors): 
+[34m▓▒░[0m ice-modifiers, grouped by their role by different colors):
 [34m▓▒░[0m
-[38;5;219m▓▒░[0m id-as'' as'' from'' [38;5;111mwait'' trigger-load'' load'' unload'' 
+[38;5;219m▓▒░[0m id-as'' as'' from'' [38;5;111mwait'' trigger-load'' load'' unload''
 [38;5;219m▓▒░[0m [38;5;51mpick'' src'' multisrc'' [38;5;172mpack'' param'' [0mextract'' [38;5;220matclone''
 [38;5;219m▓▒░[0m [38;5;220matpull'' atload'' atinit'' make'' mv'' cp'' reset''
-[38;5;219m▓▒░[0m [38;5;220mcountdown'' [38;5;160mcompile'' nocompile'' [0mnocd'' [38;5;177mif'' has'' 
+[38;5;219m▓▒░[0m [38;5;220mcountdown'' [38;5;160mcompile'' nocompile'' [0mnocd'' [38;5;177mif'' has''
 [38;5;219m▓▒░[0m [38;5;178mcloneopts'' depth'' proto'' [38;5;82mon-update-of'' subscribe''
 [38;5;219m▓▒░[0m bpick'' cloneonly'' service'' notify'' wrap-track''
-[38;5;219m▓▒░[0m bindmap'' atdelete'' ver'' 
+[38;5;219m▓▒░[0m bindmap'' atdelete'' ver''
 
 [34m▓▒░[0m No-value (flag-only) ices:
 [38;5;219m▓▒░[0m [38;5;220msvn git [38;5;82msilent lucid [0mlight-mode is-snippet blockf nocompletions

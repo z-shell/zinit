@@ -80,7 +80,7 @@
   echo S a string S "
   fc -l -1' 2>/dev/null
 0:Global aliasing quotes
-> a string S 
+> a string S
 *>*5*echo S a string S "
 # "
 # Note there is a trailing space on the "> a string S " line

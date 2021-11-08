@@ -343,7 +343,7 @@
  echo $u[1]:$u[3]
 0:append to unset variable with index
 >:third
- 
+
 # tests of var[range]+=(array)
 
  a=(1 2 3)

@@ -2795,7 +2795,7 @@ builtin print -Pr \"\$ZINIT[col-obj]Done (with the exit code: \$_retval).%f%b\""
     # Make the ices available for the hooks.
     local -A ICE
     ICE=( "${(kv)ICE2[@]}" )
-    
+
     if (( is_snippet )); then
         if [[ "${+ICE2[svn]}" = "1" ]] {
             if [[ -e "$local_dir" ]]

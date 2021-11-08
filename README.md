@@ -47,7 +47,6 @@
     - [Compiling](#compiling)
     - [Other](#other)
   - [Updating Zinit and Plugins](#updating-zinit-and-plugins)
-- [Completions](#completions-2)
   - [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
   - [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
   - [Ignoring Compdefs](#ignoring-compdefs)
@@ -98,7 +97,7 @@
     The binaries will be exposed without altering the PATH via shims
     ([Bin-Gem-Node](https://github.com/z-shell/z-a-bin-gem-node) annex is needed).
     Shims are correctly removed when deleting a plugin with `zinit delete …`.
-  
+
 - 16-07-2020
 
   - A new ice `null` which works exactly the same as `as"null"`, i.e.: it makes
@@ -369,7 +368,7 @@
     ```
 
     ).
-  
+
 - 12-04-2020
 
   - A new document on the Wiki is available — about the [**bindmap''
@@ -704,9 +703,6 @@ To see the full history check [the changelog](doc/CHANGELOG.md).
 <img width="440px" src="https://raw.githubusercontent.com/z-shell/zinit/images/startup-times.png"/>
 </a>
 </p>
-
-# Introduction
-
 Zinit is a flexible and fast Zshell plugin manager that will allow you to
 install everything from GitHub and other sites. Its characteristics are:
 
@@ -1753,7 +1749,7 @@ zinit as"null" wait"1" lucid for \
 
 Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 
-  
+
 [codefactor-badge]: https://www.codefactor.io/repository/github/z-shell/zinit/badge/main
 [codefactor-link]: https://www.codefactor.io/repository/github/z-shell/zinit/overview/main
 [deepsource-badge]: https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true

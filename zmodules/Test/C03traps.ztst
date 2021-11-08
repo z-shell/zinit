@@ -275,9 +275,9 @@
    echo "child sending signal"
    kill -15 $parentpid
    sleep 2
-   echo "child exiting" 
+   echo "child exiting"
    exit 33
-  } 
+  }
   parentpid=$$
   child &
   childpid=$!
@@ -510,7 +510,7 @@
     :
   else
     if [[ -n '' ]]; then
-        a=2  
+        a=2
     fi
     print Yes
   fi

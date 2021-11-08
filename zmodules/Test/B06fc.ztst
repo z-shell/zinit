@@ -1,10 +1,10 @@
 # Tests of fc command
 %prep
 
- mkdir fc.tmp 
+ mkdir fc.tmp
  cd fc.tmp
  print 'fc -l foo' >fcl
- 
+
 %test
   $ZTST_testdir/../Src/zsh -f ./fcl
 1:Checking that fc -l foo doesn't core dump when history is empty

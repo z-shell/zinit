@@ -314,7 +314,7 @@
 0:Recursive globbing used recursively (inside e glob qualifier)
 >a a a a a a a
 
- print glob.tmp/**/(:h) 
+ print glob.tmp/**/(:h)
 0:Head modifier
 >. glob.tmp glob.tmp glob.tmp glob.tmp glob.tmp/dir3
 
@@ -401,7 +401,7 @@
 
  doesmatch() {
    setopt localoptions extendedglob
-   print -n $1 $2\ 
+   print -n $1 $2\
    if [[ $1 = $~2 ]]; then print yes; else print no; fi;
  }
  doesmatch MY_IDENTIFIER '[[:IDENT:]]##'

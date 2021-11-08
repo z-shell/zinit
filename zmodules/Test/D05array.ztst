@@ -65,8 +65,8 @@
   echo .${${arr[-2]}[1]}.
   echo .${${arr[2,2]}[1]}.
   echo .${${arr[-2,-2]}[1]}.
-  echo .${${arr[2,-2]}[1]}. 
-  echo .${${arr[-2,2]}[1]}. 
+  echo .${${arr[2,-2]}[1]}.
+  echo .${${arr[-2,2]}[1]}.
 0:Slices should return an array, elements a scalar
 >.b.
 >.b.

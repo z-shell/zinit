@@ -35,11 +35,11 @@ Has 1 line(s). No functions are called (may set up e.g. a hook, a Zle widget bou
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-any-colorify-as-uspl2 [[[
  Returns ANSI-colorified "user/plugin" string, from any supported
  plugin spec (user---plugin, user/plugin, user plugin, plugin).
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
  $REPLY = ANSI-colorified "user/plugin" string
@@ -79,16 +79,16 @@ Called by:
 ~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-compute-ice [[[
  Computes ICE array (default, it can be specified via $3) from a) input
  ICE, b) static ice, c) saved ice, taking priorities into account. Also
  returns path to snippet directory and optional name of snippet file (only
  valid if ICE[svn] is not set).
- 
+
  Can also pack resulting ices into ZINIT_SICE (see $2).
- 
+
  $1 - URL (also plugin-spec)
  $2 - "pack" or "nopack" or "pack-nf" - packing means ICE
  wins with static ice; "pack-nf" means that disk-ices will
@@ -121,7 +121,7 @@ Called by:
 ~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-countdown [[[
  Displays a countdown 5...4... etc. and returns 0 if it
@@ -149,12 +149,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-exists-physically [[[
  Checks if directory of given plugin exists in PLUGIN_DIR.
- 
+
  Testable.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -174,13 +174,13 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-exists-physically-message [[[
  Checks if directory of given plugin exists in PLUGIN_DIR,
  and outputs error message if it doesn't.
- 
+
  Testable.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -207,7 +207,7 @@ Called by:
 ~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-first [[[
  Finds the main file of plugin. There are multiple file name
  formats, they are ordered in order starting from more correct
@@ -215,7 +215,7 @@ ____
  and doesn't call .zinit-first() – for performance. Obscure matching
  is done in .zinit-find-other-matches, here and in .zinit-load().
  Obscure = non-standard main-file naming convention.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -239,11 +239,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-store-ices [[[
  Saves ice mods in given hash onto disk.
- 
+
  $1 - directory where to create / delete files
  $2 - name of hash that holds values
  $3 - additional keys of hash to store, space separated
@@ -264,7 +264,7 @@ Called by:
 ~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-two-paths [[[
  Obtains a snippet URL without specification if it is an SVN URL (points to
  directory) or regular URL (points to file), returns 2 possible paths for
@@ -287,10 +287,10 @@ zmv
 ~~~
 
 ____
- 
+
  function zmv {
  zmv, zcp, zln:
- 
+
  This is a multiple move based on zsh pattern matching.  To get the full
  power of it, you need a postgraduate degree in zsh.  However, simple
  tasks work OK, so if that's all you need, here are some basic examples:

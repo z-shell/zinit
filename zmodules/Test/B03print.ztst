@@ -200,7 +200,7 @@
 >43
 
  printf '%1$*2$d' 1 2 3 4 5 6 7 8 9 10; echo .EoL.
-0:reuse of specified arguments 
+0:reuse of specified arguments
 > 1   3     5       7         9.EoL.
 
  echo -n 'Now is the time'; echo .EoL.

@@ -145,7 +145,7 @@
     print not executed
   done
 0:Status from expansion not propagated after unexecuted for loop
-  
+
   false
   for x in NonExistentFilePrefix*(N); do
     print not executed, either
@@ -159,7 +159,7 @@
   false
   for x in $(echo 1; false); do
     echo $?
-    (exit 4)  
+    (exit 4)
   done
 4:Last status from loop body is kept even with other funny business going on
 >1

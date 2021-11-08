@@ -2,7 +2,7 @@
 
 %prep
 
-  isset() { 
+  isset() {
     print -n "${1}: "
     if [[ -o $1 ]]; then print yes; else print no; fi
   }
@@ -189,7 +189,7 @@
 >Yay, extendedglob is set
 
   (
-  setopt ignorebraces          
+  setopt ignorebraces
   emulate zsh -o extendedglob
   [[ -o ignorebraces ]] || print "Yay, ignorebraces is no longer set"
   [[ -o extendedglob ]] && print "Yay, extendedglob is set"
@@ -218,7 +218,7 @@
     func_inner() { setopt nobareglobqual }
   '
   emulate zsh -o extendedglob -c '
-    func_outer() { 
+    func_outer() {
       func_inner
       [[ -o bareglobqual ]] || print bareglobqual was turned off
       [[ -o extendedglob ]] && print extendedglob is on, though
@@ -235,7 +235,7 @@
     func_inner() { setopt nobareglobqual }
   '
   emulate zsh -o extendedglob -o cbases -c '
-    func_outer() { 
+    func_outer() {
       func_inner
       [[ -o bareglobqual ]] && print bareglobqual is still on
       [[ -o extendedglob ]] && print extendedglob is on, too

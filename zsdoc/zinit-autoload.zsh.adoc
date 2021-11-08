@@ -91,11 +91,11 @@ Uses feature(s): _source_
 ~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-any-to-uspl2 [[[
  Converts given plugin-spec to format that's used in keys for hash tables.
  So basically, creates string "user/plugin" (this format is called: uspl2).
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - (optional) plugin (only when $1 - i.e. user - given)
 ____
@@ -114,7 +114,7 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-at-eval [[[
 ____
 
@@ -131,7 +131,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-build-module [[[
  Performs ./configure && make on the module and displays information
@@ -153,12 +153,12 @@ Called by:
 ~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-cd [[[
  Jumps to plugin's directory (in Zinit's home directory).
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -176,12 +176,12 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-cdisable [[[
  Enables given installed completion.
- 
+
  User-action entry point.
- 
+
  $1 - e.g. "_mkdir" or "mkdir"
 ____
 
@@ -197,12 +197,12 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-cenable [[[
  Disables given installed completion.
- 
+
  User-action entry point.
- 
+
  $1 - e.g. "_mkdir" or "mkdir"
 ____
 
@@ -218,13 +218,13 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-changes [[[
  Shows `git log` of given plugin.
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -241,14 +241,14 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-check-comp-consistency [[[
  Zinit creates symlink for each installed completion.
  This function checks whether given completion (i.e.
  file like "_mkdir") is indeed a symlink. Backup file
  is a completion that is disabled - has the leading "_"
  removed.
- 
+
  $1 - path to completion within plugin's directory
  $2 - path to backup file within plugin's directory
 ____
@@ -264,16 +264,16 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-check-which-completions-are-enabled [[[
  For each argument that each should be a path to completion
  within a plugin's dir, it checks whether that completion
  is disabled - returns 0 or 1 on corresponding positions
  in reply.
- 
+
  Uninstalled completions will be reported as "0"
  - i.e. disabled
- 
+
  $1, ... - path to completion within plugin's directory
 ____
 
@@ -287,13 +287,13 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-check-which-completions-are-installed [[[
  For each argument that each should be a path to completion
  within a plugin's dir, it checks whether that completion
  is installed - returns 0 or 1 on corresponding positions
  in reply.
- 
+
  $1, ... - path to completion within plugin's directory
 ____
 
@@ -307,13 +307,13 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-clear-completions [[[
  Delete stray and improper completions.
- 
+
  Completions live even when plugin isn't loaded - if they are
  installed and enabled.
- 
+
  User-action entry point.
 ____
 
@@ -333,11 +333,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-clear-report-for [[[
  Clears all report data for given user/plugin. This is
  done by resetting all related global ZINIT_* hashes.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - (optional) plugin (only when $1 - i.e. user - given)
 ____
@@ -354,10 +354,10 @@ Called by:
 ~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-compiled [[[
  Displays list of plugins that are compiled.
- 
+
  User-action entry point.
 ____
 
@@ -377,10 +377,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-compile-uncompile-all [[[
  Compiles or uncompiles all existing (on disk) plugins.
- 
+
  User-action entry point.
 ____
 
@@ -401,11 +401,11 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-confirm [[[
  Prints given question, waits for "y" key, evals
  given expression if "y" obtained
- 
+
  $1 - question
  $2 - expression
 ____
@@ -422,12 +422,12 @@ Called by:
 ~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-create [[[
  Creates a plugin, also on Github (if not "_local/name" plugin).
- 
+
  User-action entry point.
- 
+
  $1 - (optional) plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - (optional) plugin (only when $1 - i.e. user - given)
 ____
@@ -447,13 +447,13 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-delete [[[
  Deletes plugin's or snippet's directory (in Zinit's home directory).
- 
+
  User-action entry point.
- 
+
  $1 - snippet URL or plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -474,11 +474,11 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-diff-env-compute [[[
  Computes ZINIT_PATH, ZINIT_FPATH that hold (f)path components
  added by plugin. Uses data gathered earlier by .zinit-diff-env().
- 
+
  $1 - user/plugin
 ____
 
@@ -495,11 +495,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-diff-functions-compute [[[
  Computes FUNCTIONS that holds new functions added by plugin.
  Uses data gathered earlier by .zinit-diff-functions().
- 
+
  $1 - user/plugin
 ____
 
@@ -516,11 +516,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-diff-options-compute [[[
  Computes OPTIONS that holds options changed by plugin.
  Uses data gathered earlier by .zinit-diff-options().
- 
+
  $1 - user/plugin
 ____
 
@@ -537,12 +537,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-diff-parameter-compute [[[
  Computes ZINIT_PARAMETERS_PRE, ZINIT_PARAMETERS_POST that hold
  parameters created or changed (their type) by plugin. Uses
  data gathered earlier by .zinit-diff-parameter().
- 
+
  $1 - user/plugin
 ____
 
@@ -559,13 +559,13 @@ Called by:
 ~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-edit [[[
  Runs $EDITOR on source of given plugin. If the variable is not
  set then defaults to `vim'.
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -581,11 +581,11 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-exists-message [[[
  Checks if plugin is loaded. Testable. Also outputs error
  message if plugin is not loaded.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - (optional) plugin (only when $1 - i.e. user - given)
 ____
@@ -604,11 +604,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-find-completions-of-plugin [[[
  Searches for completions owned by given plugin.
  Returns them in `reply' array.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -628,11 +628,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-format-env [[[
  Creates one-column text about FPATH or PATH elements
  added when given plugin was loaded.
- 
+
  $1 - user/plugin (i.e. uspl2 format of plugin-spec)
  $2 - if 1, then examine PATH, if 2, then examine FPATH
 ____
@@ -647,11 +647,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-format-functions [[[
  Creates a one or two columns text with functions created
  by given plugin.
- 
+
  $1 - user/plugin (i.e. uspl2 format of plugin-spec)
 ____
 
@@ -665,11 +665,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-format-options [[[
  Creates one-column text about options that changed when
  plugin "$1" was loaded.
- 
+
  $1 - user/plugin (i.e. uspl2 format of plugin-spec)
 ____
 
@@ -685,11 +685,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-format-parameter [[[
  Creates one column text that lists global parameters that
  changed when the given plugin was loaded.
- 
+
  $1 - user/plugin (i.e. uspl2 format of plugin-spec)
 ____
 
@@ -705,18 +705,18 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-get-completion-owner [[[
  Returns "user---plugin" string (uspl1 format) of plugin that
  owns given completion.
- 
+
  Both :A and readlink will be used, then readlink's output if
  results differ. Readlink might not be available.
- 
+
  :A will read the link "twice" and give the final repository
  directory, possibly without username in the uspl format;
  readlink will read the link "once"
- 
+
  $1 - absolute path to completion file (in COMPLETIONS_DIR)
  $2 - readlink command (":" or "readlink")
 ____
@@ -735,11 +735,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-get-completion-owner-uspl2col [[[
  For shortening of code - returns colorized plugin name
  that owns given completion.
- 
+
  $1 - absolute path to completion file (in COMPLETIONS_DIR)
  $2 - readlink command (":" or "readlink")
 ____
@@ -758,7 +758,7 @@ Called by:
 ~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-get-path [[[
  Returns path of given ID-string, which may be a plugin-spec
@@ -783,13 +783,13 @@ Called by:
 ~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-glance [[[
  Shows colorized source code of plugin. Is able to use pygmentize,
  highlight, GNU source-highlight.
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -807,10 +807,10 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-help [[[
  Shows usage information.
- 
+
  User-action entry point.
 ____
 
@@ -824,7 +824,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-list-bindkeys [[[
 ____
@@ -842,12 +842,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-list-compdef-replay [[[
  Shows recorded compdefs (called by plugins loaded earlier).
  Plugins often call `compdef' hoping for `compinit' being
  already ran. Zinit solves this by recording compdefs.
- 
+
  User-action entry point.
 ____
 
@@ -861,7 +861,7 @@ Called by:
 ~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-ls [[[
 ____
 
@@ -877,7 +877,7 @@ Called by:
 ~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-module [[[
  Function that has sub-commands passed as long-options (with two dashes, --).
@@ -899,7 +899,7 @@ Called by:
 ~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-pager [[[
  BusyBox less lacks the -X and -i options, so it can use more
 ____
@@ -918,10 +918,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-prepare-readlink [[[
  Prepares readlink command, used for establishing completion's owner.
- 
+
  $REPLY = ":" or "readlink"
 ____
 
@@ -940,7 +940,7 @@ Called by:
 ~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-recall [[[
 ____
@@ -959,12 +959,12 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-recently [[[
  Shows plugins that obtained commits in specified past time.
- 
+
  User-action entry point.
- 
+
  $1 - time spec, e.g. "1 week"
 ____
 
@@ -983,7 +983,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-restore-extendedglob [[[
  Restores extendedglob-option from state saved earlier.
 ____
@@ -1001,7 +1001,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-run-delete-hooks [[[
 ____
 
@@ -1018,7 +1018,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-save-set-extendedglob [[[
  Enables extendedglob-option first saving if it was already
  enabled, for restoration of this state later.
@@ -1037,12 +1037,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-search-completions [[[
  While .zinit-show-completions() shows what completions are
  installed, this functions searches through all plugin dirs
  showing what's available in general (for installation).
- 
+
  User-action entry point.
 ____
 
@@ -1061,10 +1061,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-self-update [[[
  Updates Zinit code (does a git pull).
- 
+
  User-action entry point.
 ____
 
@@ -1085,10 +1085,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-show-all-reports [[[
  Displays reports of all loaded plugins.
- 
+
  User-action entry point.
 ____
 
@@ -1104,14 +1104,14 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-show-completions [[[
  Display installed (enabled and disabled), completions. Detect
  stray and improper ones.
- 
+
  Completions live even when plugin isn't loaded - if they are
  installed and enabled.
- 
+
  User-action entry point.
 ____
 
@@ -1130,10 +1130,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-show-debug-report [[[
  Displays dtrace report (data recorded in interactive session).
- 
+
  User-action entry point.
 ____
 
@@ -1149,10 +1149,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-show-registered-plugins [[[
  Lists loaded plugins (subcommands list, lodaded).
- 
+
  User-action entry point.
 ____
 
@@ -1171,12 +1171,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-show-report [[[
  Displays report of the plugin given.
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user (+ plugin in $2), plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -1198,10 +1198,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-show-times [[[
  Shows loading times of all loaded plugins.
- 
+
  User-action entry point.
 ____
 
@@ -1220,12 +1220,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-show-zstatus [[[
  Shows Zinit status, i.e. number of loaded plugins,
  of available completions, etc.
- 
+
  User-action entry point.
 ____
 
@@ -1244,16 +1244,16 @@ Called by:
 ~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-stress [[[
  Compiles plugin with various options on and off to see
  how well the code is written. The options are:
- 
+
  NO_SHORT_LOOPS, IGNORE_BRACES, IGNORE_CLOSE_BRACES, SH_GLOB,
  CSH_JUNKIE_QUOTES, NO_MULTI_FUNC_DEF.
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -1273,12 +1273,12 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-uncompile-plugin [[[
  Uncompiles given plugin.
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user (+ plugin in $2), plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -1300,11 +1300,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-uninstall-completions [[[
  Removes all completions of given plugin from Zshell (i.e. from FPATH).
  The FPATH is typically `~/.zinit/completions/'.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -1326,7 +1326,7 @@ Called by:
 ~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-unload [[[
  0. Call the Zsh Plugin's Standard *_plugin_unload function
  0. Call the code provided by the Zsh Plugin's Standard @zsh-plugin-run-at-update
@@ -1339,9 +1339,9 @@ ____
  7. Clean-up FPATH and PATH
  8. Delete created variables
  9. Forget the plugin
- 
+
  User-action entry point.
- 
+
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -1363,7 +1363,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-unregister-plugin [[[
  Removes the plugin from ZINIT_REGISTERED_PLUGINS array and from the
  zsh_loaded_plugins array (managed according to the plugin standard)
@@ -1382,7 +1382,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-update-in-parallel [[[
 ____
 
@@ -1403,12 +1403,12 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-update-or-status [[[
  Updates (git pull) or does `git status' for given plugin.
- 
+
  User-action entry point.
- 
+
  $1 - "status" for status, other for update
  $2 - plugin spec (4 formats: user---plugin, user/plugin, user (+ plugin in $2), plugin)
  $3 - plugin (only when $1 - i.e. user - given)
@@ -1441,13 +1441,13 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-update-or-status-all [[[
  Updates (git pull) or does `git status` for all existing plugins.
  This includes also plugins that are not loaded into Zsh (but exist
  on disk). Also updates (i.e. redownloads) snippets.
- 
+
  User-action entry point.
 ____
 
@@ -1470,11 +1470,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  FUNCTION: .zinit-update-or-status-snippet [[[
- 
+
  Implements update or status operation for snippet given by URL.
- 
+
  $1 - "status" or "update"
  $2 - snippet URL
 ____
@@ -1497,7 +1497,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
- 
+
  ]]]
  FUNCTION: .zinit-wait-for-update-jobs [[[
 ____

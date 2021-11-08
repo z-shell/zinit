@@ -2,7 +2,7 @@
 //
 // myapp.exe : myapp.o myapp.res
 // 	   gcc -mwindows myapp.o myapp.res -o $@
-// 
+//
 // myapp.res : myapp.rc resource.h
 // 	   windres $< -O coff -o $@
 IDR_MAINFRAME           ICON    DISCARDABLE     "zsh.ico"

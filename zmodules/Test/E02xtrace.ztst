@@ -114,7 +114,7 @@
  grep '\./fnfile' errfile 1>&2
 0:Trace output with sourcefile and line number.
 >This is fn.
-?+./fnfile:1> PS4='+%x:%I> ' 
+?+./fnfile:1> PS4='+%x:%I> '
 ?+./fnfile:5> :
 ?+./fnfile:6> fn
 ?+./fnfile:3> print This is fn.

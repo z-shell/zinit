@@ -5,7 +5,7 @@ index 298af02..b116b80 100644
 @@ -437,11 +437,6 @@ fi],
  [AC_DEFINE(DEFAULT_READNULLCMD,"more")]
  )
- 
+
 -dnl Do you want to look for pcre support?
 -AC_ARG_ENABLE(pcre,
 -AC_HELP_STRING([--enable-pcre],
@@ -16,7 +16,7 @@ index 298af02..b116b80 100644
  AC_HELP_STRING([--enable-cap],
 @@ -672,16 +667,6 @@ AC_HEADER_STAT
  AC_HEADER_SYS_WAIT
- 
+
  oldcflags="$CFLAGS"
 -if test x$enable_pcre = xyes; then
 -AC_CHECK_PROG([PCRECONF], pcre-config, pcre-config)
@@ -28,7 +28,7 @@ index 298af02..b116b80 100644
 -  CPPFLAGS="$CPPFLAGS `pcre-config --cflags`"
 -fi
 -fi
- 
+
  AC_CHECK_HEADERS(sys/time.h sys/times.h sys/select.h termcap.h termio.h \
  		 termios.h sys/param.h sys/filio.h string.h memory.h \
 @@ -689,7 +674,7 @@ AC_CHECK_HEADERS(sys/time.h sys/times.h sys/select.h termcap.h termio.h \
@@ -43,7 +43,7 @@ index 298af02..b116b80 100644
 @@ -932,12 +917,6 @@ if test "x$ac_found_iconv" = "xyes"; then
      [Define as const if the declaration of iconv() needs const.])
  fi
- 
+
 -if test x$enable_pcre = xyes; then
 -dnl pcre-config should probably be employed here
 -dnl AC_SEARCH_LIBS(pcre_compile, pcre)
@@ -64,10 +64,10 @@ index 298af02..b116b80 100644
 @@ -3278,8 +3256,7 @@ AC_SUBST_FILE(CONFIG_MK)dnl
  AC_SUBST_FILE(DEFS_MK)dnl
  AC_SUBST_FILE(VERSION_MK)dnl
- 
+
 -AC_CONFIG_FILES(Config/defs.mk Makefile Doc/Makefile Etc/Makefile \
 -Src/Makefile Test/Makefile)
 +AC_CONFIG_FILES(Config/defs.mk Makefile Src/Makefile Test/Makefile)
  AC_CONFIG_COMMANDS([config.modules], [. ./config.modules.sh])
  AC_CONFIG_COMMANDS([stamp-h], [echo >stamp-h])
- 
+
