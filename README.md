@@ -1749,8 +1749,8 @@ Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 [codefactor-link]: https://www.codefactor.io/repository/github/z-shell/zinit/overview/main
 [deepsource-badge]: https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true
 [deepsource-link]: https://deepsource.io/gh/z-shell/zinit/?ref=repository-badge
-[status-badge]: https://app.travis-ci.com/ss-o/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main
-[status-link]: https://app.travis-ci.com/ss-o/zinit
+[status-badge]: https://app.travis-ci.com/z-shell/zinit.svg?token=RtKRV4svxQFCPBzGyuQk&branch=main
+[status-link]: https://app.travis-ci.com/z-shell/zinit
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: ./LICENSE
 [ver-badge]: https://img.shields.io/github/tag/z-shell/zinit.svg
