@@ -1,5 +1,5 @@
 ---
-name: pull requests
+name: Pull requests
 about: Pull requests let you tell others about changes you've pushed to a branch in a repository
 title: ''
 labels: ''
