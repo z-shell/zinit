@@ -8,7 +8,7 @@ rules.
 The maintainers are here to help you at any point in time, In case you have doubts, questions, and/or suggestions,
 feel free to start a discussion [here](https://github.com/z-shell/zinit/discussions).
 
-Go through our [Code of conduct](CODE_OF_CONDUCT.md).
+Go through our [Code of conduct](../CODE_OF_CONDUCT.md).
 
 We have tried our best to keep the guideline beginner-friendly and reasonable, but do note the fact that a minimal
 understanding of styling is a must if you want to contribute to bigger projects and organizations.
