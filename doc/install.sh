@@ -104,7 +104,7 @@ EOF
         "It will be the following snippet:"
     command cat "$file"
     printf "[38;5;219m▓▒░[0m Enter y/n and press Return: "
-    read -p input
+    read -r input
     if [ "$input" = y ] || [ "$input" = Y ]; then
         command cat "$file" >>"$THE_ZDOTDIR"/.zshrc
         echo
