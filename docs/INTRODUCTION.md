@@ -2,20 +2,20 @@
 
 In the document below you’ll find out how to:
 
-  - use Oh My Zsh and Prezto,
+- use Oh My Zsh and Prezto,
 
-  - manage completions,
+- manage completions,
 
-  - use the Turbo mode,
+- use the Turbo mode,
 
-  - use the ice-mods like `as"program"`,
+- use the ice-mods like `as"program"`,
 
 and much more.
 
 ## Basic Plugin Loading
 
 ```zsh
-zinit load zdharma/history-search-multi-word
+zinit load z-shell/history-search-multi-word
 zinit light zsh-users/zsh-syntax-highlighting
 ```
 
@@ -69,7 +69,7 @@ gives profits in performance of `Zinit`, it is really fast and also compact
 
 The command `zinit ice` provides ice-modifiers for single next command (see
 the README subsection
-[**ice-modifiers**](https://github.com/zdharma/zinit#ice-modifiers)). The
+[**ice-modifiers**](https://github.com/z-shell/zinit#ice-modifiers)). The
 logic is that "ice" is something something that’s added (e.g. to a drink or a
 coffee) – and in the Zinit sense this means that ice is a modifier added to
 the next Zinit command, and also something that melts (so it doesn’t last
@@ -86,7 +86,7 @@ Content of ice-modifier is simply put into `"…"`, `'…'`, or `$'…'`. No
 need for `":"` after ice-mod name (although it's allowed, so as the equal sign
 `=`, so e.g. `pick="init.zsh"` or `pick=init.zsh` are being correctly
 recognized) . This way editors like `vim` and `emacs` and also
-`zsh-users/zsh-syntax-highlighting` and `zdharma/fast-syntax-highlighting` will
+`zsh-users/zsh-syntax-highlighting` and `z-shell/fast-syntax-highlighting` will
 highlight contents of ice-modifiers.
 
 ## as"program"
@@ -313,7 +313,7 @@ The ice `lucid` causes the under-prompt message saying `Loaded
 zsh-users/zsh-autosuggestions` that normally appears for every Turbo-loaded
 plugin to not show.
 
-### A Quick Glance At The [For-Syntax](https://zdharma.org/zinit/wiki/For-Syntax/)
+### A Quick Glance At The [For-Syntax](https://z-shell-github.io/zinit/wiki/For-Syntax/)
 
 This introduction is based on the classic, two-command syntax (`zinit ice …;
 zinit load/light/snippet …`) of Zinit. However, there's also available a
@@ -329,16 +329,16 @@ The syntax is a more concise one. The single command will work exactly the same
 as the previous classic-syntax invocation. It also allows solving some typical
 problems when using Zinit, like providing common/default ices for a set of
 plugins or [sourcing multiple
-files](https://zdharma.org/zinit/wiki/Sourcing-multiple-files/). For more
+files](https://z-shell.github.io/zinit/wiki/Sourcing-multiple-files/). For more
 information refer to the page dedicated to the new syntax
-([here](https://zdharma.org/zinit/wiki/For-Syntax/)).
+([here](https://z-shell.github.io/zinit/wiki/For-Syntax/)).
 
 ### Turbo-Loading Sophisticated Prompts
 
 For some, mostly advanced themes the initialization of the prompt is being done
 in a `precmd`-hook, i.e.; in a function that's gets called before each prompt.
 The hook is installed by the
-[add-zsh-hook](http://zdharma.org/zinit/wiki/zsh-plugin-standard/#use_of_add-zsh-hook_to_install_hooks)
+[add-zsh-hook](http://z-shell.github.io/zinit/wiki/zsh-plugin-standard/#use_of_add-zsh-hook_to_install_hooks)
 Zsh function by adding its name to the `$precmd_functions` array.
 
 To make the prompt fully initialized after Turbo loading in the middle of the

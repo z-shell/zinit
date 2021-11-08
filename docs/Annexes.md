@@ -1,4 +1,4 @@
-# Annexes 
+# Annexes
 
 ## What Are They?
 
@@ -7,42 +7,35 @@ just as any other plugin.
 
 ## What Can They Do?
 
-1.  Add a new Zinit subcommand (i.e. the command that’s placed after the
+1. Add a new Zinit subcommand (i.e. the command that’s placed after the
     function `zinit …` when calling Zinit).
 
-2.  Add new ice-modifiers.
+2. Add new ice-modifiers.
 
-3.  Register four type of hooks:
-    
-    1.  `atclone` hook – run after cloning any plugin or downloading any
-	snippet.
-    
-    2.  `atpull` hook – run after pulling new commits (i.e. updating) for any
-        plugin / snippet.
-    
-    3.  `atinit` hook – run before loading any plugin / snippet, after it has
-        been set-up (i.e. downloaded).
-    
-    4.  `atload` hook – run after loading any plugin / snippet.
+3. Register four type of hooks:
+    1. `atclone` hook – run after cloning any plugin or downloading any snippet.
 
-4.  Register hooks for generating help text, shown by the `zinit help`
-    subcommand.
+    2. `atpull` hook – run after pulling new commits (i.e. updating) for any plugin / snippet.
+
+    3. `atinit` hook – run before loading any plugin / snippet, after it has been set-up (i.e. downloaded).
+
+    4. `atload` hook – run after loading any plugin / snippet.
+
+4. Register hooks for generating help text, shown by the `zinit help` subcommand.
 
 ## How To Code Them?
 
 Below is an example body of an `atclone` hook (taken from
-[**zinit/z-a-submods**](https://github.com/zinit/z-a-submods) annex). It
+[**zinit/z-a-submods**](https://github.com/z-shell/z-a-submods) annex). It
 shows how to:
 
-1.  Obtain the arguments passed to the hook.
+1. Obtain the arguments passed to the hook.
 
-2.  Use an ice modifier.
+2. Use an ice modifier.
 
-3.  It also shows an useful snippet that will trim the whitespace in array
-    elements (see `# (4) …` in the code).
+3. It also shows an useful snippet that will trim the whitespace in array elements (see `# (4) …` in the code).
 
-4.  Utilize the last hook argument – the plugin’s/snippet’s containing
-    directory.
+4. Utilize the last hook argument – the plugin’s/snippet’s containing directory.
 
 <!-- end list -->
 
@@ -79,7 +72,7 @@ done
 
 The recommended method of creating a hook is to place its body into a file that
 starts with a right arrow `→` ([more
-information](http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html#namespacing),
+information](http://z-shell.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html#namespacing),
 and also a `za-` prefix, e.g. `→za-myproject-atclone-hook` and then to mark it
 for autoloading via `autoload -Uz →za-myproject-atclone-hook`. Then register the
 hook (presumably in the `myproject.plugin.zsh` file) with the API call:
@@ -115,7 +108,7 @@ zinit snippet PZT::modules/autosuggestions
 ```
 
 Checkout the project which fully implements this idea,
-[**zinit/z-a-submods**](https://github.com/zinit/z-a-submods). It e.g. also
+[**zinit/z-a-submods**](https://github.com/z-shell/z-a-submods). It e.g. also
 implements the `atpull` hook, i.e. supports automatic update of the submodules.
 The `z-a-*` prefix is recommended for projects that are being annexes.
 

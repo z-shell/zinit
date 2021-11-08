@@ -6,7 +6,7 @@ This document defines the Zsh Plugin Standard. Zinit fully supports
 this standard.
 
 This document is also available as a
-[**PDF**](http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.pdf).
+[**PDF**](http://z-shell.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.pdf).
 
 ## What Is A Zsh Plugin?
 
@@ -385,7 +385,7 @@ between prompts, thus it's natural to localize them in the main function.
 
 The recommendation is purely subjective opinion of the author. It can evolve –
 if you have any remarks, don't hesitate to
-[**fill them**](https://github.com/zdharma/Zsh-100-Commits-Club/issues/new).
+[**fill them**](https://github.com/z-shell/Zsh-100-Commits-Club/issues/new).
 
 ##### The Problems Solved By The Proposition
 
@@ -398,7 +398,7 @@ However when adopted, the proposition will solve the following issues:
 
 2. Not using a prefix at all – this is also an unwanted practice as it pollutes
    the command namespace
-   ([**an example**](https://github.com/zdharma/fast-syntax-highlighting/issues/157)
+   ([**an example**](https://github.com/z-shell/fast-syntax-highlighting/issues/157)
    of such issue appearing).
 
 3. It would allow to quickly discriminate between function types – e.g.: seeing
@@ -425,7 +425,7 @@ The proposition of the standard prefixes is as follows:
    hooks**](#use_of_add-zle-hook-widget_to_install_zle_hooks), but also for any
    other
    custom hook-like mechanism in the plugin (e.g.: Zinit annexes
-   [**use**](http://zdharma.org/zinit/wiki/Annexes/#how_to_code_them) such
+   [**use**](http://z-shell.github.io/zinit/wiki/Annexes/#how_to_code_them) such
    prefix for the Zinit hook functions). Example function name:
    `:prompt_zinc_precmd`.
 

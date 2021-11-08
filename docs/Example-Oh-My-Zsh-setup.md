@@ -20,7 +20,7 @@ zinit wait'!' lucid for \
 # D.
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay"  \
-        zdharma/fast-syntax-highlighting \
+        z-shell/fast-syntax-highlighting \
       OMZP::colored-man-pages \
   as"completion" \
         OMZP::docker/_docker
@@ -45,7 +45,7 @@ e.g. instead of 200 ms, it'll be getting your shell started up after **40 ms**
 (!).
 
 It is using the for-syntax, which is a recent addition to Zinit and it's
-described in detail [on this page](https://zdharma.org/zinit/wiki/For-Syntax/).
+described in detail [on this page](https://z-shell.github.io/zinit/wiki/For-Syntax/).
 
 ## Without using Turbo and for-syntax
 
@@ -77,14 +77,14 @@ zinit snippet OMZP::docker/_docker
 
 # G.
 zinit ice atinit"zicompinit; zicdreplay"
-zinit light zdharma/fast-syntax-highlighting
+zinit light z-shell/fast-syntax-highlighting
 ```
 
 In general, Turbo can be optionally enabled only for a subset of plugins or for
 all plugins. It needs Zsh \>= 5.3.
 
 The **Introduction** contains [**more
-information**](http://zdharma.org/zinit/wiki/INTRODUCTION/#turbo_mode_zsh_62_53)
+information**](http://z-shell.github.io/zinit/wiki/INTRODUCTION/#turbo_mode_zsh_62_53)
 on Turbo. 
 
 []( vim:set ft=markdown tw=80: )

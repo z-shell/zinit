@@ -4,9 +4,9 @@
 
 In-short, `fsh-auto-themes` is a plugin that implements Zshell per-directory
 themes for
-[zdharma/fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting),
+[z-shell/fast-syntax-highlighting](https://github.com/z-shell/fast-syntax-highlighting),
 i.e.: for a plugin that applies colors to the commands you type in the shell,
-(see a [screenshot](http://zdharma.org/assets/x-paragon.png)). With
+(see a [screenshot](http://z-shell.github.io/assets/x-paragon.png)). With
 `fsh-auto-themes` you'll be able to switch the FSH theme at the moment of
 entering a particular directory.
 
@@ -16,7 +16,7 @@ This plugin activates after changing current directory in the shell session.  It
 then searches for `.fsh-theme` file in that new directory or in any upper
 directory. Example `.fsh-theme` file contents:
 
-```
+```zsh
 q-jmnemonic
 ```
 
@@ -41,23 +41,23 @@ the `fast-theme` tool) will be restored.
 Example operation of the plugin:
 
 ![Asciinema
-Video](https://raw.githubusercontent.com/zdharma/fast-syntax-highlighting/master/images/203654.gif)
+Video](https://raw.githubusercontent.com/z-shell/fast-syntax-highlighting/main/images/203654.gif)
 
 ## Installation
 
-Example `zdharma/zinit` invocation:
+Example `z-shell/zinit` invocation:
 
 ```zsh
 zinit ice from"<USERNAME>@github.com"
-zinit light psprint/fsh-auto-themes
+zinit light z-shell/fsh-auto-themes
 ```
 
 With [Turbo
-Mode](http://zdharma.org/zinit/wiki/INTRODUCTION/#turbo_mode_zsh_62_53):
+Mode](http://z-shell.github.io/zinit/wiki/INTRODUCTION/#turbo_mode_zsh_62_53):
 
 ```zsh
 zinit ice wait'1' lucid from"<USERNAME>@github.com"
-zinit light psprint/fsh-auto-themes
+zinit light z-shell/fsh-auto-themes
 ```
 
 []( vim:set ft=markdown tw=80 fo+=a2n autoindent: )

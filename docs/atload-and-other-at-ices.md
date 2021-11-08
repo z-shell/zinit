@@ -6,19 +6,19 @@ There are four code-receiving ices: `atclone`, `atpull`, `atinit`, `atload`.
 Their role is to **receive a portion of Zsh code and execute it in certain
 moments of the plugin life-cycle**. The **`atclone`** executes it:
 
-  - **after cloning** the associated plugin or snippet to the disk.
+- **after cloning** the associated plugin or snippet to the disk.
 
 The **`atpull`** is similar, but works:
 
-  - **after updating** the associated plugin or snippet. 
+- **after updating** the associated plugin or snippet.
 
 Next, **`atinit`** works similar, but is being activated:
 
-  - **before loading** of the associated plugin or snippet.
+- **before loading** of the associated plugin or snippet.
 
 Last, **`atload`** is being activated:
 
-  - **after loading** of the associated plugin or snippet.
+- **after loading** of the associated plugin or snippet.
 
 For convenience, you can use each of the ices multiple times in single `zinit
 ice …` invocation – all the passed commands will be executed in the given order.
@@ -45,7 +45,7 @@ For example, in the following invocation:
 
 ```zsh
 zinit ice id-as'test' atload'!PATH+=:~/share'
-zinit load zdharma/null
+zinit load z-shell/null
 ```
 
 the `$PATH` is being changed within `atload` ice. Zinit's tracking records
@@ -94,4 +94,3 @@ deleted/restored on the plugin unload with `MYPROMPT=3` (for example) and the
 shell state will be clean, ready to load a new prompt.
 
 []( vim:set ft=markdown tw=80: )
-

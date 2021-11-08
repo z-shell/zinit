@@ -56,12 +56,12 @@ Zstyle :vcs_info:* check-for-changes true
 
 Zstyle :vcs_info:* get-revision false
 Autoload add-zsh-hook with options -U -z
-Zle -F 22 _gitstatus_process_response_POWERLEVEL9K
-Autoload _gitstatus_cleanup_15877_0_16212
+Zle -F 22_gitstatus_process_response_POWERLEVEL9K
+Autoload_gitstatus_cleanup_15877_0_16212
 Zle -N -- zle-line-pre-redraw _p9k_wrapper__p9k_zle_line_pre_redraw
 Note: a new widget created via zle -N: zle-line-pre-redraw
 Zle -N -- zle-keymap-select _p9k_wrapper__p9k_zle_keymap_select
-Note: === Ended tracking function: _p9k_precmd ===
+Note: === Ended tracking function:_p9k_precmd ===
 
 <span class="hljs-orange">Functions created:</span>
 +vi-git-aheadbehind                      +vi-git-remotebranch
@@ -77,4 +77,3 @@ unload with `MYPROMPT=3` (for example) and the shell state will be clean, ready
 to load a new prompt.
 
 []( vim:set ft=markdown tw=80: )
-

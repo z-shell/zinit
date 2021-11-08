@@ -1,11 +1,11 @@
-# Preinstalling Plugins
+# Pre-installing Plugins
 
-If you create a Docker image that uses Zplugin, or want to install Turbo-loaded
+If you create a Docker image that uses Zinit, or want to install Turbo-loaded
 plugins before the shell starts interactively, you can invoke the
 zplugin-scheduler function in such a way, that it:
 
- - installs plugins without waiting for the prompt (i.e. it's script friendly),
- - installs **all** plugins instantly, without respecting the `wait''` argument.
+- installs plugins without waiting for the prompt (i.e. it's script friendly),
+- installs **all** plugins instantly, without respecting the `wait''` argument.
 
 To accomplish this, use `burst` argument and call `-zplg-scheduler` function.
 Example `Dockerfile` entry:

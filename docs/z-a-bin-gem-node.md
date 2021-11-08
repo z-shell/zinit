@@ -32,7 +32,7 @@ allows to:
 Simply load like a regular plugin, i.e.:
 
 ```zsh
-zinit light zinit-zsh/z-a-bin-gem-node
+zinit light z-shell/z-a-bin-gem-node
 ```
 
 After executing this command you can then use the dl'' and patch'' ice-mods.
@@ -42,7 +42,7 @@ After executing this command you can then use the dl'' and patch'' ice-mods.
 Below is a diagram explaining the major feature – exposing a binary program
 or script through a Zsh function of the same name:
 
-![diagram](https://raw.githubusercontent.com/zinit-zsh/z-a-bin-gem-node/master/images/diag.png)
+![diagram](https://raw.githubusercontent.com/z-shell/z-a-bin-gem-node/main/images/diag.png)
 
 This way there is no need to add anything to `$PATH` – `z-a-bin-gem-node`
 will automatically create a function that will wrap the binary and provide it
@@ -122,15 +122,15 @@ There are 7 ice-modifiers provided and handled by the annex. They are:
 Creates a wrapper function of the name the same as the last segment of the
 path or as `{name-of-the-function}`. The optional preceding flags mean:
   
-  - `g` – set `$GEM_HOME` variable,
-  - `n` – set `$NODE_PATH` variable,
-  - `c` – cd to the plugin's directory before running the function and then
+- `g` – set `$GEM_HOME` variable,
+- `n` – set `$NODE_PATH` variable,
+- `c` – cd to the plugin's directory before running the function and then
     cd back after it has been run,
-  - `N` – append `&>/dev/null` to the call of the binary, i.e. redirect both
+- `N` – append `&>/dev/null` to the call of the binary, i.e. redirect both
     standard output and standard error to `/dev/null`,
-  - `E` – append `2>/dev/null` to the call of the binary, i.e. redirect
+- `E` – append `2>/dev/null` to the call of the binary, i.e. redirect
     standard error to `/dev/null`,
-  - `O` – append `>/dev/null` to the call of the binary, i.e. redirect
+- `O` – append `>/dev/null` to the call of the binary, i.e. redirect
     standard output to `/dev/null`.
 
 Example:
@@ -149,6 +149,7 @@ myfzf () {
 ---
 
 # 2. **`gem'{gem-name}; …'`**
+
 # **`gem'[{path-to-binary} <-] !{gem-name} [-> {name-of-the-function}]; …'`**
 
 Installs the gem of name `{gem-name}` with `$GEM_HOME` set to the plugin's or
@@ -162,11 +163,11 @@ Example:
 
 ```zsh
 % zinit ice gem'!asciidoctor'
-% zinit load zdharma/null
+% zinit load z-shell/null
 % which asciidoctor
 asciidoctor () {
-        local bindir="/home/sg/.zinit/plugins/zdharma---null/bin" 
-        local -x GEM_HOME="/home/sg/.zinit/plugins/zdharma---null" 
+        local bindir="/home/sg/.zinit/plugins/z-shell---null/bin" 
+        local -x GEM_HOME="/home/sg/.zinit/plugins/z-shell---null" 
         "$bindir"/"asciidoctor" "$@"
 }
 ```
@@ -174,6 +175,7 @@ asciidoctor () {
 ---
 
 # 3. **`node'{node-module}; …'`**
+
 # **`node'[{path-to-binary} <-] !{node-module} [-> {name-of-the-function}]; …'`**
 
 Installs the node module of name `{node-module}` inside the plugin's or
@@ -185,18 +187,18 @@ created with `fbin''` ice.
 Example:
 
 ```zsh
-% zinit delete zdharma/null
-Delete /home/sg/.zinit/plugins/zdharma---null?
+% zinit delete z-shell/null
+Delete /home/sg/.zinit/plugins/z-shell---null?
 [yY/n…]
 y
 Done (action executed, exit code: 0)
 % zinit ice node'remark <- !remark-cli -> remark; remark-man'
-% zinit load zdharma/null
+% zinit load z-shell/null
 …installation messages…
 % which remark
 remark () {
-        local bindir="/home/sg/.zinit/plugins/zdharma---null/node_modules/.bin"
-        local -x NODE_PATH="/home/sg/.zinit/plugins/zdharma---null"/node_modules
+        local bindir="/home/sg/.zinit/plugins/z-shell---null/node_modules/.bin"
+        local -x NODE_PATH="/home/sg/.zinit/plugins/z-shell---null"/node_modules
         "$bindir"/"remark" "$@"
 }
 ```
@@ -208,6 +210,7 @@ has been used.
 ---
 
 # 4. **`fmod'[{g|n|c|N|E|O}:]{function-name}; …'`**
+
 # **`fmod'[{g|n|c|N|E|O}:]{function-name} -> {wrapping-function-name}; …'`**
 
 It wraps given function with the ability to set `$GEM_HOME`, etc. – the
@@ -218,15 +221,15 @@ Example:
 ```zsh
 % myfun() { pwd; ls -1 }
 % zinit ice fmod'cgn:myfun'
-% zinit load zdharma/null
+% zinit load z-shell/null
 % which myfun
 myfun () {
-        local -x GEM_HOME="/home/sg/.zinit/plugins/zdharma---null"
-        local -x NODE_PATH="/home/sg/.zinit/plugins/zdharma---null"/node_modules
+        local -x GEM_HOME="/home/sg/.zinit/plugins/z-shell---null"
+        local -x NODE_PATH="/home/sg/.zinit/plugins/z-shell---null"/node_modules
         local oldpwd="/home/sg/.zinit/plugins/zinit---z-a-bin-gem-node"
         () {
                 setopt localoptions noautopushd
-                builtin cd -q "/home/sg/.zinit/plugins/zdharma---null"
+                builtin cd -q "/home/sg/.zinit/plugins/z-shell---null"
         }
         "myfun--za-bgn-orig" "$@"
         () {
@@ -235,7 +238,7 @@ myfun () {
         }
 }
 % myfun
-/home/sg/.zinit/plugins/zdharma---null
+/home/sg/.zinit/plugins/z-shell---null
 LICENSE
 README.md
 ```
@@ -276,6 +279,7 @@ fzf "$@"
 ---
 
 # 6. **`fsrc'[{g|n|c|N|E|O}:]{path-to-script}[ -> {name-of-the-function}]; …'`**
+
 # 7. **`ferc'[{g|n|c|N|E|O}:]{path-to-script}[ -> {name-of-the-function}]; …'`**
 
 Creates a wrapper function that at each invocation sources the given file.
@@ -287,10 +291,10 @@ Example:
 
 ```zsh
 % zinit ice fsrc"myscript -> myfunc" ferc"myscript"
-% zinit load zdharma/null
+% zinit load z-shell/null
 % which myfunc
 myfunc () {
-        local bindir="/home/sg/.zinit/plugins/zdharma---null"
+        local bindir="/home/sg/.zinit/plugins/z-shell---null"
         () {
                 source "$bindir"/"myscript"
         } "$@"

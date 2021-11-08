@@ -54,10 +54,6 @@ zinit light b4b4r07/gotcha
 zinit ice as"program" pick"yank" make
 zinit light mptre/yank
 
-zinit ice wait"2" lucid as'command' pick'src/vramsteg' \
-    atclone'cmake .' atpull'%atclone' make  # use Turbo mode
-zinit light psprint/vramsteg-zsh
-
 zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
     atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
@@ -67,7 +63,7 @@ zinit ice as"program" pick"$ZPFX/sdkman/bin/sdk" id-as'sdkman' run-atpull \
     atclone"wget https://get.sdkman.io/?rcupdate=false -O scr.sh; SDKMAN_DIR=$ZPFX/sdkman bash scr.sh" \
     atpull"SDKMAN_DIR=$ZPFX/sdkman sdk selfupdate" \
     atinit"export SDKMAN_DIR=$ZPFX/sdkman; source $ZPFX/sdkman/bin/sdkman-init.sh"
-zinit light zdharma/null
+zinit light z-shell/null
 
 # asciinema
 zinit ice as"command" wait lucid \
@@ -82,7 +78,7 @@ zinit load asciinema/asciinema.git
 zinit id-as"rust" wait=1 as=null sbin="bin/*" lucid rustup \
     atload="[[ ! -f ${ZINIT[COMPLETIONS_DIR]}/_cargo ]] && zi creinstall -q rust; \
     export CARGO_HOME=\$PWD; export RUSTUP_HOME=\$PWD/rustup" for \
-        zdharma/null
+        z-shell/null
 ```
 
 ## Completions
@@ -140,7 +136,7 @@ zinit light paoloantinori/hhighlighter
 
 # zsh-tag-search; after ^G, prepend with "/" for the regular search
 zinit ice wait lucid bindmap"^R -> ^G"
-zinit light -b zdharma/zsh-tag-search
+zinit light -b z-shell/zsh-tag-search
 
 # forgit
 zinit ice wait lucid
@@ -148,15 +144,15 @@ zinit load 'wfxr/forgit'
 
 # diff-so-fancy
 zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
-zinit load zdharma/zsh-diff-so-fancy
+zinit load z-shell/zsh-diff-so-fancy
 
 # zsh-startify, a vim-startify like plugin
 zinit ice wait"0b" lucid atload"zsh-startify"
-zinit load zdharma/zsh-startify
+zinit load z-shell/zsh-startify
 
 # declare-zsh
 zinit ice wait"2" lucid
-zinit load zdharma/declare-zsh
+zinit load z-shell/declare-zsh
 
 # fzf-marks
 zinit ice wait lucid
@@ -167,19 +163,19 @@ zinit ice wait lucid
 zinit load hlissner/zsh-autopair
 
 zinit ice wait"1" lucid
-zinit load psprint/zsh-navigation-tools
+zinit load z-shell/zsh-navigation-tools
 
-# zdharma/history-search-multi-word
+# z-shell/history-search-multi-word
 zstyle ":history-search-multi-word" page-size "11"
 zinit ice wait"1" lucid
-zinit load zdharma/history-search-multi-word
+zinit load z-shell/history-search-multi-word
 
 # ZUI and Crasis
 zinit ice wait"1" lucid
-zinit load zdharma/zui
+zinit load z-shell/zui
 
 zinit ice wait'[[ -n ${ZLAST_COMMANDS[(r)cra*]} ]]' lucid
-zinit load zdharma/zinit-crasis
+zinit load z-shell/zinit-crasis
 
 # Gitignore plugin – commands gii and gi
 zinit ice wait"2" lucid
@@ -187,7 +183,7 @@ zinit load voronkovich/gitignore.plugin.zsh
 
 # Autosuggestions & fast-syntax-highlighting
 zinit ice wait lucid atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
-zinit light zdharma/fast-syntax-highlighting
+zinit light z-shell/fast-syntax-highlighting
 # zsh-autosuggestions
 zinit ice wait lucid atload"!_zsh_autosuggest_start"
 zinit load zsh-users/zsh-autosuggestions
@@ -203,13 +199,13 @@ zstyle ":plugin:zredis" configure_opts "--without-tcsetpgrp"
 zstyle ":plugin:zredis" cflags  "-Wall -O2 -g -Wno-unused-but-set-variable"
 zinit ice wait"1" lucid \
     atload'ztie -d db/redis -a 127.0.0.1:4815/5 -zSL main rdhash'
-zinit load zdharma/zredis
+zinit load z-shell/zredis
 
 # Github-Issue-Tracker – the notifier thread
 zinit ice lucid id-as"GitHub-notify" \
         on-update-of'~/.cache/zsh-github-issues/new_titles.log' \
         notify'New issue: $NOTIFY_MESSAGE'
-zinit light zdharma/zsh-github-issues
+zinit light z-shell/zsh-github-issues
 ```
 
 ## Services
@@ -223,10 +219,10 @@ zinit light zservices/redis
 ```zsh
 # Github-Issue-Tracker – the issue-puller thread
 GIT_SLEEP_TIME=700
-GIT_PROJECTS=zdharma/zsh-github-issues:zdharma/zinit
+GIT_PROJECTS=z-shell/zsh-github-issues:z-shell/zinit
 
 zinit ice wait"2" lucid service"GIT" pick"zsh-github-issues.service.zsh"
-zinit light zdharma/zsh-github-issues
+zinit light z-shell/zsh-github-issues
 ```
 
 ## Snippets

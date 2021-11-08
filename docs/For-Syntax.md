@@ -14,7 +14,6 @@ It is a fundamental Zinit syntax. However, a more concise, optimized syntax,
 called *for-syntax*, is also available. It is best presented by a real-world
 example:
 
-
 ```zsh
 zinit as"null" wait"3" lucid for \
     sbin  Fakerr/git-recall \
@@ -53,7 +52,7 @@ zinit as"null" wait"2" lucid from"gh-r" for \
 ```
 
 Note: `sbin''` is an ice added by the
-[z-a-bin-gem-node](https://github.com/zinit/z-a-bin-gem-node) annex, it
+[z-a-bin-gem-node](https://github.com/z-shell/z-a-bin-gem-node) annex, it
 provides the command to the command line without altering `$PATH`. If the name
 of the command is the same as the name of the plugin, the ice contents can be
 skipped.

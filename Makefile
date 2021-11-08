@@ -11,5 +11,5 @@ gh-pages: wiki
 	cat .git/COMMIT_EDITMSG_
 	git commit -F .git/COMMIT_EDITMSG_ && git push -f origin gh-pages
 
-master: wiki
-	git checkout master
+main: wiki
+	git checkout main

@@ -28,7 +28,7 @@ Simply load as a plugin. The following command will install the annex within
 Zinit:
 
 ```zsh
-zinit light zinit-zsh/z-a-submods
+zinit light z-shell/z-a-submods
 ```
 
 After executing this command you can then use the `submods''` ice. The command

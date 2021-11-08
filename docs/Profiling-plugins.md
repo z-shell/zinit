@@ -1,14 +1,14 @@
 ```zsh
 zinit ice atinit'zmodload zsh/zprof' \
     atload'zprof | head -n 20; zmodload -u zsh/zprof'
-zinit light zdharma/fast-syntax-highlighting
+zinit light z-shell/fast-syntax-highlighting
 ```
 
  - `atinit''` loads `zsh/zprof` module (shipped with Zsh) before loading the
    plugin – this starts the profiling,
  - `atload''` works after loading the plugin – shows profiling results (`zprof |
    head`), unloads `zsh/zprof` - this stops the profiling; in the effect, only a
-   single plugin (in this case `zdharma/fast-syntax-highlighting`) will be
+   single plugin (in this case `z-shell/fast-syntax-highlighting`) will be
    profiled while the rest of the e.g. zshrc processing will go on completely
    normally,
  - the `light` loads without reporting enabled, so less Zinit code is being

@@ -1,52 +1,52 @@
 site_name: Zinit Wiki
 nav:
-- "Introduction":
-  - "Introduction": INTRODUCTION.md
-  - "The For Syntax": For-Syntax.md
-  - "Zinit Packages": Zinit-Packages.md
-- "Ice Modifiers":
-  - "Alternate Ice Syntax": Alternate-Ice-Syntax.md
-  - "Nickname a Plugin or Snippet": id-as.md
-  - "Loading Plugins From Private Repositories": Private-Repositories.md
-  - "Remapping Bindkeys": Bindkeys.md
-  - "Multiple Prompts": Multiple-prompts.md
-  - "Example wait Conditions": Example-wait-conditions.md
-  - "Installing With Make": Installing-with-make.md
-  - "Sourcing Multiple Files": Sourcing-multiple-files.md
-  - "extract Ice": extract-Ice.md
-  - "Tracking precmd-based Plugins": wrap-track.md
-  - "Tracking precmd-based Plugins (2)": atload-and-other-at-ices.md
-- "Examples":
-  - "Example Minimal Setup": Example-Minimal-Setup.md
-  - "Example Oh My Zsh Setup": Example-Oh-My-Zsh-setup.md
-  - "LS_COLORS Explanation": LS_COLORS-explanation.md
-  - "Direnv Explanation": Direnv-explanation.md
-  - "Compiling Programs": Compiling-programs.md
-  - "Profiling Plugins": Profiling-plugins.md
-  - "Gallery": GALLERY.md
-- "Zinit Extensions":
-  - "Annexes": Annexes.md
-  - "z-a-bin-gem-node": z-a-bin-gem-node.md
-  - "z-a-patch-dl": z-a-patch-dl.md
-  - "z-a-man": z-a-man.md
-  - "z-a-test": z-a-test.md
-  - "z-a-submods": z-a-submods.md
-  - "declare-zsh": declare-zsh.md
-  - "Crasis": crasis.md
-- "Various Documents":
-  - "Zsh Plugin Standard": zsh-plugin-standard.md
-  - "Zsh Native Scripting Handbook": zsh-native-scripting-handbook.md
-- "Code Documentation": 
-  - "Overview": Code-Documentation.md
-  - "zinit.zsh": zinit.zsh.md
-  - "zinit-side.zsh": zinit-side.zsh.md
-  - "zinit-install.zsh": zinit-install.zsh.md
-  - "zinit-autoload.zsh": zinit-autoload.zsh.md
+  - "Introduction":
+      - "Introduction": INTRODUCTION.md
+      - "The For Syntax": For-Syntax.md
+      - "Zinit Packages": Zinit-Packages.md
+  - "Ice Modifiers":
+      - "Alternate Ice Syntax": Alternate-Ice-Syntax.md
+      - "Nickname a Plugin or Snippet": id-as.md
+      - "Loading Plugins From Private Repositories": Private-Repositories.md
+      - "Remapping Bindkeys": Bindkeys.md
+      - "Multiple Prompts": Multiple-prompts.md
+      - "Example wait Conditions": Example-wait-conditions.md
+      - "Installing With Make": Installing-with-make.md
+      - "Sourcing Multiple Files": Sourcing-multiple-files.md
+      - "extract Ice": extract-Ice.md
+      - "Tracking precmd-based Plugins": wrap-track.md
+      - "Tracking precmd-based Plugins (2)": atload-and-other-at-ices.md
+  - "Examples":
+      - "Example Minimal Setup": Example-Minimal-Setup.md
+      - "Example Oh My Zsh Setup": Example-Oh-My-Zsh-setup.md
+      - "LS_COLORS Explanation": LS_COLORS-explanation.md
+      - "Direnv Explanation": Direnv-explanation.md
+      - "Compiling Programs": Compiling-programs.md
+      - "Profiling Plugins": Profiling-plugins.md
+      - "Gallery": GALLERY.md
+  - "Zinit Extensions":
+      - "Annexes": Annexes.md
+      - "z-a-bin-gem-node": z-a-bin-gem-node.md
+      - "z-a-patch-dl": z-a-patch-dl.md
+      - "z-a-man": z-a-man.md
+      - "z-a-test": z-a-test.md
+      - "z-a-submods": z-a-submods.md
+      - "declare-zsh": declare-zsh.md
+      - "Crasis": crasis.md
+  - "Various Documents":
+      - "Zsh Plugin Standard": zsh-plugin-standard.md
+      - "Zsh Native Scripting Handbook": zsh-native-scripting-handbook.md
+  - "Code Documentation":
+      - "Overview": Code-Documentation.md
+      - "zinit.zsh": zinit.zsh.md
+      - "zinit-side.zsh": zinit-side.zsh.md
+      - "zinit-install.zsh": zinit-install.zsh.md
+      - "zinit-autoload.zsh": zinit-autoload.zsh.md
 
 theme:
   name: material
-  custom_dir: 'docs/theme'
-  logo: 'img/logo.png'
+  custom_dir: "docs/theme"
+  logo: "img/logo.png"
   feature:
     tabs: true
 markdown_extensions:
@@ -56,8 +56,8 @@ markdown_extensions:
   - pymdownx.mark:
   - pymdownx.smartsymbols:
   - toc:
-      permalink: '#'
-      separator: '_'
+      permalink: "#"
+      separator: "_"
 extra_css:
   - css/theme.css
   - css/syntax-highlighting.css
@@ -66,7 +66,5 @@ extra_javascript:
   - js/init.js
 extra:
   social:
-    - type: 'github'
-      link: 'https://github.com/zdharma/zinit'
-    - type: 'reddit'
-      link: 'https://www.reddit.com/r/zinit/'
+    - type: "github"
+      link: "https://github.com/z-shell/zinit"
