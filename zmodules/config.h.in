@@ -17,7 +17,7 @@
 
 /* Define this if you use "suspended" instead of "stopped" */
 #define USE_SUSPENDED 1
- 
+
 /* The default history buffer size in lines */
 #define DEFAULT_HISTSIZE 30
 

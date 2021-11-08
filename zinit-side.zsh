@@ -69,7 +69,7 @@
 
     .zinit-any-to-pid "$1" "$2"
     .zinit-get-object-path plugin "$REPLY"
-    integer ret=$? 
+    integer ret=$?
     local dname="$REPLY"
     (( ret )) && { reply=( "$dname" "" ); return 1; }
 

@@ -21,7 +21,7 @@ comptestinit () {
   export PS1="<PROMPT>"
   zpty zsh "$comptest_zsh -f +Z"
 
-  zpty -r zsh log1 "*<PROMPT>*" || { 
+  zpty -r zsh log1 "*<PROMPT>*" || {
     print "first prompt hasn't appeared."
     return 1
   }

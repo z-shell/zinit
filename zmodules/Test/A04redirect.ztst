@@ -240,7 +240,7 @@
 >Output
 
   rm -f errout
-  print doo be doo be doo >foo >bar 
+  print doo be doo be doo >foo >bar
   print "foo: $(<foo)\nbar: $(<bar)"
 0:2-file multio
 >foo: doo be doo be doo

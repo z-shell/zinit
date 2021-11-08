@@ -115,7 +115,7 @@
 0:ALL_EXPORT option
 >scalar-export
 >scalar
-  
+
   # Count the number of directories on the stack.  Don't care what they are.
   dircount() { dirs -v | tail -1 | awk '{ print $1 + 1}'; }
   unsetopt autopushd
@@ -459,7 +459,7 @@
              for v in first second third; do
                eval print \$$v \$\{\(t\)$v\}
 	     done;
-           }      
+           }
   setit() { typeset -x first=inside1;
             typeset +g -x second=inside2;
             typeset -g -x third=inside3;
@@ -890,7 +890,7 @@
   unsetopt pushdminus
   popd >/dev/null
   popd >/dev/null
-  cd $mydir  
+  cd $mydir
 0q:PUSHD_MINUS option
 >$mydirt/newcd $mydirt/tmpcd $mydirt
 >$mydirt $mydirt/newcd $mydirt/tmpcd
@@ -1016,7 +1016,7 @@
 >hello
 >this is bar
 
-  fn() { 
+  fn() {
     eval 'for f in foo bar; print $f'
     eval 'for f (word1 word2) print $f'
     eval 'repeat 3 print nonsense'

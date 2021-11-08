@@ -7,7 +7,7 @@
 # mess up the syntax.
 BEGIN { printf "#include <signal.h>\n\n" }
 
-/^[\t ]*#[\t ]*define[\t _]*SIG[A-Z][A-Z0-9]*[\t ][\t ]*[^(\t ]/ { 
+/^[\t ]*#[\t ]*define[\t _]*SIG[A-Z][A-Z0-9]*[\t ][\t ]*[^(\t ]/ {
     sigindex = index($0, "SIG")
     sigtail = substr($0, sigindex, 80)
     split(sigtail, tmp)

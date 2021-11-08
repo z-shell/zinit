@@ -277,7 +277,7 @@
 >A
 >0 1 1
 
-  zregexparse p1 p2 $'\0' $'/\0/' '{print A}' '/ /' '{print B}'  
+  zregexparse p1 p2 $'\0' $'/\0/' '{print A}' '/ /' '{print B}'
   print $? $p1 $p2
 0:"\0" /\0/ {A} / / {B}
 >1 1 1

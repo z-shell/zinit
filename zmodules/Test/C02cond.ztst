@@ -370,7 +370,7 @@ F:Failures in these cases do not indicate a problem in the shell.
 >crashme () {
 >	if [[ $1 =~ ^http:* ]]
 >	then
->		url=${1#*=} 
+>		url=${1#*=}
 >	fi
 >}
 

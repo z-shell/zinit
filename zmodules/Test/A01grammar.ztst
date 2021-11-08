@@ -310,8 +310,8 @@
   done)
 0:`select' loop
 <2
-?1) one     2) two     3) three   
-?input> input> 
+?1) one     2) two     3) three
+?input> input>
 >two
 
   function name1 name2 () { print This is $0; }
@@ -747,7 +747,7 @@
   fn
 0:Long case with parsed alternatives turned back into text
 >fn () {
->	typeset ac_file="the else branch" 
+>	typeset ac_file="the else branch"
 >	case $ac_file in
 >		(*.$ac_ext | *.xcoff | *.tds | *.d | *.pdb | *.xSYM | *.bb | *.bbg | *.map | *.inf | *.dSYM | *.o | *.obj)  ;;
 >		(*.*) break ;;

@@ -333,7 +333,7 @@ All notable changes to this project will be documented in this file.
 
     In other words, instead of `wait'1'` you can enter `wait'1a'`,
     `wait'1b'` and `wait'1c'` – to this way **impose order** on the loadings
-    **regardless of the order of `zinit` commands**. 
+    **regardless of the order of `zinit` commands**.
 * 26-05-2019
   - Turbo-Mode now divides the scheduled events (i.e. loadings of plugins or snippets)
     into packs of 5. In other words, after loading each series of 5 plugins or snippets
