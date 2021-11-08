@@ -3,7 +3,7 @@ wiki: docs/*.md docs/css/*.css
 
 gh-pages: wiki
 	mv -vf wiki wiki_
-	git checkout origin/gh-pages
+	git checkout gh-pages
 	rm -rf wiki
 	mv -vf wiki_ wiki
 	git add -A wiki
