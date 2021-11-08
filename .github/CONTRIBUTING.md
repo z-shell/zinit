@@ -4,8 +4,6 @@ This documentation contains a set of guidelines to help you during the contribut
 We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project.
 Thank you for helping out and remember, **no contribution is too small.**
 
-For some tips please see [Styling-Guidelines](STYLE_GUIDELINES.md).
-
 ### Need some help regarding the basics?🤔
 
 You can refer to the following articles on basics of Git and Github and also contact the Project Mentors,
@@ -27,8 +25,6 @@ Below you will find the process and workflow used to review and merge your chang
 - Wait for the Issue to be assigned to you after which you can start working on it.
 - Note : Every change in this project should/must have an associated issue.
 
-![script](https://user-images.githubusercontent.com/44089458/86088644-5d4e7280-bac4-11ea-951d-18965e11877b.jpg)
-
 ### Step 1 : Fork the Project
 
 - Fork this Repository. This will create a Local Copy of this Repository on your Github Profile.
@@ -39,9 +35,6 @@ git clone https://github.com/<your-username>/<repo-name>
 cd <repo-name>  
 git remote add upstream https://github.com/<upstream-owner>/<repo-name>  
 ```  
-
-![script1](https://user-images.githubusercontent.com/44089458/86088965-ebc2f400-bac4-11ea-80d3-80d5e52e4353.jpg)  
-
 - If you have already forked the project, update your copy before working.
 
 ```bash
@@ -94,17 +87,11 @@ git commit -m "message"
 git push -u origin Branch_Name
 ```
 
-- Here is how your branch will look.
-![br](https://user-images.githubusercontent.com/44089458/86090718-3d20b280-bac8-11ea-971d-15be55cfe259.jpg) 
-
 ### Step 6 : Pull Request
 
 - Go to your repository in browser and click on compare and pull requests.
 Then add a title and description to your pull request that explains your contribution.  
-<img width="677" alt="pr" src="https://user-images.githubusercontent.com/44089458/86090744-4b6ece80-bac8-11ea-9d69-a0098e9d4874.PNG">  
-
-<img width="882" alt="pullr" src="https://user-images.githubusercontent.com/44089458/86092345-fed8c280-baca-11ea-9a04-95991d9c60d2.PNG">  
-- Voila! Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳
+- Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳
 
 ### Note : Do not add images, rather 👇 
 
@@ -113,6 +100,4 @@ Then add a title and description to your pull request that explains your contrib
     #### How to do that? 
 
     - You can do that by hosting all you images and screenshots to any images hosting sites such as [imgur](https://imgur.com/), [imgbb](https://imgbb.com/), [postimages](https://postimages.org/).
-    - Then link your uploaded images to README files. An instance 👇
-    
-    ![update_readme](https://media.giphy.com/media/45Bc4gO8j4D0oCLg0g/giphy.gif)
+    - Then link your uploaded images to README files.
