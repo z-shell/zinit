@@ -1,7 +1,7 @@
 language: ruby
 dist: bionic
 rvm:
-  - 2.6
+  - 2.7
 install: gem install asciidoctor-pdf --pre
 git:
   depth: 1
