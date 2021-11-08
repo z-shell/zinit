@@ -1,5 +1,5 @@
 language: ruby
-dist: bionic
+dist: focal
 rvm:
   - 2.7
 install: gem install asciidoctor-pdf --pre
