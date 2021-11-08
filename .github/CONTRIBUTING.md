@@ -4,7 +4,7 @@ This documentation contains a set of guidelines to help you during the contribut
 We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project.
 Thank you for helping out and remember, **no contribution is too small.**
 
-For some tips please see [Styling-Guidelines](.github/STYLE_GUIDELINES.md).
+For some tips please see [Styling-Guidelines](STYLE_GUIDELINES.md).
 
 ### Need some help regarding the basics?🤔
 
