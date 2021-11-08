@@ -71,6 +71,13 @@
 <details>
   <summary>Here are the new features and updates added to Zinit in the last 90 days.</summary>
 
+- 08-11-2021
+
+  - Zinit Packages for `zinit pack ...` listed in [#zinit-package](https://github.com/search?q=topic%3Azinit-package+org%3Az-shell&type=Repositories) topic.
+  - Zinit Annexes (i.e. an extension) listed in [#zinit-annex](https://github.com/search?q=topic%3Azinit-annex+org%3Az-shell&type=Repositories) topic.
+  - Zinit Services listed in [#zinit-service](https://github.com/search?q=topic%3Azinit-service+org%3Az-shell&type=Repositories) topic.
+  - [Zinit Wiki](https://z-shell.github.io/zinit/wiki/) mostly restored.
+
 - 05-11-2021
 
   - The packages have been disconnected from NPM registry and now live only on z-shell organization under [#zinit-package](https://github.com/search?q=topic%3Azinit-package+org%3Az-shell&type=Repositories) topic. Publishing to NPM isn't needed.
@@ -553,7 +560,7 @@
 
     The output:
 
-    ```
+    ```sh
     First!
     Hi!
     Second!
@@ -697,6 +704,8 @@ To see the full history check [the changelog](doc/CHANGELOG.md).
 <img width="440px" src="https://raw.githubusercontent.com/z-shell/zinit/images/startup-times.png"/>
 </a>
 </p>
+
+# Introduction
 
 Zinit is a flexible and fast Zshell plugin manager that will allow you to
 install everything from GitHub and other sites. Its characteristics are:
@@ -1390,7 +1399,7 @@ explicitly stated otherwise.
 |     [**`id-as`**](http://z-shell.github.io/zinit/wiki/id-as/)      | <div align="justify" style="text-align: justify;">Nickname a plugin or snippet, to e.g. create a short handler for long-url snippet.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |                             `compile`                              | <div align="justify" style="text-align: justify;">Pattern (+ possible `{...}` expansion, like `{a/*,b*}`) to select additional files to compile, e.g. `compile"(pure\|async).zsh"` for `sindresorhus/pure`.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |                            `nocompile`                             | <div align="justify" style="text-align: justify;">Don't try to compile `pick`-pointed files. If passed the exclamation mark (i.e. `nocompile'!'`), then do compile, but after `make''` and `atclone''` (useful if Makefile installs some scripts, to point `pick''` at the location of their installation).</div>                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                             `service`                              | <div align="justify" style="text-align: justify;">Make following plugin or snippet a _service_, which will be ran in background, and only in single Zshell instance. See [z-shell-organization](https://github.com/z-shell) page.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                             `service`                              | <div align="justify" style="text-align: justify;">Make following plugin or snippet a _service_, which will be ran in background, and only in single Zshell instance. See [z-shell-organization](https://github.com/z-shell) page.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                           `reset-prompt`                           | <div align="justify" style="text-align: justify;">Reset the prompt after loading the plugin/snippet (by issuing `zle .reset-prompt`). Note: normally it's sufficient to precede the value of `wait''` ice with `!`.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |                             `bindmap`                              | <div align="justify" style="text-align: justify;">To hold `;`-separated strings like `Key(s)A -> Key(s)B`, e.g. `^R -> ^T; ^A -> ^B`. In general, `bindmap''`changes bindings (done with the `bindkey` builtin) the plugin does. The example would cause the plugin to map Ctrl-T instead of Ctrl-R, and Ctrl-B instead of Ctrl-A. **Does not work with snippets.**</div>                                                                                                                                                                                                                                                                                                                                                 |
 |                            `trackbinds`                            | <div align="justify" style="text-align: justify;">Shadow but only `bindkey` calls even with `zinit light ...`, i.e. even with investigating disabled (fast loading), to allow `bindmap` to remap the key-binds. The same effect has `zinit light -b ...`, i.e. additional `-b` option to the `light`-subcommand. **Does not work with snippets.**</div>                                                                                                                                                                                                                                                                                                                                                                   |
