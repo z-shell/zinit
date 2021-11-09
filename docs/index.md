@@ -1,4 +1,6 @@
-# ![logo](img/zinit.png)
+
+
+![logo](img/zinit.png)
 
 This is the Zinit wiki. The goal is to complement the
 [**README**](https://github.com/z-shell/zinit/blob/main/README.md) by providing
