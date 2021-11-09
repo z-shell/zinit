@@ -81,19 +81,19 @@ hook (presumably in the `myproject.plugin.zsh` file) with the API call:
 
 ```zsh
 @zinit-register-annex myproject hook:atclone \
-    →za-myproject-atclone-handler \
-    →za-myproject-atclone-help-handler \
-    "submods''" # register a new ice-mod: submods''
+  →za-myproject-atclone-handler \
+  →za-myproject-atclone-help-handler \
+  "submods''" # register a new ice-mod: submods''
 ```
 
 The general syntax of the API call is:
 
 ```zsh
 @zinit-register-annex {project-name} \
-    {hook:<hook-type>|subcommand:<new-subcommand-name>} \
-    {name-of-the-handler-function} \
-    {name-of-the-HELP-handler-function} \
-    "{ice-mod1}|{ice-mod2}|…"
+  {hook: \
+  {name-of-the-handler-function} \
+  {name-of-the-HELP-handler-function} \
+  "{ice-mod1}|{ice-mod2}|…" < hook-type >| subcommand: < new-subcommand-name > }
 ```
 
 The last argument, i.e. the `|`-separated ice-list, is optional. That’s all\!

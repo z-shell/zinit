@@ -15,7 +15,7 @@ However, via `atload''` ice one can provide simple loop to source more files:
 
 ```zsh
 zinit ice svn pick"completion.zsh" \
-    atload'local f; for f in git.zsh misc.zsh; do \
+  atload'local f; for f in git.zsh misc.zsh; do \
         source $f \
     done'
 zinit snippet OMZ::lib
@@ -54,23 +54,23 @@ zinit load robbyrussell/oh-my-zsh
 zinit ice svn multisrc"{funct*,misc}.zsh" pick"/dev/null"
 zinit snippet OMZ::lib
 
-array=( {functions,misc}.zsh )
+array=({functions,misc}.zsh)
 zinit ice svn multisrc"$array" pick"/dev/null"
 zinit snippet OMZ::lib
 
 # Will use the array's value at the moment of plugin load
 # – this can matter in case of using Turbo mode
-array=( {functions,misc}.zsh )
+array=({functions,misc}.zsh)
 zinit ice svn multisrc"\$array" pick"/dev/null"
 zinit snippet OMZ::lib
 
 # Compatible with KSH_ARRAYS option
-array=( {functions,misc}.zsh )
+array=({functions,misc}.zsh)
 zinit ice svn multisrc"${array[*]}" pick"/dev/null"
 zinit snippet OMZ::lib
 
 # Compatible with KSH_ARRAYS option
-array=( {functions,misc}.zsh )
+array=({functions,misc}.zsh)
 zinit ice svn multisrc"\${array[*]}" pick"/dev/null"
 zinit snippet OMZ::lib
 
@@ -84,7 +84,7 @@ zinit snippet OMZ::lib
 # opening paren. In the code be careful to not redefine any variable
 # used internally by Zinit – e.g.: `i' is safe:
 
-array=( {functions,misc}.zsh )
+array=({functions,misc}.zsh)
 zinit ice svn multisrc'); local i; for i in $array; do \
             reply+=( ${i/.zsh/.sh} ); \
         done; ((1)' pick"/dev/null"
@@ -109,9 +109,9 @@ it's possible to write:
 
 ```shell
 zinit for \
-    OMZL::functions.zsh \
-    OMZL::misc.zsh \
-    OMZL::completion.zsh
+  OMZL::functions.zsh \
+  OMZL::misc.zsh \
+  OMZL::completion.zsh
 ```
 
 which is somewhat easier on eyes. Also – an **important** property: the multiple

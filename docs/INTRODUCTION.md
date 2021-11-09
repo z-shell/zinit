@@ -116,7 +116,7 @@ if a proper `atpull` (an ice–modifier ran at **update** of plugin) will be use
 
 ```zsh
 zinit ice as"program" mv"httpstat.sh -> httpstat" \
-      pick"httpstat" atpull'!git reset --hard'
+  pick"httpstat" atpull'!git reset --hard'
 zinit light b4b4r07/httpstat
 ```
 
@@ -141,9 +141,9 @@ Commands can also be added to `$PATH` using **snippets**. For example:
 
 ```zsh
 zinit ice mv"httpstat.sh -> httpstat" \
-        pick"httpstat" as"program"
+  pick"httpstat" as"program"
 zinit snippet \
-    https://github.com/b4b4r07/httpstat/blob/master/httpstat.sh
+  https://github.com/b4b4r07/httpstat/blob/master/httpstat.sh
 ```
 
 <a id="on_svn_revert"></a>
@@ -178,8 +178,8 @@ completions of a newly downloaded plugin. To uninstall the completions and
 install them again, you would use:
 
 ```zsh
-zinit cuninstall zsh-users/zsh-completions   # uninstall
-zinit creinstall zsh-users/zsh-completions   # install
+zinit cuninstall zsh-users/zsh-completions # uninstall
+zinit creinstall zsh-users/zsh-completions # install
 ```
 
 ### Listing Completions
@@ -200,9 +200,9 @@ that a smaller number of terminal pages will be occupied) like this:
 
 ```zsh
 ...
-atach, bitcoin-cli, bower    zsh-users/zsh-completions
-bundle, caffeinate, cap      zsh-users/zsh-completions
-cask, cf, chattr             zsh-users/zsh-completions
+atach, bitcoin-cli, bower zsh-users/zsh-completions
+bundle, caffeinate, cap zsh-users/zsh-completions
+cask, cf, chattr zsh-users/zsh-completions
 ...
 ```
 
@@ -211,9 +211,9 @@ e.g. `zi clist 6`, will show:
 
 ```zsh
 ...
-bundle, caffeinate, cap, cask, cf, chattr      zsh-users/zsh-completions
-cheat, choc, cmake, coffee, column, composer   zsh-users/zsh-completions
-console, dad, debuild, dget, dhcpcd, diana     zsh-users/zsh-completions
+bundle, caffeinate, cap, cask, cf, chattr zsh-users/zsh-completions
+cheat, choc, cmake, coffee, column, composer zsh-users/zsh-completions
+console, dad, debuild, dget, dhcpcd, diana zsh-users/zsh-completions
 ...
 ```
 
@@ -249,7 +249,8 @@ zinit snippet https://github.com/zsh-users/zsh-completions/trunk/src
 # For Oh My Zsh and Prezto, the OMZ:: and PZT:: prefixes work
 # without the need to add the `/trunk/` infix (however the path
 # should point to a directory, not to a file):
-zinit ice svn; zinit snippet PZT::modules/docker
+zinit ice svn
+zinit snippet PZT::modules/docker
 ```
 
 Snippets too have completions installed by default, like plugins.
@@ -316,7 +317,7 @@ it, by rewriting the above autosuggestions invocation using it:
 
 ```zsh
 zinit wait lucid atload'_zsh_autosuggest_start' light-mode for \
-    zsh-users/zsh-autosuggestions
+  zsh-users/zsh-autosuggestions
 ```
 
 The syntax is a more concise one. The single command will work exactly the same
@@ -344,7 +345,7 @@ array. For example, for `robobenklein/zinc` theme, they'll be two functions:
 `prompt_zinc_setup` and `prompt_zinc_precmd`:
 
 ```zsh
-root@sg > ~ > print $precmd_functions                       < ✔ < 22:21:33
+root@sg > ~ > print $precmd_functions < ✔ < 22:21:33
 _zsh_autosuggest_start prompt_zinc_setup prompt_zinc_precmd
 ```
 
@@ -352,7 +353,7 @@ Then, add them to the ice-list in the `atload''` ice:
 
 ```zsh
 zinit ice wait'!' lucid nocd \
-    atload'!prompt_zinc_setup; prompt_zinc_precmd'
+  atload'!prompt_zinc_setup; prompt_zinc_precmd'
 zinit load robobenklein/zinc
 ```
 
@@ -369,7 +370,7 @@ unactive. For example:
 # Load when in ~/tmp
 
 zinit ice load'![[ $PWD = */tmp* ]]' unload'![[ $PWD != */tmp* ]]' \
-    atload"!promptinit; prompt sprint3"
+  atload"!promptinit; prompt sprint3"
 zinit load psprint/zprompts
 
 # Load when NOT in ~/tmp

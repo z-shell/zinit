@@ -8,8 +8,8 @@ following way:
 
 ```zsh
 zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
-        direnv/direnv
+  atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+  direnv/direnv
 ```
 
 - `make'!'` – compile `direnv` (it's written in Go lang); the exclamation mark
@@ -31,9 +31,9 @@ The project is also available as binary Github release. This distribution can be
 
 ```zsh
 zinit from"gh-r" as"program" mv"direnv* -> direnv" \
-    atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
-    pick"direnv" src="zhook.zsh" for \
-        direnv/direnv
+  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+  pick"direnv" src="zhook.zsh" for \
+  direnv/direnv
 ```
 
 - `from"gh-r"` – install from Github **releases**,

@@ -5,13 +5,13 @@ zinit load halfo/lambda-mod-zsh-theme
 
 # Load when MYPROMPT == 2
 zinit ice load'![[ $MYPROMPT = 2 ]]' unload'![[ $MYPROMPT != 2 ]]' \
-    pick"/dev/null" multisrc"{async,pure}.zsh" \
-    atload'!prompt_pure_precmd' lucid nocd
+  pick"/dev/null" multisrc"{async,pure}.zsh" \
+  atload'!prompt_pure_precmd' lucid nocd
 zinit load sindresorhus/pure
 
 # Load when MYPROMPT == 3
 zinit ice load'![[ $MYPROMPT = 3 ]]' unload'![[ $MYPROMPT != 3 ]]' \
-          atload'!geometry::prompt' lucid nocd
+  atload'!geometry::prompt' lucid nocd
 zinit load geometry-zsh/geometry
 ```
 

@@ -80,7 +80,7 @@ article, but using the _exclamation mark_-preceded `atload` instead of
 ```zsh
 # Load when MYPROMPT == 4
 zinit ice load'![[ $MYPROMPT = 4 ]]' unload'![[ $MYPROMPT != 4 ]]' \
-            atload'!source ~/.p10k.zsh; _p9k_precmd'
+  atload'!source ~/.p10k.zsh; _p9k_precmd'
 zinit load romkatv/powerlevel10k
 ```
 

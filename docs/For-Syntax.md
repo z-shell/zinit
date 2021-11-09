@@ -16,12 +16,12 @@ example:
 
 ```zsh
 zinit as"null" wait"3" lucid for \
-    sbin  Fakerr/git-recall \
-    sbin  paulirish/git-open \
-    sbin  paulirish/git-recent \
-    sbin  davidosomething/git-my \
-    make"PREFIX=$ZPFX install"  iwata/git-now \
-    make"PREFIX=$ZPFX"          tj/git-extras
+  sbin Fakerr/git-recall \
+  sbin paulirish/git-open \
+  sbin paulirish/git-recent \
+  sbin davidosomething/git-my \
+  make"PREFIX=$ZPFX install" iwata/git-now \
+  make"PREFIX=$ZPFX" tj/git-extras
 ```
 
 Above single command installs 6 plugins (Git extension-packages), with the base
@@ -46,9 +46,9 @@ Load a few useful binary (i.e.: binary packages from the GitHub Releases) utils:
 
 ```zsh
 zinit as"null" wait"2" lucid from"gh-r" for \
-    mv"exa* -> exa" sbin       ogham/exa \
-    mv"fd* -> fd" sbin"fd/fd"  @sharkdp/fd \
-    sbin"fzf"  junegunn/fzf-bin
+  mv"exa* -> exa" sbin ogham/exa \
+  mv"fd* -> fd" sbin"fd/fd" @sharkdp/fd \
+  sbin"fzf" junegunn/fzf-bin
 ```
 
 Note: `sbin''` is an ice added by the
@@ -61,16 +61,16 @@ Turbo load some plugins, without any plugin-specific ices:
 
 ```zsh
 zinit wait lucid for \
-            hlissner/zsh-autopair \
-            urbainvaes/fzf-marks
+  hlissner/zsh-autopair \
+  urbainvaes/fzf-marks
 ```
 
 Load two Oh My Zsh files as snippets, in Turbo:
 
 ```zsh
 zinit wait lucid for \
-                        OMZ::lib/git.zsh \
-    atload"unalias grv" OMZ::plugins/git/git.plugin.zsh
+  OMZ::lib/git.zsh \
+  atload"unalias grv" OMZ::plugins/git/git.plugin.zsh
 ```
 
 []( vim:set ft=markdown tw=80 fo+=a1n autoindent: )

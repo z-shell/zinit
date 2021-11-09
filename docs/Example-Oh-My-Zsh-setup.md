@@ -6,24 +6,24 @@ setopt promptsubst
 
 # B.
 zinit wait lucid for \
-        OMZL::git.zsh \
+  OMZL::git.zsh \
   atload"unalias grv" \
-        OMZP::git
+  OMZP::git
 
 PS1="READY >" # provide a simple prompt till the theme loads
 
 # C.
 zinit wait'!' lucid for \
-    OMZL::prompt_info_functions.zsh \
-    OMZT::gnzh
+  OMZL::prompt_info_functions.zsh \
+  OMZT::gnzh
 
 # D.
 zinit wait lucid for \
-  atinit"zicompinit; zicdreplay"  \
-        z-shell/fast-syntax-highlighting \
-      OMZP::colored-man-pages \
+  atinit"zicompinit; zicdreplay" \
+  z-shell/fast-syntax-highlighting \
+  OMZP::colored-man-pages \
   as"completion" \
-        OMZP::docker/_docker
+  OMZP::docker/_docker
 ```
 
 **A** - Most themes use this option.

@@ -80,19 +80,19 @@ and then to mark it for autoloading via `autoload -Uz :zp-myproject-atclone-hook
 
 ```zsh
 @zplg-register-z-plugin "myproject" hook:atclone \
-    :zp-myproject-atclone-handler \
-    :zp-myproject-atclone-help-handler \
-    "submods''" # register a new ice-mod: submods''
+  :zp-myproject-atclone-handler \
+  :zp-myproject-atclone-help-handler \
+  "submods''" # register a new ice-mod: submods''
 ```
 
 The general syntax of the API call is:
 
 ```zsh
 @zplg-register-z-plugin {project-name} \
-    {hook:<hook-type>|subcommand:<new-subcommand-name>} \
-    {name-of-the-handler-function} \
-    {name-of-the-HELP-handler-function} \
-    "{ice-mod1}|{ice-mod2}|…"
+  {hook: \
+  {name-of-the-handler-function} \
+  {name-of-the-HELP-handler-function} \
+  "{ice-mod1}|{ice-mod2}|…" < hook-type >| subcommand: < new-subcommand-name > }
 ```
 
 The last argument, i.e. the `|`-separated ice-list, is optional. That’s all\!

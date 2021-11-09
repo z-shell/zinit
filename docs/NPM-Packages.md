@@ -36,10 +36,10 @@ This way, instead of the following command used to install `fzf`:
 
 ```zsh
 zinit lucid as=program pick="$ZPFX/bin/(fzf|fzf-tmux)" \
-    atclone="cp shell/completion.zsh _fzf_completion; \
+  atclone="cp shell/completion.zsh _fzf_completion; \
       cp bin/(fzf|fzf-tmux) $ZPFX/bin" \
-    make="PREFIX=$ZPFX install" for \
-        junegunn/fzf
+  make="PREFIX=$ZPFX install" for \
+  junegunn/fzf
 ```
 
 you only need:

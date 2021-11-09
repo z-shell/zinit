@@ -23,10 +23,10 @@ zinit light ogham/exa
 
 # All of the above using the for-syntax and also z-a-bin-gem-node annex
 zinit wait"1" lucid from"gh-r" as"null" for \
-     sbin"fzf"          junegunn/fzf-bin \
-     sbin"**/fd"        @sharkdp/fd \
-     sbin"**/bat"       @sharkdp/bat \
-     sbin"exa* -> exa"  ogham/exa
+  sbin"fzf" junegunn/fzf-bin \
+  sbin"**/fd" @sharkdp/fd \
+  sbin"**/bat" @sharkdp/bat \
+  sbin"exa* -> exa" ogham/exa
 
 zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
 zinit light docker/compose
@@ -35,11 +35,11 @@ zinit light docker/compose
 zinit pick"misc/quitcd/quitcd.zsh" sbin make light-mode for jarun/nnn
 
 zinit ice as"program" atclone"rm -f src/auto/config.cache; ./configure" \
-    atpull"%atclone" make pick"src/vim"
+  atpull"%atclone" make pick"src/vim"
 zinit light vim/vim
 
 zinit ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' src"zhook.zsh"
+  atpull'%atclone' src"zhook.zsh"
 zinit light direnv/direnv
 
 zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
@@ -55,30 +55,30 @@ zinit ice as"program" pick"yank" make
 zinit light mptre/yank
 
 zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
-    atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
-    as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
+  atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+  as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
 zinit light pyenv/pyenv
 
 zinit ice as"program" pick"$ZPFX/sdkman/bin/sdk" id-as'sdkman' run-atpull \
-    atclone"wget https://get.sdkman.io/?rcupdate=false -O scr.sh; SDKMAN_DIR=$ZPFX/sdkman bash scr.sh" \
-    atpull"SDKMAN_DIR=$ZPFX/sdkman sdk selfupdate" \
-    atinit"export SDKMAN_DIR=$ZPFX/sdkman; source $ZPFX/sdkman/bin/sdkman-init.sh"
+  atclone"wget https://get.sdkman.io/?rcupdate=false -O scr.sh; SDKMAN_DIR=$ZPFX/sdkman bash scr.sh" \
+  atpull"SDKMAN_DIR=$ZPFX/sdkman sdk selfupdate" \
+  atinit"export SDKMAN_DIR=$ZPFX/sdkman; source $ZPFX/sdkman/bin/sdkman-init.sh"
 zinit light z-shell/null
 
 # asciinema
 zinit ice as"command" wait lucid \
-    atinit"export PYTHONPATH=$ZPFX/lib/python3.7/site-packages/" \
-    atclone"PYTHONPATH=$ZPFX/lib/python3.7/site-packages/ \
+  atinit"export PYTHONPATH=$ZPFX/lib/python3.7/site-packages/" \
+  atclone"PYTHONPATH=$ZPFX/lib/python3.7/site-packages/ \
     python3 setup.py --quiet install --prefix $ZPFX" \
-    atpull'%atclone' test'0' \
-    pick"$ZPFX/bin/asciinema"
+  atpull'%atclone' test'0' \
+  pick"$ZPFX/bin/asciinema"
 zinit load asciinema/asciinema.git
 
 # Installation of Rust compiler environment via the z-a-rust annex
 zinit id-as"rust" wait=1 as=null sbin="bin/*" lucid rustup \
-    atload="[[ ! -f ${ZINIT[COMPLETIONS_DIR]}/_cargo ]] && zi creinstall -q rust; \
+  atload="[[ ! -f ${ZINIT[COMPLETIONS_DIR]}/_cargo ]] && zi creinstall -q rust; \
     export CARGO_HOME=\$PWD; export RUSTUP_HOME=\$PWD/rustup" for \
-        z-shell/null
+  z-shell/null
 ```
 
 ## Completions
@@ -196,15 +196,15 @@ zinit load psprint/fsh-auto-themes
 # zredis together with some binding/tying
 # – defines the variable $rdhash
 zstyle ":plugin:zredis" configure_opts "--without-tcsetpgrp"
-zstyle ":plugin:zredis" cflags  "-Wall -O2 -g -Wno-unused-but-set-variable"
+zstyle ":plugin:zredis" cflags "-Wall -O2 -g -Wno-unused-but-set-variable"
 zinit ice wait"1" lucid \
-    atload'ztie -d db/redis -a 127.0.0.1:4815/5 -zSL main rdhash'
+  atload'ztie -d db/redis -a 127.0.0.1:4815/5 -zSL main rdhash'
 zinit load z-shell/zredis
 
 # Github-Issue-Tracker – the notifier thread
 zinit ice lucid id-as"GitHub-notify" \
-        on-update-of'~/.cache/zsh-github-issues/new_titles.log' \
-        notify'New issue: $NOTIFY_MESSAGE'
+  on-update-of'~/.cache/zsh-github-issues/new_titles.log' \
+  notify'New issue: $NOTIFY_MESSAGE'
 zinit light z-shell/zsh-github-issues
 ```
 
@@ -232,7 +232,7 @@ zinit ice svn pick"completion.zsh" src"git.zsh"
 zinit snippet OMZ::lib
 
 zinit ice svn wait"0" lucid atinit"local ZSH=\$PWD" \
-    atclone"mkdir -p plugins; cd plugins; ln -sfn ../. osx"
+  atclone"mkdir -p plugins; cd plugins; ln -sfn ../. osx"
 zinit snippet OMZ::plugins/osx
 
 # Or with most recent Zinit and with ~/.zinit/snippets
@@ -251,7 +251,7 @@ zinit light geometry-zsh/geometry
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
-zinit light mafredri/zsh-async  # dependency
+zinit light mafredri/zsh-async # dependency
 zinit ice svn silent atload'prompt sorin'
 zinit snippet PZT::modules/prompt
 
@@ -261,8 +261,8 @@ zinit ice svn atload"prompt garrett" silent
 zinit snippet PZT::modules/prompt
 
 zinit ice wait'!' lucid nocompletions \
-         compile"{zinc_functions/*,segments/*,zinc.zsh}" \
-         atload'!prompt_zinc_setup; prompt_zinc_precmd'
+  compile"{zinc_functions/*,segments/*,zinc.zsh}" \
+  atload'!prompt_zinc_setup; prompt_zinc_precmd'
 zinit load robobenklein/zinc
 
 # ZINC git info is already async, but if you want it

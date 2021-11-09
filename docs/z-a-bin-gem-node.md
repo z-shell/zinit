@@ -89,9 +89,9 @@ The `$PATH` will remain unchanged and an `fzf` function will be created:
 
 ```zsh
 % which fzf
-fzf () {
-        local bindir="/home/sg/.zinit/plugins/junegunn---fzf-bin"
-        "$bindir"/"fzf" "$@"
+fzf() {
+  local bindir="/home/sg/.zinit/plugins/junegunn---fzf-bin"
+  "$bindir"/"fzf" "$@"
 }
 ```
 
@@ -139,10 +139,10 @@ Example:
 % zinit ice from"gh-r" fbin"g:fzf -> myfzf"
 % zinit load junegunn/fzf-bin
 % which myfzf
-myfzf () {
-        local bindir="/home/sg/.zinit/plugins/junegunn---fzf-bin"
-        local -x GEM_HOME="/home/sg/.zinit/plugins/junegunn---fzf-bin"
-        "$bindir"/"fzf" "$@"
+myfzf() {
+  local bindir="/home/sg/.zinit/plugins/junegunn---fzf-bin"
+  local -x GEM_HOME="/home/sg/.zinit/plugins/junegunn---fzf-bin"
+  "$bindir"/"fzf" "$@"
 }
 ```
 
@@ -165,10 +165,10 @@ Example:
 % zinit ice gem'!asciidoctor'
 % zinit load z-shell/null
 % which asciidoctor
-asciidoctor () {
-        local bindir="/home/sg/.zinit/plugins/z-shell---null/bin"
-        local -x GEM_HOME="/home/sg/.zinit/plugins/z-shell---null"
-        "$bindir"/"asciidoctor" "$@"
+asciidoctor() {
+  local bindir="/home/sg/.zinit/plugins/z-shell---null/bin"
+  local -x GEM_HOME="/home/sg/.zinit/plugins/z-shell---null"
+  "$bindir"/"asciidoctor" "$@"
 }
 ```
 

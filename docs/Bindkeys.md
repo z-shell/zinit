@@ -23,14 +23,14 @@ zinit bindmap'^R -> ^G' for z-shell/history-search-multi-word
 # Could also separate the bindmaps with a semicolon, i.e.:
 # bindmap'"\\e[1\;6D" -> \\e[1\;5D ; "\\e[1\;6C" -> ^[[1\;5C' \
 zinit wait light-mode trackbinds bindmap'"\\e[1\;6D" -> \\e[1\;5D"' \
-    bindmap'"\\e[1\;6C" -> ^[[1\;5C' pick'dircycle.zsh' for \
-        michaelxmcbride/zsh-dircycle
+  bindmap'"\\e[1\;6C" -> ^[[1\;5C' pick'dircycle.zsh' for \
+  michaelxmcbride/zsh-dircycle
 
 # Map space to regular space and Ctrl-Space to the `globalias' widget, which
 # expands the alias entered on the left (provided by OMZ globalias plugin).
 zinit bindmap='!" " -> magic-space; !"^ " -> globalias' nocompletions \
-    depth=1 pick=plugins/globalias/globalias.plugin.zsh for \
-        ohmyzsh/ohmyzsh
+  depth=1 pick=plugins/globalias/globalias.plugin.zsh for \
+  ohmyzsh/ohmyzsh
 ```
 
 ## Explanation

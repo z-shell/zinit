@@ -323,7 +323,7 @@ each of the main functions provided by the plugin:
 ```zsh
 emulate -L zsh
 setopt extended_glob warn_create_global typeset_silent \
-        no_short_loops rc_quotes no_auto_pushd
+  no_short_loops rc_quotes no_auto_pushd
 ```
 
 It resets all the options to their default state according to the `zsh`
@@ -360,7 +360,8 @@ It's good to localize the following variables at the entry of the main function
 of a plugin:
 
 ```shell
-local MATCH REPLY; integer MBEGIN MEND
+local MATCH REPLY
+integer MBEGIN MEND
 local -a match mbegin mend reply
 ```
 
@@ -444,10 +445,10 @@ The proposition of the standard prefixes is as follows:
 
 ```shell
 .zinc_register_hooks() {
-    add-zsh-hook precmd :zinc_precmd
-    /zinc_dmsg "Installed precmd hook with result: $?"
-    @zsh-plugin-run-on-unload "add-zsh-hook -d precmd :zinc_precmd"
-    +zinc_print "Zinc initialization complete"
+  add-zsh-hook precmd :zinc_precmd
+  /zinc_dmsg "Installed precmd hook with result: $?"
+  @zsh-plugin-run-on-unload "add-zsh-hook -d precmd :zinc_precmd"
+  +zinc_print "Zinc initialization complete"
 }
 ```
 

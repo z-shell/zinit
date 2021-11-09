@@ -104,7 +104,7 @@ being not under version control. You could do this in Bash style like follows:
 ```zsh
 local svn_status="$(svn status)"
 if [[ -n "$(echo "$svn_status" | grep \^\?)" ]]; then
-    echo found
+  echo found
 fi
 ```
 
