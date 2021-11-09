@@ -1,5 +1,3 @@
-# `ZINIT`
-
 <p align="center">
 <a href="https://github.com/z-shell/zinit">
 <img src="https://raw.githubusercontent.com/z-shell/zinit/images/zinit.png"/>
@@ -65,6 +63,8 @@
     - [Extending Git](#extending-git)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# `ZINIT`
 
 ## News
 
