@@ -7,7 +7,7 @@
 </p>
 
 [![Travis Status][status-badge]][status-link] [![CodeFactor][codefactor-badge]][codefactor-link] [![DeepSource][deepsource-badge]][deepsource-link]
-[![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link] [![Gitter][gitter-badge]][gitter-link]
+[![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link] [![Gitter][gitter-badge]][gitter-link] [![Tweet][twitter-badge]][twitter-link]
 
 ---
 
@@ -17,16 +17,16 @@
 - [News](#news)
 - [Zinit Wiki](#zinit-wiki)
 - [Quick Start](#quick-start)
-  - [Install](#install)
-    - [Automatic Installation (Recommended)](#automatic-installation-recommended)
-    - [Manual Installation](#manual-installation)
-  - [Usage](#usage)
-    - [Introduction](#introduction)
-    - [Plugins and snippets](#plugins-and-snippets)
-    - [Upgrade Zinit and plugins](#upgrade-zinit-and-plugins)
-    - [Turbo and lucid](#turbo-and-lucid)
-    - [Migration](#migration)
-    - [More Examples](#more-examples)
+- [Install](#install)
+  - [Automatic Installation (Recommended)](#automatic-installation-recommended)
+  - [Manual Installation](#manual-installation)
+- [Usage](#usage)
+  - [Introduction](#introduction)
+  - [Plugins and snippets](#plugins-and-snippets)
+  - [Upgrade Zinit and plugins](#upgrade-zinit-and-plugins)
+  - [Turbo and lucid](#turbo-and-lucid)
+  - [Migration](#migration)
+  - [More Examples](#more-examples)
 - [How to Use](#how-to-use)
   - [Ice Modifiers](#ice-modifiers)
     - [Cloning Options](#cloning-options)
@@ -38,26 +38,26 @@
     - [Sticky-Emulation Of Other Shells](#sticky-emulation-of-other-shells)
     - [Others](#others)
     - [Order of Execution](#order-of-execution)
-  - [Zinit Commands](#zinit-commands)
-    - [Help](#help)
-    - [Loading and Unloading](#loading-and-unloading)
-    - [Completions](#completions-1)
-    - [Tracking of the Active Session](#tracking-of-the-active-session)
-    - [Reports and Statistics](#reports-and-statistics)
-    - [Compiling](#compiling)
-    - [Other](#other)
-  - [Updating Zinit and Plugins](#updating-zinit-and-plugins)
-  - [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
-  - [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
-  - [Ignoring Compdefs](#ignoring-compdefs)
-  - [Disabling System-Wide `compinit` Call (Ubuntu)](#disabling-system-wide-compinit-call-ubuntu)
+- [Zinit Commands](#zinit-commands)
+  - [Help](#help)
+  - [Loading and Unloading](#loading-and-unloading)
+  - [Completions Management](#completions-management)
+  - [Tracking of the Active Session](#tracking-of-the-active-session)
+  - [Reports and Statistics](#reports-and-statistics)
+  - [Compiling](#compiling)
+  - [Other](#other)
+- [Updating Zinit and Plugins](#updating-zinit-and-plugins)
+- [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
+- [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
+- [Ignoring Compdefs](#ignoring-compdefs)
+- [Disabling System-Wide `compinit` Call (Ubuntu)](#disabling-system-wide-compinit-call-ubuntu)
 - [Zinit Module](#zinit-module)
   - [Motivation](#motivation)
-  - [Installation](#installation)
-    - [Without Zinit](#without-zinit)
-    - [With Zinit](#with-zinit)
-  - [Measuring Time of `source`s](#measuring-time-of-sources)
-  - [Debugging](#debugging)
+- [Installation](#installation)
+  - [Without Zinit](#without-zinit)
+  - [With Zinit](#with-zinit)
+- [Measuring Time of `source`s](#measuring-time-of-sources)
+- [Debugging](#debugging)
 - [Hints and Tips](#hints-and-tips)
   - [Customizing Paths](#customizing-paths)
   - [Non-GitHub (Local) Plugins](#non-github-local-plugins)
@@ -65,7 +65,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# News
+## News
 
 <details>
   <summary>Here are the new features and updates added to Zinit in the last 90 days.</summary>
@@ -613,10 +613,12 @@
   - The `zinit` completion now completes also snippets! The command `snippet`, but
     also `delete`, `recall`, `edit`, `cd`, etc. all receive such completing.
   - The `ice` subcommand can now be skipped — just pass in the ices, e.g.:
+
     ```zsh
     zinit atload"zicompinit; zicdreplay" blockf
     zinit light zsh-users/zsh-completions
     ```
+
   - The `compile` command is able to compile snippets.
   - The plugins that add their subdirectories into `$fpath` can be now `blockf`-ed —
     the functions located in the dirs will be correctly auto-loaded.
@@ -747,14 +749,14 @@ install everything from GitHub and other sites. Its characteristics are:
    article](https://z-shell.github.io/zinit/wiki/Annexes/) for an introduction on
    creating your own annex.
 
-# Zinit Wiki
+## Zinit Wiki
 
 The information in this README is complemented by the [Zinit
 Wiki](https://z-shell.github.io/zinit/wiki/). The README is an introductory overview of
 Zinit while the Wiki gives a complete information with examples. Make sure to
 read it to get the most out of Zinit.
 
-# Quick Start
+## Quick Start
 
 ## Install
 
@@ -1212,6 +1214,7 @@ zinit load <repo/plugin>
 - `defer` => `wait`
 - `lazy` => `autoload`
 - `depth` => `depth`
+
 </details>
 
 ### More Examples
@@ -1296,9 +1299,9 @@ Also, two articles on the Wiki present an example setup
 [here](https://z-shell.github.io/zinit/wiki/Example-Minimal-Setup/) and
 [here](https://z-shell.github.io/zinit/wiki/Example-Oh-My-Zsh-setup/).
 
-# How to Use
+## How to Use
 
-## Ice Modifiers
+### Ice Modifiers
 
 Following `ice` modifiers are to be
 [passed](http://z-shell.github.io/zinit/wiki/Alternate-Ice-Syntax/) to `zinit ice ...` to
@@ -1313,7 +1316,7 @@ appropriate Wiki page for an extended explanation.
 You may safely assume a given ice works with both plugins and snippets unless
 explicitly stated otherwise.
 
-### Cloning Options
+#### Cloning Options
 
 |                                Modifier                                 | Description                                                                                                                                                                                                                                                                                                                                                                     |
 |:-----------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1326,7 +1329,7 @@ explicitly stated otherwise.
 |                               `pullopts`                                | <div align="justify" style="text-align: justify;">Pass the contents of `pullopts` to `git pull` used when updating plugins. **Does not work with snippets.** </div>                                                                                                                                                                                                             |
 |                                  `svn`                                  | <div align="justify" style="text-align: justify;">Use Subversion for downloading snippet. GitHub supports `SVN` protocol, this allows to clone subdirectories as snippets, e.g. `zinit ice svn; zinit snippet OMZP::git`. Other ice `pick` can be used to select file to source (default are: `*.plugin.zsh`, `init.zsh`, `*.zsh-theme`). **Does not work with plugins.**</div> |
 
-### Selection of Files (To Source, …)
+#### Selection of Files (To Source, …)
 
 |                                   Modifier                                    | Description                                                                                                                                                                                                                                                                                        |
 |:-----------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1334,7 +1337,7 @@ explicitly stated otherwise.
 |   [**`src`**](http://z-shell.github.io/zinit/wiki/Sourcing-multiple-files)    | <div align="justify" style="text-align: justify;">Specify additional file to source after sourcing main file or after setting up command (via `as"program"`). It is not a pattern but a plain file name.</div>                                                                                     |
 | [**`multisrc`**](http://z-shell.github.io/zinit/wiki/Sourcing-multiple-files) | <div align="justify" style="text-align: justify;">Allows to specify multiple files for sourcing, enumerated with spaces as the separators (e.g. `multisrc'misc.zsh grep.zsh'`) and also using brace-expansion syntax (e.g. `multisrc'{misc,grep}.zsh'`). Supports patterns.</div>                  |
 
-### Conditional Loading
+#### Conditional Loading
 
 |                                 Modifier                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |:-------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1347,7 +1350,7 @@ explicitly stated otherwise.
 |                       `subscribe` / `on-update-of`                        | <div align="justify" style="text-align: justify;">Postpone loading of a plugin or snippet until the given file(s) get updated, e.g. `subscribe'{~/files-*,/tmp/files-*}'` </div>                                                                                                                                                                                                                                                 |
 |                              `trigger-load`                               | <div align="justify" style="text-align: justify;">Creates a function that loads the associated plugin/snippet, with an option (to use it, precede the ice content with `!`) to automatically forward the call afterwards, to a command of the same name as the function. Can obtain multiple functions to create – sparate with `;`.</div>                                                                                       |
 
-### Plugin Output
+#### Plugin Output
 
 | Modifier | Description                                                                                                                                                                                                                                                                                                                                                         |
 |:--------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1355,14 +1358,14 @@ explicitly stated otherwise.
 | `lucid`  | <div align="justify" style="text-align: justify;">Skip `Loaded ...` message under prompt for `wait`, etc. loaded plugins (a subset of `silent`).</div>                                                                                                                                                                                                              |
 | `notify` | <div align="justify" style="text-align: justify;">Output given message under-prompt after successfully loading a plugin/snippet. In case of problems with the loading, output a warning message and the return code. If starts with `!` it will then always output the given message. Hint: if the message is empty, then it will just notify about problems.</div> |
 
-### Completions
+#### Completions
 
 |    Modifier     | Description                                                                                                                                                                                                                                 |
 |:---------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `blockf`     | <div align="justify" style="text-align: justify;">Disallow plugin to modify `fpath`. Useful when a plugin wants to provide completions in traditional way. Zinit can manage completions and plugin can be blocked from exposing them.</div> |
 | `nocompletions` | <div align="justify" style="text-align: justify;">Don't detect, install and manage completions for this plugin. Completions can be installed later with `zinit creinstall {plugin-spec}`.</div>                                             |
 
-### Command Execution After Cloning, Updating or Loading
+#### Command Execution After Cloning, Updating or Loading
 
 |                                   Modifier                                    | Description                                                                                                                                                                                                                                                                                                                                                          |
 |:-----------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1378,7 +1381,7 @@ explicitly stated otherwise.
 |                                  `countdown`                                  | <div align="justify" style="text-align: justify;">Causes an interruptable (by Ctrl-C) countdown 5…4…3…2…1…0 to be displayed before executing `atclone''`,`atpull''` and `make` ices</div>                                                                                                                                                                            |
 |                                    `reset`                                    | <div align="justify" style="text-align: justify;">Invokes `git reset --hard HEAD` for plugins or `svn revert` for SVN snippets before pulling any new changes. This way `git` or `svn` will not report conflicts if some changes were done in e.g.: `atclone''` ice. For file snippets and `gh-r` plugins it invokes `rm -rf *`.</div>                               |
 
-### Sticky-Emulation Of Other Shells
+#### Sticky-Emulation Of Other Shells
 
 |    Modifier     | Description                                                                                                                                                                                                                                                                                                                                                                                        |
 |:---------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1387,7 +1390,7 @@ explicitly stated otherwise.
 |  `ksh`, `!ksh`  | <div align="justify" style="text-align: justify;">The same as `sh`, but emulating `ksh` shell.</div>                                                                                                                                                                                                                                                                                               |
 |  `csh`, `!csh`  | <div align="justify" style="text-align: justify;">The same as `sh`, but emulating `csh` shell.</div>                                                                                                                                                                                                                                                                                               |
 
-### Others
+#### Others
 
 |                              Modifier                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |:------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1406,7 +1409,7 @@ explicitly stated otherwise.
 |                              `subst`                               | <div align="justify" style="text-align: justify;">Substitute the given string into another string when sourcing the plugin script, e.g.: `zinit subst'autoload → autoload -Uz' …`.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |                             `autoload`                             | <div align="justify" style="text-align: justify;">Autoload the given functions (from their files). Equvalent to calling `atinit'autoload the-function'`. Supports renaming of the function – pass `'… → new-name'` or `'… -> new-name'`, e.g.: `zinit autoload'fun → my-fun; fun2 → my-fun2'`.</div>                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
-### Order of Execution
+#### Order of Execution
 
 Order of execution of related Ice-mods: `atinit` -> `atpull!` -> `make'!!'` -> `mv` -> `cp` -> `make!` -> `atclone`/`atpull` -> `make` -> `(plugin script loading)` -> `src` -> `multisrc` -> `atload`.
 
@@ -1430,7 +1433,7 @@ Following commands are passed to `zinit ...` to obtain described effects.
 | `unload [-q] {plg-spec}` | <div align="justify" style="text-align: justify;"> Unload plugin loaded with `zinit load ...`. `-q` – quiet.</div>                                                                                                                                                                                                                                                            |
 |   `snippet [-f] {url}`   | <div align="justify" style="text-align: justify;"> Source local or remote file (by direct URL). `-f` – don't use cache (force redownload). The URL can use the following shorthands: `PZT::` (Prezto), `PZTM::` (Prezto module), `OMZ::` (Oh My Zsh), `OMZP::` (OMZ plugin), `OMZL::` (OMZ library), `OMZT::` (OMZ theme), e.g.: `PZTM::environment`, `OMZP::git`, etc.</div> |
 
-### Completions
+### Completions Management
 
 |                          Command                          | Description                                                                                                                                                                                                    |
 |:---------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1517,7 +1520,6 @@ The ice modifiers for any plugin or snippet are stored in their directory in a
 `._zinit` subdirectory, hence the plugin doesn't have to be loaded to be correctly
 updated. There's one other file created there, `.zinit_lstupd` – it holds the log of
 the new commits pulled-in in the last update.
-
 
 ## Calling `compinit` Without Turbo Mode
 
@@ -1626,9 +1628,9 @@ loads any completion-equipped plugins, i.e. almost on 100% – add the following
 skip_global_compinit=1
 ```
 
-# Zinit Module
+## Zinit Module
 
-## Motivation
+### Motivation
 
 The module is a binary Zsh module (think about `zmodload` Zsh command, it's that topic) which transparently and
 automatically **compiles sourced scripts**. Many plugin managers do not offer compilation of plugins, the module is
@@ -1678,9 +1680,9 @@ To enable debug messages from the module set:
 typeset -g ZPLG_MOD_DEBUG=1
 ```
 
-# Hints and Tips
+## Hints and Tips
 
-## Customizing Paths
+### Customizing Paths
 
 Following variables can be set to custom values, before sourcing Zinit. The
 previous global variables like `$ZPLG_HOME` have been removed to not pollute
@@ -1706,7 +1708,7 @@ declare -A ZINIT  # initial Zinit's hash definition, if configuring before loadi
 There is also `$ZPFX`, set by default to `~/.zinit/polaris` – a directory
 where software with `Makefile`, etc. can be pointed to, by e.g. `atclone'./configure --prefix=$ZPFX'`.
 
-## Non-GitHub (Local) Plugins
+### Non-GitHub (Local) Plugins
 
 Use `create` subcommand with user name `_local` (the default) to create plugin's
 skeleton in `$ZINIT[PLUGINS_DIR]`. It will be not connected with GitHub repository
@@ -1716,7 +1718,7 @@ with just plugin's name (without `_local`, it's optional).
 If user name will not be `_local`, then Zinit will create repository also on GitHub
 and setup correct repository origin.
 
-## Extending Git
+### Extending Git
 
 There are several projects that provide git extensions. Installing them with
 Zinit has many benefits:
@@ -1749,7 +1751,6 @@ zinit as"null" wait"1" lucid for \
 
 Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 
-
 [codefactor-badge]: https://www.codefactor.io/repository/github/z-shell/zinit/badge/main
 [codefactor-link]: https://www.codefactor.io/repository/github/z-shell/zinit/overview/main
 [deepsource-badge]: https://deepsource.io/gh/z-shell/zinit.svg/?label=active+issues&show_trend=true
@@ -1765,5 +1766,7 @@ Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 [pre-commit-link]: https://github.com/pre-commit/pre-commit
 [gitter-badge]: https://badges.gitter.im/z-shell/community.svg
 [gitter-link]: https://gitter.im/z-shell/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+[twitter-badge]: https://img.shields.io/twitter/url/http/shields.io.svg?style=social
+[twitter-link]: https://twitter.com/intent/tweet?text=Z-shell%20-%20ZINIT%20plugin%20manager&url=https://github.com/z-shell/zinit&hashtags=zsh,zinit,plugin,z-shell
 
 <!-- vim:set ft=markdown tw=80 fo+=1n: -->
