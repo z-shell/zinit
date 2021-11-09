@@ -20,8 +20,7 @@ env:
 before_script:
   - sudo apt-get install -y zsh mailutils
   - zsh --version
-  - 'zsh -c ''print -rl -- "ZSH_VERSION: $ZSH_VERSION" "ZSH_PATCHLEVEL: $ZSH_PATCHLEVEL"
-    "OSTYPE: $OSTYPE" "CPUTYPE: $CPUTYPE" "MACHTYPE: $MACHTYPE"'''
+  - 'zsh -c ''print -rl -- "ZSH_VERSION: $ZSH_VERSION" "ZSH_PATCHLEVEL: $ZSH_PATCHLEVEL" "OSTYPE: $OSTYPE" "CPUTYPE: $CPUTYPE" "MACHTYPE: $MACHTYPE"'''
 script:
   - git fetch --depth=1 origin tests:tests
   - git worktree add test tests
