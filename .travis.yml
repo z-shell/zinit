@@ -22,11 +22,12 @@ before_script:
   - zsh --version
   - 'zsh -c ''print -rl -- "ZSH_VERSION: $ZSH_VERSION" "ZSH_PATCHLEVEL: $ZSH_PATCHLEVEL" "OSTYPE: $OSTYPE" "CPUTYPE: $CPUTYPE" "MACHTYPE: $MACHTYPE"'''
 script:
-  - git fetch --depth=1 origin tests:tests
-  - git worktree add test tests
+  #  - git fetch --depth=1 origin tests:tests
+  #  - git worktree add test tests
   - make
-  - make -C zsdoc pdf
+  - make -C doc/zsdoc pdf
   - share/deploy_doc.sh
+  - bash doc/mod-install.sh
 #  - make -C test test VERBOSE=1
 #  - make -C test testB VERBOSE=1
 #  - make -C test testC VERBOSE=1

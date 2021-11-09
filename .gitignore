@@ -88,6 +88,6 @@ zmodules/Src/z-shell/errnames.c
 zmodules/Src/z-shell/errcount.h
 zmodules/Src/z-shell/curses_keys.h
 
+doc/zsdoc/logs
 zmodules/Test/*.tmp
 /.project
-.vscode
