@@ -14,8 +14,8 @@ nav:
       - "Installing With Make": Installing-with-make.md
       - "Sourcing Multiple Files": Sourcing-multiple-files.md
       - "extract Ice": extract-Ice.md
-      - "Tracking precmd-based Plugins": wrap-track.md
-      - "Tracking precmd-based Plugins (2)": atload-and-other-at-ices.md
+      - "Tracking precmd-based Plugins (wrap-track)": wrap-track.md
+      - "Tracking precmd-based Plugins (atload-and-other-at-ices)": atload-and-other-at-ices.md
   - "Examples":
       - "Example Minimal Setup": Example-Minimal-Setup.md
       - "Example Oh My Zsh Setup": Example-Oh-My-Zsh-setup.md
