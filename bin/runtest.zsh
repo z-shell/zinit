@@ -22,14 +22,14 @@ LC_ALL=C
 
 local TEST_DIR="$PWD/$1"
 
-# Setup paths and load Zplugin
+# Setup paths and load zinit
 local REPLY p k l ll
 local -a reply
 local -A ZPLGM
 ZPLGM[BIN_DIR]=$PWD
 command mkdir -p $PWD/$1/answer
 ZPLGM[HOME_DIR]=$PWD/$1/answer
-builtin source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
+builtin source "${ZPLGM[BIN_DIR]}/zinit.zsh"
 command mkdir $PWD/$1/answer/snippets/OMZ::plugins
 
 # FUNCTION: internet_mock_git {{{
@@ -167,7 +167,7 @@ no_colors() {
 store_state() {
     setopt localoptions extendedglob nokshglob noksharrays
     local out="$1" out2="$2"
-    (( ${+functions[-zplg-diff-env-compute]} )) || builtin source ${ZPLGM[BIN_DIR]}"/zplugin-autoload.zsh"
+    (( ${+functions[-zplg-diff-env-compute]} )) || builtin source ${ZPLGM[BIN_DIR]}"/zinit-autoload.zsh"
 
     local -A not_show_keys
     not_show_keys=( UPAR 1 DOWNAR 1 RIGHTAR 1 LEFTAR 1 \
