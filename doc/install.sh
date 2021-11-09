@@ -4,15 +4,18 @@
 # Clone or pull
 #
 
-ZINIT_HOME="${ZINIT_HOME:-$ZPLG_HOME}"
-if [ -z "$ZINIT_HOME" ]; then
-    ZINIT_HOME="${ZDOTDIR:-$HOME}/.zinit"
-fi
+#ZINIT_HOME="${ZINIT_HOME:-$ZPLG_HOME}"
+#if [ -z "$ZINIT_HOME" ]; then
+#    ZINIT_HOME="${ZDOTDIR:-$HOME}/.zinit"
+#fi
 
-ZINIT_BIN_DIR_NAME="${ZINIT_BIN_DIR_NAME:-$ZPLG_BIN_DIR_NAME}"
-if [ -z "$ZINIT_BIN_DIR_NAME" ]; then
-    ZINIT_BIN_DIR_NAME="bin"
-fi
+#ZINIT_BIN_DIR_NAME="${ZINIT_BIN_DIR_NAME:-$ZPLG_BIN_DIR_NAME}"
+#if [ -z "$ZINIT_BIN_DIR_NAME" ]; then
+#   ZINIT_BIN_DIR_NAME="bin"
+#fi
+
+ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
+ZINIT_BIN_DIR_NAME="${${ZINIT_BIN_DIR_NAME:-${ZPLG_BIN_DIR_NAME}}:-bin}"
 
 if ! test -d "$ZINIT_HOME"; then
     mkdir "$ZINIT_HOME"
@@ -41,16 +44,16 @@ fi
 echo
 if test -d "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME/.git"; then
     cd "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" || return
-    echo "[1;34m▓▒░[0m Updating [1;36mZ-SHELL[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
+    echo "[1;34m▓▒░[0m Updating [1;36mZINIT[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
     git pull origin main
 else
     cd "$ZINIT_HOME" || return
-    echo "[1;34m▓▒░[0m Installing [1;36mZ-SHELL[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
+    echo "[1;34m▓▒░[0m Installing [1;36mZINIT[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
     { git clone --progress https://github.com/z-shell/zinit.git "$ZINIT_BIN_DIR_NAME" \
         2>&1 | { /tmp/zinit/git-process-output.zsh || cat; }; } 2>/dev/null
     if [ -d "$ZINIT_BIN_DIR_NAME" ]; then
         echo
-        echo "[1;34m▓▒░[0m Zinit succesfully installed at [1;32m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m".
+        echo "[1;34m▓▒░[0m ZINIT Succesfully installed at [1;32m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m".
         VERSION="$(command git -C "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" describe --tags 2>/dev/null)"
         echo "[1;34m▓▒░[0m Version: [1;32m$VERSION[0m"
     else
@@ -74,11 +77,11 @@ if [ $RCUPDATE -eq 1 ]; then
     ZINIT_HOME="$(echo $ZINIT_HOME | sed "s|$HOME|\$HOME|")"
     command cat <<-EOF >>"$THE_ZDOTDIR/.zshrc"
 
-### Added by Zinit's installer
+### Zinit
 if [[ ! -f $ZINIT_HOME/$ZINIT_BIN_DIR_NAME/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{160}Installing %F{33}ZINIT%F{160} Initiative Plugin Manager (%F{33}z-shell/zinit%F{160})…%f"
     command mkdir -p "$ZINIT_HOME" && command chmod g-rwX "$ZINIT_HOME"
-    command git clone https://github.com/z-shell/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
+    command git clone -q https://github.com/z-shell/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -139,8 +142,8 @@ command cat <<-EOF
 [38;5;219m▓▒░[0m run-atpull reset-prompt trackbinds aliases [38;5;111msh bash ksh csh[0m
 
 For more information see:
-- [38;5;226mREADME[0m section on the ice-modifiers:
-    - https://github.com/z-shell/zinit#ice-modifiers
+- [38;5;226mZinit Blog[0m with latest news and updates:
+    - https://z-shell.github.io
 - [38;5;226mintro[0m to Zinit at the Wiki:
     - https://z-shell.github.io/zinit/wiki/INTRODUCTION
 - [38;5;226mzinit-zsh[0m See meta plugins support, which install groups of plugins via a single, friendly label:

@@ -32,11 +32,11 @@ script:
 #  - make -C test testC VERBOSE=1
 #  - make -C test testD VERBOSE=1
 #  - make -C test testE VERBOSE=1
-notifications:
-  email:
-    recipients:
-      - admin@digitalclouds.dev
-    on_success: change
-    on_failure: change
+#notifications:
+#  email:
+#    recipients:
+#      - admin@digitalclouds.dev
+#    on_success: change
+#    on_failure: change
 before_install:
   - openssl aes-256-cbc -K $encrypted_189e52c2c347_key -iv $encrypted_189e52c2c347_iv -in share/deploy_key.enc -out share/deploy_key -d

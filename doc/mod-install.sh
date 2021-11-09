@@ -19,7 +19,7 @@ if ! test -d "$ZINIT_HOME"; then
     chmod g-rwX "$ZINIT_HOME"
 fi
 
-echo ">>> Downloading z-shell/zplugin module to $ZINIT_HOME/mod-bin"
+echo ">>> Downloading zshell/zplugin module to $ZINIT_HOME/mod-bin"
 if test -d "$ZINIT_HOME/mod-bin/.git"; then
     cd "$ZINIT_HOME/mod-bin" || return
     git pull origin main
@@ -34,7 +34,7 @@ echo ">>> Done"
 #
 
 cd "$ZINIT_HOME/mod-bin/zmodules" || return
-echo "$col_pname== Building module z-shell/zplugin, running: a make clean, then ./configure and then make ==$col_rst"
+echo "$col_pname== Building module zshell/zplugin, running: a make clean, then ./configure and then make ==$col_rst"
 echo "$col_pname== The module sources are located at: $ZINIT_HOME/mod-bin/zmodules ==$col_rst"
 test -f Makefile && {
     [ "$1" = "--clean" ] && {
@@ -53,7 +53,7 @@ CPPFLAGS=-I/usr/local/include CFLAGS="-g -Wall -O3" LDFLAGS=-L/usr/local/lib ./c
         echo "${col_info}Module has been built correctly.$col_rst"
         echo "To load the module, add following 2 lines to .zshrc, at top:"
         echo "    module_path+=( \"$ZINIT_HOME/mod-bin/zmodules/Src\" )"
-        echo "    zmodload z-shell/zplugin"
+        echo "    zmodload zshell/zplugin"
         echo ""
         echo "After loading, use command \`zpmod' to communicate with the module."
         echo "See \`zpmod -h' for more information. There are two main features,"

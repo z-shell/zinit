@@ -1,10 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# Contributing Guidelines
 
 - [Contributing Guidelines](#contributing-guidelines)
-    - [Need some help regarding the basics?🤔](#need-some-help-regarding-the-basics)
-  - [Submitting Contributions👩‍💻👨‍💻](#submitting-contributions%E2%80%8D%E2%80%8D)
+  - [Need some help regarding the basics?🤔](#need-some-help-regarding-the-basics)
+  - [Submitting Contributions👩‍💻👨‍💻](#submitting-contributions)
     - [Step 0 : Find an issue](#step-0--find-an-issue)
     - [Step 1 : Fork the Project](#step-1--fork-the-project)
     - [Step 2 : Branch](#step-2--branch)
@@ -13,16 +11,13 @@
     - [Step 5 : Work Remotely](#step-5--work-remotely)
     - [Step 6 : Pull Request](#step-6--pull-request)
     - [Note : Do not add images, rather 👇](#note--do-not-add-images-rather-)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Contributing Guidelines
+      - [How to do that?](#how-to-do-that)
 
 This documentation contains a set of guidelines to help you during the contribution process.
 We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project.
 Thank you for helping out and remember, **no contribution is too small.**
 
-### Need some help regarding the basics?🤔
+## Need some help regarding the basics?🤔
 
 You can refer to the following articles on basics of Git and Github and also contact the Project Mentors,
 in case you are stuck:
@@ -46,13 +41,14 @@ Below you will find the process and workflow used to review and merge your chang
 ### Step 1 : Fork the Project
 
 - Fork this Repository. This will create a Local Copy of this Repository on your Github Profile.
-Keep a reference to the original project in `upstream` remote.
+  Keep a reference to the original project in `upstream` remote.
 
 ```bash
 git clone https://github.com/<your-username>/<repo-name>
 cd <repo-name>
 git remote add upstream https://github.com/<upstream-owner>/<repo-name>
 ```
+
 - If you have already forked the project, update your copy before working.
 
 ```bash
@@ -108,14 +104,14 @@ git push -u origin Branch_Name
 ### Step 6 : Pull Request
 
 - Go to your repository in browser and click on compare and pull requests.
-Then add a title and description to your pull request that explains your contribution.
+  Then add a title and description to your pull request that explains your contribution.
 - Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳
 
 ### Note : Do not add images, rather 👇
 
 - We plan to remove all the images and screenshots from our repository and link them to markdown files.
 
-    #### How to do that?
+#### How to do that?
 
-    - You can do that by hosting all you images and screenshots to any images hosting sites such as [imgur](https://imgur.com/), [imgbb](https://imgbb.com/), [postimages](https://postimages.org/).
-    - Then link your uploaded images to README files.
+- You can do that by hosting all you images and screenshots to any images hosting sites such as [imgur](https://imgur.com/), [imgbb](https://imgbb.com/), [postimages](https://postimages.org/).
+- Then link your uploaded images to README files.

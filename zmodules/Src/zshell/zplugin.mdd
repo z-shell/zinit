@@ -1,4 +1,4 @@
-name=z-shell/zplugin
+name=zshell/zplugin
 link=dynamic
 load=no
 
