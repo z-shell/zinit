@@ -27,7 +27,6 @@ script:
   - make
   - make -C doc/zsdoc pdf
   - share/deploy_doc.sh
-  - bash doc/mod-install.sh
 #  - make -C test test VERBOSE=1
 #  - make -C test testB VERBOSE=1
 #  - make -C test testC VERBOSE=1
