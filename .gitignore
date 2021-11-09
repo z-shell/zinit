@@ -90,3 +90,4 @@ zmodules/Src/z-shell/curses_keys.h
 
 zmodules/Test/*.tmp
 /.project
+.vscode
