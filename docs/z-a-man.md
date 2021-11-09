@@ -2,10 +2,10 @@
 
 A Zinit [extension](../Annexes/) that automatically generates:
 
-  - man pages for all plugins and snippets (out of plugin README.md files by
-    using [ronn](https://github.com/rtomayko/ronn) converter),
-  - code-documentation manpages (by using
-    [zshelldoc](https://github.com/z-shell/zshelldoc) project).
+- man pages for all plugins and snippets (out of plugin README.md files by
+  using [ronn](https://github.com/rtomayko/ronn) converter),
+- code-documentation manpages (by using
+  [zshelldoc](https://github.com/z-shell/zshelldoc) project).
 
 Man extension is being activated at clone of a plugin and also at update of it
 and it then generates the manpages. To view them there's a `zman` command:

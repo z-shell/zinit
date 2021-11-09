@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-import Lock from "./Search/Lock"
-import Result from "./Search/Result"
+import Lock from "./Search/Lock";
+import Result from "./Search/Result";
 
 /* ----------------------------------------------------------------------------
  * Module
@@ -29,5 +29,5 @@ import Result from "./Search/Result"
 
 export default {
   Lock,
-  Result
-}
+  Result,
+};

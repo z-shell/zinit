@@ -90,4 +90,5 @@ zinit light-mode trackbinds bindmap'^R -> ^G' for z-shell/history-search-multi-w
 zinit trackbinds bindmap'^R -> ^G' for z-shell/history-search-multi-word
 zinit light z-shell/history-search-multi-word
 ```
+
 []( vim:set ft=markdown tw=80 fo+=a1n autoindent: )

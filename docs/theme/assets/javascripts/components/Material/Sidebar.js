@@ -20,12 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-import Position from "./Sidebar/Position"
+import Position from "./Sidebar/Position";
 
 /* ----------------------------------------------------------------------------
  * Module
  * ------------------------------------------------------------------------- */
 
 export default {
-  Position
-}
+  Position,
+};

@@ -30,26 +30,26 @@ $codehilite-operator-word: inherit;
 
 // Generics
 $codehilite-generic-emph: #000000;
-$codehilite-generic-error: #AA0000;
+$codehilite-generic-error: #aa0000;
 $codehilite-generic-heading: #999999;
 $codehilite-generic-output: #888888;
 $codehilite-generic-prompt: #555555;
 $codehilite-generic-strong: inherit;
-$codehilite-generic-subheading: #AAAAAA;
-$codehilite-generic-traceback: #AA0000;
+$codehilite-generic-subheading: #aaaaaa;
+$codehilite-generic-traceback: #aa0000;
 
 // Diffs
-$codehilite-diff-deleted: #FFDDDD;
-$codehilite-diff-inserted: #DDFFDD;
+$codehilite-diff-deleted: #ffdddd;
+$codehilite-diff-inserted: #ddffdd;
 
 // Keywords
-$codehilite-keyword: #3B78E7;
-$codehilite-keyword-constant: #A71D5D;
-$codehilite-keyword-declaration: #3B78E7;
-$codehilite-keyword-namespace: #3B78E7;
-$codehilite-keyword-pseudo: #A71D5D;
-$codehilite-keyword-reserved: #3E61A2;
-$codehilite-keyword-type: #3E61A2;
+$codehilite-keyword: #3b78e7;
+$codehilite-keyword-constant: #a71d5d;
+$codehilite-keyword-declaration: #3b78e7;
+$codehilite-keyword-namespace: #3b78e7;
+$codehilite-keyword-pseudo: #a71d5d;
+$codehilite-keyword-reserved: #3e61a2;
+$codehilite-keyword-type: #3e61a2;
 
 // Comments
 $codehilite-comment: #999999;
@@ -60,48 +60,48 @@ $codehilite-comment-shebang: #999999;
 $codehilite-comment-special: #999999;
 
 // Names
-$codehilite-name-attribute: #C2185B;
-$codehilite-name-builtin: #C2185B;
-$codehilite-name-builtin-pseudo: #3E61A2;
-$codehilite-name-class: #C2185B;
-$codehilite-name-constant: #3E61A2;
+$codehilite-name-attribute: #c2185b;
+$codehilite-name-builtin: #c2185b;
+$codehilite-name-builtin-pseudo: #3e61a2;
+$codehilite-name-class: #c2185b;
+$codehilite-name-constant: #3e61a2;
 $codehilite-name-decorator: #666666;
 $codehilite-name-entity: #666666;
-$codehilite-name-exception: #C2185B;
-$codehilite-name-function: #C2185B;
-$codehilite-name-label: #3B5179;
-$codehilite-name-namespace: #EC407A;
-$codehilite-name-tag: #3B78E7;
-$codehilite-name-variable: #3E61A2;
-$codehilite-name-variable-class: #3E61A2;
-$codehilite-name-variable-instance: #3E61A2;
-$codehilite-name-variable-global: #3E61A2;
-$codehilite-name-extension: #EC407A;
+$codehilite-name-exception: #c2185b;
+$codehilite-name-function: #c2185b;
+$codehilite-name-label: #3b5179;
+$codehilite-name-namespace: #ec407a;
+$codehilite-name-tag: #3b78e7;
+$codehilite-name-variable: #3e61a2;
+$codehilite-name-variable-class: #3e61a2;
+$codehilite-name-variable-instance: #3e61a2;
+$codehilite-name-variable-global: #3e61a2;
+$codehilite-name-extension: #ec407a;
 
 // Numbers
-$codehilite-literal-number: #E74C3C;
-$codehilite-literal-number-float: #E74C3C;
-$codehilite-literal-number-hex: #E74C3C;
-$codehilite-literal-number-integer: #E74C3C;
-$codehilite-literal-number-integer-long: #E74C3C;
-$codehilite-literal-number-oct: #E74C3C;
+$codehilite-literal-number: #e74c3c;
+$codehilite-literal-number-float: #e74c3c;
+$codehilite-literal-number-hex: #e74c3c;
+$codehilite-literal-number-integer: #e74c3c;
+$codehilite-literal-number-integer-long: #e74c3c;
+$codehilite-literal-number-oct: #e74c3c;
 
 // Strings
-$codehilite-literal-string: #0D904F;
-$codehilite-literal-string-backticks: #0D904F;
-$codehilite-literal-string-char: #0D904F;
+$codehilite-literal-string: #0d904f;
+$codehilite-literal-string-backticks: #0d904f;
+$codehilite-literal-string-char: #0d904f;
 $codehilite-literal-string-doc: #999999;
-$codehilite-literal-string-double: #0D904F;
+$codehilite-literal-string-double: #0d904f;
 $codehilite-literal-string-escape: #183691;
 $codehilite-literal-string-heredoc: #183691;
 $codehilite-literal-string-interpol: #183691;
 $codehilite-literal-string-other: #183691;
 $codehilite-literal-string-regex: #009926;
-$codehilite-literal-string-single: #0D904F;
-$codehilite-literal-string-symbol: #0D904F;
+$codehilite-literal-string-single: #0d904f;
+$codehilite-literal-string-symbol: #0d904f;
 
 // Miscellaneous
-$codehilite-error: #A61717;
+$codehilite-error: #a61717;
 $codehilite-whitespace: transparent;
 
 // ----------------------------------------------------------------------------
@@ -110,86 +110,209 @@ $codehilite-whitespace: transparent;
 
 // Codehilite extension
 .codehilite {
-
   // Operators
-  .o  { color: $codehilite-operator; }
-  .ow { color: $codehilite-operator-word; }
+  .o {
+    color: $codehilite-operator;
+  }
+  .ow {
+    color: $codehilite-operator-word;
+  }
 
   // Generics
-  .ge { color: $codehilite-generic-emph; }
-  .gr { color: $codehilite-generic-error; }
-  .gh { color: $codehilite-generic-heading; }
-  .go { color: $codehilite-generic-output; }
-  .gp { color: $codehilite-generic-prompt; }
-  .gs { color: $codehilite-generic-strong; }
-  .gu { color: $codehilite-generic-subheading; }
-  .gt { color: $codehilite-generic-traceback; }
+  .ge {
+    color: $codehilite-generic-emph;
+  }
+  .gr {
+    color: $codehilite-generic-error;
+  }
+  .gh {
+    color: $codehilite-generic-heading;
+  }
+  .go {
+    color: $codehilite-generic-output;
+  }
+  .gp {
+    color: $codehilite-generic-prompt;
+  }
+  .gs {
+    color: $codehilite-generic-strong;
+  }
+  .gu {
+    color: $codehilite-generic-subheading;
+  }
+  .gt {
+    color: $codehilite-generic-traceback;
+  }
 
   // Diffs
-  .gd { background-color: $codehilite-diff-deleted; }
-  .gi { background-color: $codehilite-diff-inserted; }
+  .gd {
+    background-color: $codehilite-diff-deleted;
+  }
+  .gi {
+    background-color: $codehilite-diff-inserted;
+  }
 
   // Keywords
-  .k  { color: $codehilite-keyword; }
-  .kc { color: $codehilite-keyword-constant; }
-  .kd { color: $codehilite-keyword-declaration; }
-  .kn { color: $codehilite-keyword-namespace; }
-  .kp { color: $codehilite-keyword-pseudo; }
-  .kr { color: $codehilite-keyword-reserved; }
-  .kt { color: $codehilite-keyword-type; }
+  .k {
+    color: $codehilite-keyword;
+  }
+  .kc {
+    color: $codehilite-keyword-constant;
+  }
+  .kd {
+    color: $codehilite-keyword-declaration;
+  }
+  .kn {
+    color: $codehilite-keyword-namespace;
+  }
+  .kp {
+    color: $codehilite-keyword-pseudo;
+  }
+  .kr {
+    color: $codehilite-keyword-reserved;
+  }
+  .kt {
+    color: $codehilite-keyword-type;
+  }
 
   // Comments
-  .c  { color: $codehilite-comment; }
-  .cm { color: $codehilite-comment-multiline; }
-  .cp { color: $codehilite-comment-preproc; }
-  .c1 { color: $codehilite-comment-single; }
-  .ch { color: $codehilite-comment-shebang; }
-  .cs { color: $codehilite-comment-special; }
+  .c {
+    color: $codehilite-comment;
+  }
+  .cm {
+    color: $codehilite-comment-multiline;
+  }
+  .cp {
+    color: $codehilite-comment-preproc;
+  }
+  .c1 {
+    color: $codehilite-comment-single;
+  }
+  .ch {
+    color: $codehilite-comment-shebang;
+  }
+  .cs {
+    color: $codehilite-comment-special;
+  }
 
   // Names
-  .na { color: $codehilite-name-attribute; }
-  .nb { color: $codehilite-name-builtin; }
-  .bp { color: $codehilite-name-builtin-pseudo; }
-  .nc { color: $codehilite-name-class; }
-  .no { color: $codehilite-name-constant; }
-  .nd { color: $codehilite-name-entity; }
-  .ni { color: $codehilite-name-entity; }
-  .ne { color: $codehilite-name-exception; }
-  .nf { color: $codehilite-name-function; }
-  .nl { color: $codehilite-name-label; }
-  .nn { color: $codehilite-name-namespace; }
-  .nt { color: $codehilite-name-tag; }
-  .nv { color: $codehilite-name-variable; }
-  .vc { color: $codehilite-name-variable-class; }
-  .vg { color: $codehilite-name-variable-global; }
-  .vi { color: $codehilite-name-variable-instance; }
-  .nx { color: $codehilite-name-extension; }
+  .na {
+    color: $codehilite-name-attribute;
+  }
+  .nb {
+    color: $codehilite-name-builtin;
+  }
+  .bp {
+    color: $codehilite-name-builtin-pseudo;
+  }
+  .nc {
+    color: $codehilite-name-class;
+  }
+  .no {
+    color: $codehilite-name-constant;
+  }
+  .nd {
+    color: $codehilite-name-entity;
+  }
+  .ni {
+    color: $codehilite-name-entity;
+  }
+  .ne {
+    color: $codehilite-name-exception;
+  }
+  .nf {
+    color: $codehilite-name-function;
+  }
+  .nl {
+    color: $codehilite-name-label;
+  }
+  .nn {
+    color: $codehilite-name-namespace;
+  }
+  .nt {
+    color: $codehilite-name-tag;
+  }
+  .nv {
+    color: $codehilite-name-variable;
+  }
+  .vc {
+    color: $codehilite-name-variable-class;
+  }
+  .vg {
+    color: $codehilite-name-variable-global;
+  }
+  .vi {
+    color: $codehilite-name-variable-instance;
+  }
+  .nx {
+    color: $codehilite-name-extension;
+  }
 
   // Numbers
-  .m  { color: $codehilite-literal-number; }
-  .mf { color: $codehilite-literal-number-float; }
-  .mh { color: $codehilite-literal-number-hex; }
-  .mi { color: $codehilite-literal-number-integer; }
-  .il { color: $codehilite-literal-number-integer-long; }
-  .mo { color: $codehilite-literal-number-oct; }
+  .m {
+    color: $codehilite-literal-number;
+  }
+  .mf {
+    color: $codehilite-literal-number-float;
+  }
+  .mh {
+    color: $codehilite-literal-number-hex;
+  }
+  .mi {
+    color: $codehilite-literal-number-integer;
+  }
+  .il {
+    color: $codehilite-literal-number-integer-long;
+  }
+  .mo {
+    color: $codehilite-literal-number-oct;
+  }
 
   // Strings
-  .s  { color: $codehilite-literal-string; }
-  .sb { color: $codehilite-literal-string-backticks; }
-  .sc { color: $codehilite-literal-string-char; }
-  .sd { color: $codehilite-literal-string-doc; }
-  .s2 { color: $codehilite-literal-string-double; }
-  .se { color: $codehilite-literal-string-escape; }
-  .sh { color: $codehilite-literal-string-heredoc; }
-  .si { color: $codehilite-literal-string-interpol; }
-  .sx { color: $codehilite-literal-string-other; }
-  .sr { color: $codehilite-literal-string-regex; }
-  .s1 { color: $codehilite-literal-string-single; }
-  .ss { color: $codehilite-literal-string-symbol; }
+  .s {
+    color: $codehilite-literal-string;
+  }
+  .sb {
+    color: $codehilite-literal-string-backticks;
+  }
+  .sc {
+    color: $codehilite-literal-string-char;
+  }
+  .sd {
+    color: $codehilite-literal-string-doc;
+  }
+  .s2 {
+    color: $codehilite-literal-string-double;
+  }
+  .se {
+    color: $codehilite-literal-string-escape;
+  }
+  .sh {
+    color: $codehilite-literal-string-heredoc;
+  }
+  .si {
+    color: $codehilite-literal-string-interpol;
+  }
+  .sx {
+    color: $codehilite-literal-string-other;
+  }
+  .sr {
+    color: $codehilite-literal-string-regex;
+  }
+  .s1 {
+    color: $codehilite-literal-string-single;
+  }
+  .ss {
+    color: $codehilite-literal-string-symbol;
+  }
 
   // Miscellaneous
-  .err { color: $codehilite-error; }
-  .w { color: $codehilite-whitespace; }
+  .err {
+    color: $codehilite-error;
+  }
+  .w {
+    color: $codehilite-whitespace;
+  }
 
   // Highlighted lines
   .hll {
@@ -212,7 +335,6 @@ $codehilite-whitespace: transparent;
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // If code blocks are wrapped with codehilite, the styles must be adjusted
   // so the marker stretches to the whole width and the padding is respected
   .codehilite {
@@ -327,7 +449,6 @@ $codehilite-whitespace: transparent;
 
   // Full-width container
   > .codehilite {
-
     // [mobile -]: Stretch to whole width
     @include break-to-device(mobile) {
       margin: 1em px2rem(-16px);

@@ -11,7 +11,7 @@ zinit load … # or zinit light, zinit snippet
 ```
 
 It is a fundamental Zinit syntax. However, a more concise, optimized syntax,
-called *for-syntax*, is also available. It is best presented by a real-world
+called _for-syntax_, is also available. It is best presented by a real-world
 example:
 
 ```zsh
@@ -30,13 +30,13 @@ ices `as"null" wait"3" lucid` that are common to all of the plugins and
 
 ## A Few Remarks
 
-* The syntax automatically detects if the object is a snippet or a plugin, by
+- The syntax automatically detects if the object is a snippet or a plugin, by
   checking if the object is an URL, i.e.: if it starts with `http*://` or
   `OMZ::`, etc.
-* To load a local-file snippet (which will be treaten as a local-directory
+- To load a local-file snippet (which will be treaten as a local-directory
   plugin by default) use the `is-snippet` ice,
-* To load a plugin in `light` mode use the `light-mode` ice.
-* If the plugin name collides with an ice name, precede the plugin name with
+- To load a plugin in `light` mode use the `light-mode` ice.
+- If the plugin name collides with an ice name, precede the plugin name with
   `@`, e.g.: `@sharkdp/fd` (collides with the `sh` ice, Zinit will take the
   plugin name as `sh"arkdp/fd"`), see the next section for an example.
 

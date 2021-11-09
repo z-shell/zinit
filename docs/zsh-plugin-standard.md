@@ -17,10 +17,9 @@ in a particular way.
 At a simple level, a plugin:
 
 1. Has its directory added to `$fpath` ([**Zsh
-  documentation**](http://zsh.sourceforge.net/Doc/Release/Functions.html#Autoloading-Functions)).
-  This is being done either by a plugin manager or by the plugin itself (see
-  [5th section](#546_plugin_manager_activity_indicator) for more information).
-
+   documentation**](http://zsh.sourceforge.net/Doc/Release/Functions.html#Autoloading-Functions)).
+   This is being done either by a plugin manager or by the plugin itself (see
+   [5th section](#546_plugin_manager_activity_indicator) for more information).
 
 2. Has its first `*.plugin.zsh` file sourced (or `*.zsh`, `init.zsh`, `*.sh`,
    these are non-standard).
@@ -47,12 +46,11 @@ Below follow proposed enhancements and codifications of the definition of a "Zsh
 plugin" and the actions of plugin managers – the proposed standardization. They
 cover the information of how to write a Zsh plugin.
 
-
-## 1\. Standardized $0 Handling
+## 1\. Standardized \$0 Handling
 
 To get the plugin’s location, plugins should do:
 
-``` zsh
+```zsh
 0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
 0="${${(M)0:#/*}:-$PWD/$0}"
 
@@ -65,40 +63,38 @@ The one-line code above will:
 
 2. Use `ZERO` if it’s not empty,
 
-      - the plugin manager will be easily able to alter effective `$0` before
-        loading a plugin,
+   - the plugin manager will be easily able to alter effective `$0` before
+     loading a plugin,
 
-      - this allows for e.g. `eval "$(<plugin)"`, which can be faster
-        than `source`
-        ([**comparison**](http://www.zsh.org/mla/workers/2017/msg01827.html),
-        note that it’s not for a compiled script).
+   - this allows for e.g. `eval "$(<plugin)"`, which can be faster
+     than `source`
+     ([**comparison**](http://www.zsh.org/mla/workers/2017/msg01827.html),
+     note that it’s not for a compiled script).
 
 3. Use `$0` if it doesn’t contain the path to the Zsh binary,
 
-      - plugin manager will still be able to set `$0`, although more difficultly
-        (requires `unsetopt function_argzero` before sourcing plugin script, and
-        `0=…​` assignment),
+   - plugin manager will still be able to set `$0`, although more difficultly
+     (requires `unsetopt function_argzero` before sourcing plugin script, and
+     `0=…​` assignment),
 
-      - `unsetopt function_argzero` will be detected (it causes `$0` not to
-        contain plugin-script path, but path to Zsh binary, if not overwritten
-        by a `0=…​` assignment),
-    
-      - `setopt posix_argzero` will be detected (as above).
+   - `unsetopt function_argzero` will be detected (it causes `$0` not to
+     contain plugin-script path, but path to Zsh binary, if not overwritten
+     by a `0=…​` assignment),
+
+   - `setopt posix_argzero` will be detected (as above).
 
 4. Use `%N` prompt expansion flag, which always gives absolute path to script,
 
-      - plugin manager cannot alter this (no advanced loading of plugin
-        is possible), but simple plugin-file sourcing (without a plugin
-        manager) will be saved from breaking caused by the mentioned
-        `*_argzero` options, so this is a very good last-resort
-        fallback.
+   - plugin manager cannot alter this (no advanced loading of plugin
+     is possible), but simple plugin-file sourcing (without a plugin
+     manager) will be saved from breaking caused by the mentioned
+     `*_argzero` options, so this is a very good last-resort
+     fallback.
 
 5. Finally, in the second line, it will ensure that `$0` contains an absolute
    path by prepending it with `$PWD` if necessary.
 
-The goal is flexibility, with essential motivation to support `eval
-"$(<plugin)"` and definitely solve `setopt no_function_argzero` and `setopt
-posix_argzero` cases.
+The goal is flexibility, with essential motivation to support `eval "$(<plugin)"` and definitely solve `setopt no_function_argzero` and `setopt posix_argzero` cases.
 
 A plugin manager will be even able to convert a plugin to a function (author
 implemented such proof of concept functionality, it’s fully possible – also in
@@ -146,17 +142,17 @@ develoment process.
 1. One plugin manager, Zinit, implements plugin unloading and calls the
    function.
 2. One plugin, `romkatv/powerlevel10k`, is
-2. Two plugins:
+3. Two plugins:
 
-    - `romkatv/powerlevel10k`, is
-      [**using**](https://github.com/romkatv/powerlevel10k/blob/f17081ca/internal/p10k.zsh#L5390)
-      the function to execute a specific task: shutdown of the binary, background
-      [**gitstatus**](https://github.com/romkatv/gitstatus) demon, with a very good
-      results,
+   - `romkatv/powerlevel10k`, is
+     [**using**](https://github.com/romkatv/powerlevel10k/blob/f17081ca/internal/p10k.zsh#L5390)
+     the function to execute a specific task: shutdown of the binary, background
+     [**gitstatus**](https://github.com/romkatv/gitstatus) demon, with a very good
+     results,
 
-    - `agkozak/agkozak-zsh-prompt`, is
-      [**using**](https://github.com/agkozak/agkozak-zsh-prompt/commit/08b5879a)
-      the function for the full unload of the theme.
+   - `agkozak/agkozak-zsh-prompt`, is
+     [**using**](https://github.com/agkozak/agkozak-zsh-prompt/commit/08b5879a)
+     the function for the full unload of the theme.
 
 ## 3. `@zsh-plugin-run-on-unload` Call
 
@@ -176,6 +172,7 @@ The code should be executed in the plugin's directory, in the current shell.
 The mechanism thus provides another way, side to the [unload
 function](#246_unload_function), for the plugin to participate in the process of
 unloading it.
+
 ##### Adoption Status
 
 It's a recent addition to the standard and only one plugin manager, Zinit,
@@ -203,14 +200,12 @@ implements it.
 
 ## 5\. Plugin Manager Activity Indicator
 
-
-
 Plugin managers should set the `$zsh_loaded_plugins` array to contain all
 previously loaded plugins and the plugin currently being loaded (as the last
 element). This will allow any plugin to:
 
- 1. Check which plugins are already loaded.
- 2. Check if it is being loaded by a plugin manager (i.e. not just sourced).
+1.  Check which plugins are already loaded.
+2.  Check if it is being loaded by a plugin manager (i.e. not just sourced).
 
 The first item allows a plugin to e.g. issue a notice about missing
 dependencies. Instead of issuing a notice, it may be able to satisfy the
@@ -223,7 +218,7 @@ of `zsh-async`, having also reliable `$0` defined by previous section (note:
 The second item allows a plugin to e.g. set up `$fpath`, knowing that plugin
 manager will not handle this:
 
-``` zsh
+```zsh
 if [[ ${zsh_loaded_plugins[-1]} != */kalc && -z ${fpath[(r)${0:h}]} ]]
 then
     fpath+=( "${0:h}" )
@@ -260,12 +255,12 @@ state, and have the same state on different accounts / machines.
 
 No-narration facts-list related to `$ZPFX`:
 
- 1. `export ZPFX="$HOME/polaris"` (or e.g. `$HOME/.zinit/polaris`)
- 2. `make PREFIX=$ZPFX install`
- 3. `./configure --prefix=$ZPFX`
- 4. `cmake -DCMAKE_INSTALL_PREFIX=$ZPFX .`
- 5. `zinit ice make"PREFIX=$ZPFX install"`
- 6. `zplug … hook-build:"make PREFIX=$PFX install"`
+1.  `export ZPFX="$HOME/polaris"` (or e.g. `$HOME/.zinit/polaris`)
+2.  `make PREFIX=$ZPFX install`
+3.  `./configure --prefix=$ZPFX`
+4.  `cmake -DCMAKE_INSTALL_PREFIX=$ZPFX .`
+5.  `zinit ice make"PREFIX=$ZPFX install"`
+6.  `zplug … hook-build:"make PREFIX=$PFX install"`
 
 ##### Adoption Status
 
@@ -273,7 +268,7 @@ One plugin manager, Zinit, provides the `$ZPFX` parameter.
 
 ## Zsh Plugin-Programming Best Practices
 
-The document is to define a *Zsh-plugin* but also to serve as an information
+The document is to define a _Zsh-plugin_ but also to serve as an information
 source for plugin creators. Therefore, it covers also a best practices
 information in this section.
 
@@ -341,7 +336,7 @@ It then alters the emulation by `6` different options:
   built-in regex-like globing mechanism,
 - `warn_create_global` – enables warnings to be printed each time a (global)
   variable is defined without being explicitly defined by a `typeset`, `local`,
-  `declare`, etc.  call; it allows to catch typos and missing localizations of
+  `declare`, etc. call; it allows to catch typos and missing localizations of
   the variables and thus prevents from writing a bad code,
 - `typeset_silent` – it allows to call `typeset`, `local`, etc. multiple times on
   the same variable; without it the second call causes the variable contents to
@@ -353,8 +348,7 @@ It then alters the emulation by `6` different options:
   this [**zsh-workers post**](https://www.zsh.org/mla/workers/2011/msg01050.html)
   for the details),
 - `rc_quotes` – adds useful ability to insert apostrophes into an
-  apostrophe-quoted string, by use of `''` inside it, e.g.: `'a string''s
-  example'` will yield the string `a string's example`,
+  apostrophe-quoted string, by use of `''` inside it, e.g.: `'a string''s example'` will yield the string `a string's example`,
 - `no_auto_pushd` - disables the automatic push of the directory passed to `cd`
   builtin onto the directory stack; this is useful, because otherwise the
   internal directory changes done by the plugin will pollute the global
@@ -531,23 +525,23 @@ Vim substitution patterns with back references without any problems.
 
 ## Appendix A: Revision History (History Of Updates To The Document)
 
-v1.0, 11/22/2019: Removed quoting from the `$0` assignments 
-v0.99, 10/26/2019: Added `Adoption Status` sub-sections  
-v0.98, 10/25/2019: 1/ Added `Standard Recommended Variables` section  
-v0.98, 10/25/2019: 2/ Added `Standard Function Name-Space Prefixes` section  
-v0.98, 10/25/2019: 3/ Added `Preventing Function Pollution` section  
-v0.98, 10/25/2019: 4/ Added `Preventing Parameter Pollution` section  
-v0.97, 10/23/2019: Added `Standard Recommended Options` section  
+v1.0, 11/22/2019: Removed quoting from the `$0` assignments
+v0.99, 10/26/2019: Added `Adoption Status` sub-sections
+v0.98, 10/25/2019: 1/ Added `Standard Recommended Variables` section
+v0.98, 10/25/2019: 2/ Added `Standard Function Name-Space Prefixes` section
+v0.98, 10/25/2019: 3/ Added `Preventing Function Pollution` section
+v0.98, 10/25/2019: 4/ Added `Preventing Parameter Pollution` section
+v0.97, 10/23/2019: Added `Standard Recommended Options` section
 v0.96, 10/23/2019: Added `@zsh-plugin-run-on-unload` and
-`@zsh-plugin-run-on-update` calls  
+`@zsh-plugin-run-on-update` calls
 v0.95, 07/31/2019: Plugin unload function `*_unload_plugin` -->
-`*_plugin_unload`  
-v0.94, 07/20/2019: Add initial version of the best practices section  
-v0.93, 07/20/2019: 1/ Add the second line to the `$0` handling.  
-v0.93, 07/20/2019: 2/ Reformat to 80 columns  
-v0.92, 07/14/2019: 1/ Rename LOADED_PLUGINS to zsh_loaded_plugins.  
-v0.92, 07/14/2019: 2/ Suggest that $ZPFX is optional.  
-v0.91, 06/02/2018: Fix the link to the PDF for Github.  
+`*_plugin_unload`
+v0.94, 07/20/2019: Add initial version of the best practices section
+v0.93, 07/20/2019: 1/ Add the second line to the `$0` handling.
+v0.93, 07/20/2019: 2/ Reformat to 80 columns
+v0.92, 07/14/2019: 1/ Rename LOADED_PLUGINS to zsh_loaded_plugins.
+v0.92, 07/14/2019: 2/ Suggest that \$ZPFX is optional.
+v0.91, 06/02/2018: Fix the link to the PDF for Github.
 v0.9, 12/12/2017: Remove ZERO references (wrong design), add TOC.
 
 Reminder: The date format that uses slashes is `MM/DD/YYYY`.

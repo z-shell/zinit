@@ -25,7 +25,6 @@
  * ------------------------------------------------------------------------- */
 
 export default class Toggle {
-
   /**
    * Toggle tabs visibility depending on page y-offset
    *
@@ -39,36 +38,33 @@ export default class Toggle {
    * @param {(string|HTMLElement)} el - Selector or HTML element
    */
   constructor(el) {
-    const ref = (typeof el === "string")
-      ? document.querySelector(el)
-      : el
-    if (!(ref instanceof Node))
-      throw new ReferenceError
-    this.el_ = ref
+    const ref = typeof el === "string" ? document.querySelector(el) : el;
+    if (!(ref instanceof Node)) throw new ReferenceError();
+    this.el_ = ref;
 
     /* Obtain header */
-    const header = document.querySelector("[data-md-component=header]")
+    const header = document.querySelector("[data-md-component=header]");
 
     /* Initialize height and state */
-    this.height_ = header.offsetHeight
-    this.active_ = false
+    this.height_ = header.offsetHeight;
+    this.active_ = false;
   }
 
   /**
    * Update visibility
    */
   update() {
-    const active = window.pageYOffset >=
-      this.el_.children[0].offsetTop + (5 - this.height_)
+    const active =
+      window.pageYOffset >= this.el_.children[0].offsetTop + (5 - this.height_);
     if (active !== this.active_)
-      this.el_.dataset.mdState = (this.active_ = active) ? "hidden" : ""
+      this.el_.dataset.mdState = (this.active_ = active) ? "hidden" : "";
   }
 
   /**
    * Reset visibility
    */
   reset() {
-    this.el_.dataset.mdState = ""
-    this.active_ = false
+    this.el_.dataset.mdState = "";
+    this.active_ = false;
   }
 }

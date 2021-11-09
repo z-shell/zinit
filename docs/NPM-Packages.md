@@ -18,9 +18,10 @@ The motivation for adding such functionality was:
    overwhelmed by its configuration.
 
 2. It has many package-manager -like features, such as:
-    - it can run `Makefiles`, 
-    - automatically provide *shims* (i.e.: forwarder scripts) for the binaries,
-    - extend `$PATH` to expose the binaries, and more.
+
+   - it can run `Makefiles`,
+   - automatically provide _shims_ (i.e.: forwarder scripts) for the binaries,
+   - extend `$PATH` to expose the binaries, and more.
 
 3. In general, Zinit has many hooks which allow surprising and beautiful
    things, however their content often evolves to a gradually better and better
@@ -68,7 +69,7 @@ Using Zinit to install software where one could use a regular package manager
 has several advantages:
 
 1. **Pro:** The Zinit NPM packages typically use the URLs to the official and
-   *latest* distributions of the software (like e.g.: the
+   _latest_ distributions of the software (like e.g.: the
    [ecs-cli](https://github.com/z-shell/ecs-cli) package, which uses the
    URL: `https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest`
    when installing on Linux).
@@ -76,21 +77,21 @@ has several advantages:
 2. **Pro:** You can influence the installation easily by specifying Zinit
    ice-mods, e.g.:
 
-    ```zsh
-    zinit pack=bgn atclone="cp fzy.1 $ZPFX/man/man1" for fzy
-    ```
+   ```zsh
+   zinit pack=bgn atclone="cp fzy.1 $ZPFX/man/man1" for fzy
+   ```
 
-    to install also the man page for the `fzy` fuzzy finder (this omission in
-    the package will be fixed soon).
+   to install also the man page for the `fzy` fuzzy finder (this omission in
+   the package will be fixed soon).
 
 3. **Pro:** The installation is much more flexible than a normal package
-   manager.  Example available degrees of freedom:
+   manager. Example available degrees of freedom:
 
-    - to install from Git or from release-tarball, or from binary-release file,
-    - to install via shims or via extending `$PATH`, or by copying to
-      `$ZPFX/bin`,
-    - to download files and apply patches to the source by using the
-      [Patch-Dl](../z-a-patch-dl/) annex features.
+   - to install from Git or from release-tarball, or from binary-release file,
+   - to install via shims or via extending `$PATH`, or by copying to
+     `$ZPFX/bin`,
+   - to download files and apply patches to the source by using the
+     [Patch-Dl](../z-a-patch-dl/) annex features.
 
 4. **Pro:** The installations are located in the user home directory, which
    doesn't require root access. Also, for Gems and Node modules, they are
@@ -136,8 +137,8 @@ GitHub organization. You can find the available packages there, which as of
   yet complete),
 - [fzf](https://github.com/z-shell/fzf) – the fuzzy-finder, installed from
   source (from a tarball or Git) or from the GitHub-releases binary,
-- [ls\_colors](https://github.com/z-shell/ls_colors) – the
-  [trapd00r/LS\_COLORS](https://github.com/trapd00r/LS_COLORS) color definitions
+- [ls_colors](https://github.com/z-shell/ls_colors) – the
+  [trapd00r/LS_COLORS](https://github.com/trapd00r/LS_COLORS) color definitions
   for GNU `ls`, `ogham/exa` and Zshell's completion.
 
 ## Adding Your Own Package

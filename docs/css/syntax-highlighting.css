@@ -25,8 +25,8 @@
 }
 
 /* Enables syntax highlighting for inlined code.*/
-code.hljs{
-  display:inline;
+code.hljs {
+  display: inline;
 }
 
 /*End of Zplugin config.*/

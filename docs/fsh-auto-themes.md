@@ -12,7 +12,7 @@ entering a particular directory.
 
 ## Operation
 
-This plugin activates after changing current directory in the shell session.  It
+This plugin activates after changing current directory in the shell session. It
 then searches for `.fsh-theme` file in that new directory or in any upper
 directory. Example `.fsh-theme` file contents:
 
@@ -21,14 +21,14 @@ q-jmnemonic
 ```
 
 1. **First line**: a name of a theme or a path to a theme. The path can use the
-shorthands supported by `fast-theme`, e.g.: `XDG:x-paragon` will point to the
-file `~/.config/fsh/x-paragon.ini` (unless the `$XDG_CONFIG_HOME` is being set
-to different directory than `~/.config`). See `fast-theme --help` for more
-information and other shorthands.
+   shorthands supported by `fast-theme`, e.g.: `XDG:x-paragon` will point to the
+   file `~/.config/fsh/x-paragon.ini` (unless the `$XDG_CONFIG_HOME` is being set
+   to different directory than `~/.config`). See `fast-theme --help` for more
+   information and other shorthands.
 
 2. **Second line**: a name or a path of an overlay (an overlay is a theme-like
-file that overwrites every theme's settings; you can use it to impose your own
-customizations over any theme).
+   file that overwrites every theme's settings; you can use it to impose your own
+   customizations over any theme).
 
 The plugin will switch current theme to the one in the file and also apply the
 overlay found in the file. One of the lines can be empty.

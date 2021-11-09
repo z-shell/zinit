@@ -20,4 +20,4 @@
  * IN THE SOFTWARE.
  */
 
-import "../../../.modernizr-autorc"
+import "../../../.modernizr-autorc";

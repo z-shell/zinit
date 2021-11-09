@@ -205,9 +205,7 @@
   // Some properties need to be set with higher specificity due to the default
   // styling of text links inside typesetted content
   html & {
-    transition:
-      background 0.4s,
-      color      0.4s,
+    transition: background 0.4s, color 0.4s,
       box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     // Icon

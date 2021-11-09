@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-import Adapter from "./Source/Adapter"
-import Repository from "./Source/Repository"
+import Adapter from "./Source/Adapter";
+import Repository from "./Source/Repository";
 
 /* ----------------------------------------------------------------------------
  * Module
@@ -29,5 +29,5 @@ import Repository from "./Source/Repository"
 
 export default {
   Adapter,
-  Repository
-}
+  Repository,
+};

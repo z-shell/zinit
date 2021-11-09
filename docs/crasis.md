@@ -35,7 +35,7 @@ CRASIS_THEME="zdharma-256" CRASIS_LAYOUT="contract" crasis
 ## Key Bindings
 
 | Key(s)             | Description                                                      |
-|--------------------|------------------------------------------------------------------|
+| ------------------ | ---------------------------------------------------------------- |
 | `<`,`>` or `{`,`}` | Horizontal scroll (i.e. left or right)                           |
 | `Ctrl-L`           | Redraw of whole display                                          |
 | `Ctrl-U`           | Half page up                                                     |

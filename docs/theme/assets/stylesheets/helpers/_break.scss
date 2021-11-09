@@ -80,7 +80,8 @@ $break-devices: () !default;
           @error "Invalid number: #{$number}";
         }
       }
-    } @elseif type-of($value) == number {
+    }
+    @elseif type-of($value) == number {
       $min: min($value, $min);
       $max: null;
     } @else {
@@ -108,7 +109,9 @@ $break-devices: () !default;
     }
   }
   @if type-of($current) == list or type-of($current) == number {
-    $current: (default: $current);
+    $current: (
+      default: $current,
+    );
   }
   @return break-select-min-max($current);
 }
@@ -129,7 +132,8 @@ $break-devices: () !default;
     @media only screen and (min-width: $breakpoint) {
       @content;
     }
-  } @elseif type-of($breakpoint) == list {
+  }
+  @elseif type-of($breakpoint) == list {
     $min: nth($breakpoint, 1);
     $max: nth($breakpoint, 2);
     @if type-of($min) == number and type-of($max) == number {
@@ -187,7 +191,7 @@ $break-devices: () !default;
 ///
 @mixin break-at-device($device) {
   @if type-of($device) == string {
-    $device: $device,;
+    $device: $device;
   }
   @if type-of($device) == list {
     $breakpoint: break-select-device($device);
@@ -214,7 +218,7 @@ $break-devices: () !default;
 ///
 @mixin break-from-device($device) {
   @if type-of($device) == string {
-    $device: $device,;
+    $device: $device;
   }
   @if type-of($device) == list {
     $breakpoint: break-select-device($device);
@@ -236,7 +240,7 @@ $break-devices: () !default;
 ///
 @mixin break-to-device($device) {
   @if type-of($device) == string {
-    $device: $device,;
+    $device: $device;
   }
   @if type-of($device) == list {
     $breakpoint: break-select-device($device);

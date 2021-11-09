@@ -10,7 +10,7 @@ zinit light vim/vim
 - `make` – run `make` after `atclone''` and `atpull''` (note: `make'!'` will execute before them),
 - `pick"src/vim"` – set executable flag on `src/vim`, hint that `src/` should be added to `$PATH`.
 
-***
+---
 
 The same but with **installation** (i.e. `make install` is being run) under
 `$ZPFX` (`~/.zinit/polaris` by default):
@@ -29,7 +29,7 @@ zinit light vim/vim
 - `make` – as above, but also run the `install` target,
 - `pick"src/vim"` – as above, but for different path (`$ZPFX/bin/vim`).
 
-***
+---
 
 ```zsh
 zinit ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \

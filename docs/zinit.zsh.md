@@ -1,16 +1,14 @@
-zinit.zsh(1)
-==============
+# zinit.zsh(1)
 
-NAME
-----
+## NAME
+
 zinit.zsh - a shell script
 
-SYNOPSIS
---------
+## SYNOPSIS
+
 Documentation automatically generated with \`zshelldoc'
 
-FUNCTIONS
----------
+## FUNCTIONS
 
 ```text
 pmodload
@@ -63,8 +61,7 @@ AUTOLOAD is-at-least
 PRECMD-HOOK @zinit-scheduler
 ```
 
-DETAILS
--------
+## DETAILS
 
 ## Script Body
 
@@ -83,7 +80,7 @@ _Exports (environment):_ ZPFX
 
 ## pmodload
 
-```text 
+```text
 Compatibility with Prezto. Calls can be recursive.
 ```
 
@@ -104,7 +101,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## zpcdclear
 
-```text 
+```text
 A wrapper for `zinit cdclear -q' which can be called from hook
 ices like the atinit'', atload'', etc. ices.
 ```
@@ -120,7 +117,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## zpcdreplay
 
-```text 
+```text
 A function that can be invoked from within `atinit', `atload', etc.
 ice-mod.  It works like `zinit cdreplay', which cannot be invoked
 from such hook ices.
@@ -137,7 +134,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## zpcompdef
 
-```text 
+```text
 Stores compdef for a replay with `zpcdreplay' (turbo mode) or
 with `zinit cdreplay' (normal mode). An utility functton of
 an undefined use case.
@@ -149,7 +146,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## zpcompinit
 
-```text 
+```text
 A function that can be invoked from within `atinit', `atload', etc.
 ice-mod.  It runs `autoload compinit; compinit' and respects
 ZINIT[ZCOMPDUMP_PATH] and ZINIT[COMPINIT_OPTS].
@@ -199,6 +196,7 @@ $2 - plugin (only when $1 - i.e. user - given)
 
 Returns user and plugin in $reply
 ```
+
 Has 23 line(s). Doesn't call other functions.
 
 Called by:
@@ -233,7 +231,7 @@ zinit-side.zsh/.zinit-first
 
 ## .zinit-clear-debug-report
 
-```text 
+```text
 Forgets dtrace repport gathered up to this moment.
 ```
 
@@ -253,7 +251,7 @@ zinit-autoload.zsh/.zinit-unload
 
 ## .zinit-compdef-clear
 
-```text 
+```text
 Implements user-exposed functionality to clear gathered compdefs.
 ```
 
@@ -268,7 +266,7 @@ zinit
 
 ## .zinit-compdef-replay
 
-```text 
+```text
 Runs gathered compdef calls. This allows to run `compinit'
 after loading plugins.
 ```
@@ -284,7 +282,7 @@ zinit
 
 ## .zinit-debug-start
 
-```text 
+```text
 Starts Dtrace, i.e. session tracking for changes in Zsh state.
 ```
 
@@ -308,7 +306,7 @@ zinit
 
 ## .zinit-debug-stop
 
-```text 
+```text
 Stops Dtrace, i.e. session tracking for changes in Zsh state.
 ```
 
@@ -332,7 +330,7 @@ zinit
 
 ## .zinit-debug-unload
 
-```text 
+```text
 Reverts changes detected by dtrace run.
 ```
 
@@ -351,7 +349,7 @@ zinit
 
 ## .zinit-deploy-message
 
-```text 
+```text
 Deploys a sub-prompt message to be displayed OR a `zle
 .reset-prompt' call to be invoked
 ```
@@ -369,7 +367,7 @@ Called by:
 
 ## .zinit-diff
 
-```text 
+```text
 Performs diff actions of all types
 ```
 
@@ -393,7 +391,7 @@ Called by:
 
 ## .zinit-diff-env
 
-```text 
+```text
 Implements detection of change in PATH and FPATH.
 
 $1 - user/plugin (i.e. uspl2 format)
@@ -411,7 +409,7 @@ Called by:
 
 ## .zinit-diff-functions
 
-```text 
+```text
 Implements detection of newly created functions. Performs
 data gathering, computation is done in *-compute().
 
@@ -429,7 +427,7 @@ Called by:
 
 ## .zinit-diff-options
 
-```text 
+```text
 Implements detection of change in option state. Performs
 data gathering, computation is done in *-compute().
 
@@ -447,7 +445,7 @@ Called by:
 
 ## .zinit-diff-parameter
 
-```text 
+```text
 Implements detection of change in any parameter's existence and type.
 Performs data gathering, computation is done in *-compute().
 
@@ -465,7 +463,7 @@ Called by:
 
 ## .zinit-find-other-matches
 
-```text 
+```text
 Plugin's main source file is in general `name.plugin.zsh'. However,
 there can be different conventions, if that file is not found, then
 this functions examines other conventions in order of most expected
@@ -483,7 +481,7 @@ zinit-side.zsh/.zinit-first
 
 ## .zinit-ice
 
-```text 
+```text
 Parses ICE specification (`zplg ice' subcommand), puts the result
 into ZINIT_ICE global hash. The ice-spec is valid for next command
 only (i.e. it "melts"), but it can then stick to plugin and activate
@@ -502,7 +500,7 @@ _Environment variables used:_ ZPFX
 
 ## .zinit-load
 
-```text 
+```text
 Implements the exposed-to-user action of loading a plugin.
 
 $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
@@ -544,7 +542,7 @@ zinit
 
 ## .zinit-load-plugin
 
-```text 
+```text
 Lower-level function for loading a plugin.
 
 $1 - user
@@ -579,7 +577,7 @@ Called by:
 
 ## .zinit-load-snippet
 
-```text 
+```text
 Implements the exposed-to-user action of loading a snippet.
 
 $1 - url (can be local, absolute path)
@@ -609,7 +607,7 @@ zinit-autoload.zsh/.zinit-update-or-status-snippet
 
 ## .zinit-pack-ice
 
-```text 
+```text
 Remembers all ice-mods, assigns them to concrete plugin. Ice spec
 is in general forgotten for second-next command (that's why it's
 called "ice" - it melts), however they glue to the object (plugin
@@ -629,7 +627,7 @@ zinit-autoload.zsh/.zinit-compute-ice
 
 ## .zinit-prepare-home
 
-```text 
+```text
 Creates all directories needed by Zinit, first checks if they
 already exist.
 ```
@@ -646,7 +644,7 @@ _Environment variables used:_ ZPFX
 
 ## .zinit-register-plugin
 
-```text 
+```text
 Adds the plugin to ZINIT_REGISTERED_PLUGINS array and to the
 zsh_loaded_plugins array (managed according to the plugin standard:
 http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html)
@@ -662,7 +660,7 @@ Called by:
 
 ## @zplg-register-z-plugin
 
-```text 
+```text
 Registers the z-plugin inside Zinit – i.e. an Zinit extension
 ```
 
@@ -672,7 +670,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## :zinit-reload-and-run
 
-```text 
+```text
 Marks given function ($3) for autoloading, and executes it triggering the
 load. $1 is the fpath dedicated to the function, $2 are autoload options.
 This function replaces "autoload -X", because using that on older Zsh
@@ -696,7 +694,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-run-task
 
-```text 
+```text
 A backend, worker function of .zinit-scheduler. It obtains the tasks
 index and a few of its properties (like the type: plugin, snippet,
 service plugin, service snippet) and executes it first checking for
@@ -750,7 +748,7 @@ Called by:
 
 ## @zinit-scheduler
 
-```text 
+```text
 Searches for timeout tasks, executes them. There's an array of tasks
 waiting for execution, this scheduler manages them, detects which ones
 should be run at current moment, decides to remove (or not) them from
@@ -767,7 +765,7 @@ needs to install all turbo-mode plugins without any hesitation
 script, not from prompt
 ```
 
-Has 62 line(s). *Is a precmd hook*. Calls functions:
+Has 62 line(s). _Is a precmd hook_. Calls functions:
 
 ```text
 @zinit-scheduler
@@ -805,7 +803,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-service
 
-```text 
+```text
 Handles given service, i.e. obtains lock, runs it, or waits if no lock
 
 $1 - type "p" or "s" (plugin or snippet)
@@ -848,7 +846,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## :zinit-shadow-alias
 
-```text 
+```text
 Function defined to hijack plugin's calls to `alias' builtin.
 
 The hijacking is to gather report data (which is used in unload).
@@ -867,7 +865,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## :zinit-shadow-autoload
 
-```text 
+```text
 Function defined to hijack plugin's calls to `autoload' builtin.
 
 The hijacking is not only to gather report data, but also to
@@ -887,7 +885,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## :zinit-shadow-bindkey
 
-```text 
+```text
 Function defined to hijack plugin's calls to `bindkey' builtin.
 
 The hijacking is to gather report data (which is used in unload).
@@ -907,7 +905,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## :zinit-shadow-compdef
 
-```text 
+```text
 Function defined to hijack plugin's calls to `compdef' function.
 The hijacking is not only for reporting, but also to save compdef
 calls so that `compinit' can be called after loading plugins.
@@ -924,7 +922,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-shadow-off
 
-```text 
+```text
 Turn off shadowing completely for a given mode ("load", "light",
 "light-b" (i.e. the `trackbinds' mode) or "compdef").
 ```
@@ -942,7 +940,7 @@ Called by:
 
 ## .zinit-shadow-on
 
-```text 
+```text
 Turn on shadowing of builtins and functions according to passed
 mode ("load", "light", "light-b" or "compdef"). The shadowing is
 to gather report data, and to hijack `autoload', `bindkey' and
@@ -960,7 +958,7 @@ Called by:
 
 ## :zinit-shadow-zle
 
-```text 
+```text
 Function defined to hijack plugin's calls to `zle' builtin.
 
 The hijacking is to gather report data (which is used in unload).
@@ -979,7 +977,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## :zinit-shadow-zstyle
 
-```text 
+```text
 Function defined to hijack plugin's calls to `zstyle' builtin.
 
 The hijacking is to gather report data (which is used in unload).
@@ -998,7 +996,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-submit-turbo
 
-```text 
+```text
 If `zinit load`, `zinit light` or `zinit snippet`  will be
 preceded with `wait', `load', `unload' or `on-update-of`/`subscribe'
 ice-mods then the plugin or snipped is to be loaded in turbo-mode,
@@ -1016,7 +1014,7 @@ zinit
 
 ## .zinit-unregister-plugin
 
-```text 
+```text
 Removes the plugin from ZINIT_REGISTERED_PLUGINS array and from the
 zsh_loaded_plugins array (managed according to the plugin standard)
 ```
@@ -1049,7 +1047,7 @@ Called by:
 
 ## zinit
 
-```text 
+```text
 Main function directly exposed to user, obtains subcommand and its
 arguments, has completion.
 ```
@@ -1141,7 +1139,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## -zinit_scheduler_add_sh
 
-```text 
+```text
 Copies task into ZINIT_RUN array, called when a task timeouts.
 A small function ran from pattern in /-substitution as a math
 function.
@@ -1187,4 +1185,3 @@ Called by:
 Script-Body
 :zinit-shadow-bindkey
 ```
-

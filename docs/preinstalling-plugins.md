@@ -10,7 +10,7 @@ zplugin-scheduler function in such a way, that it:
 To accomplish this, use `burst` argument and call `-zplg-scheduler` function.
 Example `Dockerfile` entry:
 
-``` zsh
+```zsh
 RUN zsh -i -c -- '-zplg-scheduler burst || true'
 ```
 

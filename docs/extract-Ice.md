@@ -11,15 +11,15 @@ It works as follows:
 1. At first, a recursive search for files of known [file
    extensions](#supported_file_formats) located not deeper than in
    a sub-directory is being performed. All such found files are then extracted.
-    - The directory-level limit is to skip extraction of some helper archive
-      files, which are typically located somewhere deeper in the directory tree.
+   - The directory-level limit is to skip extraction of some helper archive
+     files, which are typically located somewhere deeper in the directory tree.
 2. **IF** no such files will be found, then a recursive search for files of
    known archive **types** will be performed. This is basically done by running
    the `file` Unix command on each file in the plugin or snippet directory and
    then grepping the output for strings like `Zip`, `bzip2`, etc. All such
    discovered files are then extracted.
-    - The directory-level requirement is imposed also during this stage - files
-      located deeper in the tree than in a sub-directory are omitted.
+   - The directory-level requirement is imposed also during this stage - files
+     located deeper in the tree than in a sub-directory are omitted.
 3. If no archive files will be discovered then no action is being performed and
    also no warning message is being printed.
 
@@ -45,10 +45,10 @@ The value of the ice can begin with a two special characters:
    moved one directory-level up upon unpacking,
 2. Dash (`-`), i.e.: `extract'-…'` – it'll prevent removal of the archive after
    unpacking.
-    - This flag is useful to allow comparing timestamps with the server in case
-      of snippet-downloaded file – it will prevent unnecessary downloads during
-      `zinit update`, as the timestamp of the archive file on the disk will be
-      first compared with the HTTP last-modification time header.
+   - This flag is useful to allow comparing timestamps with the server in case
+     of snippet-downloaded file – it will prevent unnecessary downloads during
+     `zinit update`, as the timestamp of the archive file on the disk will be
+     first compared with the HTTP last-modification time header.
 
 The flags can be combined in any order, e.g.: `extract'!-'`.
 
@@ -66,8 +66,8 @@ recognizes the following options:
    clearing of the plugin's dir before the extraction – normally all the files
    except the archive are being moved into `._backup` directory and after that
    the extraction is performed.
-    - `extract` ice also skips creating the backup **if** more than one archive
-      is found or given as the argument.
+   - `extract` ice also skips creating the backup **if** more than one archive
+     is found or given as the argument.
 
 ## Supported File Formats
 

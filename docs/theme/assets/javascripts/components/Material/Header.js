@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-import Shadow from "./Header/Shadow"
-import Title from "./Header/Title"
+import Shadow from "./Header/Shadow";
+import Title from "./Header/Title";
 
 /* ----------------------------------------------------------------------------
  * Module
@@ -29,5 +29,5 @@ import Title from "./Header/Title"
 
 export default {
   Shadow,
-  Title
-}
+  Title,
+};

@@ -20,14 +20,13 @@
  * IN THE SOFTWARE.
  */
 
-import Abstract from "./Abstract"
+import Abstract from "./Abstract";
 
 /* ----------------------------------------------------------------------------
  * Class
  * ------------------------------------------------------------------------- */
 
 export default class GitHub extends Abstract {
-
   /**
    * Retrieve repository information from GitHub
    *
@@ -38,18 +37,17 @@ export default class GitHub extends Abstract {
    * @param {(string|HTMLAnchorElement)} el - Selector or HTML element
    */
   constructor(el) {
-    super(el)
+    super(el);
 
     /* Extract user (and repository name) from URL, as we have to query for all
        repositories, to omit 404 errors for private repositories */
-    const matches = /^.+github\.com\/([^/]+)\/?([^/]+)?.*$/
-      .exec(this.base_)
+    const matches = /^.+github\.com\/([^/]+)\/?([^/]+)?.*$/.exec(this.base_);
     if (matches && matches.length === 3) {
-      const [, user, name] = matches
+      const [, user, name] = matches;
 
       /* Initialize base URL and repository name */
-      this.base_ = `https://api.github.com/users/${user}/repos`
-      this.name_ = name
+      this.base_ = `https://api.github.com/users/${user}/repos`;
+      this.name_ = name;
     }
   }
 
@@ -61,35 +59,31 @@ export default class GitHub extends Abstract {
   fetch_() {
     const paginate = (page = 0) => {
       return fetch(`${this.base_}?per_page=30&page=${page}`)
-        .then(response => response.json())
-        .then(data => {
-          if (!(data instanceof Array))
-            throw new TypeError
+        .then((response) => response.json())
+        .then((data) => {
+          if (!(data instanceof Array)) throw new TypeError();
 
           /* Display number of stars and forks, if repository is given */
           if (this.name_) {
-            const repo = data.find(item => item.name === this.name_)
-            if (!repo && data.length === 30)
-              return paginate(page + 1)
+            const repo = data.find((item) => item.name === this.name_);
+            if (!repo && data.length === 30) return paginate(page + 1);
 
             /* If we found a repo, extract the facts */
             return repo
               ? [
-                `${this.format_(repo.stargazers_count)} Stars`,
-                `${this.format_(repo.forks_count)} Forks`
-              ]
-              : []
+                  `${this.format_(repo.stargazers_count)} Stars`,
+                  `${this.format_(repo.forks_count)} Forks`,
+                ]
+              : [];
 
-          /* Display number of repositories, otherwise */
+            /* Display number of repositories, otherwise */
           } else {
-            return [
-              `${data.length} Repositories`
-            ]
+            return [`${data.length} Repositories`];
           }
-        })
-    }
+        });
+    };
 
     /* Paginate through repos */
-    return paginate()
+    return paginate();
   }
 }

@@ -1,8 +1,7 @@
 A repository [**trapd00r/LS_COLORS**](https://github.com/trapd00r/LS_COLORS)
 provides a file with color definitions for GNU `ls` command (and also for
 [**ogham/exa**](https://github.com/ogham/exa); it can be also used to style Zsh
-completion – more on this below). Typically one does `eval $( dircolors -b
-$HOME/LS_COLORS)` to process this file and set environment for `ls`. However
+completion – more on this below). Typically one does `eval $( dircolors -b $HOME/LS_COLORS)` to process this file and set environment for `ls`. However
 this means `dircolors` is ran every shell startup.
 
 This costs much time, because a fork has to be done and the program (i.e.
@@ -20,8 +19,8 @@ zinit light trapd00r/LS_COLORS
 - `atclone"…"` – generate shell script, but instead of passing it to `eval`,
   save it to file,
 - `atpull'%atclone'` – do the same at any update of plugin (the `atclone` is
-  being ran on the *installation* while the `atpull` hook is being ran on an
-  *update* of the
+  being ran on the _installation_ while the `atpull` hook is being ran on an
+  _update_ of the
   [**trapd00r/LS_COLORS**](https://github.com/trapd00r/LS_COLORS) plugin); the
   `%atclone` is just a special string that denotes that the `atclone''` hook
   should be copied onto the `atpull''` hook,

@@ -1,16 +1,14 @@
-zinit-autoload.zsh(1)
-=======================
+# zinit-autoload.zsh(1)
 
-NAME
-----
+## NAME
+
 zinit-autoload.zsh - a shell script
 
-SYNOPSIS
---------
+## SYNOPSIS
+
 Documentation automatically generated with \`zshelldoc'
 
-FUNCTIONS
----------
+## FUNCTIONS
 
 ```text
 .zinit-any-to-uspl2
@@ -74,13 +72,12 @@ FUNCTIONS
 .zinit-update-or-status-all
 .zinit-update-or-status-snippet
 ```
+
 AUTOLOAD compinit
 
-DETAILS
--------
+## DETAILS
 
 ## Script Body
-
 
 Has 5 line(s). No functions are called (may set up e.g. a hook, a Zle widget bound to a key, etc.).
 
@@ -88,7 +85,7 @@ Uses feature(s): _source_
 
 ## .zinit-any-to-uspl2
 
-```text 
+```text
 Converts given plugin-spec to format that's used in keys for hash tables.
 So basically, creates string "user/plugin" (this format is called: uspl2).
 
@@ -112,7 +109,6 @@ Called by:
 
 ## .zinit-at-eval
 
-
 Has 1 line(s). Doesn't call other functions.
 
 Uses feature(s): _eval_
@@ -125,7 +121,7 @@ Called by:
 
 ## .zinit-build-module
 
-```text 
+```text
 Performs ./configure && make on the module and displays information
 how to load the module in .zshrc.
 ```
@@ -147,7 +143,7 @@ Called by:
 
 ## .zinit-cd
 
-```text 
+```text
 Jumps to plugin's directory (in Zinit's home directory).
 
 User-action entry point.
@@ -171,7 +167,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-cdisable
 
-```text 
+```text
 Enables given installed completion.
 
 User-action entry point.
@@ -198,7 +194,7 @@ zinit.zsh/zinit
 
 ## .zinit-cenable
 
-```text 
+```text
 Disables given installed completion.
 
 User-action entry point.
@@ -225,7 +221,7 @@ zinit.zsh/zinit
 
 ## .zinit-changes
 
-```text 
+```text
 Shows `git log` of given plugin.
 
 User-action entry point.
@@ -246,7 +242,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-check-comp-consistency
 
-```text 
+```text
 Zinit creates symlink for each installed completion.
 This function checks whether given completion (i.e.
 file like "_mkdir") is indeed a symlink. Backup file
@@ -268,7 +264,7 @@ Called by:
 
 ## .zinit-check-which-completions-are-enabled
 
-```text 
+```text
 For each argument that each should be a path to completion
 within a plugin's dir, it checks whether that completion
 is disabled - returns 0 or 1 on corresponding positions
@@ -290,7 +286,7 @@ Called by:
 
 ## .zinit-check-which-completions-are-installed
 
-```text 
+```text
 For each argument that each should be a path to completion
 within a plugin's dir, it checks whether that completion
 is installed - returns 0 or 1 on corresponding positions
@@ -309,7 +305,7 @@ Called by:
 
 ## .zinit-clear-completions
 
-```text 
+```text
 Delete stray and improper completions.
 
 Completions live even when plugin isn't loaded - if they are
@@ -335,7 +331,7 @@ zinit.zsh/zinit
 
 ## .zinit-clear-report-for
 
-```text 
+```text
 Clears all report data for given user/plugin. This is
 done by resetting all related global ZINIT_* hashes.
 
@@ -360,7 +356,7 @@ zinit.zsh/.zinit-clear-debug-report
 
 ## .zinit-compiled
 
-```text 
+```text
 Displays list of plugins that are compiled.
 
 User-action entry point.
@@ -382,7 +378,7 @@ zinit.zsh/zinit
 
 ## .zinit-compile-uncompile-all
 
-```text 
+```text
 Compiles or uncompiles all existing (on disk) plugins.
 
 User-action entry point.
@@ -408,7 +404,7 @@ zinit.zsh/zinit
 
 ## .zinit-compinit
 
-```text 
+```text
 User-exposed `compinit' frontend which first ensures that all
 completions managed by Zinit are forgotten by Zshell. After
 that it runs normal `compinit', which should more easily detect
@@ -434,7 +430,6 @@ zinit.zsh/zinit
 ```
 
 ## .zinit-compute-ice
-
 
 ```text
 Computes ZINIT_ICE array (default, it can be specified via $3) from a) input
@@ -475,7 +470,7 @@ Called by:
 
 ## .zinit-confirm
 
-```text 
+```text
 Prints given question, waits for "y" key, evals
 given expression if "y" obtained
 
@@ -495,7 +490,7 @@ Called by:
 
 ## .zinit-create
 
-```text 
+```text
 Creates a plugin, also on Github (if not "_local/name" plugin).
 
 User-action entry point.
@@ -519,7 +514,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-delete
 
-```text 
+```text
 Deletes plugin's or snippet's directory (in Zinit's home directory).
 
 User-action entry point.
@@ -543,7 +538,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-diff-env-compute
 
-```text 
+```text
 Computes ZINIT_PATH, ZINIT_FPATH that hold (f)path components
 added by plugin. Uses data gathered earlier by .zinit-diff-env().
 
@@ -561,7 +556,7 @@ Called by:
 
 ## .zinit-diff-functions-compute
 
-```text 
+```text
 Computes FUNCTIONS that holds new functions added by plugin.
 Uses data gathered earlier by .zinit-diff-functions().
 
@@ -579,7 +574,7 @@ Called by:
 
 ## .zinit-diff-options-compute
 
-```text 
+```text
 Computes OPTIONS that holds options changed by plugin.
 Uses data gathered earlier by .zinit-diff-options().
 
@@ -597,7 +592,7 @@ Called by:
 
 ## .zinit-diff-parameter-compute
 
-```text 
+```text
 Computes ZINIT_PARAMETERS_PRE, ZINIT_PARAMETERS_POST that hold
 parameters created or changed (their type) by plugin. Uses
 data gathered earlier by .zinit-diff-parameter().
@@ -616,7 +611,7 @@ Called by:
 
 ## .zinit-edit
 
-```text 
+```text
 Runs $EDITOR on source of given plugin. If the variable is not
 set then defaults to `vim'.
 
@@ -639,7 +634,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-exists-message
 
-```text 
+```text
 Checks if plugin is loaded. Testable. Also outputs error
 message if plugin is not loaded.
 
@@ -665,7 +660,7 @@ Called by:
 
 ## .zinit-find-completions-of-plugin
 
-```text 
+```text
 Searches for completions owned by given plugin.
 Returns them in `reply' array.
 
@@ -688,7 +683,7 @@ Called by:
 
 ## .zinit-format-env
 
-```text 
+```text
 Creates one-column text about FPATH or PATH elements
 added when given plugin was loaded.
 
@@ -706,7 +701,7 @@ Called by:
 
 ## .zinit-format-functions
 
-```text 
+```text
 Creates a one or two columns text with functions created
 by given plugin.
 
@@ -723,7 +718,7 @@ Called by:
 
 ## .zinit-format-options
 
-```text 
+```text
 Creates one-column text about options that changed when
 plugin "$1" was loaded.
 
@@ -746,7 +741,7 @@ Called by:
 
 ## .zinit-format-parameter
 
-```text 
+```text
 Creates one column text that lists global parameters that
 changed when the given plugin was loaded.
 
@@ -762,7 +757,6 @@ Called by:
 ```
 
 ## .zinit-get-completion-owner
-
 
 ```text
 Returns "user---plugin" string (uspl1 format) of plugin that
@@ -816,7 +810,7 @@ Called by:
 
 ## .zinit-get-path
 
-```text 
+```text
 Returns path of given ID-string, which may be a plugin-spec
 (like "user/plugin" or "user" "plugin"), an absolute path
 ("%" "/home/..." and also "%SNIPPETS/..." etc.), or a plugin
@@ -842,7 +836,7 @@ Called by:
 
 ## .zinit-glance
 
-```text 
+```text
 Shows colorized source code of plugin. Is able to use pygmentize,
 highlight, GNU source-highlight.
 
@@ -865,7 +859,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-help
 
-```text 
+```text
 Shows usage information.
 
 User-action entry point.
@@ -880,7 +874,6 @@ zinit.zsh/zinit
 ```
 
 ## .zinit-list-bindkeys
-
 
 Has 42 line(s). Calls functions:
 
@@ -897,7 +890,7 @@ zinit.zsh/zinit
 
 ## .zinit-list-compdef-replay
 
-```text 
+```text
 Shows recorded compdefs (called by plugins loaded earlier).
 Plugins often call `compdef' hoping for `compinit' being
 already ran. Zinit solves this by recording compdefs.
@@ -915,7 +908,6 @@ zinit.zsh/zinit
 
 ## .zinit-ls
 
-
 Has 19 line(s). Doesn't call other functions.
 
 Called by:
@@ -926,7 +918,7 @@ zinit.zsh/zinit
 
 ## .zinit-module
 
-```text 
+```text
 Function that has sub-commands passed as long-options (with two dashes, --).
 It's an attempt to plugin only this one function into `zinit' function
 defined in zinit.zsh, to not make this file longer than it's needed.
@@ -948,7 +940,7 @@ zinit.zsh/zinit
 
 ## .zinit-prepare-readlink
 
-```text 
+```text
 Prepares readlink command, used for establishing completion's owner.
 
 $REPLY = ":" or "readlink"
@@ -969,7 +961,6 @@ Called by:
 
 ## .zinit-recall
 
-
 Has 37 line(s). Calls functions:
 
 ```text
@@ -988,7 +979,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-recently
 
-```text 
+```text
 Shows plugins that obtained commits in specified past time.
 
 User-action entry point.
@@ -1011,7 +1002,7 @@ zinit.zsh/zinit
 
 ## .zinit-restore-extendedglob
 
-```text 
+```text
 Restores extendedglob-option from state saved earlier.
 ```
 
@@ -1027,7 +1018,7 @@ Called by:
 
 ## .zinit-save-set-extendedglob
 
-```text 
+```text
 Enables extendedglob-option first saving if it was already
 enabled, for restoration of this state later.
 ```
@@ -1044,7 +1035,7 @@ Called by:
 
 ## .zinit-search-completions
 
-```text 
+```text
 While .zinit-show-completions() shows what completions are
 installed, this functions searches through all plugin dirs
 showing what's available in general (for installation).
@@ -1067,7 +1058,7 @@ zinit.zsh/zinit
 
 ## .zinit-self-update
 
-```text 
+```text
 Updates Zinit code (does a git pull).
 
 User-action entry point.
@@ -1085,7 +1076,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-all-reports
 
-```text 
+```text
 Displays reports of all loaded plugins.
 
 User-action entry point.
@@ -1125,7 +1116,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-completions
 
-```text 
+```text
 Display installed (enabled and disabled), completions. Detect
 stray and improper ones.
 
@@ -1152,7 +1143,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-debug-report
 
-```text 
+```text
 Displays dtrace report (data recorded in interactive session).
 
 User-action entry point.
@@ -1192,7 +1183,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-registered-plugins
 
-```text 
+```text
 Lists loaded plugins (subcommands list, lodaded).
 
 User-action entry point.
@@ -1215,7 +1206,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-report
 
-```text 
+```text
 Displays report of the plugin given.
 
 User-action entry point.
@@ -1259,7 +1250,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-times
 
-```text 
+```text
 Shows loading times of all loaded plugins.
 
 User-action entry point.
@@ -1280,7 +1271,7 @@ zinit.zsh/zinit
 
 ## .zinit-show-zstatus
 
-```text 
+```text
 Shows Zinit status, i.e. number of loaded plugins,
 of available completions, etc.
 
@@ -1297,7 +1288,7 @@ zinit.zsh/zinit
 
 ## .zinit-stress
 
-```text 
+```text
 Compiles plugin with various options on and off to see
 how well the code is written. The options are:
 
@@ -1325,7 +1316,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 
 ## .zinit-uncompile-plugin
 
-```text 
+```text
 Uncompiles given plugin.
 
 User-action entry point.
@@ -1351,7 +1342,7 @@ zinit.zsh/zinit
 
 ## .zinit-uninstall-completions
 
-```text 
+```text
 Removes all completions of given plugin from Zshell (i.e. from FPATH).
 The FPATH is typically `~/.zinit/completions/'.
 
@@ -1379,7 +1370,7 @@ zinit.zsh/zinit
 
 ## .zinit-unload
 
-```text 
+```text
 0. Call the Zsh Plugin's Standard *_plugin_unload function
 1. Delete bindkeys (...)
 2. Delete Zstyles
@@ -1432,7 +1423,7 @@ zinit.zsh/zinit
 
 ## .zinit-update-or-status
 
-```text 
+```text
 Updates (git pull) or does `git status' for given plugin.
 
 User-action entry point.
@@ -1481,7 +1472,7 @@ zinit.zsh/zinit
 
 ## .zinit-update-or-status-all
 
-```text 
+```text
 Updates (git pull) or does `git status` for all existing plugins.
 This includes also plugins that are not loaded into Zsh (but exist
 on disk). Also updates (i.e. redownloads) snippets.
@@ -1536,7 +1527,7 @@ zinit.zsh/zinit
 
 ## .zinit-update-or-status-snippet
 
-```text 
+```text
 
 Implements update or status operation for snippet given by URL.
 
@@ -1566,7 +1557,6 @@ Called by:
 
 ## compinit
 
-
 Has 549 line(s). Doesn't call other functions.
 
 Uses feature(s): _autoload_, _bindkey_, _eval_, _read_, _unfunction_, _zle_, _zstyle_
@@ -1582,6 +1572,7 @@ Vim commands used to convert from asciidoc:
 :%s/^\([-a-zA-Z0-9 :@]\+\)\n\~\+/## \1
 :%s/____\n\(\_.\{-}\)\n____/```text\1^M```/g
 :%s/^ \([ \-|Az`][a-z\-0-9`  \/.]\+\)/  \1/
-:%s/\(\(^  [-a-z0-9.\/`|\\][-a-z0-9.\/`|\\  ]\+\n\)\+\)/```text\1```
+:%s/\(\(^  [-a-z0-9.\/`|\\][-a-z0-9.\/`|\\  ]\+\n\)\+\)/```text
+\1```
 :%s/^\s\+//
 -->

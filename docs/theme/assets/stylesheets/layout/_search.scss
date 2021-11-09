@@ -25,8 +25,7 @@
 // ----------------------------------------------------------------------------
 
 // Active (toggled) search
-$md-toggle__search--checked:
-  "[data-md-toggle=\"search\"]:checked ~ .md-header";
+$md-toggle__search--checked: '[data-md-toggle="search"]:checked ~ .md-header';
 
 // ----------------------------------------------------------------------------
 // Rules
@@ -34,7 +33,6 @@ $md-toggle__search--checked:
 
 // Search container
 .md-search {
-
   // Hide search, if JavaScript is not available.
   .no-js & {
     display: none;
@@ -58,9 +56,7 @@ $md-toggle__search--checked:
       width: px2rem(36px);
       height: px2rem(36px);
       transform-origin: center;
-      transition:
-        transform 0.3s 0.1s,
-        opacity   0.2s 0.2s;
+      transition: transform 0.3s 0.1s, opacity 0.2s 0.2s;
       border-radius: px2rem(20px);
       background-color: $md-color-white;
       overflow: hidden;
@@ -74,16 +70,13 @@ $md-toggle__search--checked:
 
       // Expanded overlay
       #{$md-toggle__search--checked} & {
-        transition:
-          transform 0.4s,
-          opacity   0.1s;
+        transition: transform 0.4s, opacity 0.1s;
         opacity: 1;
       }
     }
 
     // Set scale factors
     #{$md-toggle__search--checked} & {
-
       // [mobile portrait -]: Scale up 45 times
       @include break-to-device(mobile portrait) {
         transform: scale(45);
@@ -107,10 +100,7 @@ $md-toggle__search--checked:
       left: 0;
       width: 0;
       height: 0;
-      transition:
-        width   0s 0.25s,
-        height  0s 0.25s,
-        opacity 0.25s;
+      transition: width 0s 0.25s, height 0s 0.25s, opacity 0.25s;
       background-color: $md-color-black--light;
       cursor: pointer;
 
@@ -124,10 +114,7 @@ $md-toggle__search--checked:
       #{$md-toggle__search--checked} & {
         width: 100%;
         height: 100%;
-        transition:
-          width   0s,
-          height  0s,
-          opacity 0.25s;
+        transition: width 0s, height 0s, opacity 0.25s;
         opacity: 1;
       }
     }
@@ -135,7 +122,6 @@ $md-toggle__search--checked:
 
   // Search modal wrapper
   &__inner {
-
     // [tablet portrait -]: Put search modal off-canvas by default
     @include break-to-device(tablet portrait) {
       position: fixed;
@@ -144,11 +130,8 @@ $md-toggle__search--checked:
       width: 100%;
       height: 100%;
       transform: translateX(5%);
-      transition:
-        right     0s    0.3s,
-        left      0s    0.3s,
-        transform 0.15s 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity   0.15s 0.15s;
+      transition: right 0s 0.3s, left 0s 0.3s,
+        transform 0.15s 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s 0.15s;
       opacity: 0;
       z-index: 2;
 
@@ -156,11 +139,9 @@ $md-toggle__search--checked:
       #{$md-toggle__search--checked} & {
         left: 0;
         transform: translateX(0);
-        transition:
-          right     0s    0s,
-          left      0s    0s,
+        transition: right 0s 0s, left 0s 0s,
           transform 0.15s 0.15s cubic-bezier(0.1, 0.7, 0.1, 1),
-          opacity   0.15s 0.15s;
+          opacity 0.15s 0.15s;
         opacity: 1;
 
         // Adjust for RTL languages
@@ -207,7 +188,6 @@ $md-toggle__search--checked:
 
     // Set maximum width
     #{$md-toggle__search--checked} & {
-
       // [tablet landscape]: Do not overlay title
       @include break-at-device(tablet landscape) {
         width: px2rem(468px);
@@ -270,9 +250,8 @@ $md-toggle__search--checked:
       width: 100%;
       height: px2rem(36px);
       padding-left: px2rem(44px);
-      transition:
-        background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
-        color            0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
+      transition: background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
+        color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
       border-radius: px2rem(2px);
       background-color: $md-color-black--lighter;
       color: inherit;
@@ -317,9 +296,7 @@ $md-toggle__search--checked:
   // Icons
   &__icon {
     position: absolute;
-    transition:
-      color   0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
-      opacity 0.25s;
+    transition: color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     font-size: $md-icon-size;
     cursor: pointer;
     z-index: 2;
@@ -368,9 +345,7 @@ $md-toggle__search--checked:
       top: px2rem(6px);
       right: px2rem(10px);
       transform: scale(0.125);
-      transition:
-        transform 0.15s cubic-bezier(0.1, 0.7, 0.1, 1),
-        opacity   0.15s;
+      transition: transform 0.15s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.15s;
       opacity: 0;
 
       // Adjust for RTL languages
@@ -554,7 +529,6 @@ $md-toggle__search--checked:
 
     // Document
     &--document {
-
       // Icon
       &::before {
         @extend %md-icon, %md-icon__button;

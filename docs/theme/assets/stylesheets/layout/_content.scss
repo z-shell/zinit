@@ -26,7 +26,6 @@
 
 // Content container
 .md-content {
-
   // [tablet landscape +]: Add space for table of contents
   @include break-from-device(tablet landscape) {
     margin-right: px2rem(242px);

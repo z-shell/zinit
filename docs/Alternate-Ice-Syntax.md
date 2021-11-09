@@ -43,7 +43,7 @@ and have the strings following ice names colorized with a distinct color and
 this way separated from them. However, with the
 [zinit/zinit-vim-syntax](https://github.com/z-shell/zinit-vim-syntax)
 syntax definition this motivation can be superseded with the Zinit-specific
-highlighting, at least for Vim.  NOTE: the Vim syntax doesn't yet support the
+highlighting, at least for Vim. NOTE: the Vim syntax doesn't yet support the
 alternate syntaxes, it will soon (PR welcomed).
 
 []( vim:set ft=markdown tw=80 fo+=a2n autoindent: )

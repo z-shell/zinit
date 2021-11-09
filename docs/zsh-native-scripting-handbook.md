@@ -10,15 +10,13 @@ Ruby or Perl code, less like top-down shell scripts.
 
 ### @ is about keeping array form
 
-How to access all array elements in a shell? The standard answer: `use @
-subscript`, i.e. `${array[@]}`. However, this is the Bash & Ksh way (and with
+How to access all array elements in a shell? The standard answer: `use @ subscript`, i.e. `${array[@]}`. However, this is the Bash & Ksh way (and with
 the option `KSH_ARRAYS`, Zsh also works this way, i.e. needs `@` to access
 whole array). Zshell **is different**: it is `$array` that refers to all
 elements anyway. There is no need of `@` subscript.
 
-So what use has `@` in the Zsh-world? It is: "`keep array form`" or "`do not
-join`".  When is it activated? When user quotes the array, i.e. invokes
-`"$array"`, he induces *joining* of all array elements (into a single string). 
+So what use has `@` in the Zsh-world? It is: "`keep array form`" or "`do not join`". When is it activated? When user quotes the array, i.e. invokes
+`"$array"`, he induces _joining_ of all array elements (into a single string).
 `@` is to have elements still quoted (so empty elements are
 preserved), but not joined.
 
@@ -58,8 +56,7 @@ Note: `$(<...)` construct strips trailing empty lines.
 
 This topic is governed by the same principles a the previous paragraph
 (`Reading a file`), with the single difference that instead of the substitution
-`"$(<file-path)"` the substitution that should be used is `"$(command arg1
-...)"`, i.e.:
+`"$(<file-path)"` the substitution that should be used is `"$(command arg1 ...)"`, i.e.:
 
 ```zsh
 declare -a lines; lines=( ${(f)"$(command arg1 ...)"} )
@@ -255,12 +252,9 @@ print "${list[@]/(#m)*/${${(s:,:)MATCH}[4]}}" ▶ 1 2
 ```
 
 There is a problem with the `(s::)` flag that can be solved if Zsh is version
-`5.4` or higher: if there will be single input column, e.g. `list=( "column1"
-"a,b")` instead of two or more columns (i.e. `list=( "column1,column2" "a,b"
-)`), then `(s::)` will return **string** instead of 1-element **array**. So the
+`5.4` or higher: if there will be single input column, e.g. `list=( "column1" "a,b")` instead of two or more columns (i.e. `list=( "column1,column2" "a,b" )`), then `(s::)` will return **string** instead of 1-element **array**. So the
 index `[4]` in above snippet will index a string, and show its 4-th letter.
-Starting with Zsh 5.4, thanks to a patch by Bart Schaefer (`40640: the (A)
-parameter flag forces array result even if...`), it is possible to force
+Starting with Zsh 5.4, thanks to a patch by Bart Schaefer (`40640: the (A) parameter flag forces array result even if...`), it is possible to force
 **array**-kind of result even for single column, by adding `(A)` flag, i.e.:
 
 ```
@@ -334,6 +328,7 @@ value, but as always, `eval` should be avoided if possible.
 ## Real world examples
 
 ### Testing for Git subcommand
+
 Following code checks if there is a `git` subcommand `$mysub`:
 
 ```

@@ -47,9 +47,7 @@ button[data-md-color-accent] {
   width: px2rem(130px);
   margin-bottom: px2rem(4px);
   padding: px2rem(24px) px2rem(8px) px2rem(4px);
-  transition:
-    background-color 0.25s,
-    opacity          0.25s;
+  transition: background-color 0.25s, opacity 0.25s;
   border-radius: px2rem(2px);
   color: $md-color-white;
   font-size: ms(-1);
@@ -63,28 +61,30 @@ button[data-md-color-accent] {
 }
 
 // Build primary colors
-@each $name, $color in (
-  "red":         $clr-red-400,
-  "pink":        $clr-pink-500,
-  "purple":      $clr-purple-400,
-  "deep-purple": $clr-deep-purple-400,
-  "indigo":      $clr-indigo-500,
-  "blue":        $clr-blue-500,
-  "light-blue":  $clr-light-blue-500,
-  "cyan":        $clr-cyan-500,
-  "teal":        $clr-teal-500,
-  "green":       $clr-green-500,
-  "light-green": $clr-light-green-600,
-  "lime":        $clr-lime-600,
-  "yellow":      $clr-yellow-800,
-  "amber":       $clr-amber-700,
-  "orange":      $clr-orange-600,
-  "deep-orange": $clr-deep-orange-400,
-  "brown":       $clr-brown-500,
-  "grey":        $clr-grey-600,
-  "blue-grey":   $clr-blue-grey-600
-) {
-
+@each $name,
+  $color
+    in (
+      "red": $clr-red-400,
+      "pink": $clr-pink-500,
+      "purple": $clr-purple-400,
+      "deep-purple": $clr-deep-purple-400,
+      "indigo": $clr-indigo-500,
+      "blue": $clr-blue-500,
+      "light-blue": $clr-light-blue-500,
+      "cyan": $clr-cyan-500,
+      "teal": $clr-teal-500,
+      "green": $clr-green-500,
+      "light-green": $clr-light-green-600,
+      "lime": $clr-lime-600,
+      "yellow": $clr-yellow-800,
+      "amber": $clr-amber-700,
+      "orange": $clr-orange-600,
+      "deep-orange": $clr-deep-orange-400,
+      "brown": $clr-brown-500,
+      "grey": $clr-grey-600,
+      "blue-grey": $clr-blue-grey-600
+    )
+{
   // Color tile for presentation in theme documentation
   button[data-md-color-primary="#{$name}"] {
     background-color: $color;
@@ -92,7 +92,6 @@ button[data-md-color-accent] {
 
   // Color palette
   [data-md-color-primary="#{$name}"] {
-
     // Links in typesetted content
     .md-typeset a {
       color: $color;
@@ -121,7 +120,6 @@ button[data-md-color-accent] {
 
     // [tablet portrait -]: Layered navigation
     @include break-to-device(tablet portrait) {
-
       // Repository containing source
       .md-nav__source {
         background-color: mix($color, $md-color-black, 75%);
@@ -130,7 +128,6 @@ button[data-md-color-accent] {
 
     // [tablet -]: Layered navigation
     @include break-to-device(tablet) {
-
       // Site title in main navigation
       html & .md-nav--primary .md-nav__title--site {
         background-color: $color;
@@ -139,7 +136,6 @@ button[data-md-color-accent] {
 
     // [screen +]: Set background color for tabs
     @include break-from-device(screen) {
-
       // Tabs with outline
       .md-tabs {
         background-color: $color;
@@ -157,7 +153,6 @@ button[data-md-color-primary="white"] {
 
 // Overrides for white color
 [data-md-color-primary="white"] {
-
   // Application header (stays always on top)
   .md-header {
     background-color: $md-color-white;
@@ -177,7 +172,6 @@ button[data-md-color-primary="white"] {
 
   // [tablet portrait -]: Layered navigation
   @include break-to-device(tablet portrait) {
-
     // Repository containing source
     .md-nav__source {
       background-color: $md-color-black--lightest;
@@ -187,7 +181,6 @@ button[data-md-color-primary="white"] {
 
   // [tablet portrait +]: Change color of search input
   @include break-from-device(tablet landscape) {
-
     // Search input
     .md-search__input {
       background-color: $md-color-black--lightest;
@@ -201,7 +194,6 @@ button[data-md-color-primary="white"] {
 
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
-
     // Site title in main navigation
     html & .md-nav--primary .md-nav__title--site {
       background-color: $md-color-white;
@@ -216,7 +208,6 @@ button[data-md-color-primary="white"] {
 
   // [screen +]: Set background color for tabs
   @include break-from-device(screen) {
-
     // Tabs with outline
     .md-tabs {
       border-bottom: px2rem(1px) solid $md-color-black--lightest;
@@ -227,25 +218,27 @@ button[data-md-color-primary="white"] {
 }
 
 // Build accent colors
-@each $name, $color in (
-  "red":         $clr-red-a400,
-  "pink":        $clr-pink-a400,
-  "purple":      $clr-purple-a200,
-  "deep-purple": $clr-deep-purple-a200,
-  "indigo":      $clr-indigo-a200,
-  "blue":        $clr-blue-a200,
-  "light-blue":  $clr-light-blue-a700,
-  "cyan":        $clr-cyan-a700,
-  "teal":        $clr-teal-a700,
-  "green":       $clr-green-a700,
-  "light-green": $clr-light-green-a700,
-  "lime":        $clr-lime-a700,
-  "yellow":      $clr-yellow-a700,
-  "amber":       $clr-amber-a700,
-  "orange":      $clr-orange-a400,
-  "deep-orange": $clr-deep-orange-a200
-) {
-
+@each $name,
+  $color
+    in (
+      "red": $clr-red-a400,
+      "pink": $clr-pink-a400,
+      "purple": $clr-purple-a200,
+      "deep-purple": $clr-deep-purple-a200,
+      "indigo": $clr-indigo-a200,
+      "blue": $clr-blue-a200,
+      "light-blue": $clr-light-blue-a700,
+      "cyan": $clr-cyan-a700,
+      "teal": $clr-teal-a700,
+      "green": $clr-green-a700,
+      "light-green": $clr-light-green-a700,
+      "lime": $clr-lime-a700,
+      "yellow": $clr-yellow-a700,
+      "amber": $clr-amber-a700,
+      "orange": $clr-orange-a400,
+      "deep-orange": $clr-deep-orange-a200
+    )
+{
   // Color tile for presentation in theme documentation
   button[data-md-color-accent="#{$name}"] {
     background-color: $color;
@@ -253,10 +246,8 @@ button[data-md-color-primary="white"] {
 
   // Color palette
   [data-md-color-accent="#{$name}"] {
-
     // Typesetted content
     .md-typeset {
-
       // Hovered and active links
       a:hover,
       a:active {
@@ -276,13 +267,13 @@ button[data-md-color-primary="white"] {
       }
 
       // Active or targeted back reference
-      .footnote li:hover  .footnote-backref:hover,
+      .footnote li:hover .footnote-backref:hover,
       .footnote li:target .footnote-backref {
         color: $color;
       }
 
       // Active, targeted or focused permalink
-      [id]:hover  .headerlink:hover,
+      [id]:hover .headerlink:hover,
       [id]:target .headerlink,
       [id] .headerlink:focus {
         color: $color;
@@ -302,7 +293,6 @@ button[data-md-color-primary="white"] {
 
     // Search result link
     .md-search-result__link {
-
       // Active or hovered link
       &[data-md-state="active"],
       &:hover {

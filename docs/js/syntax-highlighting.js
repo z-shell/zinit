@@ -1,4 +1,4 @@
-/*! highlight.js v9.15.8 | BSD3 License | git.io/hljslicense */ !(function(e) {
+/*! highlight.js v9.15.8 | BSD3 License | git.io/hljslicense */ !(function (e) {
   var n =
     ("object" == typeof window && window) || ("object" == typeof self && self);
   var idas = "id as";
@@ -9,10 +9,10 @@
       ((n.hljs = e({})),
       "function" == typeof define &&
         define.amd &&
-        define([], function() {
+        define([], function () {
           return n.hljs;
         }));
-})(function(a) {
+})(function (a) {
   var f = [],
     u = Object.keys,
     N = {},
@@ -64,21 +64,18 @@
       illegalRe: "iR",
       lexemesRe: "lR",
       terminators: "t",
-      terminator_end: "tE"
+      terminator_end: "tE",
     },
     b = "</span>",
     h = {
       classPrefix: "hljs-",
       tabReplace: null,
       useBR: !1,
-      languages: void 0
+      languages: void 0,
     };
 
   function _(e) {
-    return e
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+    return e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
   function E(e) {
@@ -100,7 +97,7 @@
       r = Array.prototype.slice.call(arguments, 1);
     for (n in e) t[n] = e[n];
     return (
-      r.forEach(function(e) {
+      r.forEach(function (e) {
         for (n in e) t[n] = e[n];
       }),
       t
@@ -118,14 +115,14 @@
               (a.push({
                 event: "start",
                 offset: t,
-                node: r
+                node: r,
               }),
               (t = e(r, t)),
               E(r).match(/br|hr|img|input/) ||
                 a.push({
                   event: "stop",
                   offset: t,
-                  node: r
+                  node: r,
                 }));
         return t;
       })(e, 0),
@@ -153,7 +150,7 @@
         if (((t.compiled = !0), (t.k = t.k || t.bK), t.k)) {
           function r(t, e) {
             o.cI && (e = e.toLowerCase()),
-              e.split(" ").forEach(function(e) {
+              e.split(" ").forEach(function (e) {
                 var n = e.split("|");
                 a[n[0]] = [t, n[1] ? Number(n[1]) : 1];
               });
@@ -161,7 +158,7 @@
           var a = {};
           "string" == typeof t.k
             ? r("keyword", t.k)
-            : u(t.k).forEach(function(e) {
+            : u(t.k).forEach(function (e) {
                 r(e, t.k[e]);
               }),
             (t.k = a);
@@ -181,16 +178,16 @@
           t.c || (t.c = []),
           (t.c = Array.prototype.concat.apply(
             [],
-            t.c.map(function(e) {
-              return (function(n) {
+            t.c.map(function (e) {
+              return (function (n) {
                 return (
                   n.v &&
                     !n.cached_variants &&
-                    (n.cached_variants = n.v.map(function(e) {
+                    (n.cached_variants = n.v.map(function (e) {
                       return g(
                         n,
                         {
-                          v: null
+                          v: null,
                         },
                         e
                       );
@@ -200,12 +197,12 @@
               })("self" === e ? t : e);
             })
           )),
-          t.c.forEach(function(e) {
+          t.c.forEach(function (e) {
             n(e, t);
           }),
           t.starts && n(t.starts, e);
         var i = t.c
-          .map(function(e) {
+          .map(function (e) {
             return e.bK ? "\\.?(?:" + e.b + ")\\.?" : e.b;
           })
           .concat([t.tE, t.i])
@@ -213,7 +210,7 @@
           .filter(Boolean);
         t.t = i.length
           ? c(
-              (function(e, n) {
+              (function (e, n) {
                 for (
                   var t = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./,
                     r = 0,
@@ -242,9 +239,9 @@
               !0
             )
           : {
-              exec: function() {
+              exec: function () {
                 return null;
-              }
+              },
             };
       }
     })(o);
@@ -259,7 +256,7 @@
     function o() {
       (E +=
         null != l.sL
-          ? (function() {
+          ? (function () {
               var e = "string" == typeof l.sL;
               if (e && !N[l.sL]) return _(g);
               var n = e
@@ -271,7 +268,7 @@
                 c(n.language, n.value, !1, !0)
               );
             })()
-          : (function() {
+          : (function () {
               var e, n, t, r, a, i, o;
               if (!l.k) return _(g);
               for (r = "", n = 0, l.lR.lastIndex = 0, t = l.lR.exec(g); t; )
@@ -294,14 +291,14 @@
       (E += e.cN ? c(e.cN, "", !0) : ""),
         (l = Object.create(e, {
           parent: {
-            value: l
-          }
+            value: l,
+          },
         }));
     }
 
     function r(e, n) {
       if (((g += e), null == n)) return o(), 0;
-      var t = (function(e, n) {
+      var t = (function (e, n) {
         var t, r, a;
         for (t = 0, r = n.c.length; t < r; t++)
           if (v(n.c[t].bR, e))
@@ -344,7 +341,7 @@
         );
       }
       if (
-        (function(e, n) {
+        (function (e, n) {
           return !i && v(n.iR, e);
         })(n, l)
       )
@@ -371,13 +368,13 @@
         r: R,
         value: E,
         language: e,
-        top: l
+        top: l,
       };
     } catch (e) {
       if (e.message && -1 !== e.message.indexOf("Illegal"))
         return {
           r: 0,
-          value: _(n)
+          value: _(n),
         };
       throw e;
     }
@@ -387,14 +384,14 @@
     e = e || h.languages || u(N);
     var r = {
         r: 0,
-        value: _(t)
+        value: _(t),
       },
       a = r;
     return (
       e
         .filter(B)
         .filter(M)
-        .forEach(function(e) {
+        .forEach(function (e) {
           var n = C(e, t, !1);
           (n.language = e),
             n.r > a.r && (a = n),
@@ -407,7 +404,7 @@
 
   function d(e) {
     return h.tabReplace || h.useBR
-      ? e.replace(t, function(e, n) {
+      ? e.replace(t, function (e, n) {
           return h.useBR && "\n" === e
             ? "<br>"
             : h.tabReplace
@@ -423,7 +420,7 @@
       r,
       a,
       i,
-      o = (function(e) {
+      o = (function (e) {
         var n,
           t,
           r,
@@ -452,7 +449,7 @@
           "http://www.w3.org/1999/xhtml",
           "div"
         )).innerHTML = r.value),
-        (r.value = (function(e, n, t) {
+        (r.value = (function (e, n, t) {
           var r = 0,
             a = "",
             i = [];
@@ -476,7 +473,7 @@
               "<" +
               E(e) +
               f.map
-                .call(e.attributes, function(e) {
+                .call(e.attributes, function (e) {
                   return (
                     " " +
                     e.nodeName +
@@ -518,7 +515,7 @@
         })(t, R(a), i))),
       (r.value = d(r.value)),
       (e.innerHTML = r.value),
-      (e.className = (function(e, n, t) {
+      (e.className = (function (e, n, t) {
         var r = n ? c[n] : t,
           a = [e.trim()];
         return (
@@ -529,12 +526,12 @@
       })(e.className, o, r.language)),
       (e.result = {
         language: r.language,
-        re: r.r
+        re: r.r,
       }),
       r.second_best &&
         (e.second_best = {
           language: r.second_best.language,
-          re: r.second_best.r
+          re: r.second_best.r,
         }));
   }
 
@@ -559,23 +556,23 @@
     (a.highlightAuto = O),
     (a.fixMarkup = d),
     (a.highlightBlock = o),
-    (a.configure = function(e) {
+    (a.configure = function (e) {
       h = g(h, e);
     }),
     (a.initHighlighting = p),
-    (a.initHighlightingOnLoad = function() {
+    (a.initHighlightingOnLoad = function () {
       addEventListener("DOMContentLoaded", p, !1),
         addEventListener("load", p, !1);
     }),
-    (a.registerLanguage = function(n, e) {
+    (a.registerLanguage = function (n, e) {
       var t = (N[n] = e(a));
       i(t),
         t.aliases &&
-          t.aliases.forEach(function(e) {
+          t.aliases.forEach(function (e) {
             c[e] = n;
           });
     }),
-    (a.listLanguages = function() {
+    (a.listLanguages = function () {
       return u(N);
     }),
     (a.getLanguage = B),
@@ -591,32 +588,32 @@
       "!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~"),
     (a.BE = a.BACKSLASH_ESCAPE = {
       b: "\\\\[\\s\\S]",
-      r: 0
+      r: 0,
     }),
     (a.ASM = a.APOS_STRING_MODE = {
       cN: "string",
       b: "'",
       e: "'",
       i: "\\n",
-      c: [a.BE]
+      c: [a.BE],
     }),
     (a.QSM = a.QUOTE_STRING_MODE = {
       cN: "string",
       b: '"',
       e: '"',
       i: "\\n",
-      c: [a.BE]
+      c: [a.BE],
     }),
     (a.PWM = a.PHRASAL_WORDS_MODE = {
-      b: /\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/
+      b: /\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/,
     }),
-    (a.C = a.COMMENT = function(e, n, t) {
+    (a.C = a.COMMENT = function (e, n, t) {
       var r = a.inherit(
         {
           cN: "comment",
           b: e,
           e: n,
-          c: []
+          c: [],
         },
         t || {}
       );
@@ -625,7 +622,7 @@
         r.c.push({
           cN: "doctag",
           b: "(?:TODO|FIXME|NOTE|BUG|XXX):",
-          r: 0
+          r: 0,
         }),
         r
       );
@@ -636,24 +633,24 @@
     (a.NM = a.NUMBER_MODE = {
       cN: "number",
       b: a.NR,
-      r: 0
+      r: 0,
     }),
     (a.CNM = a.C_NUMBER_MODE = {
       cN: "number",
       b: a.CNR,
-      r: 0
+      r: 0,
     }),
     (a.BNM = a.BINARY_NUMBER_MODE = {
       cN: "number",
       b: a.BNR,
-      r: 0
+      r: 0,
     }),
     (a.CSSNM = a.CSS_NUMBER_MODE = {
       cN: "number",
       b:
         a.NR +
         "(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
-      r: 0
+      r: 0,
     }),
     (a.RM = a.REGEXP_MODE = {
       cN: "regexp",
@@ -666,44 +663,43 @@
           b: /\[/,
           e: /\]/,
           r: 0,
-          c: [a.BE]
-        }
-      ]
+          c: [a.BE],
+        },
+      ],
     }),
     (a.TM = a.TITLE_MODE = {
       cN: "title",
       b: a.IR,
-      r: 0
+      r: 0,
     }),
     (a.UTM = a.UNDERSCORE_TITLE_MODE = {
       cN: "title",
       b: a.UIR,
-      r: 0
+      r: 0,
     }),
     (a.METHOD_GUARD = {
       b: "\\.\\s*" + a.UIR,
-      r: 0
+      r: 0,
     }),
     a
   );
 });
 
-
 //
 //The actual highlighting rules is defined below.
 //
 
-hljs.registerLanguage("bash", function(e) {
+hljs.registerLanguage("bash", function (e) {
   var t = {
       cN: "variable",
       v: [
         {
-          b: /\$[\w\d#@][\w\d_]*/
+          b: /\$[\w\d#@][\w\d_]*/,
         },
         {
-          b: /\$\{(.*?)}/
-        }
-      ]
+          b: /\$\{(.*?)}/,
+        },
+      ],
     },
     s = {
       cN: "string",
@@ -716,33 +712,34 @@ hljs.registerLanguage("bash", function(e) {
           cN: "variable",
           b: /\$\(/,
           e: /\)/,
-          c: [e.BE]
-        }
-      ]
+          c: [e.BE],
+        },
+      ],
     };
   return {
     aliases: ["sh", "zsh"],
     l: /\b-?[a-z\._]+\b/,
     k: {
-      "ice-mod": "svn proto from teleid bindmap cloneopts depth wait blockf subscribe pick bpick as ver silent lucid notify mv cp atinit atclone atpull nocd has cloneonly make service trackbinds compile nocompile nocompletions submods countdown trigger-load light-mode is-snippet sh bash ksh csh test zman submod dl patch sbin fbin fsrc ferc fmod gem node rustup cargo extract",
+      "ice-mod":
+        "svn proto from teleid bindmap cloneopts depth wait blockf subscribe pick bpick as ver silent lucid notify mv cp atinit atclone atpull nocd has cloneonly make service trackbinds compile nocompile nocompletions submods countdown trigger-load light-mode is-snippet sh bash ksh csh test zman submod dl patch sbin fbin fsrc ferc fmod gem node rustup cargo extract",
       command:
         "load unload light snippet cuninstall creinstall clist cdisable cenable report delete update csearch times help",
       zpl: "",
-      ice: "ice"
+      ice: "ice",
     },
     c: [
       {
         cN: "ice-mod",
-	b: /light(?![\w\s])-mode|wrap-track|id-as|on-update-of|run-atpull|reset-prompt|(multi|^| )src(?!\/)|((un|at)?)load(?![\w-\s])|if(?![\s\w])/,
+        b: /light(?![\w\s])-mode|wrap-track|id-as|on-update-of|run-atpull|reset-prompt|(multi|^| )src(?!\/)|((un|at)?)load(?![\w-\s])|if(?![\s\w])/,
       },
       {
         cN: "zpl",
-	b: /zinit(?!\S)|zi(?!\S)|zini(?!\S)|for(?!\S)/,
+        b: /zinit(?!\S)|zi(?!\S)|zini(?!\S)|for(?!\S)/,
       },
       {
         cN: "meta",
         b: /^#![^\n]+sh\s*$/,
-        r: 10
+        r: 10,
       },
       {
         cN: "function",
@@ -750,18 +747,18 @@ hljs.registerLanguage("bash", function(e) {
         rB: !0,
         c: [
           e.inherit(e.TM, {
-            b: /\w[\w\d_]*/
-          })
+            b: /\w[\w\d_]*/,
+          }),
         ],
-        r: 0
+        r: 0,
       },
       e.HCM,
       s,
       {
         cN: "string",
         b: /'/,
-        e: /'/
+        e: /'/,
       },
-    ]
+    ],
   };
 });

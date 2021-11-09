@@ -1,6 +1,6 @@
 ## Using Turbo mode and for-syntax
 
-``` zsh
+```zsh
 # A.
 setopt promptsubst
 
@@ -33,11 +33,11 @@ provides many aliases – `atload''` shows how to disable some of them (e.g.: to
 use program `rgburke/grv`).
 
 **C** - Set OMZ theme. Loaded separately because the theme needs the `!` passed
-        to the `wait` ice to reset the prompt after loading the snippet in Turbo.
+to the `wait` ice to reset the prompt after loading the snippet in Turbo.
 
 **D** - Some plugins: a) syntax-highlighting, loaded possibly early for a
-        better user experience), b) example functional plugin, c) Docker
-        completion.
+better user experience), b) example functional plugin, c) Docker
+completion.
 
 Above setup loads everything after prompt, because of preceding `wait` ice. That
 is called **Turbo mode**, it shortens Zsh startup time by <u>50%-80%</u>, so
@@ -54,7 +54,7 @@ initially set like in typical, normal setup – **you can remove `wait` only fro
 the theme plugin** and its dependencies to have the same effect while still
 using Turbo for everything remaining):
 
-``` zsh
+```zsh
 # A.
 setopt promptsubst
 
@@ -85,6 +85,6 @@ all plugins. It needs Zsh \>= 5.3.
 
 The **Introduction** contains [**more
 information**](http://z-shell.github.io/zinit/wiki/INTRODUCTION/#turbo_mode_zsh_62_53)
-on Turbo. 
+on Turbo.
 
 []( vim:set ft=markdown tw=80: )

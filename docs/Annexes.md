@@ -8,18 +8,19 @@ just as any other plugin.
 ## What Can They Do?
 
 1. Add a new Zinit subcommand (i.e. the command that’s placed after the
-    function `zinit …` when calling Zinit).
+   function `zinit …` when calling Zinit).
 
 2. Add new ice-modifiers.
 
 3. Register four type of hooks:
-    1. `atclone` hook – run after cloning any plugin or downloading any snippet.
 
-    2. `atpull` hook – run after pulling new commits (i.e. updating) for any plugin / snippet.
+   1. `atclone` hook – run after cloning any plugin or downloading any snippet.
 
-    3. `atinit` hook – run before loading any plugin / snippet, after it has been set-up (i.e. downloaded).
+   2. `atpull` hook – run after pulling new commits (i.e. updating) for any plugin / snippet.
 
-    4. `atload` hook – run after loading any plugin / snippet.
+   3. `atinit` hook – run before loading any plugin / snippet, after it has been set-up (i.e. downloaded).
+
+   4. `atload` hook – run after loading any plugin / snippet.
 
 4. Register hooks for generating help text, shown by the `zinit help` subcommand.
 
@@ -39,7 +40,7 @@ shows how to:
 
 <!-- end list -->
 
-``` zsh
+```zsh
 emulate -L zsh -o extendedglob -o warncreateglobal -o typesetsilent
 
 [[ -z "${ZINIT_ICE[submods]}" ]] && return 0
@@ -78,7 +79,7 @@ for autoloading via `autoload -Uz →za-myproject-atclone-hook`. Then register t
 hook (presumably in the `myproject.plugin.zsh` file) with the API call:
 `@zinit-register-annex`:
 
-``` zsh
+```zsh
 @zinit-register-annex myproject hook:atclone \
     →za-myproject-atclone-handler \
     →za-myproject-atclone-help-handler \
@@ -87,7 +88,7 @@ hook (presumably in the `myproject.plugin.zsh` file) with the API call:
 
 The general syntax of the API call is:
 
-``` zsh
+```zsh
 @zinit-register-annex {project-name} \
     {hook:<hook-type>|subcommand:<new-subcommand-name>} \
     {name-of-the-handler-function} \
@@ -101,7 +102,7 @@ that will have syntax `submods'{user}/{plugin} –> {output-dir}; …'` and
 will clone submodules when installing the original plugin or snippet\! Example
 real-world use of the ice-mod:
 
-``` zsh
+```zsh
 # Load the `zsh-autosuggestions' plugin via Prezto module: `autosuggestions'
 zinit ice svn submods'zsh-users/zsh-autosuggestions -> external'
 zinit snippet PZT::modules/autosuggestions

@@ -2,8 +2,7 @@
 
 An annex (i.e. an extension for Zinit – [more information](../Annexes/))
 that allows Zinit to clone additional submodules when installing a plugin or
-snippet. The submodules are then automatically updated on the `zinit update
-…`
+snippet. The submodules are then automatically updated on the `zinit update …`
 command.
 
 This annex adds `submods''` ice to Zinit which has the following syntax:

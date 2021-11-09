@@ -26,7 +26,6 @@
 
 // Application footer
 .md-footer {
-
   // Hide for print
   @media print {
     display: none;
@@ -72,7 +71,6 @@
 
       // Title
       .md-footer-nav__title {
-
         // [mobile -]: Hide title for previous page
         @include break-to-device(mobile) {
           display: none;

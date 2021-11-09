@@ -19,15 +19,13 @@ zinit load z-shell/history-search-multi-word
 zinit light zsh-users/zsh-syntax-highlighting
 ```
 
-Above commands show two ways of basic plugin loading. <code>load </code>  causes reporting to
-be enabled – you can track what plugin does, view the information with `zinit
-report {plugin-spec}` and then also unload the plugin with `zinit unload
-{plugin-spec}`. `light` is a significantly faster loading without tracking and
+Above commands show two ways of basic plugin loading. <code>load </code> causes reporting to
+be enabled – you can track what plugin does, view the information with `zinit report {plugin-spec}` and then also unload the plugin with `zinit unload {plugin-spec}`. `light` is a significantly faster loading without tracking and
 reporting, by using which user resigns of the ability to view the plugin report
 and to unload it.
 
 !!!note
-    **In Turbo mode the slowdown caused by tracking is negligible.**
+**In Turbo mode the slowdown caused by tracking is negligible.**
 
 ## Oh My Zsh, Prezto
 
@@ -106,10 +104,9 @@ i.e. to `httpstat`. Other ice-mod exists, `mv`, which works like `cp` but
 **moves** a file instead of **copying** it. `mv` is ran before `cp`.
 
 !!!note
-    **The `cp` and `mv` ices (and also as some other ones, like `atclone`) are
-    being run when the plugin or snippet is being _installed_. To test them
-    again first delete the plugin or snippet by `zinit delete
-    PZT::modules/osx` (for example).**
+**The `cp` and `mv` ices (and also as some other ones, like `atclone`) are
+being run when the plugin or snippet is being _installed_. To test them
+again first delete the plugin or snippet by `zinit delete PZT::modules/osx` (for example).**
 
 ## atpull"…"
 
@@ -125,8 +122,7 @@ zinit light b4b4r07/httpstat
 
 If `atpull` starts with exclamation mark, then it will be run before `git pull`,
 and before `mv`. Nevertheless, `atpull`, `mv`, `cp` are ran **only if new
-commits are to be fetched**. So in summary, when user runs `zinit update
-b4b4r07/httpstat` to update this plugin, and there are new commits, what happens
+commits are to be fetched**. So in summary, when user runs `zinit update b4b4r07/httpstat` to update this plugin, and there are new commits, what happens
 first is that `git reset --hard` is ran – and it **restores** original
 `httpstat.sh`, **then** `git pull` is ran and it downloads new commits (doing
 fast-forward), **then** `mv` is ran again so that the command is `httpstat` not
@@ -136,8 +132,8 @@ into the plugin's contents without blocking the ability to update it with `git`
 [**\*\***](#on_svn_revert)).
 
 !!!note
-    **For exclamation mark to not be expanded by Zsh in interactive session, use
-    `'…'` not `"…"` to enclose contents of `atpull` ice-mod.**
+**For exclamation mark to not be expanded by Zsh in interactive session, use
+`'…'` not `"…"` to enclose contents of `atpull` ice-mod.**
 
 ## Snippets-Commands
 
@@ -189,7 +185,7 @@ zinit creinstall zsh-users/zsh-completions   # install
 ### Listing Completions
 
 !!!note
-    **`zi` is an alias that can be used in interactive sessions.**
+**`zi` is an alias that can be used in interactive sessions.**
 
 To see what completions **all** plugins provide, in tabular formatting and with
 name of each plugin, use:
@@ -266,17 +262,17 @@ It is like Windows – during startup, it shows desktop even though it still loa
 data in background. This has drawbacks, but is for sure better than blank screen
 for 10 minutes. And here, in Zinit, there are no drawbacks of this approach – no
 lags, freezes, etc. – the command line is fully usable while the plugins are
-being loaded, for any number of plugins. 
+being loaded, for any number of plugins.
 
 !!!note
-    **Turbo will speed up Zsh startup by <u>50%–80%</u>. For example, instead of 200 ms, it'll be 40 ms (!)**
+**Turbo will speed up Zsh startup by <u>50%–80%</u>. For example, instead of 200 ms, it'll be 40 ms (!)**
 
 Zsh 5.3 or greater is required. To use this Turbo mode add `wait` ice to the
 target plugin in one of following ways:
 
 ```zsh
 PS1="READY > "
-zinit ice wait'!0' 
+zinit ice wait'!0'
 zinit load halfo/lambda-mod-zsh-theme
 ```
 
@@ -309,15 +305,13 @@ This makes autosuggestions inactive at the first prompt. **However** the given
 right after loading autosuggestions, resulting in exactly the same behavior of
 the plugin.
 
-The ice `lucid` causes the under-prompt message saying `Loaded
-zsh-users/zsh-autosuggestions` that normally appears for every Turbo-loaded
+The ice `lucid` causes the under-prompt message saying `Loaded zsh-users/zsh-autosuggestions` that normally appears for every Turbo-loaded
 plugin to not show.
 
 ### A Quick Glance At The [For-Syntax](https://z-shell-github.io/zinit/wiki/For-Syntax/)
 
-This introduction is based on the classic, two-command syntax (`zinit ice …;
-zinit load/light/snippet …`) of Zinit. However, there's also available a
-recently added so-called *for-syntax*. It is a right moment to take a glance at
+This introduction is based on the classic, two-command syntax (`zinit ice …; zinit load/light/snippet …`) of Zinit. However, there's also available a
+recently added so-called _for-syntax_. It is a right moment to take a glance at
 it, by rewriting the above autosuggestions invocation using it:
 
 ```zsh
@@ -390,8 +384,8 @@ like `cpp`, `web`, `admin` and by setting `load` / `unload` conditions to
 activate different plugins on `cpp`, on `web`, etc.
 
 !!!note
-    **The difference with `wait` is that `load` / `unload` are constantly
-    active, not only till first activation.**
+**The difference with `wait` is that `load` / `unload` are constantly
+active, not only till first activation.**
 
 Note that for unloading of a plugin to work the plugin needs to be loaded with
 tracking (so `zinit load …`, not `zinit light …`). Tracking causes

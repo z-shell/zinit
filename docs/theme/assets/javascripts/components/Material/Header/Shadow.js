@@ -25,7 +25,6 @@
  * ------------------------------------------------------------------------- */
 
 export default class Shadow {
-
   /**
    * Show or hide header shadow depending on page y-offset
    *
@@ -40,38 +39,34 @@ export default class Shadow {
    * @param {(string|HTMLElement)} header - Selector or HTML element
    */
   constructor(el, header) {
-    let ref = (typeof el === "string")
-      ? document.querySelector(el)
-      : el
-    if (!(ref instanceof HTMLElement) ||
-        !(ref.parentNode instanceof HTMLElement))
-      throw new ReferenceError
-    this.el_ = ref.parentNode
+    let ref = typeof el === "string" ? document.querySelector(el) : el;
+    if (
+      !(ref instanceof HTMLElement) ||
+      !(ref.parentNode instanceof HTMLElement)
+    )
+      throw new ReferenceError();
+    this.el_ = ref.parentNode;
 
     /* Retrieve header */
-    ref = (typeof header === "string")
-      ? document.querySelector(header)
-      : header
-    if (!(ref instanceof HTMLElement))
-      throw new ReferenceError
-    this.header_ = ref
+    ref = typeof header === "string" ? document.querySelector(header) : header;
+    if (!(ref instanceof HTMLElement)) throw new ReferenceError();
+    this.header_ = ref;
 
     /* Initialize height and state */
-    this.height_ = 0
-    this.active_ = false
+    this.height_ = 0;
+    this.active_ = false;
   }
 
   /**
    * Calculate total height of previous nodes
    */
   setup() {
-    let current = this.el_
+    let current = this.el_;
     while ((current = current.previousElementSibling)) {
-      if (!(current instanceof HTMLElement))
-        throw new ReferenceError
-      this.height_ += current.offsetHeight
+      if (!(current instanceof HTMLElement)) throw new ReferenceError();
+      this.height_ += current.offsetHeight;
     }
-    this.update()
+    this.update();
   }
 
   /**
@@ -81,12 +76,12 @@ export default class Shadow {
    */
   update(ev) {
     if (ev && (ev.type === "resize" || ev.type === "orientationchange")) {
-      this.height_ = 0
-      this.setup()
+      this.height_ = 0;
+      this.setup();
     } else {
-      const active = window.pageYOffset >= this.height_
+      const active = window.pageYOffset >= this.height_;
       if (active !== this.active_)
-        this.header_.dataset.mdState = (this.active_ = active) ? "shadow" : ""
+        this.header_.dataset.mdState = (this.active_ = active) ? "shadow" : "";
     }
   }
 
@@ -94,8 +89,8 @@ export default class Shadow {
    * Reset shadow state
    */
   reset() {
-    this.header_.dataset.mdState = ""
-    this.height_ = 0
-    this.active_ = false
+    this.header_.dataset.mdState = "";
+    this.height_ = 0;
+    this.active_ = false;
   }
 }

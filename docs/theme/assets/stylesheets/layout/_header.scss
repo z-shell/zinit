@@ -31,9 +31,7 @@
   right: 0;
   left: 0;
   height: px2rem(48px);
-  transition:
-    background-color 0.25s,
-    color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
   background-color: $md-color-primary;
   color: $md-color-white;
   box-shadow: none;
@@ -49,12 +47,8 @@
 
   // Show and animate shadow
   &[data-md-state="shadow"] {
-    transition:
-      background-color 0.25s,
-      color 0.25s,
-      box-shadow 0.25s;
-    box-shadow:
-      0 0           px2rem(4px) rgba(0, 0, 0, 0.1),
+    transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
+    box-shadow: 0 0 px2rem(4px) rgba(0, 0, 0, 0.1),
       0 px2rem(4px) px2rem(8px) rgba(0, 0, 0, 0.2);
   }
 
@@ -93,7 +87,6 @@
 
     // [tablet landscape +]: Hide the search icon
     @include break-from-device(tablet landscape) {
-
       // Search icon
       &.md-icon--search {
         display: none;
@@ -102,7 +95,6 @@
 
     // [tablet -]: Hide the home icon or logo
     @include break-to-device(tablet) {
-
       // Home icon or logo
       &.md-icon--home,
       &.md-logo {
@@ -112,7 +104,6 @@
 
     // [screen +]: Hide the menu icon
     @include break-from-device(screen) {
-
       // Menu icon
       &.md-icon--menu {
         display: none;
@@ -124,9 +115,7 @@
   &__topic {
     display: block;
     position: absolute;
-    transition:
-      transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
-      opacity   0.15s;
+    transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.15s;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -134,9 +123,7 @@
     // Page title
     & + & {
       transform: translateX(px2rem(25px));
-      transition:
-        transform 0.4s cubic-bezier(1, 0.7, 0.1, 0.1),
-        opacity   0.15s;
+      transition: transform 0.4s cubic-bezier(1, 0.7, 0.1, 0.1), opacity 0.15s;
       opacity: 0;
       z-index: -1;
       pointer-events: none;
@@ -167,9 +154,7 @@
     // Show page title
     &[data-md-state="active"] .md-header-nav__topic {
       transform: translateX(px2rem(-25px));
-      transition:
-        transform 0.4s cubic-bezier(1, 0.7, 0.1, 0.1),
-        opacity   0.15s;
+      transition: transform 0.4s cubic-bezier(1, 0.7, 0.1, 0.1), opacity 0.15s;
       opacity: 0;
       z-index: -1;
       pointer-events: none;
@@ -182,9 +167,7 @@
       // Page title
       & + .md-header-nav__topic {
         transform: translateX(0);
-        transition:
-          transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
-          opacity   0.15s;
+        transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.15s;
         opacity: 1;
         z-index: 0;
         pointer-events: initial;

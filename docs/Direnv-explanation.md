@@ -13,19 +13,19 @@ zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
 ```
 
 - `make'!'` – compile `direnv` (it's written in Go lang); the exclamation mark
-   means: run the `make` first, before `atclone` and `atpull` hooks,
+  means: run the `make` first, before `atclone` and `atpull` hooks,
 - `atclone'…'` – initially (right after installing the plugin) generate the
-   registration code and save it to `zhook.zsh` (instead of passing to `eval`),
+  registration code and save it to `zhook.zsh` (instead of passing to `eval`),
 - `atpull'%atclone'` – regenerate the registration code also on update
-   (`atclone''` runs on *installation* while `atpull` runs on *update* of the
-   plugin),
+  (`atclone''` runs on _installation_ while `atpull` runs on _update_ of the
+  plugin),
 - `src"zhook.zsh"` – load (`source`) the generated registration code,
 - `pick"direnv"` – ensure `+x` permission on the binary,
 - `as"program"` – the plugin is a program, there's no main file to source.
 
 This way registration code is generated once every installation and update, to then be simply sourced without running `direnv`.
 
-***
+---
 
 The project is also available as binary Github release. This distribution can be installed by:
 

@@ -26,7 +26,6 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // Remove list icon on task items
   .task-list-item {
     position: relative;
@@ -49,7 +48,6 @@
 
   // Wrapper for list controls, in case custom checkboxes are enabled
   .task-list-control {
-
     // Checkbox icon in unchecked state
     .task-list-indicator::before {
       @extend %md-icon;

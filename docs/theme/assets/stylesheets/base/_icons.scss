@@ -54,12 +54,22 @@
   @extend %md-icon;
 
   // Build representational classes
-  @each $ligature, $name in (
-    "\E5C4": "arrow-back", // arrow_back
-    "\E5C8": "arrow-forward", // arrow_forward
-    "\E5D2": "menu", // menu
-    "\E8B6": "search" // search
-  ) {
+  @each $ligature,
+    $name
+      in (
+        "\E5C4": "arrow-back",
+        // arrow_back
+        "\E5C8":
+          "arrow-forward",
+        // arrow_forward
+        "\E5D2":
+          "menu",
+        // menu
+        "\E8B6":
+          "search"
+          // search
+      )
+  {
     &--#{$name}::before {
       content: $ligature;
     }
@@ -67,12 +77,17 @@
 
   // Adjust for RTL languages
   [dir="rtl"] & {
-
     // Flip ligatures for arrows
-    @each $ligature, $name in (
-      "\E5C8": "arrow-back", // arrow_forward
-      "\E5C4": "arrow-forward" // arrow_back
-    ) {
+    @each $ligature,
+      $name
+        in (
+          "\E5C8": "arrow-back",
+          // arrow_forward
+          "\E5C4":
+            "arrow-forward"
+            // arrow_back
+        )
+    {
       &--#{$name}::before {
         content: $ligature;
       }

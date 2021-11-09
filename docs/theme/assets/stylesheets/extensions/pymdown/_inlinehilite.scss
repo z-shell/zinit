@@ -26,7 +26,6 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // Qualified class selector to distinguish inline code from code blocks
   code.codehilite {
     $correct: 1 / 0.85;

@@ -26,7 +26,6 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // All footnote references
   [id^="fnref:"] {
     display: inline-block;
@@ -41,7 +40,6 @@
 
   // All footnote back references
   [id^="fn:"] {
-
     // Add spacing to anchor for offset
     &::before {
       display: none;
@@ -83,14 +81,14 @@
       }
 
       // Make back references visible on hover
-      &:hover  .footnote-backref,
+      &:hover .footnote-backref,
       &:target .footnote-backref {
         transform: translateX(0);
         opacity: 1;
       }
 
       // Active or targeted back reference
-      &:hover  .footnote-backref:hover,
+      &:hover .footnote-backref:hover,
       &:target .footnote-backref {
         color: $md-color-accent;
       }
@@ -119,10 +117,7 @@
 
     display: inline-block;
     transform: translateX(px2rem(5px));
-    transition:
-      transform 0.25s  0.125s,
-      color     0.25s,
-      opacity   0.125s 0.125s;
+    transition: transform 0.25s 0.125s, color 0.25s, opacity 0.125s 0.125s;
     color: $md-color-black--lighter;
     // Hack: remove Unicode arrow for icon
     font-size: 0;
@@ -142,7 +137,7 @@
 
       // Adjust for RTL languages
       [dir="rtl"] & {
-        transform: scaleX(-1)
+        transform: scaleX(-1);
       }
     }
   }

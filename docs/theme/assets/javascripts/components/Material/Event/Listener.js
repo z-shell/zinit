@@ -25,7 +25,6 @@
  * ------------------------------------------------------------------------- */
 
 export default class Listener {
-
   /**
    * Generic event listener
    *
@@ -43,47 +42,43 @@ export default class Listener {
    */
   constructor(els, events, handler) {
     this.els_ = Array.prototype.slice.call(
-      (typeof els === "string")
-        ? document.querySelectorAll(els)
-        : [].concat(els))
+      typeof els === "string" ? document.querySelectorAll(els) : [].concat(els)
+    );
 
     /* Set handler as function or directly as object */
-    this.handler_ = typeof handler === "function"
-      ? { update: handler }
-      : handler
+    this.handler_ =
+      typeof handler === "function" ? { update: handler } : handler;
 
     /* Initialize event names and update handler */
-    this.events_ = [].concat(events)
-    this.update_ = ev => this.handler_.update(ev)
+    this.events_ = [].concat(events);
+    this.update_ = (ev) => this.handler_.update(ev);
   }
 
   /**
    * Register listener for all relevant events
    */
   listen() {
-    this.els_.forEach(el => {
-      this.events_.forEach(event => {
-        el.addEventListener(event, this.update_, false)
-      })
-    })
+    this.els_.forEach((el) => {
+      this.events_.forEach((event) => {
+        el.addEventListener(event, this.update_, false);
+      });
+    });
 
     /* Execute setup handler, if implemented */
-    if (typeof this.handler_.setup === "function")
-      this.handler_.setup()
+    if (typeof this.handler_.setup === "function") this.handler_.setup();
   }
 
   /**
    * Unregister listener for all relevant events
    */
   unlisten() {
-    this.els_.forEach(el => {
-      this.events_.forEach(event => {
-        el.removeEventListener(event, this.update_)
-      })
-    })
+    this.els_.forEach((el) => {
+      this.events_.forEach((event) => {
+        el.removeEventListener(event, this.update_);
+      });
+    });
 
     /* Execute reset handler, if implemented */
-    if (typeof this.handler_.reset === "function")
-      this.handler_.reset()
+    if (typeof this.handler_.reset === "function") this.handler_.reset();
   }
 }

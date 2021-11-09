@@ -26,7 +26,6 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // Admonition extension
   .admonition {
     @include z-depth(2);
@@ -92,19 +91,66 @@
     }
 
     // Build representational classes
-    @each $names, $appearance in (
-      abstract summary tldr: $clr-light-blue-a400 "\E8D2", // subject
-      info todo: $clr-cyan-a700 "\E88E", // info
-      tip hint important : $clr-teal-a700 "\E80E", // whatshot
-      success check done: $clr-green-a700 "\E876", // done
-      question help faq: $clr-light-green-a700 "\E887", // help
-      warning caution attention: $clr-orange-a400 "\E002", // warning
-      failure fail missing: $clr-red-a200 "\E14C", // clear
-      danger error: $clr-red-a400 "\E3E7", // flash_on
-      bug: $clr-pink-a400 "\E868", // bug_report
-      example: $clr-deep-purple-a400 "\E242", // format_list_numbered
-      quote cite: $clr-grey "\E244" // format_quote
-    ) {
+    @each $names,
+      $appearance
+        in (
+          abstract summary tldr: $clr-light-blue-a400 "\E8D2",
+          // subject
+          info
+            todo:
+            $clr-cyan-a700
+            "\E88E",
+          // info
+          tip
+            hint
+            important:
+            $clr-teal-a700
+            "\E80E",
+          // whatshot
+          success
+            check
+            done:
+            $clr-green-a700
+            "\E876",
+          // done
+          question
+            help
+            faq:
+            $clr-light-green-a700
+            "\E887",
+          // help
+          warning
+            caution
+            attention:
+            $clr-orange-a400
+            "\E002",
+          // warning
+          failure
+            fail
+            missing:
+            $clr-red-a200
+            "\E14C",
+          // clear
+          danger
+            error:
+            $clr-red-a400
+            "\E3E7",
+          // flash_on
+          bug:
+            $clr-pink-a400
+            "\E868",
+          // bug_report
+          example:
+            $clr-deep-purple-a400
+            "\E242",
+          // format_list_numbered
+          quote
+            cite:
+            $clr-grey
+            "\E244"
+            // format_quote
+        )
+    {
       $tint: nth($appearance, 1);
       $icon: nth($appearance, 2);
 

@@ -47,9 +47,7 @@
   &::before {
     @extend %md-icon;
 
-    transition:
-      color   0.25s,
-      opacity 0.25s;
+    transition: color 0.25s, opacity 0.25s;
     color: $md-color-black--lightest;
     content: "\E14D"; // content_copy
 
@@ -74,9 +72,7 @@
     right: px2rem(34px);
     padding: px2rem(6px) px2rem(10px);
     transform: translateX(px2rem(8px));
-    transition:
-      transform 0.25s cubic-bezier(0.9, 0.1, 0.9, 0),
-      opacity   0.175s;
+    transition: transform 0.25s cubic-bezier(0.9, 0.1, 0.9, 0), opacity 0.175s;
     border-radius: px2rem(2px);
     background-color: $md-color-black--light;
     color: $md-color-white;
@@ -88,9 +84,8 @@
     // Active message
     &--active {
       transform: translateX(0);
-      transition:
-        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity   0.175s 0.075s;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.175s 0.075s;
       opacity: 1;
       pointer-events: initial;
     }

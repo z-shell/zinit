@@ -4,19 +4,18 @@ zinit ice atinit'zmodload zsh/zprof' \
 zinit light z-shell/fast-syntax-highlighting
 ```
 
- - `atinit''` loads `zsh/zprof` module (shipped with Zsh) before loading the
-   plugin – this starts the profiling,
- - `atload''` works after loading the plugin – shows profiling results (`zprof |
-   head`), unloads `zsh/zprof` - this stops the profiling; in the effect, only a
-   single plugin (in this case `z-shell/fast-syntax-highlighting`) will be
-   profiled while the rest of the e.g. zshrc processing will go on completely
-   normally,
- - the `light` loads without reporting enabled, so less Zinit code is being
-   run – no Zinit code responsible for the tracking (i.e. the automatic data
-   gathering, during loading of a plugin, for the reports and the possibility to
-   unload the plugin) will be activated and the functions will not appear in the
-   `zprof` report.
- - example `zprof` report: 
+- `atinit''` loads `zsh/zprof` module (shipped with Zsh) before loading the
+  plugin – this starts the profiling,
+- `atload''` works after loading the plugin – shows profiling results (`zprof | head`), unloads `zsh/zprof` - this stops the profiling; in the effect, only a
+  single plugin (in this case `z-shell/fast-syntax-highlighting`) will be
+  profiled while the rest of the e.g. zshrc processing will go on completely
+  normally,
+- the `light` loads without reporting enabled, so less Zinit code is being
+  run – no Zinit code responsible for the tracking (i.e. the automatic data
+  gathering, during loading of a plugin, for the reports and the possibility to
+  unload the plugin) will be activated and the functions will not appear in the
+  `zprof` report.
+- example `zprof` report:
 
 ```
 num calls    time                self                 name
@@ -41,13 +40,13 @@ num calls    time                self                 name
 
 - the first column is the time is in milliseconds; it denotes the amount of time
   spent in a function in total
-    - so for example, `--zplg-shadow-autoload`
-      consumed 10.71 ms of the execution time,
+  - so for example, `--zplg-shadow-autoload`
+    consumed 10.71 ms of the execution time,
 - the fourth column is also a time in milliseconds, but it denotes the amount of
   time spent on executing only of function's **own code**, i.e. it doesn't count
   the time spent in **descendant functions** that are called from the function;
-    - so for example, `--zplg-shadow-autoload` spent 8.71 ms on executing only
-      its own code.
+  - so for example, `--zplg-shadow-autoload` spent 8.71 ms on executing only
+    its own code.
 - the table is sorted on the **self-time** column.
 
 []( vim:set ft=markdown tw=80: )

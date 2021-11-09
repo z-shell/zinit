@@ -25,8 +25,7 @@
 // ----------------------------------------------------------------------------
 
 // Active (toggled) drawer
-$md-toggle__drawer--checked:
-  "[data-md-toggle=\"drawer\"]:checked ~ .md-container";
+$md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container';
 
 // ----------------------------------------------------------------------------
 // Rules
@@ -52,7 +51,6 @@ $md-toggle__drawer--checked:
 
   // [tablet -]: Convert navigation to drawer
   @include break-to-device(tablet) {
-
     // Render primary sidebar as a slideout container
     &--primary {
       position: fixed;
@@ -61,9 +59,7 @@ $md-toggle__drawer--checked:
       width: px2rem(242px);
       height: 100%;
       transform: translateX(0);
-      transition:
-        transform  0.25s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.25s;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
       background-color: $md-color-white;
       z-index: 3;
 
@@ -143,7 +139,6 @@ $md-toggle__drawer--checked:
 
     // [tablet -]: Adjust margins
     @include break-to-device(tablet) {
-
       // Stretch scrollwrap for primary sidebar
       .md-sidebar--primary & {
         position: absolute;

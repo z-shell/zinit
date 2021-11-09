@@ -1,16 +1,14 @@
-zinit-install.zsh(1)
-======================
+# zinit-install.zsh(1)
 
-NAME
-----
+## NAME
+
 zinit-install.zsh - a shell script
 
-SYNOPSIS
---------
+## SYNOPSIS
+
 Documentation automatically generated with \`zshelldoc'
 
-FUNCTIONS
----------
+## FUNCTIONS
 
 ```text
 .zinit-at-eval
@@ -25,8 +23,7 @@ FUNCTIONS
 .zinit-setup-plugin-dir
 ```
 
-DETAILS
--------
+## DETAILS
 
 ## Script Body
 
@@ -48,7 +45,7 @@ Called by:
 
 ## .zinit-compile-plugin
 
-```text 
+```text
 Compiles given plugin (its main source file, and also an
 additional "....zsh" file if it exists).
 
@@ -76,7 +73,7 @@ zinit.zsh/zinit
 
 ## .zinit-download-file-stdout
 
-```text 
+```text
 Downloads file to stdout. Supports following backend commands:
 curl, wget, lftp, lynx. Used by snippet loading.
 ```
@@ -130,7 +127,7 @@ zinit.zsh/.zinit-load-snippet
 
 ## .zinit-forget-completion
 
-```text 
+```text
 Implements alternation of Zsh state so that already initialized
 completion stops being visible to Zsh.
 
@@ -152,7 +149,7 @@ zinit.zsh/zinit
 
 ## .zinit-get-latest-gh-r-version
 
-```text 
+```text
 Gets version string of latest release of given Github
 package. Connects to Github releases page.
 ```
@@ -172,7 +169,7 @@ zinit-autoload.zsh/.zinit-update-or-status
 
 ## .zinit-handle-binary-file
 
-```text 
+```text
 If the file is an archive, it is extracted by this function.
 Next stage is scanning of files with the common utility `file',
 to detect executables. They are given +x mode. There are also
@@ -194,7 +191,7 @@ Called by:
 
 ## .zinit-install-completions
 
-```text 
+```text
 Installs all completions of given plugin. After that they are
 visible to `compinit'. Visible completions can be selectively
 disabled and enabled. User can access completion data with
@@ -247,7 +244,7 @@ Called by:
 
 ## .zinit-setup-plugin-dir
 
-```text 
+```text
 Clones given plugin into PLUGIN_DIR. Supports multiple
 sites (respecting `from' and `proto' ice modifiers).
 Invokes compilation of plugin's main file.
@@ -282,4 +279,3 @@ Called by:
 zinit-autoload.zsh/.zinit-update-or-status
 zinit.zsh/.zinit-load
 ```
-

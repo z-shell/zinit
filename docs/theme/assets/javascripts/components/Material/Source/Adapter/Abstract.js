@@ -20,14 +20,13 @@
  * IN THE SOFTWARE.
  */
 
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
 
 /* ----------------------------------------------------------------------------
  * Class
  * ------------------------------------------------------------------------- */
 
 export default class Abstract {
-
   /**
    * Retrieve repository information
    *
@@ -40,16 +39,13 @@ export default class Abstract {
    * @param {(string|HTMLAnchorElement)} el - Selector or HTML element
    */
   constructor(el) {
-    const ref = (typeof el === "string")
-      ? document.querySelector(el)
-      : el
-    if (!(ref instanceof HTMLAnchorElement))
-      throw new ReferenceError
-    this.el_ = ref
+    const ref = typeof el === "string" ? document.querySelector(el) : el;
+    if (!(ref instanceof HTMLAnchorElement)) throw new ReferenceError();
+    this.el_ = ref;
 
     /* Retrieve base URL */
-    this.base_ = this.el_.href
-    this.salt_ = this.hash_(this.base_)
+    this.base_ = this.el_.href;
+    this.salt_ = this.hash_(this.base_);
   }
 
   /**
@@ -58,20 +54,20 @@ export default class Abstract {
    * @return {Promise<Array<string>>} Promise that returns an array of facts
    */
   fetch() {
-    return new Promise(resolve => {
-      const cached = Cookies.getJSON(`${this.salt_}.cache-source`)
+    return new Promise((resolve) => {
+      const cached = Cookies.getJSON(`${this.salt_}.cache-source`);
       if (typeof cached !== "undefined") {
-        resolve(cached)
+        resolve(cached);
 
-      /* If the data is not cached in a cookie, invoke fetch and set
+        /* If the data is not cached in a cookie, invoke fetch and set
          a cookie that automatically expires in 15 minutes */
       } else {
-        this.fetch_().then(data => {
-          Cookies.set(`${this.salt_}.cache-source`, data, { expires: 1 / 96 })
-          resolve(data)
-        })
+        this.fetch_().then((data) => {
+          Cookies.set(`${this.salt_}.cache-source`, data, { expires: 1 / 96 });
+          resolve(data);
+        });
       }
-    })
+    });
   }
 
   /**
@@ -80,7 +76,7 @@ export default class Abstract {
    * @abstract
    */
   fetch_() {
-    throw new Error("fetch_(): Not implemented")
+    throw new Error("fetch_(): Not implemented");
   }
 
   /**
@@ -90,11 +86,9 @@ export default class Abstract {
    * @return {string} Formatted number
    */
   format_(number) {
-    if (number > 10000)
-      return `${(number / 1000).toFixed(0)}k`
-    else if (number > 1000)
-      return `${(number / 1000).toFixed(1)}k`
-    return `${number}`
+    if (number > 10000) return `${(number / 1000).toFixed(0)}k`;
+    else if (number > 1000) return `${(number / 1000).toFixed(1)}k`;
+    return `${number}`;
   }
 
   /**
@@ -106,12 +100,12 @@ export default class Abstract {
    * @return {number} Hashed string
    */
   hash_(str) {
-    let hash = 0
-    if (str.length === 0) return hash
+    let hash = 0;
+    if (str.length === 0) return hash;
     for (let i = 0, len = str.length; i < len; i++) {
-      hash  = ((hash << 5) - hash) + str.charCodeAt(i)
-      hash |= 0 // Convert to 32bit integer
+      hash = (hash << 5) - hash + str.charCodeAt(i);
+      hash |= 0; // Convert to 32bit integer
     }
-    return hash
+    return hash;
   }
 }

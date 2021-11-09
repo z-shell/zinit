@@ -5,27 +5,27 @@
 A Zsh-Zinit annex (i.e. an extension) that provides functionality, which
 allows to:
 
-  1. Run programs and scripts without adding anything to `$PATH`,
-  2. Install and run Ruby [gems](https://github.com/rubygems/rubygems) and
-     [Node](https://github.com/npm/cli) modules from within a local directory
-     with
-     [$GEM_HOME](https://guides.rubygems.org/command-reference/#gem-environment)
-     and
-     [$NODE_PATH](https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders)
-     automatically set,
-  3. Run programs, scripts and functions with automatic `cd` into the plugin
-     or snippet directory, plus also with automatic standard output
-     & standard error redirecting.
-  4. Source scripts through an automatically created function with the above
-     `$GEM_HOME`, `$NODE_PATH` and `cd` features available,
-  5. Create the so called `shims` known from
-     [rbenv](https://github.com/rbenv/rbenv) – the same feature as the first
-     item of this enumaration – of running a program without adding anything
-     to `$PATH` with all of the above features, however through an automatic
-     **script** created in `$ZPFX/bin`, not a **function** (the first item
-     uses a function-based mechanism),
-  6. Automatic updates of Ruby gems and Node modules during regular plugin and
-     snippet updates with `zinit update …`.
+1. Run programs and scripts without adding anything to `$PATH`,
+2. Install and run Ruby [gems](https://github.com/rubygems/rubygems) and
+   [Node](https://github.com/npm/cli) modules from within a local directory
+   with
+   [\$GEM_HOME](https://guides.rubygems.org/command-reference/#gem-environment)
+   and
+   [\$NODE_PATH](https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders)
+   automatically set,
+3. Run programs, scripts and functions with automatic `cd` into the plugin
+   or snippet directory, plus also with automatic standard output
+   & standard error redirecting.
+4. Source scripts through an automatically created function with the above
+   `$GEM_HOME`, `$NODE_PATH` and `cd` features available,
+5. Create the so called `shims` known from
+   [rbenv](https://github.com/rbenv/rbenv) – the same feature as the first
+   item of this enumaration – of running a program without adding anything
+   to `$PATH` with all of the above features, however through an automatic
+   **script** created in `$ZPFX/bin`, not a **function** (the first item
+   uses a function-based mechanism),
+6. Automatic updates of Ruby gems and Node modules during regular plugin and
+   snippet updates with `zinit update …`.
 
 ## Installation
 
@@ -102,16 +102,16 @@ an embedded path to it. Thus, no `$PATH` changes are needed!
 
 There are 7 ice-modifiers provided and handled by the annex. They are:
 
-  1. `fbin''` – creates functions for binaries and scripts,
-  2. `sbin''` – creates `shims` for binaries and scripts,
-  3. `gem''` – installs and updates gems + creates functions for gems'
-     binaries,
-  4. `node''` – installs and updates node_modules + creates functions for
-     binaries of the modules,
-  5. `fmod''` – creates wrapping functions for other functions,
-  6. `fsrc''` – creates functions that source given scripts,
-  7. `ferc''` – the same as `fsrc''`, but using an alternate script-loading
-     method.
+1. `fbin''` – creates functions for binaries and scripts,
+2. `sbin''` – creates `shims` for binaries and scripts,
+3. `gem''` – installs and updates gems + creates functions for gems'
+   binaries,
+4. `node''` – installs and updates node_modules + creates functions for
+   binaries of the modules,
+5. `fmod''` – creates wrapping functions for other functions,
+6. `fsrc''` – creates functions that source given scripts,
+7. `ferc''` – the same as `fsrc''`, but using an alternate script-loading
+   method.
 
 **The ice-modifiers in detail:**
 
@@ -121,17 +121,17 @@ There are 7 ice-modifiers provided and handled by the annex. They are:
 
 Creates a wrapper function of the name the same as the last segment of the
 path or as `{name-of-the-function}`. The optional preceding flags mean:
-  
+
 - `g` – set `$GEM_HOME` variable,
 - `n` – set `$NODE_PATH` variable,
 - `c` – cd to the plugin's directory before running the function and then
-    cd back after it has been run,
+  cd back after it has been run,
 - `N` – append `&>/dev/null` to the call of the binary, i.e. redirect both
-    standard output and standard error to `/dev/null`,
+  standard output and standard error to `/dev/null`,
 - `E` – append `2>/dev/null` to the call of the binary, i.e. redirect
-    standard error to `/dev/null`,
+  standard error to `/dev/null`,
 - `O` – append `>/dev/null` to the call of the binary, i.e. redirect
-    standard output to `/dev/null`.
+  standard output to `/dev/null`.
 
 Example:
 
@@ -166,8 +166,8 @@ Example:
 % zinit load z-shell/null
 % which asciidoctor
 asciidoctor () {
-        local bindir="/home/sg/.zinit/plugins/z-shell---null/bin" 
-        local -x GEM_HOME="/home/sg/.zinit/plugins/z-shell---null" 
+        local bindir="/home/sg/.zinit/plugins/z-shell---null/bin"
+        local -x GEM_HOME="/home/sg/.zinit/plugins/z-shell---null"
         "$bindir"/"asciidoctor" "$@"
 }
 ```

@@ -36,39 +36,37 @@
  * @return {HTMLElement} Native DOM node
  */
 export function createElement(tag, properties, ...children) {
-  const el = document.createElement(tag)
+  const el = document.createElement(tag);
 
   /* Set all properties */
   if (properties)
-    Array.prototype.forEach.call(Object.keys(properties), attr => {
-      el.setAttribute(attr, properties[attr])
-    })
+    Array.prototype.forEach.call(Object.keys(properties), (attr) => {
+      el.setAttribute(attr, properties[attr]);
+    });
 
   /* Iterate child nodes */
-  const iterateChildNodes = nodes => {
-    Array.prototype.forEach.call(nodes, node => {
-
+  const iterateChildNodes = (nodes) => {
+    Array.prototype.forEach.call(nodes, (node) => {
       /* Directly append text content */
-      if (typeof node === "string" ||
-          typeof node === "number") {
-        el.textContent += node
+      if (typeof node === "string" || typeof node === "number") {
+        el.textContent += node;
 
-      /* Recurse, if we got an array */
+        /* Recurse, if we got an array */
       } else if (Array.isArray(node)) {
-        iterateChildNodes(node)
+        iterateChildNodes(node);
 
-      /* Append raw HTML */
+        /* Append raw HTML */
       } else if (typeof node.__html !== "undefined") {
-        el.innerHTML += node.__html
+        el.innerHTML += node.__html;
 
-      /* Append regular nodes */
+        /* Append regular nodes */
       } else if (node instanceof Node) {
-        el.appendChild(node)
+        el.appendChild(node);
       }
-    })
-  }
+    });
+  };
 
   /* Iterate child nodes and return element */
-  iterateChildNodes(children)
-  return el
+  iterateChildNodes(children);
+  return el;
 }

@@ -182,7 +182,6 @@
 
     // Adjust styles for primary navigation
     &--primary {
-
       // List title and item
       .md-nav__title,
       .md-nav__item {
@@ -251,7 +250,6 @@
 
       // Adjust for RTL languages
       html [dir="rtl"] & .md-nav__title {
-
         // Icon
         &::before {
           right: px2rem(4px);
@@ -328,7 +326,6 @@
 
       // Table of contents inside navigation
       .md-nav--secondary {
-
         // Set links to static to avoid unnecessary layering
         .md-nav__link {
           position: static;
@@ -390,9 +387,8 @@
     .md-nav__toggle ~ & {
       display: flex;
       transform: translateX(100%);
-      transition:
-        transform 0.25s cubic-bezier(0.8, 0, 0.6, 1),
-        opacity   0.125s 0.05s;
+      transition: transform 0.25s cubic-bezier(0.8, 0, 0.6, 1),
+        opacity 0.125s 0.05s;
       opacity: 0;
 
       // Adjust for RTL languages
@@ -409,9 +405,8 @@
     // Expand nested navigation, if toggle is checked
     .md-nav__toggle:checked ~ & {
       transform: translateX(0);
-      transition:
-        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity   0.125s 0.125s;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.125s 0.125s;
       opacity: 1;
 
       // Just show navigation, if browser doesn't supports 3D transforms
@@ -423,7 +418,6 @@
 
   // [tablet portrait -]: Show table of contents in drawer
   @include break-to-device(tablet portrait) {
-
     // Show link to table of contents - higher specificity is necessary to
     // display the table of contents inside the drawer
     html &__link[for="__toc"] {
@@ -464,7 +458,6 @@
 
   // [screen +]: Tree-like navigation
   @include break-from-device(screen) {
-
     // Animation is only possible if JavaScript is available, as the max-height
     // property must be calculated before transitioning
     &[data-md-state="animate"] {
@@ -501,7 +494,6 @@
     // Link inside item - ideally the link display method would be set to
     // inline on screen, but this doesn't work with text ellipsis
     &__link {
-
       // Item contains a nested list
       .md-nav__item--nested > &::after {
         display: inline-block;

@@ -1,16 +1,14 @@
-zinit-side.zsh(1)
-===================
+# zinit-side.zsh(1)
 
-NAME
-----
+## NAME
+
 zinit-side.zsh - a shell script
 
-SYNOPSIS
---------
+## SYNOPSIS
+
 Documentation automatically generated with \`zshelldoc'
 
-FUNCTIONS
----------
+## FUNCTIONS
 
 ```text
 .zinit-any-colorify-as-uspl2
@@ -23,8 +21,7 @@ FUNCTIONS
 .zinit-two-paths
 ```
 
-DETAILS
--------
+## DETAILS
 
 ## Script Body
 
@@ -101,7 +98,7 @@ zinit-autoload.zsh/.zinit-get-path
 
 ## .zinit-exists-physically-message
 
-```text 
+```text
 Checks if directory of given plugin exists in PLUGIN_DIR,
 and outputs error message if it doesn't.
 
@@ -238,5 +235,3 @@ zinit-autoload.zsh/.zinit-delete
 zinit-autoload.zsh/.zinit-get-path
 zinit-autoload.zsh/.zinit-update-or-status
 ```
-
-

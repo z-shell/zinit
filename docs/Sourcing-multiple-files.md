@@ -9,7 +9,7 @@ zinit light martinrotter/powerless
   alphabetically first matched file is sourced),
 - `src''` – provide second file to source (not a pattern, plain file name)
 
-***
+---
 
 However, via `atload''` ice one can provide simple loop to source more files:
 
@@ -29,10 +29,10 @@ zinit snippet OMZ::lib
   plugin's) directory**,
 - `atload''` code isn't tracked by Zinit, i.e. cannot be unloaded, unless you
   load a plugin (not a snippet) with `zinit load …` and prepend the value of
-  the ice with exclamation mark, i.e.  `atload'!local f; for …'`,
+  the ice with exclamation mark, i.e. `atload'!local f; for …'`,
 - `atload''` is executed after loading main files (`pick''` and `src''` ones).
 
-****
+---
 
 The `multisrc''` ice, which loads **multiple** files enumerated with
 spaces as the separator (e.g. `multisrc'misc.zsh grep.zsh'`) and also using
@@ -110,12 +110,12 @@ it's possible to write:
 ```shell
 zinit for \
     OMZL::functions.zsh \
-    OMZL::misc.zsh \                                                                    
+    OMZL::misc.zsh \
     OMZL::completion.zsh
 ```
 
 which is somewhat easier on eyes. Also – an **important** property: the multiple
-snippets loaded with the for-syntax are being loaded *separately*, which means
+snippets loaded with the for-syntax are being loaded _separately_, which means
 that they will not cause a longer keyboard blockage, which could have been
 noticeable – when using Turbo. The Zinit scheduler will distribute the work over
 time and will allow activation of keyboard in between the snippets. The

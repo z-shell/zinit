@@ -20,13 +20,13 @@
  * IN THE SOFTWARE.
  */
 
-import Event from "./Material/Event"
-import Header from "./Material/Header"
-import Nav from "./Material/Nav"
-import Search from "./Material/Search"
-import Sidebar from "./Material/Sidebar"
-import Source from "./Material/Source"
-import Tabs from "./Material/Tabs"
+import Event from "./Material/Event";
+import Header from "./Material/Header";
+import Nav from "./Material/Nav";
+import Search from "./Material/Search";
+import Sidebar from "./Material/Sidebar";
+import Source from "./Material/Source";
+import Tabs from "./Material/Tabs";
 
 /* ----------------------------------------------------------------------------
  * Module
@@ -39,5 +39,5 @@ export default {
   Search,
   Sidebar,
   Source,
-  Tabs
-}
+  Tabs,
+};

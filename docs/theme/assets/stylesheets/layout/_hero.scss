@@ -36,9 +36,7 @@
   &__inner {
     margin-top: px2rem(20px);
     padding: px2rem(16px) px2rem(16px) px2rem(8px);
-    transition:
-      transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
-      opacity   0.25s;
+    transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     transition-delay: 0.1s;
 
     // [tablet -]: Compensate for missing tabs
@@ -51,9 +49,7 @@
     [data-md-state="hidden"] & {
       pointer-events: none;
       transform: translateY(px2rem(12.5px));
-      transition:
-        transform 0s   0.4s,
-        opacity   0.1s 0s;
+      transition: transform 0s 0.4s, opacity 0.1s 0s;
       opacity: 0;
     }
 

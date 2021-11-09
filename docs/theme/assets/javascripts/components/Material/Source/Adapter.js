@@ -20,12 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-import GitHub from "./Adapter/GitHub"
+import GitHub from "./Adapter/GitHub";
 
 /* ----------------------------------------------------------------------------
  * Module
  * ------------------------------------------------------------------------- */
 
 export default {
-  GitHub
-}
+  GitHub,
+};

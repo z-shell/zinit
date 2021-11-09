@@ -20,12 +20,12 @@
  * IN THE SOFTWARE.
  */
 
-import Toggle from "./Tabs/Toggle"
+import Toggle from "./Tabs/Toggle";
 
 /* ----------------------------------------------------------------------------
  * Module
  * ------------------------------------------------------------------------- */
 
 export default {
-  Toggle
-}
+  Toggle,
+};
