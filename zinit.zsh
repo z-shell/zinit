@@ -12,7 +12,7 @@ if (( !${#ZINIT_TASKS} )) { ZINIT_TASKS=( "<no-data>" ); }
 typeset -gAH ZINIT ZINIT_SNIPPETS ZINIT_REPORTS ZINIT_ICES ZINIT_SICE ZINIT_CUR_BIND_MAP ZINIT_EXTS ZINIT_EXTS2
 typeset -gaH ZINIT_COMPDEF_REPLAY
 
-# Compatibility with pre-rename project (Zplugin).
+# Compatibility with pre-rename project (Zinit).
 typeset -gAH ZPLGM
 ZINIT=( "${(kv)ZPLGM[@]}" "${(kv)ZINIT[@]}" )
 unset ZPLGM
@@ -1203,7 +1203,7 @@ builtin setopt noaliases
         command mkdir 2>/dev/null -p $ZPFX/bin
     }
     [[ ! -d ${ZINIT[PLUGINS_DIR]}/_local---zinit ]] && {
-        command rm -rf "${ZINIT[PLUGINS_DIR]:-${TMPDIR:-/tmp}/132bcaCAB}/_local---zplugin"
+        command rm -rf "${ZINIT[PLUGINS_DIR]:-${TMPDIR:-/tmp}/132bcaCAB}/_local---zinit"
         command mkdir -p "${ZINIT[PLUGINS_DIR]}/_local---zinit"
         command chmod go-w "${ZINIT[PLUGINS_DIR]}"
         command ln -s "${ZINIT[BIN_DIR]}/_zinit" "${ZINIT[PLUGINS_DIR]}/_local---zinit"

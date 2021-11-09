@@ -90,7 +90,7 @@ DETAILS
 Script Body
 ~~~~~~~~~~~
 
-Has 211 line(s). Calls functions:
+Has 213 line(s). Calls functions:
 
  Script-Body
  |-- add-zsh-hook
@@ -107,7 +107,7 @@ _Exports (environment):_ PMSPEC [big]*//* ZPFX [big]*//* ZSH_CACHE_DIR
 ~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @autoload. [[[
 ____
@@ -125,7 +125,7 @@ pmodload
 ~~~~~~~~
 
 ____
-
+ 
  FUNCTION: pmodload. [[[
  Compatibility with Prezto. Calls can be recursive.
 ____
@@ -142,7 +142,7 @@ zicdclear
 ~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: zicdclear. [[[
  A wrapper for `zinit cdclear -q' which can be called from hook
@@ -159,7 +159,7 @@ zicdreplay
 ~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: zicdreplay. [[[
  A function that can be invoked from within `atinit', `atload', etc.
  ice-mod.  It works like `zinit cdreplay', which cannot be invoked
@@ -176,7 +176,7 @@ zicompdef
 ~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: zicompdef. [[[
  Stores compdef for a replay with `zicdreplay' (turbo mode) or
@@ -192,7 +192,7 @@ zicompinit
 ~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: zicompinit. [[[
  A function that can be invoked from within `atinit', `atload', etc.
@@ -213,7 +213,7 @@ zinit
 ~~~~~
 
 ____
-
+ 
  FUNCTION: zinit. [[[
  Main function directly exposed to user, obtains subcommand and its
  arguments, has completion.
@@ -266,7 +266,7 @@ Called by:
 ~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-add-fpath. [[[
 ____
 
@@ -282,10 +282,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-add-report. [[[
  Adds a report line for given plugin.
-
+ 
  $1 - uspl2, i.e. user/plugin
  $2, ... - the text
 ____
@@ -307,7 +307,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-any-to-pid. [[[
 ____
 
@@ -327,15 +327,15 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-any-to-user-plugin. [[[
  Allows elastic plugin-spec across the code.
-
+ 
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
-
+ 
  Returns user and plugin in $reply.
-
+ 
 ____
 
 Has 29 line(s). Doesn't call other functions.
@@ -378,7 +378,7 @@ _Environment variables used:_ ZPFX
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-compdef-clear. [[[
  Implements user-exposed functionality to clear gathered compdefs.
 ____
@@ -398,7 +398,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-compdef-replay. [[[
  Runs gathered compdef calls. This allows to run `compinit'
  after loading plugins.
@@ -421,7 +421,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: +zinit-deploy-message. [[[
  Deploys a sub-prompt message to be displayed OR a `zle
@@ -442,7 +442,7 @@ Called by:
 ~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-diff. [[[
  Performs diff actions of all types
 ____
@@ -459,10 +459,10 @@ Called by:
 ~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-diff-env. [[[
  Implements detection of change in PATH and FPATH.
-
+ 
  $1 - user/plugin (i.e. uspl2 format)
  $2 - command, can be "begin" or "end"
 ____
@@ -478,11 +478,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-diff-functions. [[[
  Implements detection of newly created functions. Performs
  data gathering, computation is done in *-compute().
-
+ 
  $1 - user/plugin (i.e. uspl2 format)
  $2 - command, can be "begin" or "end"
 ____
@@ -497,11 +497,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-diff-options. [[[
  Implements detection of change in option state. Performs
  data gathering, computation is done in *-compute().
-
+ 
  $1 - user/plugin (i.e. uspl2 format)
  $2 - command, can be "begin" or "end"
 ____
@@ -516,11 +516,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-diff-parameter. [[[
  Implements detection of change in any parameter's existence and type.
  Performs data gathering, computation is done in *-compute().
-
+ 
  $1 - user/plugin (i.e. uspl2 format)
  $2 - command, can be "begin" or "end"
 ____
@@ -535,7 +535,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-find-other-matches. [[[
  Plugin's main source file is in general `name.plugin.zsh'. However,
  there can be different conventions, if that file is not found, then
@@ -554,7 +554,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-formatter-bar. [[[
 ____
@@ -569,7 +569,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-formatter-bar-util. [[[
 ____
 
@@ -584,7 +584,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-formatter-pid. [[[
 ____
@@ -602,7 +602,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-formatter-th-bar. [[[
 ____
@@ -617,7 +617,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-formatter-url. [[[
 ____
@@ -630,7 +630,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-get-mtime-into. [[[
 ____
 
@@ -646,7 +646,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-get-object-path. [[[
 ____
 
@@ -670,7 +670,7 @@ Called by:
 ~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-ice. [[[
  Parses ICE specification, puts the result into ICE global hash.
  The ice-spec is valid for next command only (i.e. it "melts"), but
@@ -691,10 +691,10 @@ _Environment variables used:_ ZPFX
 ~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-load. [[[
  Implements the exposed-to-user action of loading a plugin.
-
+ 
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin name, if the third format is used
 ____
@@ -717,7 +717,7 @@ Called by:
 ~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-load-ices. [[[
 ____
 
@@ -735,7 +735,7 @@ _Environment variables used:_ ZPFX
 ~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-load-object. [[[
 ____
 
@@ -751,10 +751,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-load-plugin. [[[
  Lower-level function for loading a plugin.
-
+ 
  $1 - user
  $2 - plugin
  $3 - mode (light or load)
@@ -777,11 +777,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-load-snippet. [[[
  Implements the exposed-to-user action of loading a snippet.
-
+ 
  $1 - url (can be local, absolute path).
 ____
 
@@ -805,7 +805,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: +zinit-message-formatter [[[
 ____
@@ -818,7 +818,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: +zinit-message. [[[
 ____
@@ -867,7 +867,7 @@ Called by:
 ~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-pack-ice. [[[
  Remembers all ice-mods, assigns them to concrete plugin. Ice spec
  is in general forgotten for second-next command (that's why it's
@@ -891,7 +891,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: +zinit-parse-opts. [[[
 ____
@@ -907,7 +907,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: +zinit-prehelp-usage-message. [[[
 ____
@@ -926,7 +926,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-prepare-home. [[[
  Creates all directories needed by Zinit, first checks if they
  already exist.
@@ -950,7 +950,7 @@ _Environment variables used:_ ZPFX
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @zinit-register-annex. [[[
  Registers the z-annex inside Zinit – i.e. an Zinit extension
@@ -964,7 +964,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @zinit-register-hook. [[[
  Registers the z-annex inside Zinit – i.e. an Zinit extension
@@ -980,11 +980,11 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-register-plugin. [[[
  Adds the plugin to ZINIT_REGISTERED_PLUGINS array and to the
  zsh_loaded_plugins array (managed according to the plugin standard:
- http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html).
+ http://z-shell.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html).
 ____
 
 Has 23 line(s). Calls functions:
@@ -1000,20 +1000,20 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-reload-and-run. [[[
  Marks given function ($3) for autoloading, and executes it triggering the
  load. $1 is the fpath dedicated to the function, $2 are autoload options.
  This function replaces "autoload -X", because using that on older Zsh
  versions causes problems with traps.
-
+ 
  So basically one creates function stub that calls :zinit-reload-and-run()
  instead of "autoload -X".
-
+ 
  $1 - FPATH dedicated to function
  $2 - autoload options
  $3 - function name (one that needs autoloading)
-
+ 
  Author: Bart Schaefer
 ____
 
@@ -1027,7 +1027,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-run. [[[
  Run code inside plugin's folder
@@ -1049,13 +1049,13 @@ Called by:
 ~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-run-task. [[[
  A backend, worker function of .zinit-scheduler. It obtains the tasks
  index and a few of its properties (like the type: plugin, snippet,
  service plugin, service snippet) and executes it first checking for
  additional conditions (like non-numeric wait'' ice).
-
+ 
  $1 - the pass number, either 1st or 2nd pass
  $2 - the time assigned to the task
  $3 - type: plugin, snippet, service plugin, service snippet
@@ -1079,24 +1079,24 @@ Called by:
 ~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @zinit-scheduler. [[[
  Searches for timeout tasks, executes them. There's an array of tasks
  waiting for execution, this scheduler manages them, detects which ones
  should be run at current moment, decides to remove (or not) them from
  the array after execution.
-
+ 
  $1 - if "following", then it is non-first (second and more)
  invocation of the scheduler; this results in chain of `sched'
  invocations that results in repetitive @zinit-scheduler activity.
-
+ 
  if "burst", then all tasks are marked timeout and executed one
  by one; this is handy if e.g. a docker image starts up and
  needs to install all turbo-mode plugins without any hesitation
  (delay), i.e. "burst" allows to run package installations from
  script, not from prompt.
-
+ 
 ____
 
 Has 75 line(s). *Is a precmd hook*. Calls functions:
@@ -1112,7 +1112,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: -zinit_scheduler_add_sh. [[[
  Copies task into ZINIT_RUN array, called when a task timeouts.
@@ -1128,7 +1128,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION:.zinit-set-m-func() [[[
  Sets and withdraws the temporary, atclone/atpull time function `m`.
@@ -1151,7 +1151,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-setup-params. [[[
 ____
@@ -1167,7 +1167,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-submit-turbo. [[[
  If `zinit load`, `zinit light` or `zinit snippet`  will be
  preceded with `wait', `load', `unload' or `on-update-of`/`subscribe'
@@ -1186,7 +1186,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @zinit-substitute. [[[
 ____
@@ -1214,10 +1214,10 @@ _Environment variables used:_ ZPFX
 ~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-tmp-subst-alias. [[[
  Function defined to hijack plugin's calls to the `alias' builtin.
-
+ 
  The hijacking is to gather report data (which is used in unload).
 ____
 
@@ -1233,10 +1233,10 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-tmp-subst-autoload. [[[
  Function defined to hijack plugin's calls to the `autoload' builtin.
-
+ 
  The hijacking is not only to gather report data, but also to.
  run custom `autoload' function, that doesn't need FPATH.
 ____
@@ -1258,10 +1258,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-tmp-subst-bindkey. [[[
  Function defined to hijack plugin's calls to the `bindkey' builtin.
-
+ 
  The hijacking is to gather report data (which is used in unload).
 ____
 
@@ -1278,7 +1278,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-tmp-subst-compdef. [[[
  Function defined to hijack plugin's calls to the `compdef' function.
  The hijacking is not only for reporting, but also to save compdef
@@ -1297,7 +1297,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-tmp-subst-off. [[[
  Turn off temporary substituting of functions completely for a given mode ("load", "light",
  "light-b" (i.e. the `trackbinds' mode) or "compdef").
@@ -1315,7 +1315,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-tmp-subst-on. [[[
  Turn on temporary substituting of functions of builtins and functions according to passed
  mode ("load", "light", "light-b" or "compdef"). The temporary substituting of functions is
@@ -1335,10 +1335,10 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-tmp-subst-zle. [[[.
  Function defined to hijack plugin's calls to the `zle' builtin.
-
+ 
  The hijacking is to gather report data (which is used in unload).
 ____
 
@@ -1354,10 +1354,10 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: :zinit-tmp-subst-zstyle. [[[
  Function defined to hijack plugin's calls to the `zstyle' builtin.
-
+ 
  The hijacking is to gather report data (which is used in unload).
 ____
 
@@ -1373,7 +1373,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-util-shands-path. [[[
  Replaces parts of path with %HOME, etc.
 ____
@@ -1429,7 +1429,7 @@ zplugin
 ~~~~~~~
 
 ____
-
+ 
  Compatibility functions. [[[
 ____
 
@@ -1477,7 +1477,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @zsh-plugin-run-on-update. [[[
  The Plugin Standard required mechanism, see:
@@ -1494,7 +1494,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: @zsh-plugin-run-on-update. [[[
  The Plugin Standard required mechanism
@@ -1510,17 +1510,17 @@ add-zsh-hook
 ~~~~~~~~~~~~
 
 ____
-
+ 
  Add to HOOK the given FUNCTION.
  HOOK is one of chpwd, precmd, preexec, periodic, zshaddhistory,
  zshexit, zsh_directory_name (the _functions subscript is not required).
-
+ 
  With -d, remove the function from the hook instead; delete the hook
  variable if it is empty.
-
+ 
  -D behaves like -d, but pattern characters are active in the
  function name, so any matching function will be deleted from the hook.
-
+ 
 ____
 
 Has 93 line(s). Doesn't call other functions.
@@ -1536,16 +1536,16 @@ compinit
 ~~~~~~~~
 
 ____
-
+ 
  Initialisation for new style completion. This mainly contains some helper
  functions and setup. Everything else is split into different files that
  will automatically be made autoloaded (see the end of this file).  The
  names of the files that will be considered for autoloading are those that
  begin with an underscores (like `_condition).
-
+ 
  The first line of each of these files is read and must indicate what
  should be done with its contents:
-
+ 
  `#compdef <names ...>'
 ____
 
@@ -1563,8 +1563,8 @@ is-at-least
 ~~~~~~~~~~~
 
 ____
-
-
+ 
+ 
  Test whether $ZSH_VERSION (or some value of your choice, if a second argument
  is provided) is greater than or equal to x.y.z-r (in argument one). In fact,
  it'll accept any dot/dash-separated string of numbers as its second argument
@@ -1573,7 +1573,7 @@ ____
  when the comparison is done; only the numbers matter. Any left-out segments
  in the first argument that are present in the version string compared are
  considered as zeroes, eg 3 == 3.0 == 3.0.0 == 3.0.0.0 and so on.
-
+ 
 ____
 
 Has 56 line(s). Doesn't call other functions.

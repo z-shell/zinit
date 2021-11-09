@@ -61,7 +61,7 @@ zicp
 ~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION zicp [[[
 ____
@@ -80,14 +80,14 @@ ziextract
 ~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ziextract [[[
  If the file is an archive, it is extracted by this function.
  Next stage is scanning of files with the common utility `file',
  to detect executables. They are given +x mode. There are also
  messages to the user on performed actions.
-
+ 
  $1 - url
  $2 - file
 ____
@@ -120,7 +120,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-atclone-hook [[[
 ____
@@ -139,7 +139,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-at-eval [[[
 ____
@@ -160,7 +160,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-atpull-e-hook [[[
 ____
@@ -178,7 +178,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-atpull-hook [[[
 ____
@@ -196,11 +196,11 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-compile-plugin [[[
  Compiles given plugin (its main source file, and also an
  additional "....zsh" file if it exists).
-
+ 
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
 ____
@@ -224,7 +224,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-compile-plugin-hook [[[
 ____
@@ -241,13 +241,13 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-compinit [[[
  User-exposed `compinit' frontend which first ensures that all
  completions managed by Zinit are forgotten by Zshell. After
  that it runs normal `compinit', which should more easily detect
  Zinit's completions.
-
+ 
  No arguments.
 ____
 
@@ -271,7 +271,7 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-cp-hook [[[
 ____
@@ -289,7 +289,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-download-file-stdout [[[
  Downloads file to stdout. Supports following backend commands:
  curl, wget, lftp, lynx. Used by snippet loading.
@@ -313,7 +313,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-download-snippet [[[
  Downloads snippet – either a file – with curl, wget, lftp or lynx,
  or a directory, with Subversion – when svn-ICE is active. Github
@@ -338,7 +338,7 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-extract() [[[
 ____
@@ -360,7 +360,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-extract-hook [[[
 ____
@@ -376,12 +376,12 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-forget-completion [[[
  Implements alternation of Zsh state so that already initialized
  completion stops being visible to Zsh.
-
+ 
  $1 - completion function name, e.g. "_cp"; can also be "cp"
 ____
 
@@ -400,7 +400,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-get-cygwin-package [[[
 ____
@@ -420,7 +420,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-get-latest-gh-r-url-part [[[
  Gets version string of latest release of given Github
@@ -443,7 +443,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-get-package [[[
 ____
@@ -468,7 +468,7 @@ _Environment variables used:_ zinit.zsh -> ZPFX
 ~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-get-url-mtime [[[
  For the given URL returns the date in the Last-Modified
  header as a time stamp
@@ -486,13 +486,13 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-install-completions [[[
  Installs all completions of given plugin. After that they are
  visible to `compinit'. Visible completions can be selectively
  disabled and enabled. User can access completion data with
  `clist' or `completions' subcommand.
-
+ 
  $1 - plugin spec (4 formats: user---plugin, user/plugin, user, plugin)
  $2 - plugin (only when $1 - i.e. user - given)
  $3 - if 1, then reinstall, otherwise only install completions that aren't there
@@ -518,7 +518,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-make-ee-hook [[[
 ____
@@ -535,7 +535,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-make-e-hook [[[
 ____
@@ -552,7 +552,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-make-hook [[[
 ____
@@ -569,14 +569,14 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-mirror-using-svn [[[
  Used to clone subdirectories from Github. If in update mode
  (see $2), then invokes `svn update', in normal mode invokes
  `svn checkout --non-interactive -q <URL>'. In test mode only
  compares remote and local revision and outputs true if update
  is needed.
-
+ 
  $1 - URL
  $2 - mode, "" - normal, "-u" - update, "-t" - test
  $3 - subdirectory (not path) with working copy, needed for -t and -u
@@ -594,7 +594,7 @@ Called by:
 ~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-mv-hook [[[
 ____
@@ -612,7 +612,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  FUNCTION: .zinit-parse-json [[[
  Retrievies the ice-list from given profile from
  the JSON of the package.json.
@@ -632,7 +632,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-ps-on-update-hook [[[
 ____
@@ -650,7 +650,7 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: ∞zinit-reset-opt-hook [[[
 ____
@@ -668,13 +668,13 @@ Not called by script or any function (may be e.g. a hook, a Zle widget, etc.).
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-setup-plugin-dir [[[
  Clones given plugin into PLUGIN_DIR. Supports multiple
  sites (respecting `from' and `proto' ice modifiers).
  Invokes compilation of plugin's main file.
-
+ 
  $1 - user
  $2 - plugin
 ____
@@ -700,7 +700,7 @@ Called by:
 ~~~~~~~~~~~~~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: .zinit-update-snippet [[[
 ____
@@ -722,7 +722,7 @@ zpextract
 ~~~~~~~~~
 
 ____
-
+ 
  ]]]
  FUNCTION: zpextract [[[
 ____
@@ -739,16 +739,16 @@ compinit
 ~~~~~~~~
 
 ____
-
+ 
  Initialisation for new style completion. This mainly contains some helper
  functions and setup. Everything else is split into different files that
  will automatically be made autoloaded (see the end of this file).  The
  names of the files that will be considered for autoloading are those that
  begin with an underscores (like `_condition).
-
+ 
  The first line of each of these files is read and must indicate what
  should be done with its contents:
-
+ 
  `#compdef <names ...>'
 ____
 
