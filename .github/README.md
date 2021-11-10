@@ -11,7 +11,7 @@
 
 </p><p>
 
-[**HTML**](.github/README.html) | [**PDF**](.github/README.pdf)
+[**HTML**](README.html) | [**PDF**](README.pdf)
 
 <p></div>
 
