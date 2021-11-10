@@ -15,7 +15,6 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ main ]
   schedule:
     - cron: '23 9 * * 5'
@@ -62,8 +61,8 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-#    - run: |
-#       sh -c "$(curl -fsSL https://raw.githubusercontent.com/z-shell/zinit/main/doc/install.sh)"
-
+    - run: |
+        sudo apt update && sudo apt-get install zsh
+        
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
