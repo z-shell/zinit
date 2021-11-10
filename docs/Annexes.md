@@ -2,7 +2,7 @@
 
 ## What Are They?
 
-They are Zinit extensions. An annex is added to Zinit by simply loading it
+They are [Zinit Extensions](https://github.com/search?q=topic%3Azinit-annex+org%3Az-shell&type=Repositories). An annex is added to Zinit by simply loading it
 just as any other plugin.
 
 ## What Can They Do?
@@ -117,16 +117,16 @@ The `z-a-*` prefix is recommended for projects that are being annexes.
 
 There are 2 or 3 subtypes for each of the hook:
 
-1.  `atinit` or `!atinit` – the `!` version is ran before the `atinit`
+1. `atinit` or `!atinit` – the `!` version is ran before the `atinit`
     **ice-mod** (i.e. before `zinit ice atinit'echo this!'; …`), while
     the normal version runs after it.
 
-2.  `atload` or `!atload` – analogous to the `atinit` case: the `!` version runs
+2. `atload` or `!atload` – analogous to the `atinit` case: the `!` version runs
     before the `atload` **ice-mod** (while the normal version runs after it).
 
-3.  `atclone` or `!atclone` – analogous to the `atinit` and `atload` cases.
+3. `atclone` or `!atclone` – analogous to the `atinit` and `atload` cases.
 
-4.  `atpull`, `!atpull` or `%atpull` – the first two are being ran **only when
+4. `atpull`, `!atpull` or `%atpull` – the first two are being ran **only when
     there are new commits to be downloaded** during the update. The `%` version
     is being **always** run, regardless if the update will pull any actual
     commits or not, and it is being ran **after** the `atpull` **ice-mod**.
