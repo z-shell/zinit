@@ -3,3 +3,11 @@ version = 1
 [[analyzers]]
 name = "shell"
 enabled = true
+
+[[analyzers]]
+name = "secrets"
+enabled = true
+
+[[transformers]]
+name = "prettier"
+enabled = true
