@@ -1,58 +1,3 @@
-#!/bin/sh
-#
-# mkmakemod.sh: generate Makefile.in files for module building
-#
-# Options:
-#   -m = file is already generated; only build the second stage
-#   -i = do not build second stage
-#
-# Args:
-#   $1 = subdirectory to look in, relative to $top_srcdir
-#   $2 = final output filename, within the $1 directory
-#
-# This script must be run from the top-level build directory, and $top_srcdir
-# must be set correctly in the environment.
-#
-# This looks in $1, and uses all the *.mdd files there.  Each .mdd file
-# defines one module.  The .mdd file is actually a shell script, which will
-# be sourced.  It may define the following shell variables:
-#
-#   name            name of this module
-#   moddeps         modules on which this module depends (default none)
-#   nozshdep        non-empty indicates no dependence on the `zsh/main' pseudo-module
-#   alwayslink      if non-empty, always link the module into the executable
-#   autofeatures    features defined by the module, for autoloading
-#   autofeatures_emu As autofeatures, but for non-zsh emulation modes
-#   objects         .o files making up this module (*must* be defined)
-#   proto           .syms files for this module (default generated from $objects)
-#   headers         extra headers for this module (default none)
-#   hdrdeps         extra headers on which the .mdh depends (default none)
-#   otherincs       extra headers that are included indirectly (default none)
-#
-# The .mdd file may also include a Makefile.in fragment between lines
-# `:<<\Make' and `Make' -- this will be copied into Makemod.in.
-#
-# The resulting Makemod.in knows how to build each module that is defined.
-# For each module it also knows how to build a .mdh file.  Each source file
-# should #include the .mdh file for the module it is a part of.  The .mdh
-# file #includes the .mdh files for any module dependencies, then each of
-# $headers, and then each .epro (for global declarations).  It will
-# be recreated if any of the dependency .mdh files changes, or if any of
-# $headers or $hdrdeps changes.  When anything depends on it, all the .epros
-# and $otherincs will be made up to date, but the .mdh file won't actually
-# be rebuilt if those files change.
-#
-# The order of sections of the output file is thus:
-#   simple generated macros
-#   macros generated from *.mdd
-#   included Makemod.in.in
-#   rules generated from *.mdd
-# The order dependencies are basically that the generated macros are required
-# in Makemod.in.in, but some of the macros that it creates are needed in the
-# later rules.
-#
-
-# sed script to normalise a pathname
 sed_normalise='
     s,^,/,
     s,$,/,
@@ -80,13 +25,13 @@ elif test ."$1" = .-i; then
     second_stage=false
 fi
 
-top_srcdir=$(echo $top_srcdir | sed "$sed_normalise")
+top_srcdir=`echo $top_srcdir | sed "$sed_normalise"`
 the_subdir=$1
 the_makefile=$2
 
 if $first_stage; then
 
-    dir_top=$(echo $the_subdir | sed 's,[^/][^/]*,..,g')
+    dir_top=`echo $the_subdir | sed 's,[^/][^/]*,..,g'`
 
     trap "rm -f $the_subdir/${the_makefile}.in; exit 1" 1 2 15
     echo "creating $the_subdir/${the_makefile}.in"
@@ -122,12 +67,12 @@ if $first_stage; then
     all_proto=
     lastsub=//
     for module in $module_list; do
-        modfile="$(grep '^name='$module' ' ./config.modules | \
-	  sed -e 's/^.* modfile=//' -e 's/ .*//')"
+        modfile="`grep '^name='$module' ' ./config.modules | \
+	  sed -e 's/^.* modfile=//' -e 's/ .*//'`"
 	case $modfile in
 	    $the_subdir/$lastsub/*) ;;
 	    $the_subdir/*/*)
-		lastsub=$(echo $modfile | sed 's,^'$the_subdir'/,,;s,/[^/]*$,,')
+		lastsub=`echo $modfile | sed 's,^'$the_subdir'/,,;s,/[^/]*$,,'`
 		case "$all_subdirs " in
 		    *" $lastsub "* ) ;;
 		    * )
@@ -136,7 +81,7 @@ if $first_stage; then
 		esac
 		;;
 	    $the_subdir/*)
-		mddname=$(echo $modfile | sed 's,^.*/,,;s,\.mdd$,,')
+		mddname=`echo $modfile | sed 's,^.*/,,;s,\.mdd$,,'`
 		here_mddnames="$here_mddnames $mddname"
 		build=$is_dynamic
 		case $is_dynamic@$bin_mods in
@@ -188,24 +133,24 @@ if $first_stage; then
 	unset autofeatures autofeatures_emu
 	unset objects proto headers hdrdeps otherincs
 	. $top_srcdir/$the_subdir/${mddname}.mdd
-	q_name=$(echo $name | sed 's,Q,Qq,g;s,_,Qu,g;s,/,Qs,g')
+	q_name=`echo $name | sed 's,Q,Qq,g;s,_,Qu,g;s,/,Qs,g'`
 	test -n "${moddeps+set}" || moddeps=
 	test -n "$nozshdep" || moddeps="$moddeps zsh/main"
 	test -n "${proto+set}" ||
-	    proto=$(echo $objects '' | sed 's,\.o ,.syms ,g')
+	    proto=`echo $objects '' | sed 's,\.o ,.syms ,g'`
 
-	dobjects=$(echo $objects '' | sed 's,\.o ,..o ,g')
+	dobjects=`echo $objects '' | sed 's,\.o ,..o ,g'`
 	modhdeps=
 	mododeps=
 	exportdeps=
 	imports=
 	q_moddeps=
 	for dep in $moddeps; do
-	    depfile="$(grep '^name='$dep' ' ./config.modules | \
-	      sed -e 's/^.* modfile=//' -e 's/ .*//')"
-	    q_dep=$(echo $dep | sed 's,Q,Qq,g;s,_,Qu,g;s,/,Qs,g')
+	    depfile="`grep '^name='$dep' ' ./config.modules | \
+	      sed -e 's/^.* modfile=//' -e 's/ .*//'`"
+	    q_dep=`echo $dep | sed 's,Q,Qq,g;s,_,Qu,g;s,/,Qs,g'`
 	    q_moddeps="$q_moddeps $q_dep"
-	    eval $(echo $depfile | sed 's,/\([^/]*\)\.mdd$,;depbase=\1,;s,^,loc))
+	    eval `echo $depfile | sed 's,/\([^/]*\)\.mdd$,;depbase=\1,;s,^,loc=,'`
 	    case "$binmod" in
 		*" $dep "* )
 		    dep=zsh/main
@@ -292,7 +237,7 @@ if $first_stage; then
 	echo "MODOBJS_${mddname} = $objects"
 	echo "MODDOBJS_${mddname} = $dobjects \$(@E@NTRYOBJ)"
 	echo "SYMS_${mddname} = $proto"
-	echo "EPRO_${mddname} = "$(echo $proto '' | sed 's,\.syms ,.epro ,g')
+	echo "EPRO_${mddname} = "`echo $proto '' | sed 's,\.syms ,.epro ,g'`
 	echo "INCS_${mddname} = \$(EPRO_${mddname}) $otherincs"
 	echo "EXPIMP_${mddname} = $imports \$(EXPOPT)$mddname.export"
 	echo "NXPIMP_${mddname} ="
@@ -314,7 +259,7 @@ if $first_stage; then
 		echo "uninstall.modules-here: uninstall.modules.${mddname}"
 		echo
 	    ;; esac
-	    instsubdir=$(echo $name | sed 's,^,/,;s,/[^/]*$,,')
+	    instsubdir=`echo $name | sed 's,^,/,;s,/[^/]*$,,'`
 	    echo "install.modules.${mddname}: ${mddname}.\$(DL_EXT)"
 	    echo "	\$(SHELL) \$(sdir_top)/mkinstalldirs \$(DESTDIR)\$(MODDIR)${instsubdir}"
 	    echo "	\$(INSTALL_PROGRAM) \$(STRIPFLAGS) ${mddname}.\$(DL_EXT) \$(DESTDIR)\$(MODDIR)/${name}.\$(DL_EXT)"
