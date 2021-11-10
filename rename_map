@@ -1,0 +1,22 @@
+#!/usr/bin//env bash
+
+in="$1"
+
+sed -i 's/ZPLG/ZINIT/g' $in
+sed -i 's/ZPLGM/ZINIT/g' $in
+sed -i 's/zplg/zinit/g' $in
+sed -i 's/psprint/z-shell/g' $in
+
+echo "Done"
+#sed 's/zplugin/zinit/g'
+
+
+
+
+#sed 's/word1/word2/g' input.file
+## *bsd/macos sed syntax#
+#sed 's/word1/word2/g' input.file > output.file
+#sed -i 's/word1/word2/g' input.file
+#sed -i -e 's/word1/word2/g' -e 's/xx/yy/g' input.file
+## use + separator instead of / ##
+#sed -i 's+regex+new-text+g' file.txt

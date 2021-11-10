@@ -36,7 +36,7 @@ local NLIST_INSTANT_SELECT=0
 # How should be current element of the list drawn. Possible values: reverse, underline.
 # On Linux virtual terminal this will be enforced to reverse (because of poor
 # underline support on that terminal). The same for screen/tmux. You can fix
-# those terminals, see: http://psprint.github.io/Fixing-TMux-Screen-and-Linuxs-VT/
+# those terminals, see: http://z-shell.github.io/Fixing-TMux-Screen-and-Linuxs-VT/
 local active_text=reverse
 [[ "$ZSHSELECT_ACTIVE_TEXT" = (reverse|underline) ]] && active_text="$ZSHSELECT_ACTIVE_TEXT"
 

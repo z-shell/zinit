@@ -1,6 +1,6 @@
-ALIASES__psprint/zsh-select
+ALIASES__z-shell/zsh-select
 
-AT_TIME_1_psprint---zsh-select
+AT_TIME_1_z-shell---zsh-select
 __reset-by-test__
 BIN_DIR
 test
@@ -14,17 +14,17 @@ DTRACE
 0
 EXTENDED_GLOB
 
-FPATH__psprint/zsh-select
+FPATH__z-shell/zsh-select
 
-FUNCTIONS__psprint/zsh-select
+FUNCTIONS__z-shell/zsh-select
 
 HOME_DIR
 _test1/answer
 HOME_READY
 1
-OPTIONS__psprint/zsh-select
+OPTIONS__z-shell/zsh-select
 
-PATH__psprint/zsh-select
+PATH__z-shell/zsh-select
 
 PLUGINS_DIR
 _test1/answer/plugins
@@ -34,24 +34,24 @@ SHADOWING
 inactive
 SNIPPETS_DIR
 _test1/answer/snippets
-TIME_1_psprint---zsh-select
+TIME_1_z-shell---zsh-select
 __reset-by-test__
 TIME_INDEX
 1
-WIDGETS_DELETE__psprint/zsh-select
+WIDGETS_DELETE__z-shell/zsh-select
 
-WIDGETS_SAVED__psprint/zsh-select
+WIDGETS_SAVED__z-shell/zsh-select
 
 ZERO
 zplugin.zsh
-ZSTYLES__psprint/zsh-select
+ZSTYLES__z-shell/zsh-select
 
 ---
-ZPLG_REGISTERED_PLUGINS: '_local/zplugin' 'psprint/zsh-select'
-ZPLG_REGISTERED_STATES: '_local/zplugin' '1' 'psprint/zsh-select' '2'
-ZPLG_SNIPPETS: 
-ZPLG_SICE: 'psprint/zsh-select' 'teleid psprint/zsh-select wait '\'''\'' depth 1 '
-ZPLG_COMPDEF_REPLAY: 
-ZPLG_CUR_PLUGIN: ''
+ZINIT_REGISTERED_PLUGINS: '_local/zplugin' 'z-shell/zsh-select'
+ZINIT_REGISTERED_STATES: '_local/zplugin' '1' 'z-shell/zsh-select' '2'
+ZINIT_SNIPPETS: 
+ZINIT_SICE: 'z-shell/zsh-select' 'teleid z-shell/zsh-select wait '\'''\'' depth 1 '
+ZINIT_COMPDEF_REPLAY: 
+ZINIT_CUR_PLUGIN: ''
 ---
 Parameter module: 1
