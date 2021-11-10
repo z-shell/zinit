@@ -5,8 +5,8 @@ zplugin ice depth"1"
 zplugin load z-shell/zsh-select
 zplugin load z-shell/ice-order
 
-print -rl -- "${(o)ZPLG_ICE[@]}" >! answer/ice
-print -rl -- "${(okv)ZPLG_SICE[@]}" >! answer/sice
+print -rl -- "${(o)ZINIT_ICE[@]}" >! answer/ice
+print -rl -- "${(okv)ZINIT_SICE[@]}" >! answer/sice
 
 store_state answer/state_bunload answer/errors_bunload
 
