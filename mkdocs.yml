@@ -46,7 +46,7 @@ nav:
 theme:
   name: material
   custom_dir: "docs/theme"
-  logo: "img/logo.png"
+  logo: "img/z-zinit.png"
   feature:
     tabs: true
 markdown_extensions:
