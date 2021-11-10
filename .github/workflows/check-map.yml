@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Dart
+        run: |
+          sudo apt-get update && \
+          sudo apt-get install dart
       - name: Check links with linkcheck
         uses: filiph/linkcheck@v2.0.15+1
