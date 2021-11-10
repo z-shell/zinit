@@ -40,7 +40,7 @@
 .md-tabs {
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(-45deg, #620fe7, #1ef51e, #e8ff15);
+  background: linear-gradient(-45deg, #620fe7, #1ef51e, #e5fd0c);
   background-size: 400% 400%;
   animation: Gradient 20s infinite;
   -webkit-animation: Gradient 20s infinite;
@@ -116,7 +116,7 @@ h2:after {
 /*Borders around code blocks.*/
 .codehilite code,
 .codehilite pre {
-  color: #353535;
+  color: #4d4d4d;
   background-color: #f7f7f7;
   overflow: auto;
   box-sizing: border-box;
