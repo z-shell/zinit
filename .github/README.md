@@ -11,7 +11,7 @@
 
 </p><p>
 
-[**HTML**](README.html) | [**PDF**](README.pdf)
+[**PDF**](README.pdf)
 
 <p></div>
 
