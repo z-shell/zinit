@@ -4,8 +4,16 @@
 </a>
 </p>
 
+<div align="center"><p>
+
 [![Travis Status][status-badge]][status-link] [![CodeFactor][codefactor-badge]][codefactor-link] [![DeepSource][deepsource-badge]][deepsource-link]
 [![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link] [![Gitter][gitter-badge]][gitter-link] [![Tweet][twitter-badge]][twitter-link]
+
+</p><p>
+
+[**HTML**](.github/README.html) | [**PDF**](.github/README.pdf)
+
+<p></div>
 
 ---
 
