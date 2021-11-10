@@ -205,7 +205,7 @@ if $first_stage; then
 	      sed -e 's/^.* modfile=//' -e 's/ .*//')"
 	    q_dep=$(echo $dep | sed 's,Q,Qq,g;s,_,Qu,g;s,/,Qs,g')
 	    q_moddeps="$q_moddeps $q_dep"
-	    eval $$(echo $depfile | sed 's,/\([^/]*\)\.mdd$,;depbase=\1,;s,^,loc)
+	    eval $(echo $depfile | sed 's,/\([^/]*\)\.mdd$,;depbase=\1,;s,^,loc)
 	    case "$binmod" in
 		*" $dep "* )
 		    dep=zsh/main
