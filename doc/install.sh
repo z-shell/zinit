@@ -5,17 +5,14 @@
 #
 
 #ZINIT_HOME="${ZINIT_HOME:-$ZPLG_HOME}"
-#if [ -z "$ZINIT_HOME" ]; then
-#    ZINIT_HOME="${ZDOTDIR:-$HOME}/.zinit"
-#fi
+if [ -z "$ZINIT_HOME" ]; then
+    ZINIT_HOME="${ZDOTDIR:-$HOME}/.zinit"
+fi
 
 #ZINIT_BIN_DIR_NAME="${ZINIT_BIN_DIR_NAME:-$ZPLG_BIN_DIR_NAME}"
-#if [ -z "$ZINIT_BIN_DIR_NAME" ]; then
-#   ZINIT_BIN_DIR_NAME="bin"
-#fi
-
-ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
-ZINIT_BIN_DIR_NAME="${${ZINIT_BIN_DIR_NAME:-${ZPLG_BIN_DIR_NAME}}:-bin}"
+if [ -z "$ZINIT_BIN_DIR_NAME" ]; then
+   ZINIT_BIN_DIR_NAME="bin"
+fi
 
 if ! test -d "$ZINIT_HOME"; then
     mkdir "$ZINIT_HOME"
