@@ -9,11 +9,13 @@
 [![Travis Status][status-badge]][status-link] [![CodeFactor][codefactor-badge]][codefactor-link] [![DeepSource][deepsource-badge]][deepsource-link]
 [![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link] [![Gitter][gitter-badge]][gitter-link] [![Tweet][twitter-badge]][twitter-link]
 
-</p><p>
+  </p><p>
 
-[**PDF**](README.pdf)
+《 [**WIKI**](https://z-shell.github.io/zinit/wiki/) 》
+《 [**BLOG**](https://z-shell.github.io/) 》
+《 [**PDF**](README.pdf)  》
 
-<p></div>
+  <p></div>
 
 ---
 
@@ -21,7 +23,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [News](#news)
-- [Zinit Wiki](#zinit-wiki)
 - [Quick Start](#quick-start)
 - [Install](#install)
   - [Automatic Installation (Recommended)](#automatic-installation-recommended)
@@ -72,6 +73,8 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # News
+
+> NEWS WILL BE MOVED TO [BLOG](https://z-shell.github.io)
 
 <details>
   <summary>Here are the new features and updates added to Zinit in the last 90 days.</summary>
@@ -754,13 +757,6 @@ install everything from GitHub and other sites. Its characteristics are:
    complete list of available Zinit extensions and refer to the [Wiki
    article](https://z-shell.github.io/zinit/wiki/Annexes/) for an introduction on
    creating your own annex.
-
-## Zinit Wiki
-
-The information in this README is complemented by the [Zinit
-Wiki](https://z-shell.github.io/zinit/wiki/). The README is an introductory overview of
-Zinit while the Wiki gives a complete information with examples. Make sure to
-read it to get the most out of Zinit.
 
 ## Quick Start
 
