@@ -16,11 +16,11 @@
   color: #63a35c;
 }
 
-/*End of Zplugin config.*/
+/*End of Zinit config.*/
 
 .hljs {
   display: block;
-  background: white;
+  background: rgba(255, 255, 255, 0.801);
   padding: 0.5em;
   color: #333333;
   overflow-x: auto;
@@ -38,12 +38,12 @@
 .hljs-strong,
 .hljs-emphasis,
 .hljs-quote {
-  color: #df5000;
+  color: #00ff00;
 }
 
 .hljs-selector-tag,
 .hljs-type {
-  color: #a71d5d;
+  color: #8b1da7;
 }
 
 .hljs-symbol,

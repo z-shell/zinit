@@ -14,7 +14,7 @@
 /*Define gradient colors and start position for top bars.*/
 .md-header,
 .md-tabs {
-  background: linear-gradient(-45deg, #845ec2, #d65db1, #ff6f91);
+  background: linear-gradient(-45deg, #661ed8, #11ff1c, #e6fa34);
   background-size: 400% 400%;
   animation: Gradient 20s infinite;
   animation-delay: -5s;
