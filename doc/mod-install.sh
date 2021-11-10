@@ -12,20 +12,21 @@ echo "${col_info}Re-run this script to update (from Github) and rebuild the modu
 # Clone or pull
 #
 
-ZINIT_HOME="${ZDOTDIR:-$HOME}/.zinit"
+ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
+ZINIT_MOD_BIN_DIR_NAME="bin"
 
-if ! test -d "$ZINIT_HOME"; then
-    mkdir "$ZINIT_HOME"
-    chmod g-rwX "$ZINIT_HOME"
+if ! test -d "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME"; then
+    mkdir -p "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME"
+    chmod g-rwX "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME"
 fi
 
-echo ">>> Downloading zshell/zplugin module to $ZINIT_HOME/mod-bin"
-if test -d "$ZINIT_HOME/mod-bin/.git"; then
-    cd "$ZINIT_HOME/mod-bin" || return
+echo ">>> Downloading zshell/zplugin module to $ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME"
+if test -d "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME/.git"; then
+    cd "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME" || return
     git pull origin main
 else
     cd "$ZINIT_HOME" || return
-    git clone --depth 10 https://github.com/z-shell/zplugin.git mod-bin
+    git clone --depth 10 https://github.com/z-shell/zplugin.git "$ZINIT_MOD_BIN_DIR_NAME"
 fi
 echo ">>> Done"
 
@@ -33,9 +34,9 @@ echo ">>> Done"
 # Build the module
 #
 
-cd "$ZINIT_HOME/mod-bin/zmodules" || return
+cd "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME/zmodules" || return
 echo "$col_pname== Building module zshell/zplugin, running: a make clean, then ./configure and then make ==$col_rst"
-echo "$col_pname== The module sources are located at: $ZINIT_HOME/mod-bin/zmodules ==$col_rst"
+echo "$col_pname== The module sources are located at: $ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME/zmodules ==$col_rst"
 test -f Makefile && {
     [ "$1" = "--clean" ] && {
         echo "$col_info2-- make distclean --$col_rst"
@@ -52,7 +53,7 @@ CPPFLAGS=-I/usr/local/include CFLAGS="-g -Wall -O3" LDFLAGS=-L/usr/local/lib ./c
     make && {
         echo "${col_info}Module has been built correctly.$col_rst"
         echo "To load the module, add following 2 lines to .zshrc, at top:"
-        echo "    module_path+=( \"$ZINIT_HOME/mod-bin/zmodules/Src\" )"
+        echo "    module_path+=( \"$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME/zmodules/Src\" )"
         echo "    zmodload zshell/zplugin"
         echo ""
         echo "After loading, use command \`zpmod' to communicate with the module."
