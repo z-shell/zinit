@@ -12,61 +12,58 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [`ZINIT`](#zinit)
-  - [News](#news)
-  - [Zinit Wiki](#zinit-wiki)
-  - [Quick Start](#quick-start)
-  - [Install](#install)
-    - [Automatic Installation (Recommended)](#automatic-installation-recommended)
-    - [Manual Installation](#manual-installation)
-  - [Usage](#usage)
-    - [Introduction](#introduction)
-    - [Plugins and snippets](#plugins-and-snippets)
-    - [Upgrade Zinit and plugins](#upgrade-zinit-and-plugins)
-    - [Turbo and lucid](#turbo-and-lucid)
-    - [Migration](#migration)
-    - [More Examples](#more-examples)
-  - [How to Use](#how-to-use)
-    - [Ice Modifiers](#ice-modifiers)
-    - [Cloning Options](#cloning-options)
-    - [Selection of Files (To Source, …)](#selection-of-files-to-source-)
-    - [Conditional Loading](#conditional-loading)
-    - [Plugin Output](#plugin-output)
-    - [Completions](#completions)
-    - [Command Execution After Cloning, Updating or Loading](#command-execution-after-cloning-updating-or-loading)
-    - [Sticky-Emulation Of Other Shells](#sticky-emulation-of-other-shells)
-    - [Others](#others)
-    - [Order of Execution](#order-of-execution)
-  - [Zinit Commands](#zinit-commands)
-    - [Help](#help)
-    - [Loading and Unloading](#loading-and-unloading)
-    - [Completions Management](#completions-management)
-    - [Tracking of the Active Session](#tracking-of-the-active-session)
-    - [Reports and Statistics](#reports-and-statistics)
-    - [Compiling](#compiling)
-    - [Other](#other)
-    - [Updating Zinit and Plugins](#updating-zinit-and-plugins)
-    - [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
-    - [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
-    - [Ignoring Compdefs](#ignoring-compdefs)
-    - [Disabling System-Wide `compinit` Call (Ubuntu)](#disabling-system-wide-compinit-call-ubuntu)
-  - [Zinit Module](#zinit-module)
-    - [Motivation](#motivation)
-    - [Installation](#installation)
-      - [Without Zinit](#without-zinit)
-      - [With Zinit](#with-zinit)
-    - [Measuring Time of `source`s](#measuring-time-of-sources)
-    - [Debugging](#debugging)
-  - [Hints and Tips](#hints-and-tips)
-    - [Customizing Paths](#customizing-paths)
-    - [Non-GitHub (Local) Plugins](#non-github-local-plugins)
-    - [Extending Git](#extending-git)
+- [News](#news)
+- [Zinit Wiki](#zinit-wiki)
+- [Quick Start](#quick-start)
+- [Install](#install)
+  - [Automatic Installation (Recommended)](#automatic-installation-recommended)
+  - [Manual Installation](#manual-installation)
+- [Usage](#usage)
+  - [Introduction](#introduction)
+  - [Plugins and snippets](#plugins-and-snippets)
+  - [Upgrade Zinit and plugins](#upgrade-zinit-and-plugins)
+  - [Turbo and lucid](#turbo-and-lucid)
+  - [Migration](#migration)
+  - [More Examples](#more-examples)
+- [How to Use](#how-to-use)
+  - [Ice Modifiers](#ice-modifiers)
+  - [Cloning Options](#cloning-options)
+  - [Selection of Files (To Source, …)](#selection-of-files-to-source-)
+  - [Conditional Loading](#conditional-loading)
+  - [Plugin Output](#plugin-output)
+  - [Completions](#completions)
+  - [Command Execution After Cloning, Updating or Loading](#command-execution-after-cloning-updating-or-loading)
+  - [Sticky-Emulation Of Other Shells](#sticky-emulation-of-other-shells)
+  - [Others](#others)
+  - [Order of Execution](#order-of-execution)
+- [Zinit Commands](#zinit-commands)
+  - [Help](#help)
+  - [Loading and Unloading](#loading-and-unloading)
+  - [Completions Management](#completions-management)
+  - [Tracking of the Active Session](#tracking-of-the-active-session)
+  - [Reports and Statistics](#reports-and-statistics)
+  - [Compiling](#compiling)
+  - [Other](#other)
+  - [Updating Zinit and Plugins](#updating-zinit-and-plugins)
+  - [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
+  - [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
+  - [Ignoring Compdefs](#ignoring-compdefs)
+  - [Disabling System-Wide `compinit` Call (Ubuntu)](#disabling-system-wide-compinit-call-ubuntu)
+- [Zinit Module](#zinit-module)
+  - [Motivation](#motivation)
+  - [Installation](#installation)
+    - [Without Zinit](#without-zinit)
+    - [With Zinit](#with-zinit)
+  - [Measuring Time of `source`s](#measuring-time-of-sources)
+  - [Debugging](#debugging)
+- [Hints and Tips](#hints-and-tips)
+  - [Customizing Paths](#customizing-paths)
+  - [Non-GitHub (Local) Plugins](#non-github-local-plugins)
+  - [Extending Git](#extending-git)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# `ZINIT`
-
-## News
+# News
 
 <details>
   <summary>Here are the new features and updates added to Zinit in the last 90 days.</summary>
@@ -1436,19 +1433,19 @@ Following commands are passed to `zinit ...` to obtain described effects.
 
 ### Completions Management
 
-|                          Command                          | Description                                                                                                                                                                                                    |
-| :-------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| <code> clist [*columns*], completions [*columns*] </code> | <div align="justify" style="text-align: justify;"> List completions in use, with <code>_columns_</code> completions per line. `zpl clist 5` will for example print 5 completions per line. Default is 3.</div> |
-|                    `cdisable {cname}`                     | <div align="justify" style="text-align: justify;"> Disable completion `cname`.</div>                                                                                                                           |
-|                     `cenable {cname}`                     | <div align="justify" style="text-align: justify;"> Enable completion `cname`.</div>                                                                                                                            |
-|             `creinstall [-q] [-Q] {plg-spec}`             | <div align="justify" style="text-align: justify;"> Install completions for plugin, can also receive absolute local path. `-q` – quiet. `-Q` - quiet all.</div>                                                 |
-|                  `cuninstall {plg-spec}`                  | <div align="justify" style="text-align: justify;"> Uninstall completions for plugin.</div>                                                                                                                     |
-|                         `csearch`                         | <div align="justify" style="text-align: justify;"> Search for available completions from any plugin.</div>                                                                                                     |
-|                        `compinit`                         | <div align="justify" style="text-align: justify;"> Refresh installed completions.</div>                                                                                                                        |
-|                         `cclear`                          | <div align="justify" style="text-align: justify;"> Clear stray and improper completions.</div>                                                                                                                 |
-|                         `cdlist`                          | <div align="justify" style="text-align: justify;"> Show compdef replay list.</div>                                                                                                                             |
-|                      `cdreplay [-q]`                      | <div align="justify" style="text-align: justify;"> Replay compdefs (to be done after compinit). `-q` – quiet.</div>                                                                                            |
-|                      `cdclear [-q]`                       | <div align="justify" style="text-align: justify;"> Clear compdef replay list. `-q` – quiet.</div>                                                                                                              |     |
+|                            Command                            | Description                                                                                                                                                                                                    |
+|:-------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <code> clist \[*columns*\], completions \[*columns*\] </code> | <div align="justify" style="text-align: justify;"> List completions in use, with <code>*columns*</code> completions per line. `zpl clist 5` will for example print 5 completions per line. Default is 3.</div> |
+|                      `cdisable {cname}`                       | <div align="justify" style="text-align: justify;"> Disable completion `cname`.</div>                                                                                                                           |
+|                       `cenable {cname}`                       | <div align="justify" style="text-align: justify;"> Enable completion `cname`.</div>                                                                                                                            |
+|               `creinstall [-q] [-Q] {plg-spec}`               | <div align="justify" style="text-align: justify;"> Install completions for plugin, can also receive absolute local path. `-q` – quiet. `-Q` - quiet all.</div>                                                 |
+|                    `cuninstall {plg-spec}`                    | <div align="justify" style="text-align: justify;"> Uninstall completions for plugin.</div>                                                                                                                     |
+|                           `csearch`                           | <div align="justify" style="text-align: justify;"> Search for available completions from any plugin.</div>                                                                                                     |
+|                          `compinit`                           | <div align="justify" style="text-align: justify;"> Refresh installed completions.</div>                                                                                                                        |
+|                           `cclear`                            | <div align="justify" style="text-align: justify;"> Clear stray and improper completions.</div>                                                                                                                 |
+|                           `cdlist`                            | <div align="justify" style="text-align: justify;"> Show compdef replay list.</div>                                                                                                                             |
+|                        `cdreplay [-q]`                        | <div align="justify" style="text-align: justify;"> Replay compdefs (to be done after compinit). `-q` – quiet.</div>                                                                                            |
+|                        `cdclear [-q]`                         | <div align="justify" style="text-align: justify;"> Clear compdef replay list. `-q` – quiet.</div>                                                                                                              |
 
 ### Tracking of the Active Session
 
