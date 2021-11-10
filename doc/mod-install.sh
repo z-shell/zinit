@@ -13,7 +13,7 @@ echo "${col_info}Re-run this script to update (from Github) and rebuild the modu
 #
 
 ZINIT_HOME="${ZINIT_HOME:-${ZPLG_HOME:-${ZDOTDIR:-${HOME}}/.zinit}}"
-ZINIT_MOD_BIN_DIR_NAME="bin"
+ZINIT_MOD_BIN_DIR_NAME="mod-bin"
 
 if ! test -d "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME"; then
     mkdir -p "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME"
@@ -26,7 +26,7 @@ if test -d "$ZINIT_HOME/$ZINIT_MOD_BIN_DIR_NAME/.git"; then
     git pull origin main
 else
     cd "$ZINIT_HOME" || return
-    git clone --depth 10 https://github.com/z-shell/zplugin.git "$ZINIT_MOD_BIN_DIR_NAME"
+    git clone --depth 10 https://github.com/z-shell/zinit.git "$ZINIT_MOD_BIN_DIR_NAME"
 fi
 echo ">>> Done"
 
