@@ -63,7 +63,6 @@ timeline() {
   print -f "%s %s" "${bar// /░}" ""
   print -nPr "%f"
 }
-
 # $1 - n. of objects
 # $2 - packed objects
 # $3 - total objects
