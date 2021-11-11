@@ -11,7 +11,7 @@
 
 All notable changes to this project will be documented in this file.
 
-- 21-01-2020
+- 21-01-2020 [+]
 
   - A few tips for the project rename following the field reports (the issues created
     by users):
@@ -113,7 +113,7 @@ All notable changes to this project will be documented in this file.
 
     The output:
 
-    ```
+    ```zsh
     First!
     Hi!
     Second!
@@ -167,10 +167,12 @@ All notable changes to this project will be documented in this file.
   - The `zinit` completion now completes also snippets! The command `snippet`, but
     also `delete`, `recall`, `edit`, `cd`, etc. all receive such completing.
   - The `ice` subcommand can now be skipped – just pass in the ices, e.g.:
+
     ```zsh
     zinit atload"zicompinit; zicdreplay" blockf
     zinit light zsh-users/zsh-completions
     ```
+
   - The `compile` command is able to compile snippets.
   - The plugins that add their subdirectories into `$fpath` can be now `blockf`-ed –
     the functions located in the dirs will be correctly auto-loaded.
@@ -234,7 +236,7 @@ All notable changes to this project will be documented in this file.
 
     - [z-a-test](https://github.com/zinit/z-a-test)
 
-      Runs tests (if detected `test' target in a `Makefile`or any`\*.zunit` files)
+      Runs tests (if detected `test' target in a`Makefile`or any`\*.zunit` files)
       on plugin installation and non-empty update.
 
     - [z-a-patch-dl](https://github.com/zinit/z-a-patch-dl)
@@ -242,7 +244,7 @@ All notable changes to this project will be documented in this file.
       Allows easy download and applying of patches, to e.g. aid building a binary
       program equipped in the plugin.
 
-  - A new variable is being recognized by the installation script:
+  - [DEPRECATED] A new variable is being recognized by the installation script:
     `$ZPLG_BIN_DIR_NAME`. It configures the directory within `$ZPLG_HOME` to which
     zinit should be cloned.
 
@@ -329,7 +331,7 @@ All notable changes to this project will be documented in this file.
 
     In case of problems with the loading a warning message will be output:
 
-    ```
+    ```zsh
     % zinit ice notify atload'return 7'
     % zinit light z-shell/null
     %
@@ -405,6 +407,7 @@ All notable changes to this project will be documented in this file.
 
   - New `$ZPLGM` field `COMPINIT_OPTS` (also see [Customizing Paths](#customizing-paths--other)). You can pass
     `-C` or `-i` there to mute the `insecure directories` messages. Typical use case could be:
+
     ```zsh
     zinit ice wait"5" atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
     zinit light z-shell/fast-syntax-highlighting
