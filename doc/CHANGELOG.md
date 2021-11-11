@@ -237,6 +237,7 @@ All notable changes to this project will be documented in this file.
     - [z-a-test](https://github.com/zinit/z-a-test)
 
       Runs tests (if detected `test' target in a`Makefile`or any`\*.zunit` files)
+
       on plugin installation and non-empty update.
 
     - [z-a-patch-dl](https://github.com/zinit/z-a-patch-dl)
