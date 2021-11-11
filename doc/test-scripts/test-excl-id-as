@@ -189,5 +189,4 @@ zinit cd myid/sub && ls -lthd .*(N) *(N)
 zinit cclear
 
 cd $INITIAL_CD
-# vim:ft=zsh:sts=4:sw=4:et
 # !!! This file modified by automated tool by Z-Shell. This tool fix variables and URL for Zinit project.
