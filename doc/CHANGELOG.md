@@ -75,9 +75,9 @@ All notable changes to this project will be documented in this file.
     possible to do:
 
     ```zsh
-    zplg run my/plugin ls
-    zplg run -l cat \*.plugin.zsh
-    zplg run -l pwd
+    zinit run my/plugin ls
+    zinit run -l cat \*.plugin.zsh
+    zinit run -l pwd
     ```
 
 - 07-11-2019
@@ -243,7 +243,7 @@ All notable changes to this project will be documented in this file.
       program equipped in the plugin.
 
   - A new variable is being recognized by the installation script:
-    `$ZPLG_BIN_DIR_NAME`. It configures the directory within `$ZPLG_HOME` to which
+    `$ZINIT_BIN_DIR_NAME`. It configures the directory within `$ZINIT_HOME` to which
     zinit should be cloned.
 
 - 09-08-2019
@@ -258,7 +258,7 @@ All notable changes to this project will be documented in this file.
 - 29-07-2019
 
   - `delete` now supports following options:
-    - `--all` – deletes all plugins and snippets (a purge, similar to `rm -rf ${ZPLGM[PLUGINS_DIR]} ${ZPLGM[SNIPPETS_DIR]}`)
+    - `--all` – deletes all plugins and snippets (a purge, similar to `rm -rf ${ZINIT[PLUGINS_DIR]} ${ZINIT[SNIPPETS_DIR]}`)
     - `--clean` – deletes only plugins and snippets that are **currently not loaded**
       in the current session.
 
@@ -399,21 +399,21 @@ All notable changes to this project will be documented in this file.
 
   - Uplift of Git-output, it now has an animated progress-bar:
 
-  ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-progress-bar.gif)
+  ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zinit-progress-bar.gif)
 
 - 15-08-2018
 
-  - New `$ZPLGM` field `COMPINIT_OPTS` (also see [Customizing Paths](#customizing-paths--other)). You can pass
+  - New `$ZINIT` field `COMPINIT_OPTS` (also see [Customizing Paths](#customizing-paths--other)). You can pass
     `-C` or `-i` there to mute the `insecure directories` messages. Typical use case could be:
     ```zsh
-    zinit ice wait"5" atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
+    zinit ice wait"5" atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
     zinit light z-shell/fast-syntax-highlighting
     ```
 
 - 13-08-2018
 
   - `self-update` (subcommand used to update zinit) now lists new commits downloaded by the update:
-    ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-self-update.png)
+    ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zinit-self-update.png)
 
   - New subcommand `bindkeys` that lists what bindkeys each plugin has set up.
 
@@ -428,10 +428,10 @@ All notable changes to this project will be documented in this file.
     ```zsh
     zinit ice depth"1" multisrc="lib/{functions,misc}.zsh" pick"/dev/null"; zinit load robbyrussell/oh-my-zsh
     zinit ice svn multisrc"{functions,misc}.zsh" pick"/dev/null"; zinit snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"\${array[@]}" pick"/dev/null"; zinit snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"${array[@]}" pick"/dev/null"; zinit snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"\$array" pick"/dev/null"; zinit snippet OMZ::lib
-    array=( {functions,misc}.zsh ); zplg ice svn multisrc"$array" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zinit ice svn multisrc"\${array[@]}" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zinit ice svn multisrc"${array[@]}" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zinit ice svn multisrc"\$array" pick"/dev/null"; zinit snippet OMZ::lib
+    array=( {functions,misc}.zsh ); zinit ice svn multisrc"$array" pick"/dev/null"; zinit snippet OMZ::lib
     zinit ice svn multisrc"misc.zsh functions.zsh" pick"/dev/null"; zinit snippet OMZ::lib
     ```
 - 12-07-2018
@@ -440,7 +440,7 @@ All notable changes to this project will be documented in this file.
     plugins by scripting:
 
     ```zsh
-    zsh -i -c -- '-zplg-scheduler burst'
+    zsh -i -c -- '-zinit-scheduler burst'
     ```
 
 - 10-07-2018
@@ -470,13 +470,13 @@ All notable changes to this project will be documented in this file.
 - 14-01-2018
 
   - Two functions have been exposed: `zpcdreplay` and `zpcompinit`. First one invokes compdef-replay,
-    second one is equal to `autoload compinit; compinit` (it also respects `$ZPLGM[ZCOMPDUMP_PATH]`).
+    second one is equal to `autoload compinit; compinit` (it also respects `$ZINIT[ZCOMPDUMP_PATH]`).
     You can use e.g. `atinit'zpcompinit'` ice-mod in a syntax-highlighting plugin, to initialize
     completion right-before setting up syntax highlighting (because that should be done at the end).
 
 - 13-01-2018
 
-  - New customizable path `$ZPLGM[ZCOMPDUMP_PATH]` that allows to point zinit to non-standard
+  - New customizable path `$ZINIT[ZCOMPDUMP_PATH]` that allows to point zinit to non-standard
     `.zcompdump` location.
   - Tilde-expansion is now performed on the [customizable paths](#customizing-paths--other) – you can
     assign paths like `~/.zinit`, there's no need to use `$HOME/.zinit`.
@@ -556,7 +556,7 @@ All notable changes to this project will be documented in this file.
 
   - New subcommand `ls` which lists snippets-directory in a formatted and colorized manner. Example:
 
-  ![zinit-ls](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-ls.png)
+  ![zinit-ls](https://raw.githubusercontent.com/z-shell/zinit/images/zinit-ls.png)
 
 - 29-10-2017
 
@@ -575,7 +575,7 @@ All notable changes to this project will be documented in this file.
     ```zsh
     # Single file snippet, URL points to file
 
-    zplg snippet PZT::modules/helper/init.zsh
+    zinit snippet PZT::modules/helper/init.zsh
 
     # Multi-file snippet, URL points to directory to clone with Subversion
     # The file to source (init.zsh) is automatically detected
@@ -628,7 +628,7 @@ All notable changes to this project will be documented in this file.
     zinit load %/Users/sgniazdowski/github/{directory}
     ```
 
-    Completions are not automatically installed, but user can run `zplg creinstall %HOME/github/{directory}`, etc.
+    Completions are not automatically installed, but user can run `zinit creinstall %HOME/github/{directory}`, etc.
 
 - 23-05-2017
 
@@ -642,3 +642,5 @@ All notable changes to this project will be documented in this file.
     Setting up snippet httpstat.sh
     Downloading httpstat.sh...
     ```
+# !!! This file modified by automated tool by Z-Shell. This tool fix variables and URL for Zinit project.
+# For any queries please visit https://github.com/z-shell/zinit/issues
