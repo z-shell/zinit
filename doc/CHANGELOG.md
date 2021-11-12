@@ -642,5 +642,7 @@ All notable changes to this project will be documented in this file.
     Setting up snippet httpstat.sh
     Downloading httpstat.sh...
     ```
+
 # !!! This file modified by automated tool by Z-Shell. This tool fix variables and URL for Zinit project.
+
 # For any queries please visit https://github.com/z-shell/zinit/issues
