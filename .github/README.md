@@ -4,69 +4,77 @@
 </a>
 </p>
 
+<div align="center"><p>
+
 [![Travis Status][status-badge]][status-link] [![CodeFactor][codefactor-badge]][codefactor-link] [![DeepSource][deepsource-badge]][deepsource-link]
 [![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link] [![Gitter][gitter-badge]][gitter-link] [![Tweet][twitter-badge]][twitter-link]
+
+  </p><p>
+
+《 [**WIKI**](https://z-shell.github.io/zinit/wiki/) 》
+《 [**BLOG**](https://z-shell.github.io/) 》
+《 [**PDF**](README.pdf)  》
+
+  <p></div>
 
 ---
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [`ZINIT`](#zinit)
-  - [News](#news)
-  - [Zinit Wiki](#zinit-wiki)
-  - [Quick Start](#quick-start)
-  - [Install](#install)
-    - [Automatic Installation (Recommended)](#automatic-installation-recommended)
-    - [Manual Installation](#manual-installation)
-  - [Usage](#usage)
-    - [Introduction](#introduction)
-    - [Plugins and snippets](#plugins-and-snippets)
-    - [Upgrade Zinit and plugins](#upgrade-zinit-and-plugins)
-    - [Turbo and lucid](#turbo-and-lucid)
-    - [Migration](#migration)
-    - [More Examples](#more-examples)
-  - [How to Use](#how-to-use)
-    - [Ice Modifiers](#ice-modifiers)
-    - [Cloning Options](#cloning-options)
-    - [Selection of Files (To Source, …)](#selection-of-files-to-source-)
-    - [Conditional Loading](#conditional-loading)
-    - [Plugin Output](#plugin-output)
-    - [Completions](#completions)
-    - [Command Execution After Cloning, Updating or Loading](#command-execution-after-cloning-updating-or-loading)
-    - [Sticky-Emulation Of Other Shells](#sticky-emulation-of-other-shells)
-    - [Others](#others)
-    - [Order of Execution](#order-of-execution)
-  - [Zinit Commands](#zinit-commands)
-    - [Help](#help)
-    - [Loading and Unloading](#loading-and-unloading)
-    - [Completions Management](#completions-management)
-    - [Tracking of the Active Session](#tracking-of-the-active-session)
-    - [Reports and Statistics](#reports-and-statistics)
-    - [Compiling](#compiling)
-    - [Other](#other)
-    - [Updating Zinit and Plugins](#updating-zinit-and-plugins)
-    - [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
-    - [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
-    - [Ignoring Compdefs](#ignoring-compdefs)
-    - [Disabling System-Wide `compinit` Call (Ubuntu)](#disabling-system-wide-compinit-call-ubuntu)
-  - [Zinit Module](#zinit-module)
-    - [Motivation](#motivation)
-    - [Installation](#installation)
-      - [Without Zinit](#without-zinit)
-      - [With Zinit](#with-zinit)
-    - [Measuring Time of `source`s](#measuring-time-of-sources)
-    - [Debugging](#debugging)
-  - [Hints and Tips](#hints-and-tips)
-    - [Customizing Paths](#customizing-paths)
-    - [Non-GitHub (Local) Plugins](#non-github-local-plugins)
-    - [Extending Git](#extending-git)
+- [News](#news)
+- [Quick Start](#quick-start)
+- [Install](#install)
+  - [Automatic Installation (Recommended)](#automatic-installation-recommended)
+  - [Manual Installation](#manual-installation)
+- [Usage](#usage)
+  - [Introduction](#introduction)
+  - [Plugins and snippets](#plugins-and-snippets)
+  - [Upgrade Zinit and plugins](#upgrade-zinit-and-plugins)
+  - [Turbo and lucid](#turbo-and-lucid)
+  - [Migration](#migration)
+  - [More Examples](#more-examples)
+- [How to Use](#how-to-use)
+  - [Ice Modifiers](#ice-modifiers)
+  - [Cloning Options](#cloning-options)
+  - [Selection of Files (To Source, …)](#selection-of-files-to-source-)
+  - [Conditional Loading](#conditional-loading)
+  - [Plugin Output](#plugin-output)
+  - [Completions](#completions)
+  - [Command Execution After Cloning, Updating or Loading](#command-execution-after-cloning-updating-or-loading)
+  - [Sticky-Emulation Of Other Shells](#sticky-emulation-of-other-shells)
+  - [Others](#others)
+  - [Order of Execution](#order-of-execution)
+- [Zinit Commands](#zinit-commands)
+  - [Help](#help)
+  - [Loading and Unloading](#loading-and-unloading)
+  - [Completions Management](#completions-management)
+  - [Tracking of the Active Session](#tracking-of-the-active-session)
+  - [Reports and Statistics](#reports-and-statistics)
+  - [Compiling](#compiling)
+  - [Other](#other)
+  - [Updating Zinit and Plugins](#updating-zinit-and-plugins)
+  - [Calling `compinit` Without Turbo Mode](#calling-compinit-without-turbo-mode)
+  - [Calling `compinit` With Turbo Mode](#calling-compinit-with-turbo-mode)
+  - [Ignoring Compdefs](#ignoring-compdefs)
+  - [Disabling System-Wide `compinit` Call (Ubuntu)](#disabling-system-wide-compinit-call-ubuntu)
+- [Zinit Module](#zinit-module)
+  - [Motivation](#motivation)
+  - [Installation](#installation)
+    - [Without Zinit](#without-zinit)
+    - [With Zinit](#with-zinit)
+  - [Measuring Time of `source`s](#measuring-time-of-sources)
+  - [Debugging](#debugging)
+- [Hints and Tips](#hints-and-tips)
+  - [Customizing Paths](#customizing-paths)
+  - [Non-GitHub (Local) Plugins](#non-github-local-plugins)
+  - [Extending Git](#extending-git)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# `ZINIT`
+# News
 
-## News
+> NEWS WILL BE MOVED TO [BLOG](https://z-shell.github.io)
 
 <details>
   <summary>Here are the new features and updates added to Zinit in the last 90 days.</summary>
@@ -750,13 +758,6 @@ install everything from GitHub and other sites. Its characteristics are:
    article](https://z-shell.github.io/zinit/wiki/Annexes/) for an introduction on
    creating your own annex.
 
-## Zinit Wiki
-
-The information in this README is complemented by the [Zinit
-Wiki](https://z-shell.github.io/zinit/wiki/). The README is an introductory overview of
-Zinit while the Wiki gives a complete information with examples. Make sure to
-read it to get the most out of Zinit.
-
 ## Quick Start
 
 ## Install
@@ -1320,7 +1321,7 @@ explicitly stated otherwise.
 ### Cloning Options
 
 |                                Modifier                                 | Description                                                                                                                                                                                                                                                                                                                                                                     |
-|:-----------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :---------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                                 `proto`                                 | <div align="justify" style="text-align: justify;">Change protocol to `git`,`ftp`,`ftps`,`ssh`, `rsync`, etc. Default is `https`. **Does not work with snippets.** </div>                                                                                                                                                                                                        |
 | [**`from`**](http://z-shell.github.io/zinit/wiki/Private-Repositories/) | <div align="justify" style="text-align: justify;">Clone plugin from given site. Supported are `from"github"` (default), `..."github-rel"`, `..."gitlab"`, `..."bitbucket"`, `..."notabug"` (short names: `gh`, `gh-r`, `gl`, `bb`, `nb`). Can also be a full domain name (e.g. for GitHub enterprise). **Does not work with snippets.**</div>                                   |
 |                                  `ver`                                  | <div align="justify" style="text-align: justify;">Used with `from"gh-r"` (i.e. downloading a binary release, e.g. for use with `as"program"`) – selects which version to download. Default is latest, can also be explicitly `ver"latest"`. Works also with regular plugins, checkouts e.g. `ver"abranch"`, i.e. a specific version. **Does not work with snippets.**</div>     |
@@ -1333,7 +1334,7 @@ explicitly stated otherwise.
 ### Selection of Files (To Source, …)
 
 |                                   Modifier                                    | Description                                                                                                                                                                                                                                                                                        |
-|:-----------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :---------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |  [**`pick`**](http://z-shell.github.io/zinit/wiki/Sourcing-multiple-files/)   | <div align="justify" style="text-align: justify;">Select the file to source, or the file to set as command (when using `snippet --command` or the ice `as"program"`); it is a pattern, alphabetically first matched file is being chosen; e.g. `zinit ice pick"*.plugin.zsh"; zinit load …`.</div> |
 |   [**`src`**](http://z-shell.github.io/zinit/wiki/Sourcing-multiple-files)    | <div align="justify" style="text-align: justify;">Specify additional file to source after sourcing main file or after setting up command (via `as"program"`). It is not a pattern but a plain file name.</div>                                                                                     |
 | [**`multisrc`**](http://z-shell.github.io/zinit/wiki/Sourcing-multiple-files) | <div align="justify" style="text-align: justify;">Allows to specify multiple files for sourcing, enumerated with spaces as the separators (e.g. `multisrc'misc.zsh grep.zsh'`) and also using brace-expansion syntax (e.g. `multisrc'{misc,grep}.zsh'`). Supports patterns.</div>                  |
@@ -1341,7 +1342,7 @@ explicitly stated otherwise.
 ### Conditional Loading
 
 |                                 Modifier                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|:-------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :-----------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`wait`**](http://z-shell.github.io/zinit/wiki/Example-wait-conditions) | <div align="justify" style="text-align: justify;">Postpone loading a plugin or snippet. For `wait'1'`, loading is done `1` second after prompt. For `wait'[[ ... ]]'`, `wait'(( ... ))'`, loading is done when given condition is meet. For `wait'!...'`, prompt is reset after load. Zsh can start 80% (i.e.: 5x) faster thanks to postponed loading. **Fact:** when `wait` is used without value, it works as `wait'0'`.</div> |
 |    [**`load`**](http://z-shell.github.io/zinit/wiki/Multiple-prompts)     | <div align="justify" style="text-align: justify;">A condition to check which should cause plugin to load. It will load once, the condition can be still true, but will not trigger second load (unless plugin is unloaded earlier, see `unload` below). E.g.: `load'[[ $PWD = */github* ]]'`.</div>                                                                                                                              |
 |   [**`unload`**](http://z-shell.github.io/zinit/wiki/Multiple-prompts)    | <div align="justify" style="text-align: justify;">A condition to check causing plugin to unload. It will unload once, then only if loaded again. E.g.: `unload'[[ $PWD != */github* ]]'`.</div>                                                                                                                                                                                                                                  |
@@ -1354,7 +1355,7 @@ explicitly stated otherwise.
 ### Plugin Output
 
 | Modifier | Description                                                                                                                                                                                                                                                                                                                                                         |
-|:--------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `silent` | <div align="justify" style="text-align: justify;">Mute plugin's or snippet's `stderr` & `stdout`. Also skip `Loaded ...` message under prompt for `wait`, etc. loaded plugins, and completion-installation messages.</div>                                                                                                                                          |
 | `lucid`  | <div align="justify" style="text-align: justify;">Skip `Loaded ...` message under prompt for `wait`, etc. loaded plugins (a subset of `silent`).</div>                                                                                                                                                                                                              |
 | `notify` | <div align="justify" style="text-align: justify;">Output given message under-prompt after successfully loading a plugin/snippet. In case of problems with the loading, output a warning message and the return code. If starts with `!` it will then always output the given message. Hint: if the message is empty, then it will just notify about problems.</div> |
@@ -1362,14 +1363,14 @@ explicitly stated otherwise.
 ### Completions
 
 |    Modifier     | Description                                                                                                                                                                                                                                 |
-|:---------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :-------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |    `blockf`     | <div align="justify" style="text-align: justify;">Disallow plugin to modify `fpath`. Useful when a plugin wants to provide completions in traditional way. Zinit can manage completions and plugin can be blocked from exposing them.</div> |
 | `nocompletions` | <div align="justify" style="text-align: justify;">Don't detect, install and manage completions for this plugin. Completions can be installed later with `zinit creinstall {plugin-spec}`.</div>                                             |
 
 ### Command Execution After Cloning, Updating or Loading
 
 |                                   Modifier                                    | Description                                                                                                                                                                                                                                                                                                                                                          |
-|:-----------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :---------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                                     `mv`                                      | <div align="justify" style="text-align: justify;">Move file after cloning or after update (then, only if new commits were downloaded). Example: `mv "fzf-* -> fzf"`. It uses `->` as separator for old and new file names. Works also with snippets.</div>                                                                                                           |
 |                                     `cp`                                      | <div align="justify" style="text-align: justify;">Copy file after cloning or after update (then, only if new commits were downloaded). Example: `cp "docker-c* -> dcompose"`. Ran after `mv`.</div>                                                                                                                                                                  |
 | [**`atclone`**](http://z-shell.github.io/zinit/wiki/atload-and-other-at-ices) | <div align="justify" style="text-align: justify;">Run command after cloning, within plugin's directory, e.g. `zinit ice atclone"echo Cloned"`. Ran also after downloading snippet.</div>                                                                                                                                                                             |
@@ -1385,7 +1386,7 @@ explicitly stated otherwise.
 ### Sticky-Emulation Of Other Shells
 
 |    Modifier     | Description                                                                                                                                                                                                                                                                                                                                                                                        |
-|:---------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :-------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   `sh`, `!sh`   | <div align="justify" style="text-align: justify;">Source the plugin's (or snippet's) script with `sh` emulation so that also all functions declared within the file will get a _sticky_ emulation assigned – when invoked they'll execute also with the `sh` emulation set-up. The `!sh` version switches additional options that are rather not important from the portability perspective.</div> |
 | `bash`, `!bash` | <div align="justify" style="text-align: justify;">The same as `sh`, but with the `SH_GLOB` option disabled, so that Bash regular expressions work.</div>                                                                                                                                                                                                                                           |
 |  `ksh`, `!ksh`  | <div align="justify" style="text-align: justify;">The same as `sh`, but emulating `ksh` shell.</div>                                                                                                                                                                                                                                                                                               |
@@ -1394,7 +1395,7 @@ explicitly stated otherwise.
 ### Others
 
 |                              Modifier                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|:------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :----------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                                `as`                                | <div align="justify" style="text-align: justify;">Can be `as"program"` (also the alias: `as"command"`), and will cause to add script/program to `$PATH` instead of sourcing (see `pick`). Can also be `as"completion"` – use with plugins or snippets in whose only underscore-starting `_*` files you are interested in. The third possible value is `as"null"` – a shorthand for `pick"/dev/null" nocompletions` – i.e.: it disables the default script-file sourcing and also the installation of completions.</div>                                                                                                                                                                                                   |
 |     [**`id-as`**](http://z-shell.github.io/zinit/wiki/id-as/)      | <div align="justify" style="text-align: justify;">Nickname a plugin or snippet, to e.g. create a short handler for long-url snippet.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |                             `compile`                              | <div align="justify" style="text-align: justify;">Pattern (+ possible `{...}` expansion, like `{a/*,b*}`) to select additional files to compile, e.g. `compile"(pure\|async).zsh"` for `sindresorhus/pure`.</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -1421,14 +1422,14 @@ Following commands are passed to `zinit ...` to obtain described effects.
 ### Help
 
 |      Command       | Description                                                                 |
-|:------------------:|-----------------------------------------------------------------------------|
+| :----------------: | --------------------------------------------------------------------------- |
 | `-h, --help, help` | <div align="justify" style="text-align: justify;"> Usage information.</div> |
 |       `man`        | <div align="justify" style="text-align: justify;"> Manual.</div>            |
 
 ### Loading and Unloading
 
 |         Command          | Description                                                                                                                                                                                                                                                                                                                                                                   |
-|:------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :----------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |    `load {plg-spec}`     | <div align="justify" style="text-align: justify;"> Load plugin, can also receive absolute local path.</div>                                                                                                                                                                                                                                                                   |
 | `light [-b] {plg-spec}`  | <div align="justify" style="text-align: justify;"> Light plugin load, without reporting/investigating. `-b` – investigate `bindkey`-calls only. There's also `light-mode` ice which can be used to induce the no-investigating (i.e.: _light_) loading, regardless of the command used.</div>                                                                                 |
 | `unload [-q] {plg-spec}` | <div align="justify" style="text-align: justify;"> Unload plugin loaded with `zinit load ...`. `-q` – quiet.</div>                                                                                                                                                                                                                                                            |
@@ -1436,24 +1437,24 @@ Following commands are passed to `zinit ...` to obtain described effects.
 
 ### Completions Management
 
-|                          Command                          | Description                                                                                                                                                                                                    |
-| :-------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| <code> clist [*columns*], completions [*columns*] </code> | <div align="justify" style="text-align: justify;"> List completions in use, with <code>_columns_</code> completions per line. `zpl clist 5` will for example print 5 completions per line. Default is 3.</div> |
-|                    `cdisable {cname}`                     | <div align="justify" style="text-align: justify;"> Disable completion `cname`.</div>                                                                                                                           |
-|                     `cenable {cname}`                     | <div align="justify" style="text-align: justify;"> Enable completion `cname`.</div>                                                                                                                            |
-|             `creinstall [-q] [-Q] {plg-spec}`             | <div align="justify" style="text-align: justify;"> Install completions for plugin, can also receive absolute local path. `-q` – quiet. `-Q` - quiet all.</div>                                                 |
-|                  `cuninstall {plg-spec}`                  | <div align="justify" style="text-align: justify;"> Uninstall completions for plugin.</div>                                                                                                                     |
-|                         `csearch`                         | <div align="justify" style="text-align: justify;"> Search for available completions from any plugin.</div>                                                                                                     |
-|                        `compinit`                         | <div align="justify" style="text-align: justify;"> Refresh installed completions.</div>                                                                                                                        |
-|                         `cclear`                          | <div align="justify" style="text-align: justify;"> Clear stray and improper completions.</div>                                                                                                                 |
-|                         `cdlist`                          | <div align="justify" style="text-align: justify;"> Show compdef replay list.</div>                                                                                                                             |
-|                      `cdreplay [-q]`                      | <div align="justify" style="text-align: justify;"> Replay compdefs (to be done after compinit). `-q` – quiet.</div>                                                                                            |
-|                      `cdclear [-q]`                       | <div align="justify" style="text-align: justify;"> Clear compdef replay list. `-q` – quiet.</div>                                                                                                              |     |
+|                            Command                            | Description                                                                                                                                                                                                    |
+| :-----------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <code> clist \[_columns_\], completions \[_columns_\] </code> | <div align="justify" style="text-align: justify;"> List completions in use, with <code>_columns_</code> completions per line. `zpl clist 5` will for example print 5 completions per line. Default is 3.</div> |
+|                      `cdisable {cname}`                       | <div align="justify" style="text-align: justify;"> Disable completion `cname`.</div>                                                                                                                           |
+|                       `cenable {cname}`                       | <div align="justify" style="text-align: justify;"> Enable completion `cname`.</div>                                                                                                                            |
+|               `creinstall [-q] [-Q] {plg-spec}`               | <div align="justify" style="text-align: justify;"> Install completions for plugin, can also receive absolute local path. `-q` – quiet. `-Q` - quiet all.</div>                                                 |
+|                    `cuninstall {plg-spec}`                    | <div align="justify" style="text-align: justify;"> Uninstall completions for plugin.</div>                                                                                                                     |
+|                           `csearch`                           | <div align="justify" style="text-align: justify;"> Search for available completions from any plugin.</div>                                                                                                     |
+|                          `compinit`                           | <div align="justify" style="text-align: justify;"> Refresh installed completions.</div>                                                                                                                        |
+|                           `cclear`                            | <div align="justify" style="text-align: justify;"> Clear stray and improper completions.</div>                                                                                                                 |
+|                           `cdlist`                            | <div align="justify" style="text-align: justify;"> Show compdef replay list.</div>                                                                                                                             |
+|                        `cdreplay [-q]`                        | <div align="justify" style="text-align: justify;"> Replay compdefs (to be done after compinit). `-q` – quiet.</div>                                                                                            |
+|                        `cdclear [-q]`                         | <div align="justify" style="text-align: justify;"> Clear compdef replay list. `-q` – quiet.</div>                                                                                                              |
 
 ### Tracking of the Active Session
 
 |     Command      | Description                                                                                                |
-|:----------------:|------------------------------------------------------------------------------------------------------------|
+| :--------------: | ---------------------------------------------------------------------------------------------------------- |
 | `dtrace, dstart` | <div align="justify" style="text-align: justify;"> Start investigating what's going on in session.</div>   |
 |     `dstop`      | <div align="justify" style="text-align: justify;"> Stop investigating what's going on in session.</div>    |
 |    `dunload`     | <div align="justify" style="text-align: justify;"> Revert changes recorded between dstart and dstop.</div> |
@@ -1463,7 +1464,7 @@ Following commands are passed to `zinit ...` to obtain described effects.
 ### Reports and Statistics
 
 |              Command               | Description                                                                                                                                                                                           |
-|:----------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |         `times [-s] [-m]`          | <div align="justify" style="text-align: justify;"> Statistics on plugin load times, sorted in order of loading. `-s` – use seconds instead of milliseconds. `-m` – show plugin loading moments.</div> |
 |             `zstatus`              | <div align="justify" style="text-align: justify;"> Overall Zinit status.</div>                                                                                                                        |
 |     `report {plg-spec}\|--all`     | <div align="justify" style="text-align: justify;"> Show plugin report. `--all` – do it for all plugins.</div>                                                                                         |
@@ -1476,7 +1477,7 @@ Following commands are passed to `zinit ...` to obtain described effects.
 ### Compiling
 
 |            Command            | Description                                                                                                                  |
-|:-----------------------------:|------------------------------------------------------------------------------------------------------------------------------|
+| :---------------------------: | ---------------------------------------------------------------------------------------------------------------------------- |
 |  `compile {plg-spec}\|--all`  | <div align="justify" style="text-align: justify;"> Compile plugin. `--all` – compile all plugins.</div>                      |
 | `uncompile {plg-spec}\|--all` | <div align="justify" style="text-align: justify;"> Remove compiled version of plugin. `--all` – do it for all plugins.</div> |
 |          `compiled`           | <div align="justify" style="text-align: justify;"> List plugins that are compiled.</div>                                     |
@@ -1484,7 +1485,7 @@ Following commands are passed to `zinit ...` to obtain described effects.
 ### Other
 
 |                             Command                              | Description                                                                                                                                                                                                                                                                                                                                                                                   |
-|:----------------------------------------------------------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |                          `self-update`                           | <div align="justify" style="text-align: justify;"> Updates and compiles Zinit.</div>                                                                                                                                                                                                                                                                                                          |
 |            `update [-q] [-r] {plg-spec}\|URL\|--all`             | <div align="justify" style="text-align: justify;"> Git update plugin or snippet.<br> `--all` – update all plugins and snippets.<br> `-q` – quiet.<br> `-r` \| `--reset` – run `git reset --hard` / `svn revert` before pulling changes.</div>                                                                                                                                                 |
 |                    `ice <ice specification>`                     | <div align="justify" style="text-align: justify;"> Add ice to next command, argument is e.g. from"gitlab".</div>                                                                                                                                                                                                                                                                              |
@@ -1695,7 +1696,7 @@ declare -A ZINIT  # initial Zinit's hash definition, if configuring before loadi
 ```
 
 | Hash Field                        | Description                                                                                                                                                                                                                                                                                                                                                                                              |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ZINIT[BIN_DIR]                    | Where Zinit code resides, e.g.: "~/.zinit/bin"                                                                                                                                                                                                                                                                                                                                                           |
 | ZINIT[HOME_DIR]                   | Where Zinit should create all working directories, e.g.: "~/.zinit"                                                                                                                                                                                                                                                                                                                                      |
 | ZINIT[PLUGINS_DIR]                | Override single working directory – for plugins, e.g. "/opt/zsh/zinit/plugins"                                                                                                                                                                                                                                                                                                                           |

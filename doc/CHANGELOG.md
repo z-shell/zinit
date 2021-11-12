@@ -258,8 +258,8 @@ All notable changes to this project will be documented in this file.
 - 29-07-2019
 
   - `delete` now supports following options:
-    - `--all` – deletes all plugins and snippets (a purge, similar to `rm -rf ${ZINIT[PLUGINS_DIR]} ${ZINIT[SNIPPETS_DIR]}`)
-    - `--clean` – deletes only plugins and snippets that are **currently not loaded**
+  - `--all` – deletes all plugins and snippets (a purge, similar to `rm -rf ${ZINIT[PLUGINS_DIR]} ${ZINIT[SNIPPETS_DIR]}`)
+  - `--clean` – deletes only plugins and snippets that are **currently not loaded**
       in the current session.
 
 - 09-07-2019
@@ -413,7 +413,7 @@ All notable changes to this project will be documented in this file.
 - 13-08-2018
 
   - `self-update` (subcommand used to update zinit) now lists new commits downloaded by the update:
-    ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zinit-self-update.png)
+    ![image](https://raw.githubusercontent.com/z-shell/zinit/images/zplg-self-update.png)
 
   - New subcommand `bindkeys` that lists what bindkeys each plugin has set up.
 
@@ -484,7 +484,7 @@ All notable changes to this project will be documented in this file.
 - 31-12-2017
 
   - For the new year there's a new feature: user-services spawned by Zshell :) Check out
-    [available services](https://github.com/zservices). They are configured like their
+    [available services](https://github.com/z-shell). They are configured like their
     READMEs say, and controlled via:
 
     ```
@@ -497,7 +497,7 @@ All notable changes to this project will be documented in this file.
 
     This feature allows to configure everything in `.zshrc`, without the the need to deal with `systemd` or
     `launchd`, and can be useful e.g. to configure shared-variables (across Zshells), stored in `redis` database
-    (details on [zservices/redis](https://github.com/zservices/redis)).
+    (details on [zservices/redis](https://github.com/z-shell/redis)).
 
 - 24-12-2017
 
@@ -642,7 +642,5 @@ All notable changes to this project will be documented in this file.
     Setting up snippet httpstat.sh
     Downloading httpstat.sh...
     ```
-
-# !!! This file modified by automated tool by Z-Shell. This tool fix variables and URL for Zinit project.
-
+    
 # For any queries please visit https://github.com/z-shell/zinit/issues
