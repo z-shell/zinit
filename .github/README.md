@@ -1763,10 +1763,7 @@ Target directory for installed files is `$ZPFX` (`~/.zinit/polaris` by default).
 [mit-link]: ./LICENSE
 [ver-badge]: https://img.shields.io/github/tag/z-shell/zinit.svg
 [ver-link]: https://github.com/z-shell/zinit/releases
-[pre-commit]: https://img.shields.io/badge/pre--commit-enabled-blue?logo=pre-commit&logoColor=white
-[pre-commit-link]: https://github.com/pre-commit/pre-commit
-[gitter-badge]: https://badges.gitter.im/z-shell/community.svg
-[gitter-link]: https://gitter.im/z-shell/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+
 [twitter-badge]: https://img.shields.io/twitter/url/http/shields.io.svg?style=social
 [twitter-link]: https://twitter.com/intent/tweet?text=Z-shell%20-%20ZINIT%20plugin%20manager&url=https://github.com/z-shell/zinit&hashtags=zsh,zinit,plugin,z-shell
 
