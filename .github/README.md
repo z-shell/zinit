@@ -1,15 +1,10 @@
-<p align="center">
-<a href="https://github.com/z-shell/zinit">
-<img src="https://raw.githubusercontent.com/z-shell/zinit/images/zinit.png"/>
-</a>
-</p>
-
 <div align="center"><p>
 
-[![Travis Status][status-badge]][status-link] [![CodeFactor][codefactor-badge]][codefactor-link] [![DeepSource][deepsource-badge]][deepsource-link]
+  Please visit [ZI](https://github.con/z-shell/zi) to receive futher updates. For questions and support do not hesitate to leave a [message](https://github.com/z-shell/zi/discussions) or raise an [issue](https://github.com/z-shell/zi/issues/new/choose).
+  
 [![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link]
 
-  </p><p>
+ </p><p>
 
 《 [**WIKI**](https://z-shell.github.io/zinit/wiki/) 》
 《 [**BLOG**](https://z-shell.github.io/) 》
