@@ -114,8 +114,7 @@ builtin source "${ZINIT[BIN_DIR]}/zinit-side.zsh" || { builtin print -P "${ZINIT
     if (( ___nest == 2 )) {
         : ${(PAA)___varname::="${(kv)___Strings[@]}"}
     }
-}
-# ]]]
+} # ]]]
 # FUNCTION: .zinit-get-package [[[
 .zinit-get-package() {
     emulate -LR zsh
