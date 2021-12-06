@@ -152,8 +152,7 @@
         fileB_there=( "$local_dirB/$dirnameB"/*~*.(zwc|md|js|html)(.-DOnN[1]) )
 
     reply=( "$local_dirA/$dirnameA" "$svn_dirA" "$local_dirB/$dirnameB" "${fileB_there[1]##$local_dirB/$dirnameB/#}" )
-}
-# ]]]
+} # ]]]
 # FUNCTION: .zinit-compute-ice [[[
 # Computes ICE array (default, it can be specified via $3) from a) input
 # ICE, b) static ice, c) saved ice, taking priorities into account. Also
