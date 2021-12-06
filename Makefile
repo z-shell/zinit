@@ -7,7 +7,6 @@ all: zinit.zsh.zwc zinit-side.zsh.zwc zinit-install.zsh.zwc zinit-autoload.zsh.z
 	doc/zcompile $<
 
 # Tests moved to gitlab-ci.
-# To reduce zdharma-continuum copying code.
 #alltest: test testB testC testD testE
 #test:
 #	make VERBOSE=$(VERBOSE) NODIFF=$(NODIFF) DEBUG=$(DEBUG) OPTDUMP=$(OPTDUMP) OPTS=$(OPTS) -C test test
