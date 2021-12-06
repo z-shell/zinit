@@ -95,8 +95,7 @@ function $f {
     ZINIT[CUR_USR]= ZINIT[CUR_PLUGIN]= ZINIT[CUR_USPL2]=
 }"
     done
-}
-# ]]]
+} # ]]]
 
 #
 # Dtrace
