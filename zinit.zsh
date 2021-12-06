@@ -122,8 +122,7 @@ ZINIT_2MAP=(
     OMZL:: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/
     PZT:: https://raw.githubusercontent.com/sorin-ionescu/prezto/master/
     PZTM:: https://raw.githubusercontent.com/sorin-ionescu/prezto/master/modules/
-)
-# ]]]
+) # ]]]
 
 # Init. [[[
 zmodload zsh/zutil || { builtin print -P "%F{196}zsh/zutil module is required, aborting Zinit set up.%f"; return 1; }
