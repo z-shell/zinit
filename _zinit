@@ -1,7 +1,6 @@
 #compdef zinit
 
 setopt localoptions warncreateglobal typesetsilent
-
 local curcontext="$curcontext" state state_descr line ret=1
 local -a expl
 
