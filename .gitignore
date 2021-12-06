@@ -2,6 +2,7 @@ test/
 txt/
 *.txt
 *.zwc
+*.zi
 *.zini
 .ycm_extra_conf.py
 zmodules/COMPILED_AT
