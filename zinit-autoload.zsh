@@ -300,8 +300,7 @@ ZINIT[EXTENDED_GLOB]=""
     @zinit-substitute atclone atpull
     [[ $atpull = "%atclone" ]] && { eval "$atclone"; retval=$?; } || { eval "$atpull"; retval=$?; }
     return $retval
-}
-# ]]]
+} # ]]]
 
 #
 # Format functions
