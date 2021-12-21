@@ -1,6 +1,6 @@
 <div align="center"><p>
 
-  Please visit [ZI](https://github.con/z-shell/zi) to receive futher updates. For questions and support do not hesitate to leave a [message](https://github.com/z-shell/zi/discussions) or raise an [issue](https://github.com/z-shell/zi/issues/new/choose).
+  Please visit [ZI](https://github.com/z-shell/zi) to receive futher updates. For questions and support do not hesitate to leave a [message](https://github.com/z-shell/zi/discussions) or raise an [issue](https://github.com/z-shell/zi/issues/new/choose).
   
 [![MIT License][mit-badge]][mit-link] [![Version][ver-badge]][ver-link]
 
