@@ -1,9 +1,11 @@
 ![logo](img/zinit.png)
 
-The goal is to complement the [**README.md**](https://github.com/z-shell/zinit/blob/main/README.md) and [**Z-Shell ZINIT Blog**](https://z-shell.github.io) by easier way to approach, more intuitively organized.
+# Notice
 
-With the help of the [**MkDocs**](https://www.mkdocs.org/) project-documentation tool) and also a more in-depth information.
+**This Wiki is deprecated and no longer maintained.** Please visit [ZI](https://z-shell.pages/dev/) for the greatest latest.
 
-> Notice: All documentation planned to be organized in one place in near future.
+> Legacy versions: 
+> - [Zinit](https://z-shell.github.io/zinit/wiki/)
+> - [Zplugin](https://z-shell.github.io/zinit/site/)
 
 []( vim:set ft=markdown tw=80: )
